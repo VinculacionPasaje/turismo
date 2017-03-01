@@ -18,6 +18,8 @@ Author URL: http://shapebootstrap.net
 	width: 100%;
 }
 
+
+
 .owl-item img, .full-img {
   max-width: none;
 	width:100%;
@@ -302,6 +304,8 @@ Author URL: http://shapebootstrap.net
   	font-size: 0.8em;
   	top: 20%;
   }
+  
+  
 
 
 }
@@ -490,6 +494,9 @@ ul.nostyle i {
   padding: 22px 15px 21px;
 }
 @media only screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+display: block;
+}
   #main-menu.navbar-default {
     background-color: rgba(174, 6, 0, 0.8);
   border-color: transparent;

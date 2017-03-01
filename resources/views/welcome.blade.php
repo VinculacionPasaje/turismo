@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>GAD PASAJE | Bienvenido</title>
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     
-    <link rel="shortcut icon" href="{{url('frontend/images/ico/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{url('frontend/images/ico/icono.ico')}}">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -90,16 +91,19 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home">INICIO</a></li>
+						
+						
                           <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">PASAJE<span class="caret"></span></a>
+						
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="404.html">PASAJE</a></li>
                                 <li><a href="#">Link Two</a></li>
                                 <li><a href="#">Link Three</a></li>               
                             </ul>
-                        </li>    
+                         </li>    
                           <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">OFERTA<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="404.html">OFERTA</a></li>
                                 <li><a href="#">Link Two</a></li>
@@ -107,7 +111,7 @@
                             </ul>
                         </li>    
                           <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">SERVICIOS<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="404.html">SERVICIOS</a></li>
                                 <li><a href="#">Link Two</a></li>
@@ -536,8 +540,8 @@
     <script src="{{url('frontend/js/bootstrap.min.js')}}"></script>
     <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
-    <script src="{{url('frontend/js/jquery.inview.min.js')}}"></script>
-    <script src="{{url('frontend/js/wow.min.js')}}"></script>
+
+ 
     <script src="{{url('frontend/js/main.js')}}"></script>
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 

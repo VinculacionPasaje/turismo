@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/icono.ico')}}">
 
@@ -97,19 +98,36 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="404.html">PASAJE</a></li>
-                                <li><a href="#">Link Two</a></li>
-                                <li><a href="#">Link Three</a></li>               
+                                <li><a href="#">¿Cómo Llegar?</a></li>
+                                <li><a href="#">Mapas</a></li>  
+                                <li><a href="#">¿Que Traer?</a></li> 
+                                <li><a href="#">FAQ</a></li>   
+                                <li><a href="#">Material Turístico</a></li>            
                             </ul>
-                         </li>    
-                          <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">OFERTA<span class="caret"></span></a>
+                             </li> 
+
+                        <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="404.html">OFERTA</a></li>
-                                <li><a href="#">Link Two</a></li>
-                                <li><a href="#">Link Three</a></li>               
+                                 <li class="dropdown-submenu">
+                                        <a class="test" tabindex="-1" href="#">Actividades</a>
+                                        <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="#">Deportes de Aventura</a></li>
+                                                <li><a tabindex="-1" href="#">Otras Actividades</a></li>
+                                        </ul>
+                                 </li>
+                                 <li class="dropdown-submenu">
+                                        <a class="test" tabindex="-1" href="#">Atractivos Turísticos</a>
+                                        <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="#">Parroquias</a></li>
+                                                <li><a tabindex="-1" href="#">Iglesias</a></li>
+                                        </ul>
+                                 </li>              
                             </ul>
                         </li>    
+
+
+                            
                           <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -118,6 +136,25 @@
                                 <li><a href="#">Link Three</a></li>               
                             </ul>
                         </li>    
+
+                           <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                 <li class="dropdown-submenu">
+                                        <a class="test" tabindex="-1" href="#">New dropdown</a>
+                                        <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                                <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                        </ul>
+                                 </li>
+                                <li><a href="#">Link Two</a></li>
+                                <li><a href="#">Link Three</a></li>               
+                            </ul>
+                        </li>  
+
+                        
+
+                       
                         
                         <li class="scroll"><a href="#about">CONTACTOS</a></li>
 
@@ -227,7 +264,7 @@
                         <div class="portfolio-info">
                             <h3>Portfolio Item 1</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="{{url('frontend/images/portfolio/01.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
@@ -538,6 +575,7 @@
 
     <script src="{{url('frontend/js/jquery.js')}}"></script>
     <script src="{{url('frontend/js/bootstrap.min.js')}}"></script>
+    
     <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
 

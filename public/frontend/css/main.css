@@ -71,7 +71,7 @@ Author URL: http://shapebootstrap.net
 
 .scrollToTop {
   background: url("../images/bootom-top-arrow.png") no-repeat scroll 13px 12px #ffffff;
-  border: 3px solid #AE0600;
+  border: 3px solid rgba(26, 28, 40, 0.9);
   border-radius: 5px;
   bottom: 20px;
   display: inline-block;
@@ -90,6 +90,7 @@ Author URL: http://shapebootstrap.net
 .scrollToTop:hover{
   background-position: 13px -50px;  
   text-decoration: none;
+  border: 3px solid #D62929;
   outline: none;
 }
 
@@ -115,7 +116,7 @@ Author URL: http://shapebootstrap.net
 }
 #topbar i:hover {
 	color: #FFCA00;
-	cursor: pointer;
+	
 	opacity: 1;
 }
 .social.right {
@@ -181,7 +182,7 @@ Author URL: http://shapebootstrap.net
 }
 
 #carousel .text h2 {
-	background-color: rgba(49, 59, 61, 0.8);
+	background-color: rgba(26, 28, 40, 0.9);;
 	color: #fff;
 	display: inline-block;
 	font-size: 2em;
@@ -192,7 +193,7 @@ Author URL: http://shapebootstrap.net
 	width: 100%;
 }
 #carousel .text p {
-	background-color: rgba(49, 59, 61, 0.6);
+	background-color: rgba(26, 28, 40, 0.9);;
 	color: #fff;
 	max-width: 700px;
 	padding: 10px 20px;
@@ -260,7 +261,7 @@ Author URL: http://shapebootstrap.net
 }
 
 .slider_btn {  
-  background: rgba(49, 59, 61, 0.6);
+  background: rgba(26, 28, 40, 0.9);
   border: 2px solid #fff;
   border-radius: 5px;
   color: #fff;
@@ -304,17 +305,28 @@ Author URL: http://shapebootstrap.net
   	font-size: 0.8em;
   	top: 20%;
   }
+
+
+
+  
   
   
 
 
 }
 
+
+
+
 @media(max-width:480px ){	
  
 	.slider_caption h2 {font-size: 20px;line-height: 30px;}
   .slider_caption p { font-size: 13px;}
     .slider_btn {font-size: 13px;padding: 5px 10px;}
+
+    
+
+    
   
  
 }
@@ -494,9 +506,83 @@ ul.nostyle i {
   padding: 22px 15px 21px;
 }
 @media only screen and (min-width: 768px) {
+
+  
+
+  
+
+.dropdown {
+   
+    display: inline-block;
+     position: relative;
+}
+
+
   .dropdown:hover .dropdown-menu {
 display: block;
+margin: 0;
+
 }
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  display: none;
+
+}
+
+.dropdown .dropdown-menu .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
+  position: absolute;
+  display: none;
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+    display: block;
+    margin: 0;
+}
+
+.dropdown .dropdown-menu .dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown .dropdown-menu .dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown .dropdown-menu .dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown .dropdown-menu .dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+
+
   #main-menu.navbar-default {
     background-color: rgba(174, 6, 0, 0.8);
   border-color: transparent;

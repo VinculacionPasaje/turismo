@@ -110,45 +110,75 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  <li class="dropdown-submenu">
-                                        <a class="test" tabindex="-1" href="#">Actividades</a>
+                                        <a tabindex="-1" href="#">Actividades</a>
                                         <ul class="dropdown-menu">
                                                 <li><a tabindex="-1" href="#">Deportes de Aventura</a></li>
                                                 <li><a tabindex="-1" href="#">Otras Actividades</a></li>
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a class="test" tabindex="-1" href="#">Atractivos Turísticos</a>
+                                        <a tabindex="-1" href="#">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
                                                 <li><a tabindex="-1" href="#">Parroquias</a></li>
                                                 <li><a tabindex="-1" href="#">Iglesias</a></li>
+                                                <li><a tabindex="-1" href="#">Parques y Monumentos</a></li>
+                                                <li><a tabindex="-1" href="#">Rutas Turísticas</a></li>
+                                                <li><a tabindex="-1" href="#">Sitios Tradicionales</a></li>
+                                                 <li><a tabindex="-1" href="#">Manifestaciones Culturales</a></li>
+                                                  <li><a tabindex="-1" href="#">Sitios Arqueológicos</a></li>
+                                                   <li><a tabindex="-1" href="#">Sitios Naturales</a></li>
                                         </ul>
-                                 </li>              
+                                 </li>   
+                                 <li><a href="#">Turismo Comunitario</a></li>           
                             </ul>
                         </li>    
 
 
                             
                           <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="404.html">SERVICIOS</a></li>
-                                <li><a href="#">Link Two</a></li>
-                                <li><a href="#">Link Three</a></li>               
+                                 <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#">Hospedaje</a>
+                                        <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="#">Hosterías</a></li>
+                                                <li><a tabindex="-1" href="#">Hoteles</a></li>
+                                                 <li><a tabindex="-1" href="#">Hostales</a></li>
+                                        </ul>
+                                 </li>
+                                 <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#">Alimentación</a>
+                                        <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="#">Restaurantes</a></li>
+                                                <li><a tabindex="-1" href="#">Cafeterias</a></li>
+                                                <li><a tabindex="-1" href="#">Fuentes de Soda</a></li>
+                                                
+                                        </ul>
+                                 </li> 
+
+                                  <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#">Diversión</a>
+                                        <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="#">Discotecas</a></li>
+                                                <li><a tabindex="-1" href="#">Centro de eventos</a></li>
+                                                <li><a tabindex="-1" href="#">Bares</a></li>
+                                                 <li><a tabindex="-1" href="#">Karaokes</a></li>
+                                                
+                                        </ul>
+                                 </li>   
+                                         
                             </ul>
                         </li>    
+ 
 
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li class="dropdown-submenu">
-                                        <a class="test" tabindex="-1" href="#">New dropdown</a>
-                                        <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                                                <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                                        </ul>
-                                 </li>
-                                <li><a href="#">Link Two</a></li>
-                                <li><a href="#">Link Three</a></li>               
+                                 
+                                <li><a href="#">Dirección de Turismo</a></li>
+                                <li><a href="#">Agenda de Eventos</a></li>
+                                <li><a href="#">Proyectos</a></li>  
+                                <li><a href="#">Catastros Turísticos</a></li>               
                             </ul>
                         </li>  
 

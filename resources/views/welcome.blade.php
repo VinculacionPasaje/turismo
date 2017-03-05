@@ -582,23 +582,30 @@
     <footer id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2014 Your Company. Designed by <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
+                <div class="col-xs-12 col-md-6 col-sm-6">
+                    <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
+                        Av. Bolívar entre Municipalidad y Juan Montalvo | Telf. 593 (7) 291-5234 | Fax. FALTA FAX | www.municipiodepasaje.gob.ec
+                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador 2017
+                        
+                        </p> 
+                
+
+                   
                 </div>
-                <div class="col-sm-6">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-github"></i></a></li>
-                    </ul>
+
+                 <div class="col-xs-12 col-md-6 col-sm-6">
+                
+                
+
+                    <div class="caja-redes">
+                    <a href="#" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
+                    <a href="#" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
+                    <a href="#" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
+                    <a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+                    
+                    </div>
                 </div>
+                
             </div>
         </div>
     </footer><!--/#footer-->

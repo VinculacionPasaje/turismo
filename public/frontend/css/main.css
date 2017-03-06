@@ -155,6 +155,30 @@ Author URL: http://shapebootstrap.net
 
   }
 
+  .celeste{
+
+    background: #429CFF;
+    color: white;
+   
+
+  }
+
+  .fondo5{
+
+  background: rgba(26, 28, 40, 1);
+   
+   
+
+  }
+
+  .fondo6{
+
+   background: rgba(26, 28, 40, 1);
+   
+   
+
+  }
+
   
 
   .line:after,nav:after,.center:after,.box:after {
@@ -307,6 +331,28 @@ Author URL: http://shapebootstrap.net
   }
 
 
+  
+
+
+
+  
+  
+  
+
+
+}
+
+@media(min-width:767px ){
+
+
+  .redessocial{
+    padding-top: 22px;
+
+  } 
+
+  
+
+
 
   
   
@@ -330,7 +376,7 @@ Author URL: http://shapebootstrap.net
 	z-index: 10;
   padding-left: 25px;
 }
-    
+   
 
     
   
@@ -338,6 +384,9 @@ Author URL: http://shapebootstrap.net
 }
 
 @media(min-width:480px ){	
+
+
+  
  
 
     
@@ -1393,6 +1442,22 @@ margin: 0;
     position: relative;
     width: 400px;
 }
+
+.caja-redes2 {
+    margin: 0 auto;
+
+  
+
+    position: relative;
+ 
+}
+
+.caja-redes2 a {
+	text-align: center;
+  font-size: 15px;
+	
+}
+
 .caja-redes a {
 	text-align: center;
 	font-size: 20px;
@@ -1408,6 +1473,19 @@ margin: 0;
 	position: relative;
 	width: 3em;
 }
+
+.icon-button2 {
+
+	border-radius: 3em;
+	cursor: pointer;
+	display: inline-block;
+	height: 3em;
+	line-height: 3em;
+	margin: 0 8px;
+	position: relative;
+	width: 3em;
+} 
+
 .icon-button span {
 	border-radius: 0;
 	display: block;
@@ -1422,12 +1500,37 @@ margin: 0;
 	transition: all 0.3s;
 	width: 0;
 }
+
+.icon-button2 span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 0;
+}
+
+
 .icon-button:hover span {
 	width: 3em;
 	height: 3em;
 	border-radius: 3em;
 	margin: -1.5em;
 }
+
+.icon-button2:hover span {
+	width: 3em;
+	height: 3em;
+	border-radius: 3em;
+	margin: -1.5em;
+}
+
 .linkedin span {
 	background-color: #E80C7A;
 }
@@ -1458,6 +1561,43 @@ margin: 0;
 	width: 3em;
 	z-index: 2;
 }
+
+.icon-button2 i {
+	background: none;
+	color: black;
+	left: 0;
+	line-height: 3em;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 3em;
+	z-index: 2;
+}
+
+.icon-button2 .icon-linkedin {
+	color: #212121;
+}
+.icon-button2 .icon-pinterest {
+	color: #C92228;
+}
+.icon-button2 .icon-twitter {
+	color: #4099ff;
+}
+.icon-button2 .icon-facebook {
+	color: #3B5998;
+}
+.icon-button2 .icon-google-plus {
+	color: #db5a3c;
+}
+
+.icon-button2:hover .icon-linkedin, .icon-button2:hover .icon-pinterest, .icon-button2:hover .icon-twitter, .icon-button2:hover .icon-facebook, .icon-button2:hover .icon-google-plus {
+	color: white;
+}
+
+
 .icon-button .icon-linkedin {
 	color: #212121;
 }
@@ -1476,3 +1616,96 @@ margin: 0;
 .icon-button:hover .icon-linkedin, .icon-button:hover .icon-pinterest, .icon-button:hover .icon-twitter, .icon-button:hover .icon-facebook, .icon-button:hover .icon-google-plus {
 	color: white;
 }
+
+/* --- Clase que agregaremos cuando el usuario haga scroll --- */
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	/*max-width:1000px;*/
+	left:0;
+	width:100%;
+	
+}
+
+
+
+/* footer social icons */
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+
+
+/* footer social icons */
+.social-network a.icoRss:hover {
+	background-color: #E80C7A;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.social-circle i {
+	color: black;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+

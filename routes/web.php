@@ -13,3 +13,4 @@
 
 //Para las vistas principales
 Route::get('/', 'FrontController@index');
+Route::get('base', 'FrontController@base');

@@ -36,33 +36,132 @@
 
     
     <header id="header">
+
+            <div id="topbar">
+                    <div class="line ">
+
+                                    <div  class="col-xs-4 col-md-4 fondo1">
+                                                
+                                                
+                                     </div>
+
+                                    <div  class="col-xs-4 col-md-4 fondo2">
+                                                
+                                                
+                                    </div>
+
+                                    <div  class="col-xs-4 col-md-4 fondo3">
+                                                
+                                                
+                                    </div>
+
+                                
+                                
+                                
+                                </div>  
+                    </div> 
+
+                 
+
+                <div  class="col-xs-4 col-md-4" align="center">
+                      <img src="{{url('frontend/images/escudos.png')}}" alt="logo">                           
+                                                
+                </div>
+
+                <div  class="col-xs-4 col-md-4" align="center">
+                                <img src="{{url('frontend/images/logo4.png')}}" alt="logo">                   
+                                                    
+                </div>
+
+            <div class="redessocial" align="center" >
+               <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                       
+               </ul>				
+                                                                
+            </div>
+
+                     
+
+         
         
-        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+        
+    </header>
+
+      <!-- CAROUSEL --> 
+         <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme"> 
+               <div class="item">
+                  <img src="{{url('frontend/images/slider/bg1.jpg')}}" alt="">
+                  <div class="line"> 
+                     <div class="text hide-s">
+                        <div class="line"> 
+                          <div class="prev-arrow">
+                             <i class="fa fa-chevron-left"></i>
+                          </div>
+                          <div class="next-arrow">
+                             <i class="fa fa-chevron-right"></i>
+                          </div>
+                        </div> 
+                        <h2>PASAJE</h2>
+                        <p>Pasaje es un cantón con impresionante potencial para desarrollar el turismo de naturaleza. Su gente, su cultura y su historia, hacen de este bello cantón, un lugar digno de admirar y visitar.
+
+                        </p>
+                        <a class="slider_btn" href="#">Leer Más</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="{{url('frontend/images/slider/bg2.jpg')}}" alt="">
+                  <div class="line">
+                     <div class="text hide-s"> 
+                        <div class="line"> 
+                          <div class="prev-arrow ">
+                             <i class="fa fa-chevron-left"></i>
+                          </div>
+                          <div class="next-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                          </div>
+                        </div> 
+                       <h2>PASAJE</h2>
+                        <p>Pasaje es un cantón con impresionante potencial para desarrollar el turismo de naturaleza. Su gente, su cultura y su historia, hacen de este bello cantón, un lugar digno de admirar y visitar.
+
+                        </p>
+                        <a class="slider_btn" href="#">Leer Más</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="{{url('frontend/images/slider/bg1.jpg')}}" alt="">
+                  <div class="line">
+                     <div class="text hide-s">
+                        <div class="line"> 
+                          <div class="prev-arrow ">
+                             <i class="fa fa-chevron-left"></i>
+                          </div>
+                          <div class="next-arrow ">
+                             <i class="fa fa-chevron-right"></i>
+                          </div>
+                        </div> 
+                        <h2>PASAJE</h2>
+                        <p>Pasaje es un cantón con impresionante potencial para desarrollar el turismo de naturaleza. Su gente, su cultura y su historia, hacen de este bello cantón, un lugar digno de admirar y visitar.
+
+                     </p>
+                        <a class="slider_btn" href="#">Leer Más</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+         <nav id="main-menu" class="navbar navbar-default menu " role="banner">
 
             
-            <div id="topbar">
-                        <div class="line ">
-
-                            <div  class="col-xs-4 col-md-4 fondo1">
-                                        
-                                        
-                                    </div>
-
-                            <div  class="col-xs-4 col-md-4 fondo2">
-                                        
-                                        
-                                    </div>
-
-                            <div  class="col-xs-4 col-md-4 fondo3">
-                                        
-                                        
-                                    </div>
-
-                         
-                        
-                        
-                        </div>  
-            </div> 
+            
 
             
 
@@ -201,73 +300,6 @@
 
             </div>
         </nav>
-    </header>
-
-      <!-- CAROUSEL --> 
-         <div id="carousel" style="padding-top: 13px;">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
-               <div class="item">
-                  <img src="{{url('frontend/images/slider/bg1.jpg')}}" alt="">
-                  <div class="line"> 
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow">
-                             <i class="fa fa-chevron-left"></i>
-                          </div>
-                          <div class="next-arrow">
-                             <i class="fa fa-chevron-right"></i>
-                          </div>
-                        </div> 
-                        <h2>PASAJE</h2>
-                        <p>Pasaje es un cantón con impresionante potencial para desarrollar el turismo de naturaleza. Su gente, su cultura y su historia, hacen de este bello cantón, un lugar digno de admirar y visitar.
-
-                        </p>
-                        <a class="slider_btn" href="#">Leer Más</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="{{url('frontend/images/slider/bg2.jpg')}}" alt="">
-                  <div class="line">
-                     <div class="text hide-s"> 
-                        <div class="line"> 
-                          <div class="prev-arrow ">
-                             <i class="fa fa-chevron-left"></i>
-                          </div>
-                          <div class="next-arrow">
-                            <i class="fa fa-chevron-right"></i>
-                          </div>
-                        </div> 
-                       <h2>PASAJE</h2>
-                        <p>Pasaje es un cantón con impresionante potencial para desarrollar el turismo de naturaleza. Su gente, su cultura y su historia, hacen de este bello cantón, un lugar digno de admirar y visitar.
-
-                        </p>
-                        <a class="slider_btn" href="#">Leer Más</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="{{url('frontend/images/slider/bg1.jpg')}}" alt="">
-                  <div class="line">
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow ">
-                             <i class="fa fa-chevron-left"></i>
-                          </div>
-                          <div class="next-arrow ">
-                             <i class="fa fa-chevron-right"></i>
-                          </div>
-                        </div> 
-                        <h2>PASAJE</h2>
-                        <p>Pasaje es un cantón con impresionante potencial para desarrollar el turismo de naturaleza. Su gente, su cultura y su historia, hacen de este bello cantón, un lugar digno de admirar y visitar.
-
-                     </p>
-                        <a class="slider_btn" href="#">Leer Más</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
 
     
 
@@ -625,6 +657,8 @@
     <script src="{{url('frontend/js/main.js')}}"></script>
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 
+    
+
 
     <script type="text/javascript">
          jQuery(document).ready(function($) {
@@ -655,6 +689,22 @@
                 theme_slider.trigger('owl.prev');
             })     
         }); 
+
+
+        $(document).ready(function(){
+            var altura = $('.menu').offset().top;
+            
+            $(window).on('scroll', function(){
+                if ( $(window).scrollTop() > altura ){
+                    $('.menu').addClass('menu-fixed');
+                } else {
+                    $('.menu').removeClass('menu-fixed');
+                }
+            });
+        
+        });
       </script>
+
+      
 </body>
 </html>

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
     
-    <link rel="shortcut icon" href="{{url('frontend/images/ico/icono.ico')}}">
+    <link rel="shortcut icon" href="{{url('frontend/images/ico/icon.ico')}}">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -581,32 +581,37 @@
 
     <footer id="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-sm-6">
-                    <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
-                        Av. Bolívar entre Municipalidad y Juan Montalvo | Telf. 593 (7) 291-5234 | Fax. FALTA FAX | www.municipiodepasaje.gob.ec
-                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador 2017
-                        
-                        </p> 
+
+               <div class="col-xs-12 col-md-12 col-sm-12" style="padding-bottom: 10px;" align="center">
+                   <img src="{{url('frontend/images/logo3.png')}}" alt="logo">
                 
 
                    
                 </div>
 
-                 <div class="col-xs-12 col-md-6 col-sm-6">
-                
-                
+            
+            
+                <div class="col-xs-12 col-md-12 col-sm-12">
+                    <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
+                        Av. Bolívar entre Municipalidad y Juan Montalvo | Telf. 593 (7) 291-5234 | Fax. FALTA FAX | www.municipiodepasaje.gob.ec
+                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador 2017
+                        
+                        </p> 
 
-                    <div class="caja-redes">
+                         <div class="caja-redes">
                     <a href="#" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
                     <a href="#" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
                     <a href="#" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
                     <a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
                     
                     </div>
-                </div>
                 
-            </div>
+
+                   
+                </div>
+
+                
+           
         </div>
     </footer><!--/#footer-->
 

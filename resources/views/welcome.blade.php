@@ -19,11 +19,20 @@
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/icon.ico')}}">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
+
+     <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
    
  
 </head><!--/head-->
@@ -286,6 +295,32 @@
                        
                         
                         <li class="scroll"><a href="#about">CONTACTOS</a></li>
+
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ route('login') }}">LOGIN</a></li>
+                        
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
 
                      
                       
@@ -704,6 +739,9 @@
         
         });
       </script>
+
+          <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 
       
 </body>

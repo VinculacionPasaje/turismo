@@ -16,4 +16,9 @@ class FrontController extends Controller
         return view('layouts/base');
     }
 
+    public function login(){
+       
+        return view('auth/login');
+    }
+
 }

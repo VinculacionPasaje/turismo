@@ -14,3 +14,8 @@
 //Para las vistas principales
 Route::get('/', 'FrontController@index');
 Route::get('base', 'FrontController@base');
+Route::get('login', 'FrontController@login');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

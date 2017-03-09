@@ -34,6 +34,7 @@ class User extends Authenticatable
         return $this->belongsTo(Rol::class,'id_roles','id');
     }
 
+
     public function setPathAttribute($path){
 
         if(!empty($path)){

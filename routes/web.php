@@ -13,9 +13,11 @@
 
 //Para las vistas principales
 Route::get('/', 'FrontController@index');
+Route::get('administracion','FrontController@admin');
 Route::get('base', 'FrontController@base');
 Route::get('login', 'FrontController@login');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//vistas de administracion
+Route::resource('administracion/usuarios','UsuarioController');

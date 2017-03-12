@@ -111,7 +111,7 @@
                 <li class="treeview">
                     <a href="">
                         <i class="fa fa-user-circle-o"></i>
-                        <span>Usuarios</span>
+                        <span>USUARIOS</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -127,31 +127,42 @@
                 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-address-card-o"></i><span>Eventos</span>
+                        <i class="fa fa-address-card-o"></i><span>PASAJE</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i>Listado</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Agregar</a></li>
+
                         <li>
-                            <a href="#"><i class="fa fa-book"></i> Temario
+                            <a href="#"><i class="fa fa-book"></i> ¿Cómo Llegar?
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-circle-o"></i>Listado</a></li>
-                                <li><a href=""><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                             
                             </ul>
                         </li>
 
-                        <li>
-                            <a href="#"><i class="fa fa-book"></i> Contenido
+                         <li>
+                            <a href="#"><i class="fa fa-book"></i> Mapas
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-circle-o"></i>Listado</a></li>
-                                <li><a href=""><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                             
                             </ul>
                         </li>
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-book"></i> ¿Que traer?
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('traer.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                        
                     </ul>
                 </li>
 

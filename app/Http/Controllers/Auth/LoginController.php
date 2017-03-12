@@ -54,16 +54,30 @@ class LoginController extends Controller
     public function login(Request $request)
     {
        
-        $data = $request;
+        $data = $request; 
         $mail = $data['email'];
         $usuario = User::where('email',$mail)->get();
         if($usuario->count()) // si al menos hay 1 usuario con ese correo en la BD
         {
 
              foreach($usuario as $item){
-                if($item->estado==0){
-                    // es un usuario registrado pero esta dado de baja
-                return $this->sendFailedLoginResponse($request); // le mando un mensaje de error
+                if($item->estado==0){           // es un usuario registrado pero esta dado de baja
+          
+
+                    // If the class is using the ThrottlesLogins trait, we can automatically throttle
+                    // the login attempts for this application. We'll key this by the username and
+                    // the IP address of the client making these requests into this application.
+                    if ($this->hasTooManyLoginAttempts($request)) {
+                        $this->fireLockoutEvent($request);
+
+                        return $this->sendLockoutResponse($request);
+                    }
+
+                     
+                                 
+                        $this->incrementLoginAttempts($request); // Si el usuario intenta muchas veces logearse este metodo le pondra un limite de logeo
+
+                     return $this->sendFailedLoginResponse($request); // le mando un mensaje de error
                 }else{
                      $this->validateLogin($request);
 
@@ -91,7 +105,20 @@ class LoginController extends Controller
         }
 
         }else{
-             return $this->sendFailedLoginResponse($request);
+
+            // If the class is using the ThrottlesLogins trait, we can automatically throttle
+                    // the login attempts for this application. We'll key this by the username and
+                    // the IP address of the client making these requests into this application.
+                    if ($this->hasTooManyLoginAttempts($request)) {
+                        $this->fireLockoutEvent($request);
+
+                        return $this->sendLockoutResponse($request);
+                    }
+            
+            
+             
+                    $this->incrementLoginAttempts($request);  // Si el usuario intenta muchas veces logearse este metodo le pondra un limite de logeo
+             return $this->sendFailedLoginResponse($request); // manda mensaje de error de logeo
         }
        
         

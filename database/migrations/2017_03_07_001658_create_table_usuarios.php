@@ -19,7 +19,7 @@ class CreateTableUsuarios extends Migration
             $table->string('apellido');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('path')->nullable();
+            $table->string('path')->nullable(); //nullable significa que permite valores nulos
              $table->char('estado',1)->default(1);
             $table->integer('id_roles')->unsigned();
             $table->rememberToken();

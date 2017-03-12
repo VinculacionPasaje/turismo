@@ -101,25 +101,41 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $data = $request; 
+        $password = $data['password'];
         $usuario = User::find($id);
         $this->validate($request, [
                         
                         'name'   => [ 'required', 'max:255' ],
                         'apellido' => [ 'required', 'max:255' ],                      
                         'email'     => [ 'required', Rule::unique('users')->ignore($usuario->id), ],
-                        'password'  => [ 'required', 'between:6,12' ],
+                        
                     ]);
         
-        $usuario->fill([
-
-            'name' => $request['name'],
-            'apellido' => $request['apellido'],
-            'email' => $request['email'],
-            'password' => bcrypt($request['password']),
+       
             
+            if($password==null){ // que no me sobreescriba el password  con un valor null
 
-        ]);
+                 $usuario->fill([
 
+                    'name' => $request['name'],
+                    'apellido' => $request['apellido'],
+                    'email' => $request['email'],
+                   
+                ]);
+
+            }else{ // caso contrario que me actualize la nueva contraseña
+            $usuario->fill([ 
+
+                    'name' => $request['name'],
+                    'apellido' => $request['apellido'],
+                    'email' => $request['email'],
+                    'password' => bcrypt($request['password']),
+                ]);
+                
+            }
+     
         if($usuario->save()){
             return Redirect::to('administracion/usuarios')->with('mensaje-registro', 'Usuario Actualizado Correctamente');
         }

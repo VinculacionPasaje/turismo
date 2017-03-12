@@ -189,7 +189,7 @@
                     
 
                     
-                    <a class="navbar-brand" href="index.html"><img src="{{url('frontend/images/logo.png')}}" alt="logo"></a>
+                    <a class="navbar-brand" href="{{url ('/')}}"><img src="{{url('frontend/images/logo.png')}}" alt="logo"></a>
                 </div>
 
                 

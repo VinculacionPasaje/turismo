@@ -337,6 +337,20 @@
         </nav>
 
     
+<section id="sliderSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        
+      </div>
+    </div>
+  </section>
+
+    
+
+    <!--
 
     <section id="portfolio">
         <div class="container">
@@ -351,7 +365,7 @@
                     <li><a href="#" data-filter=".creative">Creative</a></li>
                     <li><a href="#" data-filter=".corporate">Corporate</a></li>
                     <li><a href="#" data-filter=".portfolio">Portfolio</a></li>
-                </ul><!--/#portfolio-filter-->
+                </ul>
             </div>
 
             <div class="portfolio-items">
@@ -364,7 +378,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/01.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
 
                 <div class="portfolio-item corporate portfolio">
                     <div class="portfolio-item-inner">
@@ -375,7 +389,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
 
                 <div class="portfolio-item creative">
                     <div class="portfolio-item-inner">
@@ -386,7 +400,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
 
                 <div class="portfolio-item corporate">
                     <div class="portfolio-item-inner">
@@ -397,7 +411,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
 
                 <div class="portfolio-item creative portfolio">
                     <div class="portfolio-item-inner">
@@ -408,7 +422,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
 
                 <div class="portfolio-item corporate">
                     <div class="portfolio-item-inner">
@@ -419,7 +433,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
 
                 <div class="portfolio-item creative portfolio">
                     <div class="portfolio-item-inner">
@@ -430,8 +444,7 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
-
+                </div>
                 <div class="portfolio-item corporate">
                     <div class="portfolio-item-inner">
                         <img class="img-responsive" src="{{url('frontend/images/portfolio/08.jpg')}}" alt="">
@@ -441,23 +454,25 @@
                             <a class="preview" href="{{url('frontend/images/portfolio/full.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                </div><!--/.portfolio-item-->
+                </div>
             </div>
-        </div><!--/.container-->
-    </section><!--/#portfolio-->
+        </div>
+    </section>
+
+    -->
 
     
    
-
+   <!--
     <section id="meet-team">
         
 
-            <div class="divider"></div>
+        <div class="divider"></div>
 
             <div class="container">
                 
 
-                <div class="col-xs-6 col-md-6">
+                <div class="col-xs-12 col-md-12">
                     <h3 class="column-title">Our History</h3>
                     <div role="tabpanel">
                         <ul class="nav main-tab nav-justified" role="tablist">
@@ -494,6 +509,9 @@
                         </div>
                     </div>
                 </div>
+
+
+             
 
                 <div class="col-xs-6 col-md-6">
                     <h3 class="column-title">Faqs</h3>
@@ -543,23 +561,25 @@
                     </div>
                 </div>
 
-            </div>
+               
+
+           
         </div>
-    </section><!--/#meet-team-->
+    </section>
 
-    
+ -->
 
-    
 
-    <section id="blog">
+ <section id="blog">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Latest Blogs</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2 class="section-title text-center wow fadeInDown">Últimas noticias</h2>
+                
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+            
+                <div class="col-lg-8 col-md-8 col-sm-6">
                     <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
                         <article>
                             <header class="entry-header">
@@ -584,62 +604,182 @@
                         </article>
                     </div>
                 </div><!--/.col-sm-6-->
-                <div class="col-sm-6">
-                    <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="100ms">
-                        <article class="media clearfix">
-                            <div class="entry-thumbnail pull-left">
-                                <img class="img-responsive" src="{{url('frontend/images/blog/02.jpg')}}" alt="">
-                                <span class="post-format post-format-gallery"><i class="fa fa-image"></i></span>
-                            </div>
-                            <div class="media-body">
-                                <header class="entry-header">
-                                    <div class="entry-date">01 December 2014</div>
-                                    <h2 class="entry-title"><a href="#">BeReviews was a awesome envent in dhaka</a></h2>
-                                </header>
 
-                                <div class="entry-content">
-                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
-                                    <a class="btn btn-primary" href="#">Read More</a>
+                 <div class="col-lg-4 col-md-4 col-sm-6">
+                    <h3 class="column-title">Categorias</h3>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Turismo
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <a href="#"> Prueba 1 </a> 
+                                    <br>
+                                     <a href="#"> Prueba 2 </a> 
                                 </div>
-
-                                <footer class="entry-meta">
-                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Campbell</a></span>
-                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                                </footer>
                             </div>
-                        </article>
-                    </div>
-                    <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="200ms">
-                        <article class="media clearfix">
-                            <div class="entry-thumbnail pull-left">
-                                <img class="img-responsive" src="{{url('frontend/images/blog/03.jpg')}}" alt="">
-                                <span class="post-format post-format-audio"><i class="fa fa-music"></i></span>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Deportes
+                                    </a>
+                                </h4>
                             </div>
-                            <div class="media-body">
-                                <header class="entry-header">
-                                    <div class="entry-date">03 November 2014</div>
-                                    <h2 class="entry-title"><a href="#">Play list of old bangle  music and gajal</a></h2>
-                                </header>
-
-                                <div class="entry-content">
-                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
-                                    <a class="btn btn-primary" href="#">Read More</a>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
                                 </div>
-
-                                <footer class="entry-meta">
-                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Ruth</a></span>
-                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                                </footer>
                             </div>
-                        </article>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Cultural
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
             </div>
 
         </div>
     </section>
+
+
+
+
+    <!--home-content-top starts from here-->
+<section class="home-content-top">
+  <div class="container">
+    
+    <!--our-quality-shadow-->
+    <div class="clearfix"></div>
+    <h1 class="heading1">Noticias de Pasaje</h1>
+    <div class="tabbable-panel margin-tops4 ">
+      <div class="tabbable-line">
+        <ul class="nav nav-tabs tabtop  tabsetting">
+          <li  class="active"> <a href="#tab_default_1" data-toggle="tab" >  Noticias </a> </li>
+          <li> <a href="#tab_default_2" data-toggle="tab"> Interesantes</a> </li>
+          <li> <a href="#tab_default_3" data-toggle="tab"> Destacado </a> </li>
+          
+        </ul>
+        <div class="tab-content margin-tops">
+          <div class="tab-pane active fade in" id="tab_default_1">
+               <div class="row" style="padding-bottom: 10px;">
+                <div class="col-md-4">
+                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="heading4">Magento Product Upload Services</h4>
+                    <p>Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
+                    
+                    <a class="btn btn-primary" href="#">Read More</a>
+                </div>
+                 </div>
+
+                 <div class="row" style="padding-bottom: 10px;">
+
+                <div class="col-md-4">
+                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-8">
+                        <h4 class="heading4">Magento Product Upload Services</h4>
+                        <p>Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
+                        
+                         <a class="btn btn-primary" href="#">Read More</a>
+                </div>
+                </div>
+
+          </div>
+          <div class="tab-pane fade" id="tab_default_2">
+            
+
+            <div class="row" style="padding-bottom: 10px;">
+                <div class="col-md-4">
+                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="heading4">Magento Product Upload Services</h4>
+                    <p>Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
+                    
+                    <a class="btn btn-primary" href="#">Read More</a>
+                </div>
+                 </div>
+
+                 <div class="row" style="padding-bottom: 10px;">
+
+                <div class="col-md-4">
+                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-8">
+                        <h4 class="heading4">Magento Product Upload Services</h4>
+                        <p>Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
+                        
+                       <a class="btn btn-primary" href="#">Read More</a>
+                </div>
+                </div>
+
+
+          </div>
+          <div class="tab-pane fade" id="tab_default_3">
+            
+            <div class="row" style="padding-bottom: 10px;">
+                <div class="col-md-4">
+                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="heading4">Magento Product Upload Services</h4>
+                    <p>Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
+                    
+                     <a class="btn btn-primary" href="#">Read More</a>
+                </div>
+                 </div>
+
+                 <div class="row" style="padding-bottom: 10px;">
+
+                <div class="col-md-4">
+                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-8">
+                        <h4 class="heading4">Magento Product Upload Services</h4>
+                        <p>Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
+                        
+                         <a class="btn btn-primary" href="#">Read More</a>
+                </div>
+                </div>
+
+
+          </div>
+          
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--home-content-top ends here--> 
+
+
+    
+
+    
+
+    
 
 
 
@@ -695,6 +835,7 @@
 
  
     <script src="{{url('frontend/js/main.js')}}"></script>
+    
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 
     
@@ -720,6 +861,8 @@
                 pagination: false,
                 singleItem: true
             });
+
+            
         
             // Custom Navigation Events
             $(".next-arrow").click(function() {

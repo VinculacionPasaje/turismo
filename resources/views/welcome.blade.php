@@ -593,7 +593,7 @@
 
                             <div class="entry-content">
                                 <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-primary" href="#">Read More</a>
+                                <a class="btn btn-primary" href="#">Leer más</a>
                             </div>
 
                             <footer class="entry-meta">
@@ -603,24 +603,181 @@
                             </footer>
                         </article>
                     </div>
-                </div><!--/.col-sm-6-->
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                     <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <article>
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
+                                    <span class="post-format post-format-video"><i class="fa fa-film"></i></span>
+                                </div>
+                                <div class="entry-date">25 November 2014</div>
+                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
+                            </header>
+
+                            <div class="entry-content">
+                                <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
+                                <a class="btn btn-primary" href="#">Leer más</a>
+                            </div>
+
+                            <footer class="entry-meta">
+                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
+                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                            </footer>
+                        </article>
+                    </div>
+                    </div>
+
+                     <div class="col-lg-6 col-md-6 col-sm-6">
+
+                     <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <article>
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
+                                    <span class="post-format post-format-video"><i class="fa fa-film"></i></span>
+                                </div>
+                                <div class="entry-date">25 November 2014</div>
+                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
+                            </header>
+
+                            <div class="entry-content">
+                                <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
+                                <a class="btn btn-primary" href="#">Leer más</a>
+                            </div>
+
+                            <footer class="entry-meta">
+                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
+                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                            </footer>
+                        </article>
+                    </div>
+                    </div>
+
+                </div><!--/.col-sm-8-->
 
                  <div class="col-lg-4 col-md-4 col-sm-6">
+                    
+
+                    <div class="panel panel-default">
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b> Noticias</b></div>
+                    <div class="panel-body" id="menu2">
+                    
+                    <ul class="demo1" style="overflow-y: hidden; height: 210px;">
+
+
+                            <li style="" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60"></td>
+                            <td>
+                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer Más</a>
+                                
+                                </td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                            
+                            <li style="" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60"></td>
+                            <td>
+                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer más</a> </td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                            
+                            <li style="" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <td>
+                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer más</a></td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                            
+                            <li style="display:none;" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <td>
+                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer más</a></td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                            
+                            <li style="display:none;" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <td>
+                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer más</a></td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                            
+                            <li style="display:none;" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <td>
+                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer más</a></td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                            
+                            <li style="display:none;" class="news-item">
+                            <table cellpadding="4">
+                            <tbody><tr>
+                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <td>
+                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim...  <a class="btn btn-primary" href="#">Leer más</a></td>
+                            </tr>
+                            </tbody></table>
+                            </li>
+                        </ul>
+                    </div>
+
+                            <div class="panel-footer">
+                                
+                               
+                                <div class="clearfix">
+                                    
+
+                                </div>
+                                <a class="btn btn-primary" href="#">Ver Más Noticias</a>
+                      
+                            </div>
+
                     <h3 class="column-title">Categorias</h3>
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Turismo
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <b>Turismo</b>
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    <a href="#"> Prueba 1 </a> 
+                                    <b><a href="#"> Prueba 1 </a> </b>
                                     <br>
-                                     <a href="#"> Prueba 2 </a> 
+                                     <b><a href="#"> Prueba 2 </a> </b>
                                 </div>
                             </div>
                         </div>
@@ -628,13 +785,15 @@
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Deportes
+                                        <b>Deportes</b>
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                    <b><a href="#"> Prueba 1 </a> </b>
+                                    <br>
+                                     <b><a href="#"> Prueba 2 </a> </b>
                                 </div>
                             </div>
                         </div>
@@ -642,23 +801,322 @@
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Cultural
+                                        <b>Cultural</b>
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                    <b> <a href="#"> Prueba 1 </a> </b>
+                                    <br>
+                                     <b><a href="#"> Prueba 2 </a> </b>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+                    <!--
+                     <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="200ms">
+                        <article class="media clearfix">
+                            <div class="entry-thumbnail pull-left">
+                                <img class="img-responsive" src="images/blog/03.jpg" alt="">
+                                <span class="post-format post-format-audio"><i class="fa fa-music"></i></span>
+                            </div>
+                            <div class="media-body">
+                                <header class="entry-header">
+                                    <div class="entry-date">03 November 2014</div>
+                                    <h2 class="entry-title"><a href="#">Play list of old bangle  music and gajal</a></h2>
+                                </header>
+
+                                <div class="entry-content">
+                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
+                                    <a class="btn btn-primary" href="#">Read More</a>
+                                </div>
+
+                                <footer class="entry-meta">
+                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Ruth</a></span>
+                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                    -->
+                    
                 </div>
                 
             </div>
 
         </div>
     </section>
+
+
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-md-9">
+                <h3>
+                    Auction Ends Today</h3>
+            </div>
+            <div class="col-md-3">
+                <!-- Controls -->
+                <div class="controls pull-right hidden-xs">
+                    <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
+                        data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
+                            data-slide="next"></a>
+                </div>
+            </div>
+        </div>
+        <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No : gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+      				
+      			</div>
+    		</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 
@@ -673,9 +1131,9 @@
     <div class="tabbable-panel margin-tops4 ">
       <div class="tabbable-line">
         <ul class="nav nav-tabs tabtop  tabsetting">
-          <li  class="active"> <a href="#tab_default_1" data-toggle="tab" >  Noticias </a> </li>
-          <li> <a href="#tab_default_2" data-toggle="tab"> Interesantes</a> </li>
-          <li> <a href="#tab_default_3" data-toggle="tab"> Destacado </a> </li>
+          <li  class="active"> <a href="#tab_default_1" data-toggle="tab" > <span class="glyphicon glyphicon-list-alt"></span>  Noticias </a> </li>
+          <li> <a href="#tab_default_2" data-toggle="tab"> <span class="glyphicon glyphicon-eye-open"></span>  Interesantes</a> </li>
+          <li> <a href="#tab_default_3" data-toggle="tab"> <span class="glyphicon glyphicon-check"></span> Destacado </a> </li>
           
         </ul>
         <div class="tab-content margin-tops">
@@ -840,6 +1298,8 @@
 
     
 
+    
+
 
     <script type="text/javascript">
          jQuery(document).ready(function($) {
@@ -886,10 +1346,28 @@
             });
         
         });
+
+         $(function () {
+                $(".demo1").bootstrapNews({
+                    newsPerPage: 3,
+                    autoplay: true,
+                    pauseOnHover:true,
+                    direction: 'up',
+                    newsTickerInterval: 4000,
+                    onToDo: function () {
+                        //console.log(this);
+                    }
+                });
+		
+		
+        });
       </script>
 
           <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+     <script src="{{url('frontend/js/jquery.bootstrap.newsbox.min.js')}}"></script>
+    
+
 
       
 </body>

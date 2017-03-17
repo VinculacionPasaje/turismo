@@ -32,6 +32,7 @@
         //vistas de administracion
         Route::resource('administracion/usuarios','UsuarioController');
         Route::resource('administracion/traer','TraerController');
+        Route::resource('administracion/categorias','CategoriaController');
 
 
         Route::get('/error',function(){

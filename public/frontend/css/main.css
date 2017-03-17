@@ -1745,6 +1745,18 @@ margin: 0;
 	
 }
 
+.desaparece{
+  
+    transform: translateY(-100%);
+
+}
+
+.aparece{
+  
+    transform: translateY(0%);
+
+}
+
 
 
 /* footer social icons */

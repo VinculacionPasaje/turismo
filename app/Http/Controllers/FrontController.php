@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoria;
 
 class FrontController extends Controller
 {
@@ -13,8 +14,11 @@ class FrontController extends Controller
 
 
     public function index(){
+
+        $categorias= Categoria::where('estado',1)->get();
+      
        
-        return view('welcome');
+        return view('welcome', compact('categorias'));
     }
 
     public function base(){

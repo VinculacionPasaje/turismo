@@ -42,11 +42,7 @@
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"></a>
     <!-- END SCROLL TOP BUTTON -->
-
-    
-    <header id="header">
-
-            <div id="topbar">
+     <div id="topbar">
                     <div class="line ">
 
                                     <div  class="col-xs-4 col-md-4 fondo1">
@@ -70,15 +66,20 @@
                                 </div>  
                     </div> 
 
+
+    
+    <header id="header">
+
+           
                  
 
                 <div  class="col-xs-4 col-md-4" align="center">
-                      <img src="{{url('frontend/images/escudos.png')}}" alt="logo">                           
+                      <img src="{{url('frontend/images/escudo2.png')}}" alt="logo">                           
                                                 
                 </div>
 
                 <div  class="col-xs-4 col-md-4" align="center">
-                                <img src="{{url('frontend/images/logo4.png')}}" alt="logo">                   
+                                <img src="{{url('frontend/images/logo5.png')}}" alt="logo">                   
                                                     
                 </div>
 
@@ -165,6 +166,9 @@
                </div>
             </div>
          </div>
+
+
+         
 
 
          <nav id="main-menu" class="navbar navbar-default menu " role="banner">
@@ -764,55 +768,35 @@
                             </div>
 
                     <h3 class="column-title">Categorias</h3>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        <b>Turismo</b>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <b><a href="#"> Prueba 1 </a> </b>
-                                    <br>
-                                     <b><a href="#"> Prueba 2 </a> </b>
+
+                        @if($categorias->count())
+                        @foreach($categorias as $categoria)
+                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
+                                                <b>{{$categoria->nombre}}</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="{{$categoria->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <b><a href="#"> Prueba 1 </a> </b>
+                                            <br>
+                                            <b><a href="#"> Prueba 2 </a> </b>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <b>Deportes</b>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <b><a href="#"> Prueba 1 </a> </b>
-                                    <br>
-                                     <b><a href="#"> Prueba 2 </a> </b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <b>Cultural</b>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <b> <a href="#"> Prueba 1 </a> </b>
-                                    <br>
-                                     <b><a href="#"> Prueba 2 </a> </b>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
+                        
+
+
+                            
+                        
+                       
+
                     </div>
 
 
@@ -1361,10 +1345,44 @@
 		
 		
         });
+
+
+        (function () {
+    var previousScroll = 0;
+
+    $(window).scroll(function(){
+       var currentScroll = $(this).scrollTop();
+       if (currentScroll > previousScroll){
+
+            //$('.menu').hide('slow');
+
+           $('.menu').addClass('desaparece');
+           $('.menu').removeClass('aparece');
+
+           //para abajo
+          
+       } else {
+
+           //$('.menu').show('slow');
+          
+            
+
+           $('.menu').addClass('aparece');
+           $('.menu').removeClass('desaparece');
+           
+          
+
+         //para arriba
+       }
+       previousScroll = currentScroll;
+    });
+}()); //run this anonymous function immediately
+
+       
+
       </script>
 
-          <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+         
      <script src="{{url('frontend/js/jquery.bootstrap.newsbox.min.js')}}"></script>
     
 

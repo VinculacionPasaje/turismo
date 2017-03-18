@@ -40,7 +40,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top menu2" role="banner">
 
             
             <div id="topbar">
@@ -84,7 +84,7 @@
                     
 
                     
-                    <a class="navbar-brand" href="index.html"><img src="{{url('frontend/images/logo.png')}}" alt="logo"></a>
+                    <a class="navbar-brand" href="{{url ('/')}}"><img src="{{url('frontend/images/logo.png')}}" alt="logo"></a>
                 </div>
 
                 
@@ -94,7 +94,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">INICIO</a></li>
+                        <li class="scroll active"><a href="{{url ('/')}}">INICIO</a></li>
 						
 						
                           <li class="dropdown">
@@ -103,7 +103,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">¿Cómo Llegar?</a></li>
                                 <li><a href="#">Mapas</a></li>  
-                                <li><a href="#">¿Que Traer?</a></li> 
+                                <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
                                 <li><a href="#">FAQ</a></li>   
                                 <li><a href="#">Material Turístico</a></li>            
                             </ul>
@@ -208,8 +208,8 @@
 
 
  
-<div class="container">
-   <section>
+<div class="container" style=" padding-top: 100px;">
+   
     @if (Session::has('errors'))
 		    <div class="alert alert-warning" role="alert">
 			<ul>
@@ -220,12 +220,11 @@
 		        </ul>
 		    </div>
 	@endif
-        @yield('contenido')
+    @yield('contenido')
 
     
 
-  </section>
-
+ 
 </div>
  
 
@@ -279,34 +278,36 @@
 
 
     <script type="text/javascript">
-         jQuery(document).ready(function($) {
-            var theme_slider = $("#owl-demo");
-            $("#owl-demo").owlCarousel({
-                navigation: false,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                autoPlay: 6000,
-                addClassActive: true,
-             // transitionStyle: "fade",
-                singleItem: true
-            });
-            $("#owl-demo2").owlCarousel({
-                slideSpeed: 300,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["&#xf007","&#xf006"],
-                pagination: false,
-                singleItem: true
-            });
-        
-            // Custom Navigation Events
-            $(".next-arrow").click(function() {
-                theme_slider.trigger('owl.next');
-            })
-            $(".prev-arrow").click(function() {
-                theme_slider.trigger('owl.prev');
-            })     
-        }); 
+          (function () {
+    var previousScroll = 0;
+
+    $(window).scroll(function(){
+       var currentScroll = $(this).scrollTop();
+       if (currentScroll > previousScroll){
+
+            //$('.menu').hide('slow');
+
+           $('.menu2').addClass('desaparece');
+           $('.menu2').removeClass('aparece');
+
+           //para abajo
+          
+       } else {
+
+           //$('.menu').show('slow');
+          
+            
+
+           $('.menu2').addClass('aparece');
+           $('.menu2').removeClass('desaparece');
+           
+          
+
+         //para arriba
+       }
+       previousScroll = currentScroll;
+    });
+}()); //run this anonymous function immediately
       </script>
   
 

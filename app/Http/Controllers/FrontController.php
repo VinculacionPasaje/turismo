@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Traer;
 
 class FrontController extends Controller
 {
@@ -21,9 +22,10 @@ class FrontController extends Controller
         return view('welcome', compact('categorias'));
     }
 
-    public function base(){
+    public function traer(){
+        $traer= Traer::where('id',1)->get();
        
-        return view('layouts/base');
+        return view('frontend/Traer', compact('traer'));
     }
 
     public function login(){

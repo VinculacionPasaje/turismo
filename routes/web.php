@@ -14,7 +14,7 @@
         //Para las vistas principales
         Route::get('/', 'FrontController@index');
         Route::get('administracion','FrontController@admin');
-        Route::get('base', 'FrontController@base');
+        Route::get('traer', 'FrontController@traer');
 
 
         // Authentication Routes...

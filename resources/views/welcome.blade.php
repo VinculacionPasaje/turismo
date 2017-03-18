@@ -212,7 +212,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">¿Cómo Llegar?</a></li>
                                 <li><a href="#">Mapas</a></li>  
-                                <li><a href="#">¿Que Traer?</a></li> 
+                                <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
                                 <li><a href="#">FAQ</a></li>   
                                 <li><a href="#">Material Turístico</a></li>            
                             </ul>

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
     
-    <link rel="shortcut icon" href="{{url('frontend/images/ico/icon.ico')}}">
+    <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
   
 
@@ -84,7 +84,7 @@
                     
 
                     
-                    <a class="navbar-brand" href="{{url ('/')}}"><img src="{{url('frontend/images/logo.png')}}" alt="logo"></a>
+                    <a class="navbar-brand" href="{{url ('/')}}"><img src="{{url('frontend/images/logo2.png')}}" alt="logo"></a>
                 </div>
 
                 
@@ -104,8 +104,8 @@
                                 <li><a href="#">¿Cómo Llegar?</a></li>
                                 <li><a href="#">Mapas</a></li>  
                                 <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
-                                <li><a href="#">FAQ</a></li>   
-                                <li><a href="#">Material Turístico</a></li>            
+                                <li><a href="#">Preguntas Frecuentes</a></li>   
+                                <li><a href="{{url ('traer')}}">Material Turístico</a></li>            
                             </ul>
                              </li> 
 

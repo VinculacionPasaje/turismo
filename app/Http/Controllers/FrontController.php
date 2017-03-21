@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categoria;
 use App\Traer;
+use App\Material;
 
 class FrontController extends Controller
 {
@@ -26,6 +27,12 @@ class FrontController extends Controller
         $traer= Traer::where('id',1)->get();
        
         return view('frontend/Traer', compact('traer'));
+    }
+
+     public function material(){
+        $material= Material::where('id',1)->get();
+       
+        return view('frontend/Material', compact('material'));
     }
 
     public function login(){

@@ -176,6 +176,16 @@
                             </ul>
                         </li>
 
+                        <li>
+                            <a href="#"><i class="fa fa-book"></i> Material Turistico
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('material.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                             
+                            </ul>
+                        </li>
+
                         
                     </ul>
                 </li>

@@ -13,6 +13,7 @@ class MaterialTableSeeder extends Seeder
     public function run()
     {
         Material::create([
+            'id'=>1,
             'contenido'=>'<p> Contenido de prueba </p>',
             'fecha'=>'2017-03-17',
             'contador_visitas'=> 1,

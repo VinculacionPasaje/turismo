@@ -138,6 +138,19 @@
                     </ul>
                 </li>
 
+
+                 <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-facebook"></i>
+                        <span>Redes Sociales</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('redes.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+
+                    </ul>
+                </li>
+
                 
                 <li class="treeview">
                     <a href="#">
@@ -157,11 +170,12 @@
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-book"></i> Mapas
+                            <a href="#"><i class="fa fa-book"></i> Preguntas
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('preguntas.index')}}"><i class="fa fa-circle-o"></i>Listar</a></li>
+                                <li><a href="{{route('preguntas.create')}}"><i class="fa fa-circle-o"></i>Agregar</a></li>
                              
                             </ul>
                         </li>

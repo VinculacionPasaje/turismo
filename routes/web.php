@@ -16,6 +16,7 @@
         Route::get('administracion','FrontController@admin');
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
+        Route::get('preguntas', 'FrontController@pregunta');
 
 
         // Authentication Routes...
@@ -35,6 +36,8 @@
         Route::resource('administracion/traer','TraerController');
         Route::resource('administracion/material','MaterialController');
         Route::resource('administracion/categorias','CategoriaController');
+        Route::resource('administracion/preguntas','PreguntasController');
+        Route::resource('administracion/redes','RedesController');
 
 
         Route::get('/error',function(){

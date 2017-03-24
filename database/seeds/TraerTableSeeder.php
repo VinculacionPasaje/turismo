@@ -13,6 +13,7 @@ class TraerTableSeeder extends Seeder
     public function run()
     {
         Traer::create([
+            'id'=>1,
             'contenido'=>'<p> Contenido de prueba </p>',
             'fecha'=>'2017-03-17',
             'contador_visitas'=> 1,

@@ -104,8 +104,8 @@
                                 <li><a href="#">¿Cómo Llegar?</a></li>
                                 <li><a href="#">Mapas</a></li>  
                                 <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
-                                <li><a href="#">Preguntas Frecuentes</a></li>   
-                                <li><a href="{{url ('traer')}}">Material Turístico</a></li>            
+                                <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
+                                <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
                              </li> 
 

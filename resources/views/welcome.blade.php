@@ -85,10 +85,40 @@
 
             <div class="redessocial" align="center" >
                <ul class="social-network social-circle">
-                        <li><a href="#" class="icoRss" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+        
+
+                    @foreach($redes as $red)
+
+                            @if($red->id==1)
+
+                            <li><a href="{{$red->url}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            @endif
+
+                            @if($red->id==2)
+
+                           <li><a href="{{$red->url}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            @endif
+
+
+                            @if($red->id==3)
+
+                             <li><a href="{{$red->url}}" class="icoRss" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+
+                            @endif
+
+                            @if($red->id==4)
+                                <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                            @endif
+
+                            
+
+                    @endforeach
+
+                   
+                        
+                        
+                       
+                        
                        
                </ul>				
                                                                 
@@ -213,7 +243,7 @@
                                 <li><a href="#">¿Cómo Llegar?</a></li>
                                 <li><a href="#">Mapas</a></li>  
                                 <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
-                                <li><a href="#">Preguntas Frecuentes</a></li>   
+                                <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
                              </li> 
@@ -441,16 +471,24 @@
                     
 
                     <div class="panel panel-default">
-                    <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b> Noticias</b></div>
+                    <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b> Noticias</b>
+
+                    <ul class="pagination pull-right" style="margin: 0px;">
+                        <li><a href="#" class="prev"><span class="glyphicon glyphicon-chevron-down"></span></a></li>
+                        <li><a href="#" class="next"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                    
+                    
+                    </div>
                     <div class="panel-body" id="menu2">
                     
-                    <ul class="demo1" style="overflow-y: hidden; height: 210px;">
+                    <ul class="demo1" style="overflow-y: hidden;">
 
 
                             <li style="" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60"></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%"> </tr>
                             <td>
                                  <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                  
@@ -464,7 +502,7 @@
                             <li style="" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60"></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%"> </tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                 <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
@@ -472,10 +510,10 @@
                             </tbody></table>
                             </li>
                             
-                            <li style="" class="news-item">
+                            <li style="display:none;" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                 <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
@@ -487,7 +525,7 @@
                             <li style="display:none;" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                 <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
@@ -499,7 +537,7 @@
                             <li style="display:none;" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                 <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
@@ -511,7 +549,7 @@
                             <li style="display:none;" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                 <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
@@ -523,7 +561,7 @@
                             <li style="display:none;" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <td><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="60" ></td>
+                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                 <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
@@ -745,10 +783,39 @@
                         </p> 
 
                          <div class="caja-redes">
-                    <a href="#" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
-                    <a href="#" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
-                    <a href="#" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
-                    <a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+
+                           @foreach($redes as $red)
+
+                                @if($red->id==1)
+
+                                <a href="{{$red->url}}" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+                                @endif
+
+                                @if($red->id==2)
+
+                                <a href="{{$red->url}}" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
+                                @endif
+
+
+                                @if($red->id==3)
+
+                                 <a href="{{$red->url}}" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
+
+                                @endif
+
+                                @if($red->id==4)
+                                   <a href="{{$red->url}}" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
+                                @endif
+
+                                
+
+                    @endforeach 
+                           
+                            
+                   
+                    
+                  
+                  
                     
                     </div>
                 

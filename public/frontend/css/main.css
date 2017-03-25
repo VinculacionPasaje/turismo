@@ -196,7 +196,13 @@ Author URL: http://shapebootstrap.net
   line-height:0;
   visibility:hidden;
 }
-.line {clear:left;}
+.line {clear:left;
+
+}
+
+.espacio{
+  padding-top: 25px;  
+}
 .line .line {padding:0;}
 
 .size-1140 .line {
@@ -384,6 +390,15 @@ Author URL: http://shapebootstrap.net
 
 }
 
+.cabecera .orla {
+    
+    width: 100%;
+    height: auto;
+}
+
+
+
+
 @media(min-width:767px ){
 
 
@@ -392,6 +407,8 @@ Author URL: http://shapebootstrap.net
 
   } 
 
+  
+  
   
 
 
@@ -608,7 +625,7 @@ ul.nostyle i {
   margin-bottom: 0;
 }
 .navbar.navbar-default .navbar-toggle {
-  margin-top: 32px;
+ 
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;
@@ -1192,7 +1209,7 @@ margin: 0;
   border-color: #eee;
 }
 .panel-default > .panel-heading {
-  background-color: #07689F;
+  background-color: #d52b1e;
   border-color: #eee;
 }
 .panel-default > .panel-heading .panel-title {
@@ -1846,7 +1863,7 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.2s;
 }
 .social-circle i {
-	color: black;
+	color: white;
 	-webkit-transition: all 0.8s;
 	-moz-transition: all 0.8s;
 	-o-transition: all 0.8s;
@@ -2296,6 +2313,35 @@ Answer
 .questions {
   display: none;
 }
+
+
+.video-section .pattern-overlay {
+background-color: rgba(71, 71, 71, 0.59);
+
+min-height: 650px; 
+/* Incase of overlay problems just increase the min-height*/
+}
+.video-section h1, .video-section h3{
+
+color:#fff;
+}
+.video-section h1{
+font-size:60px;
+font-family: 'Buenard', serif;
+font-weight:bold;
+padding-bottom: 15px;
+margin: 40px auto 0px;
+text-shadow: 1px 1px 1px #000;
+-webkit-text-shadow: 1px 1px 1px #000;
+-moz-text-shadow: 1px 1px 1px #000;
+}
+.video-section h3{
+font-size: 25px;
+font-weight:lighter;
+margin: 0px auto 15px;
+}
+.video-section .buttonBar{display:none;}
+.player {font-size: 1px;}
 
 
 

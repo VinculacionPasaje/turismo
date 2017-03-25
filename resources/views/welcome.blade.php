@@ -42,96 +42,15 @@
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"></a>
     <!-- END SCROLL TOP BUTTON -->
-     <div id="topbar">
-                    <div class="line ">
-
-                                    <div  class="col-xs-4 col-md-4 fondo1">
-                                                
-                                                
-                                     </div>
-
-                                    <div  class="col-xs-4 col-md-4 fondo2">
-                                                
-                                                
-                                    </div>
-
-                                    <div  class="col-xs-4 col-md-4 fondo3">
-                                                
-                                                
-                                    </div>
-
-                                
-                                
-                                
-                                </div>  
-                    </div> 
 
 
-    
-    <header>
-
-           
-                 
-
-                <div  class="col-xs-6 col-md-4" align="center">
-                      <img src="{{url('frontend/images/escudos.png')}}" alt="logo">                           
-                                                
-                </div>
-
-                <div  class="col-xs-6 col-md-4" align="center">
-                                <img src="{{url('frontend/images/header.png')}}" alt="logo">                   
-                                                    
-                </div>
-
-            <div class="redessocial" align="center" >
-               <ul class="social-network social-circle">
+     
         
 
-                    @foreach($redes as $red)
-
-                            @if($red->id==1)
-
-                            <li><a href="{{$red->url}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            @endif
-
-                            @if($red->id==2)
-
-                           <li><a href="{{$red->url}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            @endif
 
 
-                            @if($red->id==3)
 
-                             <li><a href="{{$red->url}}" class="icoRss" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-
-                            @endif
-
-                            @if($red->id==4)
-                                <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
-                            @endif
-
-                            
-
-                    @endforeach
-
-                   
-                        
-                        
-                       
-                        
-                       
-               </ul>				
-                                                                
-            </div>
-
-                     
-
-         
-        
-        
-    </header>
-
-      <!-- CAROUSEL --> 
+      <!-- 
          <div id="carousel">
             <div id="owl-demo" class="owl-carousel owl-theme"> 
                <div class="item">
@@ -196,6 +115,107 @@
                </div>
             </div>
          </div>
+
+         CAROUSEL --> 
+
+
+         <!--Video Section-->
+            <section class="content-section video-section">
+            
+            
+            <div class="pattern-overlay">
+
+                          
+
+                        <div id="topbar">
+                                    <div class="line ">
+
+                                            <div  class="col-xs-4 col-md-4 fondo1">   </div>
+                                            <div  class="col-xs-4 col-md-4 fondo2"></div>
+                                            <div  class="col-xs-4 col-md-4 fondo3"></div>
+                                                                                    
+                                    </div>  
+                            </div> 
+
+                         
+
+                    <div class="espacio">
+
+                            <div  class="col-xs-6 col-md-4" align="center">
+                                    <img src="{{url('frontend/images/escudos.png')}}" alt="logo">                           
+                                                                
+                            </div>
+
+                            <div  class="col-xs-6 col-md-4" align="center">
+                                            <img src="{{url('frontend/images/header2.png')}}" alt="logo">                   
+                                                                
+                            </div>
+
+                        <div class="redessocial" align="center" >
+                                <ul class="social-network social-circle">
+                            
+
+                                        @foreach($redes as $red)
+
+                                                @if($red->id==1)
+
+                                                <li><a href="{{$red->url}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                                @endif
+
+                                                @if($red->id==2)
+
+                                            <li><a href="{{$red->url}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                                @endif
+
+
+                                                @if($red->id==3)
+
+                                                <li><a href="{{$red->url}}" class="icoRss" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+
+                                                @endif
+
+                                                @if($red->id==4)
+                                                    <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                                                @endif
+
+                                                
+
+                                        @endforeach
+
+                                    
+                                            
+                                            
+                                        
+                                            
+                                        
+                                </ul>				
+                                                                                    
+                            </div>
+                     </div>
+                     
+                     <div class="cabecera">
+
+                     <img class="orla" src="{{url('frontend/images/orla.png')}}" alt="logo">  
+                     
+                     </div>
+            
+            <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=SDTZ7iX4vTQ',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+                <div class="container">
+
+                
+                    
+                    
+                        <div class="col-lg-12">
+                        <h1><span>Pasaje</span>, provincia de tesoros escondidos</h1>
+                        <h3>¿Nunca has sentido que te falta algo? Todos llegamos a ese punto en el que necesitamos algo que nos haga conectar con una parte nueva de nosotros, que aún no conocíamos. Y Pasaje, es el lugar para encontrarlo.
+                        
+                        </h3>
+                    
+                </div>
+                </div>
+            </div>
+            </section>
+<!--Video Section Ends Here-->
 
 
          
@@ -400,7 +420,7 @@
 
                             <div class="entry-content">
                                 <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-primary" href="#">Leer más</a>
+                                <a class="btn btn-danger" href="#">Leer más</a>
                             </div>
 
                             <footer class="entry-meta">
@@ -426,7 +446,7 @@
 
                             <div class="entry-content">
                                 <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-primary" href="#">Leer más</a>
+                                <a class="btn btn-danger" href="#">Leer más</a>
                             </div>
 
                             <footer class="entry-meta">
@@ -453,7 +473,7 @@
 
                             <div class="entry-content">
                                 <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-primary" href="#">Leer más</a>
+                                <a class="btn btn-danger" href="#">Leer más</a>
                             </div>
 
                             <footer class="entry-meta">
@@ -492,7 +512,7 @@
                             <td>
                                  <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                  
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                                 
                                 </td>
                             </tr>
@@ -505,7 +525,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%"> </tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                             </tr>
                             </tbody></table>
                             </li>
@@ -516,7 +536,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                             </td>
                             </tr>
                             </tbody></table>
@@ -528,7 +548,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                             </td>
                             </tr>
                             </tbody></table>
@@ -540,7 +560,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                             </td>
                             </tr>
                             </tbody></table>
@@ -552,7 +572,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                             </td>
                             </tr>
                             </tbody></table>
@@ -564,7 +584,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-primary" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
                             </td>
                             </tr>
                             </tbody></table>
@@ -579,7 +599,7 @@
                                     
 
                                 </div>
-                                <a class="btn btn-primary" href="#">Ver Más Noticias</a>
+                                <a class="btn btn-danger" href="#">Ver Más Noticias</a>
                       
                             </div>
                     </div>
@@ -659,7 +679,7 @@
                     <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                     
-                    <a class="btn btn-primary" href="#">Read More</a>
+                    <a class="btn btn-danger" href="#">Read More</a>
                 </div>
                  </div>
 
@@ -674,7 +694,7 @@
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
 
                         
-                         <a class="btn btn-primary" href="#">Read More</a>
+                         <a class="btn btn-danger" href="#">Read More</a>
                 </div>
                 </div>
 
@@ -690,7 +710,7 @@
                    <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                     
-                    <a class="btn btn-primary" href="#">Read More</a>
+                    <a class="btn btn-danger" href="#">Read More</a>
                 </div>
                  </div>
 
@@ -703,7 +723,7 @@
                     <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                         
-                       <a class="btn btn-primary" href="#">Read More</a>
+                       <a class="btn btn-danger" href="#">Read More</a>
                 </div>
                 </div>
 
@@ -718,7 +738,7 @@
                 <div class="col-md-8">
                    <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                     <a class="btn btn-primary" href="#">Read More</a>
+                     <a class="btn btn-danger" href="#">Read More</a>
                 </div>
                  </div>
 
@@ -731,7 +751,7 @@
                         <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                         
-                         <a class="btn btn-primary" href="#">Read More</a>
+                         <a class="btn btn-danger" href="#">Read More</a>
                 </div>
                 </div>
 
@@ -876,6 +896,12 @@
             })     
         }); 
 
+        $(document).ready(function () {
+
+            $(".player").mb_YTPlayer();
+
+        });
+
 
         $(document).ready(function(){
             var altura = $('.menu').offset().top;
@@ -943,6 +969,11 @@
 
          
      <script src="{{url('frontend/js/jquery.bootstrap.newsbox.min.js')}}"></script>
+     <script src="{{url('frontend/js/jquery.mb.YTPlayer.js')}}"></script>
+  
+     
+
+     
     
 
 

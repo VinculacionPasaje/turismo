@@ -8,6 +8,7 @@ use App\Traer;
 use App\Material;
 use App\Preguntas;
 use App\Redes;
+use App\Video;
 
 class FrontController extends Controller
 {
@@ -21,9 +22,10 @@ class FrontController extends Controller
 
         $categorias= Categoria::where('estado',1)->get();
         $redes= Redes::where('estado',1)->get();
+        $videos= Video::where('id',1)->get();
       
        
-        return view('welcome', compact('categorias', 'redes'));
+        return view('welcome', compact('categorias', 'redes', 'videos'));
     }
 
     public function traer(){

@@ -198,20 +198,28 @@
                      <img class="orla" src="{{url('frontend/images/orla.png')}}" alt="logo">  
                      
                      </div>
-            
-            <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=SDTZ7iX4vTQ',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
-                <div class="container">
+            @foreach($videos as $video)
+                <a id="bgndVideo" class="player" data-property="{videoURL:'{{$video->url}}',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+                        <div class="container">
 
-                
-                    
-                    
-                        <div class="col-lg-12">
-                        <h1><span>Pasaje</span>, provincia de tesoros escondidos</h1>
-                        <h3>¿Nunca has sentido que te falta algo? Todos llegamos a ese punto en el que necesitamos algo que nos haga conectar con una parte nueva de nosotros, que aún no conocíamos. Y Pasaje, es el lugar para encontrarlo.
                         
-                        </h3>
-                    
-                </div>
+                            
+                            
+                                <div class="col-lg-12">
+
+                                <h1>{{$video->titulo}}</h1>
+                                <h3 align="justify">
+                                {{$video->descripcion}}
+                                
+                                </h3>
+
+                                <a class="slider_btn" href="#">Ven a descubrirlo</a>
+
+                                
+                                </div>
+                            
+                        </div>
+                @endforeach
                 </div>
             </div>
             </section>

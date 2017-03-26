@@ -38,6 +38,7 @@
         Route::resource('administracion/categorias','CategoriaController');
         Route::resource('administracion/preguntas','PreguntasController');
         Route::resource('administracion/redes','RedesController');
+        Route::resource('administracion/videos','VideoController');
 
 
         Route::get('/error',function(){

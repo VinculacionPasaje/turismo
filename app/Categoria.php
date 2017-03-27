@@ -14,4 +14,9 @@ class Categoria extends Model
         'descripcion',
         'estado'
     ];
+
+     public function noticias(){
+        return $this->hasMany(Noticia::class);
+    }
+
 }

@@ -138,6 +138,20 @@
                     </ul>
                 </li>
 
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-user-circle-o"></i>
+                        <span>NOTICIAS</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('noticias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                       
+                          <li><a href="{{route('noticias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                   
+                    </ul>
+                </li>
+
 
                 
                 <li class="treeview">

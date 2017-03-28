@@ -2353,6 +2353,8 @@ color:#fff;
 }
 
 
+
+
 .video-section h1{
 
 font-family: 'Buenard', serif;
@@ -2391,6 +2393,46 @@ margin: 0px auto 15px;
 }
 
 .botonBajar img{width:36px;height:auto;position:absolute;left:50%;margin-left:-18px;top:26px}
+
+.oculto{
+  overflow:hidden;
+    
+}
+
+.sliderTitle {
+    position: relative;
+    top: -280px;
+    z-index: 4;
+    padding-left: 50px;
+    padding-top: 25px;
+    margin: 0 auto;
+    font-size: 60px;
+    pointer-events: none;
+    font-family: BreePeruWeb,Arial;
+
+    color:#fffd00;
+    font-weight:bold;
+    
+    text-shadow: 2px 2px 2px #000;
+    -webkit-text-shadow: 1px 1px 1px #000;
+    -moz-text-shadow: 1px 1px 1px #000;
+    }
+
+.rulo_slider {
+    display: block;
+    height: 162px;
+    width: 100%;
+    position: relative;
+    top: 322px;
+    z-index: 2000;
+    
+    margin: 0 auto;
+    pointer-events: none;
+    bottom: -1px !important;
+    height: 162px;
+    position: absolute !important;
+    
+}
 
 
 

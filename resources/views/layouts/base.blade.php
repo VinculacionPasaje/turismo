@@ -40,7 +40,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top menu2" role="banner">
+        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner">
 
             
             <div id="topbar">
@@ -206,9 +206,13 @@
         </nav>
     </header>
 
+   @yield('header')
+ 
+<div class="container" style=" padding-top: 25px;">
 
  
-<div class="container" style=" padding-top: 100px;">
+
+
     <div class="col-lg-9 col-md-9 col-sm-6">
    
     @if (Session::has('errors'))
@@ -225,7 +229,7 @@
 
     </div>
 
-    <div class="container">
+    
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <!-- Carousel
@@ -263,7 +267,7 @@
                     </div><!-- End Carousel -->  
                 </div>
             </div>
-        </div>
+       
 
  
 </div>

@@ -13,10 +13,7 @@
 
 <p class="sliderTitle"> ¿Qué traer? </p>
 
-<div class="rulo_slider" style="background: url({{url('frontend/images/Rulos.png')}})";></div>
 
-
-</div>
 
 
 

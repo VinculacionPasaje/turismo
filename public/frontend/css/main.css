@@ -398,6 +398,50 @@ Author URL: http://shapebootstrap.net
 
 
 
+ @media (min-width: 768px) and (max-width: 992px) { 
+
+   .rulo_slider {
+    
+   
+    
+    top: 390px;
+    z-index: 2000;
+    
+   
+
+    position: absolute;
+    
+} 
+
+   
+  
+} 
+
+
+ @media (min-width: 993px) { 
+
+  
+
+   .rulo_slider {
+    
+   
+    
+    top: 322px;
+    z-index: 2000;
+    
+   
+
+    position: absolute;
+    
+}
+  
+} 
+
+
+
+
+
+
 
 @media(min-width:767px ){
 
@@ -414,7 +458,17 @@ font-size:60px;
 .video-section h3{
 font-size: 25px;
 
+
 }
+
+
+
+
+
+
+
+
+
   
 
 
@@ -451,10 +505,38 @@ font-size: 25px;
 
 
 
+
+
+
     
   
  
 }
+
+@media (min-width:555px){
+  .sliderTitle2{
+      font-size: 60px;
+  }
+
+  .sliderTitle3{
+      font-size: 45px;
+  }
+}
+
+
+@media (max-width:554px){
+  .sliderTitle2{
+      font-size: 35px;
+  }
+
+  .sliderTitle3{
+      font-size: 35px;
+  }
+}
+
+
+
+
 
 @media(max-width:550px ){	
  
@@ -463,6 +545,8 @@ font-size: 25px;
 .redessocial{
   display: none;
 }
+
+
 
   .video-section h1{
 font-size:45px;
@@ -474,7 +558,27 @@ font-size: 18px;
 }
 
 
+
+
+
    
+
+    
+  
+ 
+}
+
+
+@media(max-width:767px ){	/* este vale */
+ .rulo_slider {
+
+  position: relative;
+    top: -210px;
+    z-index: 4;
+
+}
+
+
 
     
   
@@ -2418,19 +2522,54 @@ margin: 0px auto 15px;
     -moz-text-shadow: 1px 1px 1px #000;
     }
 
+    .sliderTitle2 {
+    position: relative;
+    top: -280px;
+    z-index: 4;
+    padding-left: 50px;
+    padding-top: 25px;
+    margin: 0 auto;
+
+    pointer-events: none;
+    font-family: BreePeruWeb,Arial;
+
+    color:#fff;
+    font-weight:bold;
+    
+    text-shadow: 3px 3px 3px #000;
+    -webkit-text-shadow: 1px 1px 1px #000;
+    -moz-text-shadow: 1px 1px 1px #000;
+    }
+
+
+    .sliderTitle3 {
+    position: relative;
+    top: -280px;
+    z-index: 4;
+    padding-left: 50px;
+    padding-top: 25px;
+    margin: 0 auto;
+
+    pointer-events: none;
+    font-family: BreePeruWeb,Arial;
+
+    color:#fff;
+    font-weight:bold;
+    
+    text-shadow: 3px 3px 3px #000;
+    -webkit-text-shadow: 1px 1px 1px #000;
+    -moz-text-shadow: 1px 1px 1px #000;
+    }
+
 .rulo_slider {
     display: block;
     height: 162px;
     width: 100%;
-    position: relative;
-    top: 322px;
-    z-index: 2000;
-    
     margin: 0 auto;
     pointer-events: none;
     bottom: -1px !important;
-    height: 162px;
-    position: absolute !important;
+
+  
     
 }
 

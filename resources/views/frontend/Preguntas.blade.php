@@ -4,6 +4,22 @@
 
 @endsection
 
+@section('header')
+
+<div class='oculto'>
+
+<img src="{{url('frontend/images/faq.jpg')}}" alt="">
+
+
+<p class="sliderTitle3"> Preguntas Frecuentes </p>
+
+
+
+
+
+@endsection
+
+
 @section('contenido')
 
 <p> Preguntas Frecuentes </p>

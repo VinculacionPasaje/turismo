@@ -4,6 +4,21 @@
 
 @endsection
 
+@section('header')
+
+<div class='oculto'>
+
+<img src="{{url('frontend/images/material.jpg')}}" alt="">
+
+
+<p class="sliderTitle2"> Material Turístico </p>
+
+
+
+
+
+@endsection
+
 @section('contenido')
 
 @foreach($material as $item)

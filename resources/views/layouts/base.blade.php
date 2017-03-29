@@ -208,7 +208,7 @@
 
    @yield('header')
  
-<div class="container" style=" padding-top: 25px;">
+<div class="container">
 
  
 

@@ -189,7 +189,7 @@
 
                        
                         
-                        <li class="scroll"><a href="#about">CONTACTOS</a></li>
+                        <li class="scroll"><a href="{url ('contactos')}}">CONTACTOS</a></li>
 
                      
                       

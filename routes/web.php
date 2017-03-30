@@ -17,6 +17,8 @@
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');
+        Route::get('contactos', 'MailController@index');
+        Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
 
 
         // Authentication Routes...

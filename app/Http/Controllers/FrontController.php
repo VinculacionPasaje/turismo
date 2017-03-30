@@ -34,6 +34,9 @@ class FrontController extends Controller
         return view('frontend/Traer', compact('traer'));
     }
 
+
+     
+
      public function material(){
         $material= Material::where('id',1)->get();
        

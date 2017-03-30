@@ -1,3 +1,4 @@
+
 @extends('layouts.base')
 @section('title')
 <title>Preguntas Frecuentes</title>

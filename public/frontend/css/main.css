@@ -307,6 +307,30 @@ Author URL: http://shapebootstrap.net
   padding: 10px;
 }
 
+
+
+.slider_btn3 {  
+  background: rgb(181, 0, 8);
+
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  font-family: "Varela",sans-serif;
+  margin-top: 10px;
+  padding: 9px 15px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;  
+}
+.slider_btn3:hover,.slider_btn3:focus{   
+  text-decoration: none;
+  outline: none;
+  color: yellow;
+}
+
+
 .slider_btn {  
   background: rgba(49, 59, 61, 0.8);
 
@@ -2572,6 +2596,39 @@ margin: 0px auto 15px;
   
     
 }
+
+.contact{
+
+  font-size: 45px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+   font-family: BreePeruWeb,Arial;
+
+    color:#000;
+    font-weight:bold;
+    
+   
+
+}
+
+.icono{
+  font-size: 35px;
+  
+}
+
+.icon-face{
+  color: #4460A1;
+}
+
+.icon-twi{
+  color: #53ABEE;
+}
+
+.icon-ins{
+  color: #9C27A8;
+}
+
 
 
 

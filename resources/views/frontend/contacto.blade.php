@@ -193,7 +193,7 @@
 
                        
                         
-                        <li class="scroll"><a href="{url ('contactos')}}">CONTACTOS</a></li>
+                        <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
 
                      
                       
@@ -289,50 +289,73 @@
             <legend><b>Redes Sociales</b></legend>
 
             <div class="social-box">
-                <div class="col-xs-4 col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            
-                                <a href="https://facebook.com/niseorg">
-                                    <i class="fa fa-facebook-square icono icon-face" aria-hidden="true"></i>
-                                </a>
-                            
-                        </div>
-                        <div class="panel-footer">
-                            <b>Facebook</b>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-xs-4 col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            
-                                <a href="https://twitter.com/niseorg">
-                                    <i class='fa fa-twitter-square icono icon-twi'></i>
-                                </a>
-                            
-                        </div>
-                        <div class="panel-footer">
-                            <b>Twitter</b>
-                        </div>
-                    </div>
-                </div>
+             @foreach($redes as $red)
 
-                <div class="col-xs-4 col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            
-                                <a href="https://plus.google.com/niseorg">
-                                    <i class='fa fa-instagram icono icon-ins'></i>
-                                </a>
-                            
-                        </div>
-                        <div class="panel-footer">
-                            <b>Instagram</b>
-                        </div>
-                    </div>
-                </div>
+                                @if($red->id==1) 
+
+                               <div class="col-xs-4 col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            
+                                                <a href="{{$red->url}}">
+                                                    <i class="fa fa-facebook-square icono icon-face" aria-hidden="true"></i>
+                                                </a>
+                                            
+                                        </div>
+                                        <div class="panel-footer">
+                                            <b>Facebook</b>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @endif
+
+                                @if($red->id==2)
+
+                               
+                                    <div class="col-xs-4 col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                
+                                                    <a href="{{$red->url}}">
+                                                        <i class='fa fa-twitter-square icono icon-twi'></i>
+                                                    </a>
+                                                
+                                            </div>
+                                            <div class="panel-footer">
+                                                <b>Twitter</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
+
+                                @if($red->id==3)
+
+                                  <div class="col-xs-4 col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                
+                                                    <a href="{{$red->url}}">
+                                                        <i class='fa fa-instagram icono icon-ins'></i>
+                                                    </a>
+                                                
+                                            </div>
+                                            <div class="panel-footer">
+                                                <b>Instagram</b>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                @endif
+
+                                
+                                
+
+                    @endforeach 
+  
             </div>
 
                 
@@ -341,10 +364,18 @@
                 <legend><b> Más Información </b></legend>
                 <p class="text-align: left;">
                     <address>
-                        <strong>Organization Name</strong><br>
-                        Email: nelson@arena.co.ke<br>
-                        Twitter: @twitterAccount<br>
-                        Telephone: +254 178 623 151
+                    @foreach($footer as $item)
+                    
+
+
+                     <strong>Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje </strong><br>
+                       <b> Dirección: </b> {{$item->direccion}}<br>
+                        <b>Email: </b> {{$item->email}}<br>
+                        <b>Teléfono: </b> {{$item->telefono}}<br>
+                        <b>FAX: </b> {{$item->fax}}<br>
+                        <b>Web:</b>    {{$item->web}}<br>
+                @endforeach
+                       
                     </address>
                 </p>
             </div>
@@ -365,10 +396,12 @@
  
 
   
- <footer id="footer">
+<div  class="col-xs-12 col-md-12 fondo1">   </div>
+    <footer id="footer">
+    
         <div class="container">
 
-               <div class="col-xs-12 col-md-12 col-sm-12" style="padding-bottom: 10px;" align="center">
+               <div class="col-xs-12 col-md-12 col-sm-12" style="padding-bottom: 10px; padding-top:15px;" align="center">
                    <img src="{{url('frontend/images/logo3.png')}}" alt="logo">
                 
 
@@ -378,17 +411,48 @@
             
             
                 <div class="col-xs-12 col-md-12 col-sm-12">
+                   @foreach($footer as $item)
                     <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
-                        Av. Bolívar entre Municipalidad y Juan Montalvo | Telf. 593 (7) 291-5234 | Fax. FALTA FAX | www.municipiodepasaje.gob.ec
-                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador 2017
+                        {{$item->direccion}} | Telf. {{$item->telefono}} | Fax. {{$item->fax}} | Web: {{$item->web}} | Email: {{$item->email}}
+                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador {{$item->anio}}
                         
                         </p> 
+                @endforeach
 
                          <div class="caja-redes">
-                    <a href="#" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
-                    <a href="#" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
-                    <a href="#" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
-                    <a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+
+                           @foreach($redes as $red)
+
+                                @if($red->id==1)
+
+                                <a href="{{$red->url}}" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+                                @endif
+
+                                @if($red->id==2)
+
+                                <a href="{{$red->url}}" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
+                                @endif
+
+
+                                @if($red->id==3)
+
+                                 <a href="{{$red->url}}" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
+
+                                @endif
+
+                                @if($red->id==4)
+                                   <a href="{{$red->url}}" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
+                                @endif
+
+                                
+
+                    @endforeach 
+                           
+                            
+                   
+                    
+                  
+                  
                     
                     </div>
                 

@@ -332,7 +332,8 @@ Author URL: http://shapebootstrap.net
 
 
 .slider_btn {  
-  background: rgba(49, 59, 61, 0.8);
+  background: #ae0600;
+  font-weight: bold;
 
   border-radius: 5px;
   color: #fff;
@@ -2489,14 +2490,15 @@ font-family: 'Buenard', serif;
 font-weight:bold;
 padding-bottom: 15px;
 margin: 40px auto 0px;
-text-shadow: 1px 1px 1px #000;
--webkit-text-shadow: 1px 1px 1px #000;
--moz-text-shadow: 1px 1px 1px #000;
+text-shadow: 2px 2px 2px #000;
+-webkit-text-shadow: 2px 2px 2px #000;
+-moz-text-shadow: 2px 2px 2px #000;
 }
 .video-section h3{
 
-font-weight:lighter;
+font-weight:normal;
 margin: 0px auto 15px;
+text-shadow: 2px 2px 2px #000;
 }
 
 .video-section .buttonBar{display:none;}

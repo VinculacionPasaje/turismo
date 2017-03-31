@@ -9,6 +9,7 @@ use App\Material;
 use App\Preguntas;
 use App\Redes;
 use App\Video;
+use App\Footer;
 
 class FrontController extends Controller
 {
@@ -23,15 +24,18 @@ class FrontController extends Controller
         $categorias= Categoria::where('estado',1)->get();
         $redes= Redes::where('estado',1)->get();
         $videos= Video::where('id',1)->get();
+        $footer= Footer::where('estado',1)->get();
       
        
-        return view('welcome', compact('categorias', 'redes', 'videos'));
+        return view('welcome', compact('categorias', 'redes', 'videos', 'footer'));
     }
 
     public function traer(){
         $traer= Traer::where('id',1)->get();
+         $redes= Redes::where('estado',1)->get();
+          $footer= Footer::where('estado',1)->get();
        
-        return view('frontend/Traer', compact('traer'));
+        return view('frontend/Traer', compact('traer', 'redes', 'footer'));
     }
 
 
@@ -39,14 +43,17 @@ class FrontController extends Controller
 
      public function material(){
         $material= Material::where('id',1)->get();
+         $redes= Redes::where('estado',1)->get();
+          $footer= Footer::where('estado',1)->get();
        
-        return view('frontend/Material', compact('material'));
+        return view('frontend/Material', compact('material', 'redes', 'footer'));
     }
 
      public function pregunta(){
         $preguntas= Preguntas::where('estado',1)->get();
-       
-        return view('frontend/Preguntas', compact('preguntas'));
+        $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+        return view('frontend/Preguntas', compact('preguntas', 'redes', 'footer'));
     }
 
     public function login(){

@@ -41,6 +41,7 @@
         Route::resource('administracion/preguntas','PreguntasController');
         Route::resource('administracion/redes','RedesController');
         Route::resource('administracion/videos','VideoController');
+        Route::resource('administracion/footer','FooterController');
         Route::resource('administracion/noticias','NoticiaController');
 
 

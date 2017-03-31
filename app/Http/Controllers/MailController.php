@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 // we will use Mail namespace
 use Mail;
+use App\Redes;
+use App\Footer;
 use Illuminate\Support\Facades\Redirect;
 
 class MailController extends Controller
@@ -13,8 +15,9 @@ class MailController extends Controller
     
     public function index(){
         
-       
-        return view('frontend/contacto');
+        $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+        return view('frontend/contacto', compact('redes', 'footer'));
     }
 
 

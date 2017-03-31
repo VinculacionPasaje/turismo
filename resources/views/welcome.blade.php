@@ -123,7 +123,7 @@
             <section class="content-section video-section">
             
             
-            <div class="pattern-overlay">
+            <div class="pattern-overlay" style="background: url({{url('frontend/images/trama1.gif')}});">
 
                           
 
@@ -213,7 +213,14 @@
                                 
                                 </h3>
 
+                               <div align="center">
+                               
+                               
+                               
+
                                 <a class="slider_btn" href="#">Ven a descubrirlo</a>
+
+                                </div>
 
                                 
                                 </div>
@@ -261,7 +268,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">INICIO</a></li>
+                        <li class="scroll active"><a href="{{url ('/')}}">INICIO</a></li>
 						
 						
                           <li class="dropdown">
@@ -501,16 +508,13 @@
                     <div class="panel panel-default">
                     <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b> Noticias</b>
 
-                    <ul class="pagination pull-right" style="margin: 0px;">
-                        <li><a href="#" class="prev"><span class="glyphicon glyphicon-chevron-down"></span></a></li>
-                        <li><a href="#" class="next"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
-                    </ul>
+                  
                     
                     
                     </div>
                     <div class="panel-body" id="menu2">
                     
-                    <ul class="demo1" style="overflow-y: hidden;">
+                    <ul class="demo1" style="overflow-y: hidden; margin-bottom: 0px;">
 
 
                             <li style="" class="news-item">
@@ -520,7 +524,7 @@
                             <td>
                                  <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
                                  
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
                                 
                                 </td>
                             </tr>
@@ -533,7 +537,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%"> </tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p> 
                             </tr>
                             </tbody></table>
                             </li>
@@ -544,7 +548,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
                             </td>
                             </tr>
                             </tbody></table>
@@ -556,7 +560,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
                             </td>
                             </tr>
                             </tbody></table>
@@ -568,7 +572,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
                             </td>
                             </tr>
                             </tbody></table>
@@ -580,7 +584,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p> 
                             </td>
                             </tr>
                             </tbody></table>
@@ -592,7 +596,7 @@
                             <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
                             <td>
                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  <a class="btn btn-danger" href="#">Leer Más</a>
+                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
                             </td>
                             </tr>
                             </tbody></table>
@@ -790,11 +794,12 @@
 
 
     
-
+<div  class="col-xs-12 col-md-12 fondo1">   </div>
     <footer id="footer">
+    
         <div class="container">
 
-               <div class="col-xs-12 col-md-12 col-sm-12" style="padding-bottom: 10px;" align="center">
+               <div class="col-xs-12 col-md-12 col-sm-12" style="padding-bottom: 10px; padding-top:15px;" align="center">
                    <img src="{{url('frontend/images/logo3.png')}}" alt="logo">
                 
 
@@ -804,11 +809,13 @@
             
             
                 <div class="col-xs-12 col-md-12 col-sm-12">
+                 @foreach($footer as $item)
                     <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
-                        Av. Bolívar entre Municipalidad y Juan Montalvo | Telf. 593 (7) 291-5234 | Fax. FALTA FAX | www.municipiodepasaje.gob.ec
-                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador 2017
+                        {{$item->direccion}} | Telf. {{$item->telefono}} | Fax. {{$item->fax}} | Web: {{$item->web}} | Email: {{$item->email}}
+                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador {{$item->anio}}
                         
                         </p> 
+                @endforeach
 
                          <div class="caja-redes">
 
@@ -926,7 +933,7 @@
 
          $(function () {
                 $(".demo1").bootstrapNews({
-                    newsPerPage: 3,
+                    newsPerPage: 1,
                     autoplay: true,
                     pauseOnHover:true,
                     direction: 'up',

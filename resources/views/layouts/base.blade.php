@@ -189,7 +189,7 @@
 
                        
                         
-                        <li class="scroll"><a href="{url ('contactos')}}">CONTACTOS</a></li>
+                        <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
 
                      
                       
@@ -539,43 +539,7 @@
 </div>
  
 
-
-  
- <footer id="footer">
-        <div class="container">
-
-               <div class="col-xs-12 col-md-12 col-sm-12" style="padding-bottom: 10px;" align="center">
-                   <img src="{{url('frontend/images/logo3.png')}}" alt="logo">
-                
-
-                   
-                </div>
-
-            
-            
-                <div class="col-xs-12 col-md-12 col-sm-12">
-                    <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
-                        Av. Bolívar entre Municipalidad y Juan Montalvo | Telf. 593 (7) 291-5234 | Fax. FALTA FAX | www.municipiodepasaje.gob.ec
-                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador 2017
-                        
-                        </p> 
-
-                         <div class="caja-redes">
-                    <a href="#" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
-                    <a href="#" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
-                    <a href="#" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
-                    <a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
-                    
-                    </div>
-                
-
-                   
-                </div>
-
-                
-           
-        </div>
-    </footer><!--/#footer-->
+ @yield('footer')
 
     <script src="{{url('frontend/js/jquery.js')}}"></script>
     <script src="{{url('frontend/js/bootstrap.min.js')}}"></script>

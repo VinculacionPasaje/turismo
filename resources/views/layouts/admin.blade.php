@@ -27,13 +27,17 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="background: #ecf0f5 !important;">
 <div class="wrapper" id="contenido_principal">
+
     <header class="main-header">
+   
         <!-- Logo -->
         <a href="{{url('administracion')}}" class="logo">
             <span class="logo-mini"><b>AD</b></span>
             <span class="logo-lg"><b>ADMINISTRACIÓN</b></span>
         </a>
+        
         <nav class="navbar navbar-static-top" role="navigation">
+        
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Navegación</span>
@@ -83,6 +87,8 @@
             </div>
 
         </nav>
+
+        
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">

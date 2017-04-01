@@ -1,87 +1,78 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="no-js">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <head>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <meta charset="utf-8">
+        @yield('title')
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!-- CSS -->
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+        <link rel="stylesheet" href="{{url('frontend/css/reset.css')}}">
+         <link rel="stylesheet" href="{{url('frontend/css/supersized.css')}}">
+          <link rel="stylesheet" href="{{url('frontend/css/style.css')}}">
+              <link rel="shortcut icon" href="{{url('frontend/images/ico/icon.ico')}}">
+        
 
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    </head>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
+    <body>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+      
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+        @yield('contenido')
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
+        <!-- Javascript -->
+        <script src="{{url('frontend/js/jquery.js')}}"></script>
+        <script src="{{url('frontend/js/supersized.3.2.7.min.js')}}"></script>
+       
+        <script src="{{url('frontend/js/scripts.js')}}"></script>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <script type="text/javascript">
+        jQuery(function($){
 
-        @yield('content')
-    </div>
+            $.supersized({
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
+                // Functionality
+                slide_interval     : 4000,    // Length between transitions
+                transition         : 1,    // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+                transition_speed   : 1000,    // Speed of transition
+                performance        : 1,    // 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+
+                // Size & Position
+                min_width          : 0,    // Min width allowed (in pixels)
+                min_height         : 0,    // Min height allowed (in pixels)
+                vertical_center    : 1,    // Vertically center background
+                horizontal_center  : 1,    // Horizontally center background
+                fit_always         : 0,    // Image will never exceed browser width or height (Ignores min. dimensions)
+                fit_portrait       : 1,    // Portrait images will not exceed browser height
+                fit_landscape      : 0,    // Landscape images will not exceed browser width
+
+                // Components
+                slide_links        : 'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+                slides             : [    // Slideshow Images
+                                        {image : '{{url('frontend/images/backgrounds/1.jpg')}}'},
+                                        {image : '{{url('frontend/images/backgrounds/2.jpg')}}'},
+                                        {image : '{{url('frontend/images/backgrounds/3.jpg')}}'}
+                                    ]
+
+            });
+
+        });
+       
+        </script>
+        
+           @yield('script')
+
+    </body>
+
 </html>

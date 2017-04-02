@@ -138,7 +138,6 @@ class NoticiaController extends Controller
                     'destacado' => 1,
                     'path'=> $request['path'],
                     'contenido'=> $request['contenido'],
-                    'contador_visitas'=>0,
                     'id_categorias'=> $request['id_categorias'],
                    
                 ]);
@@ -152,7 +151,6 @@ class NoticiaController extends Controller
                     'destacado' => 0,
                     'path'=> $request['path'],
                     'contenido'=> $request['contenido'],
-                    'contador_visitas'=>0,
                     'id_categorias'=> $request['id_categorias'],
                 ]);
                 

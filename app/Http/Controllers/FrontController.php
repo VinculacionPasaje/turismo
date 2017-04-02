@@ -31,11 +31,22 @@ class FrontController extends Controller
     }
 
     public function traer(){
-        $traer= Traer::where('id',1)->get();
-         $redes= Redes::where('estado',1)->get();
+          $traer= Traer::where('id',1)->get();
+          $redes= Redes::where('estado',1)->get();
           $footer= Footer::where('estado',1)->get();
+
+          $variable=0;
        
-        return view('frontend/Traer', compact('traer', 'redes', 'footer'));
+         foreach($traer as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+        
+
+        
+        return view('frontend/Traer', compact('traer', 'redes', 'footer'))->with('variable',$variable);
     }
 
 
@@ -45,8 +56,17 @@ class FrontController extends Controller
         $material= Material::where('id',1)->get();
          $redes= Redes::where('estado',1)->get();
           $footer= Footer::where('estado',1)->get();
+
+           $variable=0;
        
-        return view('frontend/Material', compact('material', 'redes', 'footer'));
+         foreach($material as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+       
+        return view('frontend/Material', compact('material', 'redes', 'footer'))->with('variable',$variable);
     }
 
      public function pregunta(){

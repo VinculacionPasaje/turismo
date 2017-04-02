@@ -9,9 +9,9 @@
 
 <div class='oculto'>
 
-<img src="{{url('frontend/images/faq.jpg')}}" alt="">
+<img class="oculto" src="{{url('frontend/images/faq.jpg')}}" alt="">
 
-
+</div>
 <p class="sliderTitle3"> Preguntas Frecuentes </p>
 
 
@@ -66,7 +66,7 @@
             
             
                 <div class="col-xs-12 col-md-12 col-sm-12">
-                    @foreach($footer as $item)
+                 @foreach($footer as $item)
                     <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
                         {{$item->direccion}} | Telf. {{$item->telefono}} | Fax. {{$item->fax}} | Web: {{$item->web}} | Email: {{$item->email}}
                         <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador {{$item->anio}}
@@ -74,43 +74,46 @@
                         </p> 
                 @endforeach
 
-                         <div class="caja-redes">
-
-                           @foreach($redes as $red)
-
-                                @if($red->id==1)
-
-                                <a href="{{$red->url}}" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
-                                @endif
-
-                                @if($red->id==2)
-
-                                <a href="{{$red->url}}" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
-                                @endif
-
-
-                                @if($red->id==3)
-
-                                 <a href="{{$red->url}}" class="icon-button linkedin"><i class="fa fa-instagram"></i><span></span></a>
-
-                                @endif
-
-                                @if($red->id==4)
-                                   <a href="{{$red->url}}" class="icon-button pinterest"><i class="fa fa-youtube"></i><span></span></a>
-                                @endif
-
-                                
-
-                    @endforeach 
-                           
+                        <div class="redessocial2" align="center" >
+                                <ul class="social-network social-circle">
                             
-                   
-                    
-                  
-                  
-                    
-                    </div>
-                
+
+                                        @foreach($redes as $red)
+
+                                                @if($red->id==1)
+
+                                                <li><a href="{{$red->url}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                                @endif
+
+                                                @if($red->id==2)
+
+                                            <li><a href="{{$red->url}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                                @endif
+
+
+                                                @if($red->id==3)
+
+                                                <li><a href="{{$red->url}}" class="icoRss" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+
+                                                @endif
+
+                                                @if($red->id==4)
+                                                    <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                                                @endif
+
+                                                
+
+                                        @endforeach
+
+                                    
+                                            
+                                            
+                                        
+                                            
+                                        
+                                </ul>				
+                                                                                    
+                            </div>
 
                    
                 </div>
@@ -119,7 +122,6 @@
            
         </div>
     </footer><!--/#footer-->
-
 
 
 @endsection

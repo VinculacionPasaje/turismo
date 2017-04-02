@@ -272,6 +272,9 @@
  
 </div>
 
+
+
+
 <div class="container">
     <div class="row">
         <div class="row">
@@ -544,12 +547,11 @@
     <script src="{{url('frontend/js/jquery.js')}}"></script>
     <script src="{{url('frontend/js/bootstrap.min.js')}}"></script>
     
-    <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
+
 
  
     <script src="{{url('frontend/js/main.js')}}"></script>
-    <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+
 
 
     <script type="text/javascript">
@@ -557,37 +559,6 @@
         $('#myCarousel').carousel({
             interval:   4000
         });
-
-    (function () {
-    var previousScroll = 0;
-
-    $(window).scroll(function(){
-       var currentScroll = $(this).scrollTop();
-       if (currentScroll > previousScroll){
-
-            //$('.menu').hide('slow');
-
-           $('.menu2').addClass('desaparece');
-           $('.menu2').removeClass('aparece');
-
-           //para abajo
-          
-       } else {
-
-           //$('.menu').show('slow');
-          
-            
-
-           $('.menu2').addClass('aparece');
-           $('.menu2').removeClass('desaparece');
-           
-          
-
-         //para arriba
-       }
-       previousScroll = currentScroll;
-    });
-}()); //run this anonymous function immediately
       </script>
   
 

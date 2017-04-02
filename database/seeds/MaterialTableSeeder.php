@@ -16,7 +16,7 @@ class MaterialTableSeeder extends Seeder
             'id'=>1,
             'contenido'=>'<p> Contenido de prueba </p>',
             'fecha'=>'2017-03-17',
-            'contador_visitas'=> 1,
+            'contador_visitas'=> 0,
 
         ]);
     }

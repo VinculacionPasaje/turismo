@@ -476,6 +476,11 @@ Author URL: http://shapebootstrap.net
 
   } 
 
+   .redessocial2{
+    padding-bottom: 15px;
+
+  } 
+
  .video-section h1{
 font-size:60px;
 
@@ -2524,7 +2529,7 @@ text-shadow: 2px 2px 2px #000;
 
 .botonBajar img{width:36px;height:auto;position:absolute;left:50%;margin-left:-18px;top:26px}
 
-.oculto{
+.oculto {
   overflow:hidden;
     
 }

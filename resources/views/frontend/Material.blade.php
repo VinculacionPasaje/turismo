@@ -51,7 +51,7 @@
             
                 <div class="col-xs-12 col-md-12 col-sm-12">
                  @foreach($footer as $item)
-                    <p >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
+                      <p class="blanco" >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
                         {{$item->direccion}} | Telf. {{$item->telefono}} | Fax. {{$item->fax}} | Web: {{$item->web}} | Email: {{$item->email}}
                         <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador {{$item->anio}}
                         

@@ -1378,6 +1378,9 @@ margin: 0;
   border-top-color: #eee;
   background: #fff;
 }
+.blanco{
+  color:white;
+}
 #animated-number {
   padding: 100px 0 70px;
   background: #132125 url(../images/animated-number/bg.jpg) no-repeat 0 0;

@@ -547,7 +547,8 @@
     <script src="{{url('frontend/js/jquery.js')}}"></script>
     <script src="{{url('frontend/js/bootstrap.min.js')}}"></script>
     
-
+ <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
 
  
     <script src="{{url('frontend/js/main.js')}}"></script>

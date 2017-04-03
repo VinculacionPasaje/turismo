@@ -1643,6 +1643,14 @@ margin: 0;
   width: 100%;
   
 }
+
+.img-responsive3{
+    max-width:100% !important;
+    height:auto;
+    display:block;
+}
+
+
 #blog .blog-post.blog-media .post-format {
   position: absolute;
   top: 20px;

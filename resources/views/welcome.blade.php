@@ -276,7 +276,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">¿Cómo Llegar?</a></li>
-                                <li><a href="#">Mapas</a></li>  
+                                <li><a href="{{url ('mapas')}}">Mapas</a></li>  
                                 <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
@@ -504,14 +504,9 @@
 
                  <div class="col-lg-4 col-md-4 col-sm-6">
                     
-
+                    <h3 class="column-title">Noticias</h3>
                     <div class="panel panel-default">
-                    <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b> Noticias</b>
-
-                  
                     
-                    
-                    </div>
                     <div class="panel-body" id="menu2">
                     
                     <ul class="demo1" style="overflow-y: hidden; margin-bottom: 0px;">
@@ -615,6 +610,7 @@
                       
                             </div>
                     </div>
+
 
                       <h3 class="column-title">Categorias</h3>
 

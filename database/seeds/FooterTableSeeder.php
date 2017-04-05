@@ -15,8 +15,8 @@ class FooterTableSeeder extends Seeder
     {
          Footer::create([
             'id'=>1,
-            'telefono'=>'593 (7) 291-5234',
-            'fax'=>'FALTA FAX',
+            'telefono'=>'(07) 2 915-234 - (07) 2 915-149',
+            'fax'=>'(07) 2 913-027',
             'direccion'=> 'Av. Bolívar entre Municipalidad y Juan Montalvo',
             'web'=> 'www.municipiodepasaje.gob.ec',
             'anio'=> '2017',

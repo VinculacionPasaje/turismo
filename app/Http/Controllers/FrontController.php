@@ -10,6 +10,7 @@ use App\Preguntas;
 use App\Redes;
 use App\Video;
 use App\Footer;
+use App\Mapas;
 
 class FrontController extends Controller
 {
@@ -74,6 +75,26 @@ class FrontController extends Controller
         $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
         return view('frontend/Preguntas', compact('preguntas', 'redes', 'footer'));
+    }
+
+    public function mapas(){
+       $mapas= Mapas::where('estado',1)->get();
+        $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+
+         $variable=0;
+       if($mapas->count())
+       {
+             foreach($mapas as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+
+       }
+        
+        return view('frontend/mapas', compact('mapas', 'redes', 'footer'))->with('variable',$variable);
     }
 
     public function login(){

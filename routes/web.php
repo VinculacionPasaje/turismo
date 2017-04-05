@@ -17,6 +17,7 @@
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');
+        Route::get('mapas', 'FrontController@mapas');
         Route::get('contactos', 'MailController@index');
         Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
 
@@ -43,6 +44,7 @@
         Route::resource('administracion/videos','VideoController');
         Route::resource('administracion/footer','FooterController');
         Route::resource('administracion/noticias','NoticiaController');
+        Route::resource('administracion/mapas','MapasController');
 
 
         Route::get('/error',function(){

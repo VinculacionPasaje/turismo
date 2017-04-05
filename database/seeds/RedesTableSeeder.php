@@ -14,7 +14,7 @@ class RedesTableSeeder extends Seeder
     {
         Redes::create([
             'id'=> 1,
-            'url'=>'https://www.facebook.com',
+            'url'=>'https://www.facebook.com/municipiodepasaje',
             'descripcion'=>'Red social para facebook',
 
         ]);

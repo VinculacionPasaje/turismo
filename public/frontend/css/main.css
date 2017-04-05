@@ -2647,6 +2647,42 @@ text-shadow: 2px 2px 2px #000;
   color: #9C27A8;
 }
 
+.widget {
+    float: left;
+    width: 100%;
+   
+    position: relative;
+    z-index: 1;
+    padding: 0px;
+}
+
+.widget-title {
+    float: left;
+    margin-top: -1px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+   
+    text-align: left;
+    line-height: 34px;
+    border-bottom: 2px solid #ae0600;
+}
+
+.widget .widget-title h2 {
+    color: #fff;
+    background: #ae0600;
+    padding: 0px 10px 0px 10px;
+    display: inline-block;
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 33px;
+    margin: 0px;
+    margin-bottom: -2px;
+    float: left;
+}
+
 
 
 

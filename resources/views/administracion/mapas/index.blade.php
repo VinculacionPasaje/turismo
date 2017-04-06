@@ -41,17 +41,16 @@
                                     <th>Foto</th>
                                     <th>Titulo</th>
                                     <th>Descripcion</th>
-                                    <th>Visitas</th>
                                     <th>Accion</th>
                                 </tr>
                                 @foreach($mapas as $map)
                                     <tr data-id="{{$map->id}}">
                                         <td>
-                                            <img src="{{url('fotos/'.$map->path)}}" alt="" style="width:70px;"/>
+                                            <img src="{{url('fotos/'.$map->path)}}" alt="" style="width:100px;"/>
                                         </td>
                                         <td>{{$map->titulo}}</td>
                                         <td>{{$map->descripcion}}</td>
-                                        <td>{{$map->contador_visitas}}</td>
+                                        
                                        
                                         <td>
                                             {!!link_to_route('mapas.edit', $title = 'Editar', $parameters = $map->id, $attributes = ['class'=>'btn  btn-primary btn-sm'])!!}

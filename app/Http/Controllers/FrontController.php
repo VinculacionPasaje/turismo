@@ -79,13 +79,14 @@ class FrontController extends Controller
 
     public function mapas(){
        $mapas= Mapas::where('estado',1)->get();
+       $mapita= Mapas::where('id',5000)->get();
         $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
 
          $variable=0;
-       if($mapas->count())
+       if($mapita->count())
        {
-             foreach($mapas as $item){
+             foreach($mapita as $item){
 
              $item->contador_visitas++;
              $variable= $item;

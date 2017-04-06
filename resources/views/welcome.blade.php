@@ -37,7 +37,7 @@
  
 </head><!--/head-->
 
-<body id="home" class="homepage">
+<body id="home" class="homepage"  style="background: #f5f5f5;">
 
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"></a>
@@ -505,7 +505,7 @@
                  <div class="col-lg-4 col-md-4 col-sm-6">
                     
                     <h3 class="column-title">Noticias</h3>
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" style="background: #f5f5f5;">
                     
                     <div class="panel-body" id="menu2">
                     

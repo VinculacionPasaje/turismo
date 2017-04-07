@@ -237,14 +237,14 @@
 
                 <a class="fancybox" rel="ligthbox" href="{{url('fotos/'.$map->path)}}">
                     <div class="img-contenedor">
+
                     <img class="img-responsive4" alt="" src="{{url('fotos/'.$map->path)}}"  />
+                     <h2 class="texto5" style="padding-left:5px;"><span class="fondotexto2">{{$map->titulo}}</span></h2>
+                     
+                     <h2 class="texto4" style="font-weight: normal;padding-left: 5px;padding-bottom: -;padding-bottom: 0px;padding-right: 5px;"><span class="fondotexto">{{$map->descripcion}}</span></h2>
                     </div>
                 </a>
-                 <div class='text-center' style="border-style: ridge; border-width: 2px;">
-                        <p style="font-color='black'; font-weight:bold;">{{$map->titulo}}</p>
-                       
-                        <p style="font-color='black';">{{$map->descripcion}}</p>
-                    </div> <!-- text-right / end -->
+            
             </div> <!-- col-6 / end -->
 
 

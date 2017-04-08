@@ -41,7 +41,7 @@
                                     
                                     <th>Preguntas</th>
                                     <th>Respuestas</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                                 </tr>
                                 @foreach($preguntas as $preguntita)
                                     <tr data-id="{{$preguntita->id}}">

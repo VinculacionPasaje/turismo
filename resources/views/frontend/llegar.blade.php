@@ -358,23 +358,12 @@
     
     <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
-    <script src="{{url('frontend/js/jquery.fancybox.min.js')}}"></script>
+
     
  
     <script src="{{url('frontend/js/main.js')}}"></script>
 
-    <script>
-        $(document).ready(function(){
-            //FANCYBOX
-            //https://github.com/fancyapps/fancyBox
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
-        });
    
-
-    </script>
 
 
 
@@ -389,3 +378,138 @@
 
 </html>
 
+
+
+
+
+
+
+<div class="container">
+        <h1 class="text-center">Nav tab Slider</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <!-- begin panel group -->
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                
+                <!-- panel 1 -->
+                <div class="panel panel-default">
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab1" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingOne"data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h4 class="panel-title">India</h4>
+                        </div>
+                    </span>
+                    
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <address>
+                                	<strong>President:</strong>Pranab Mukherjee<br/>
+								<strong>Gross domestic product:</strong>1.877 trillion USD (2013<br/>
+								<strong>GDP per capita:</strong>1,498.87 USD (2013)
+                        	</address>
+                        </div>
+                    </div>
+                </div> 
+                <!-- / panel 1 -->
+                
+                <!-- panel 2 -->
+                <div class="panel panel-default">
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab2" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h4 class="panel-title collapsed">USA</h4>
+                        </div>
+                    </span>
+
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                        <!-- Tab content goes here -->
+                        	<address>
+                                <strong>President:</strong>Barack Obama<br/>
+								<strong>Capital:</strong>Washington, D.C.
+                            </address>
+                        </div>
+                    </div>
+                </div>
+                <!-- / panel 2 -->
+                
+                <!--  panel 3 -->
+                <div class="panel panel-default">
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab3" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingThree"  class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h4 class="panel-title">Australia</h4>
+                        </div>
+                    </span>
+
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                          <!-- tab content goes here -->
+                           <address>
+                                <strong>Capital:</strong>Canberra<br/>
+								<strong>Currency:</strong>Australian dollar<br/>
+								<strong>Population:</strong>23.13 million (2013)
+                            </address>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    <!--  panel 4 -->
+                <div class="panel panel-default">
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab4" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingFour"  class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                            <h4 class="panel-title">South Africa</h4>
+                        </div>
+                    </span>
+
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                          <div class="panel-body">
+                          <!-- tab content goes here -->
+                           <address>
+                                <strong>Currency:</strong>South African rand<br/>
+								<strong>Capitals:</strong>PretoriaCape TownBloemfontein<br/>
+								<strong>President:</strong>Jacob Zuma
+                            </address>
+                          </div>
+                        </div>
+                      </div>
+            </div> <!-- / panel-group -->
+             
+        </div> <!-- /col-md-4 -->
+        
+        <div class="col-md-8">
+            <!-- begin macbook pro mockup -->
+            <div class="md-macbook-pro md-glare">
+                <div class="md-lid">
+                    <div class="md-screen">
+                    <!-- content goes here -->                
+                        <div class="tab-featured-image">
+                            <div class="tab-content">
+                                <div class="tab-pane  in active" id="tab1">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30676699.030264623!2d64.4372529214908!3d20.187620346666957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1457158121310" width="591" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        
+                                </div>
+                                <div class="tab-pane " id="tab2">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26361123.79707315!2d-113.75288902170205!3d36.241665136685484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1457158189316" width="591" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                                            
+                                </div>
+                                <div class="tab-pane fade" id="tab3">
+                                    
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29564789.223500308!2d115.02356031986889!3d-25.237495546910143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2sin!4v1457158241408" width="591" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                                <div class="tab-pane fade" id="tab4">
+                                    
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14407673.856201163!2d15.648419372356775!3d-28.161751242644485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c34a689d9ee1251%3A0xe85d630c1fa4e8a0!2sSouth+Africa!5e0!3m2!1sen!2sin!4v1457158297247" width="591" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+
+
+        </div>
+    </div> 
+</div>

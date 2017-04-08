@@ -41,7 +41,7 @@
                                     <th>Foto</th>
                                     <th>Titulo</th>
                                     <th>Descripcion</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                                 </tr>
                                 @foreach($mapas as $map)
                                     <tr data-id="{{$map->id}}">

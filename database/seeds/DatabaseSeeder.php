@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
            $this->call(VideoSeeder::class);
              $this->call(FooterTableSeeder::class);
              $this->call(MapasTableSeeder::class);
+              $this->call(LlegarTableSeeder::class);
     }
 }

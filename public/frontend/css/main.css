@@ -615,12 +615,45 @@ font-size: 18px;
  
 }
 
+@media(max-width:480px ){	
+
+.texto5{
+  font-size: 12px;
+  font-weight: bold;
+   top: 93px;
+}
+
+
+.texto4{
+
+font-size: 13px;
+top: 130px;
+
+}
+
+
+ 
+
+}
+
 @media(min-width:480px ){	
 
 
 
-  
- 
+  .texto5{
+    font-weight: bold;
+  font-size: 15px;
+  top: 154px;
+}
+
+.texto4{
+
+ font-size: 15px;
+top: 190px;
+
+}
+
+}
 
     
 #carousel .text {
@@ -2715,7 +2748,7 @@ text-shadow: 2px 2px 2px #000;
 .texto4{
   position: absolute;
 
-top: 200px;
+
     font-family: arial;
 left: 0;
 font-size: 15px;
@@ -2728,10 +2761,10 @@ background: rgba(174, 6, 0, 0.90);
 .texto5{
   position: absolute;
 text-align: center;
-top: 154px;
+
     font-family: arial;
 left: 0;
-font-size: 15px;
+
 width: 100%;
 display:none;
 line-height: 37px;

@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('title')
     <section class="content-header">
-        <h1>Noticias<small>Agregar</small></h1>
+        <h1>Contenido<small>Agregar</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-            <li class="active">Noticias</li>
+            <li class="active">Contenido</li>
             <li class="active">Agregar</li>
         </ol>
     </section>
@@ -25,15 +25,15 @@
     @endif
     <div class="box box-primary">
         <div class="box-header">
-            <h3 class="box-title">Nueva Noticia</h3>
+            <h3 class="box-title">Nuevo Contenido</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            {!!Form::open(['route' => 'noticias.store','method'=>'POST','files' => true,'id'=>'form'])!!}
+            {!!Form::open(['route' => 'llegar.store','method'=>'POST','files' => true,'id'=>'form'])!!}
             <div id="msj-success" class="alert alert-success alert-dismissible aprobado" role="alert" style="display:none">
-                <strong> Noticia Agregada Correctamente.</strong>
+                <strong> Contenido Agregado Correctamente.</strong>
             </div>
             <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-            @include('administracion.noticias.form.create')
+            @include('administracion.llegar.form.create')
           
            
             {!! Form::close() !!}
@@ -41,7 +41,7 @@
     </div>
 @endsection
 @section('script')
-    <script src="{{url('administration/dist/js/noticias/java-noticias.js')}}"></script>
+    <script src="{{url('administration/dist/js/llegar/java-llegar.js')}}"></script>
     <script src="{{url('administration/dist/js/alertify.js')}}"></script>
       <script src="{{url('administration/dist/js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
     
@@ -53,32 +53,7 @@
             },3000);
         });
     </script>
-    <script>
-        $(function() {
-                $.fn.datepicker.dates['en'] = {
-                    days: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
-                    daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-                    daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-                    months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-                        "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-                    monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
-                        "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-                    today: "Hoy",
-                    clear: "Clear",
-                    titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
-                    weekStart: 0
-                };
-                $("#datepicker").datepicker({
-                    format: 'yyyy/mm/dd',
-                    language:'en'
-                })
-                $("#datepicker2").datepicker({
-                    format: 'yyyy/mm/dd',
-                    language:'en'
-                })
-            });
-
-    </script>
+    
 
     <script>
   var editor_config = {

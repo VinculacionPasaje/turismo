@@ -158,19 +158,7 @@
                     </ul>
                 </li>
 
-                <li class="treeview">
-                    <a href="">
-                        <i class="fa fa-user-circle-o"></i>
-                        <span>MAPAS</span>
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{route('mapas.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
-                       
-                          <li><a href="{{route('mapas.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
-                   
-                    </ul>
-                </li>
+                        
 
 
                 
@@ -232,7 +220,20 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                  <li><a href="{{route('llegar.index')}}"><i class="fa fa-circle-o"></i>Listar</a></li>
+                                <li><a href="{{route('llegar.create')}}"><i class="fa fa-circle-o"></i>Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-book"></i> Mapas
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                 <li><a href="{{route('mapas.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                       
+                                    <li><a href="{{route('mapas.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
                              
                             </ul>
                         </li>

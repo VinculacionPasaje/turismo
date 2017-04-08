@@ -42,7 +42,7 @@
                                     <th>Nombres</th>
                                     <th>Apellidos</th>
                                     <th>Email</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                                 </tr>
                                 @foreach($usuarios as $usuario)
                                     <tr data-id="{{$usuario->id}}">

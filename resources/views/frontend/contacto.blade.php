@@ -105,7 +105,7 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">¿Cómo Llegar?</a></li>
+                                <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
                                 <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
@@ -411,19 +411,24 @@
             
             
                 <div class="col-xs-12 col-md-12 col-sm-12">
-                   @foreach($footer as $item)
-                     <p class="blanco" >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
-                        {{$item->direccion}} | Telf. {{$item->telefono}} | Fax. {{$item->fax}} | Web: {{$item->web}} | Email: {{$item->email}}
-                        <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador {{$item->anio}}
-                        
-                        </p> 
-                @endforeach
 
-                         <div class="redessocial2" align="center" >
+                    @if(count($footer) >0)
+                        @foreach($footer as $item)
+                            <p class="blanco" >Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje <br>
+                                {{$item->direccion}} | Telf. {{$item->telefono}} | Fax. {{$item->fax}} | Web: {{$item->web}} | Email: {{$item->email}}
+                                <br>® Todos los Derechos Reservados | Pasaje, El Oro, Ecuador {{$item->anio}}
+                                
+                                </p> 
+                        @endforeach
+                    @endif
+
+                        <div class="redessocial2" align="center" >
                                 <ul class="social-network social-circle">
-                            
 
-                                        @foreach($redes as $red)
+                                @if(count($redes) >0)
+
+
+                                 @foreach($redes as $red)
 
                                                 @if($red->id==1)
 
@@ -450,11 +455,10 @@
 
                                         @endforeach
 
-                                    
-                                            
-                                            
-                                        
-                                            
+
+
+                                @endif
+                                   
                                         
                                 </ul>				
                                                                                     

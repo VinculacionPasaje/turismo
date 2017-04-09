@@ -18,6 +18,7 @@
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');
         Route::get('mapas', 'FrontController@mapas');
+        Route::get('llegar', 'FrontController@llegar');
         Route::get('contactos', 'MailController@index');
         Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
 

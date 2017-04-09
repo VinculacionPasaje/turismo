@@ -101,7 +101,7 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">¿Cómo Llegar?</a></li>
+                                <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
                                 <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   

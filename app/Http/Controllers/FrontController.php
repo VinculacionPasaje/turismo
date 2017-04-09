@@ -11,7 +11,7 @@ use App\Redes;
 use App\Video;
 use App\Footer;
 use App\Mapas;
-
+use App\Llegar;
 class FrontController extends Controller
 {
 
@@ -96,6 +96,27 @@ class FrontController extends Controller
        }
         
         return view('frontend/mapas', compact('mapas', 'redes', 'footer'))->with('variable',$variable);
+    }
+
+    public function llegar(){
+       $llegar= Llegar::where('estado',1)->get();
+       $llegada= Llegar::where('id',5000)->get();
+        $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+
+         $variable=0;
+       if($llegada->count())
+       {
+             foreach($llegada as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+
+       }
+        
+        return view('frontend/llegar', compact('llegar', 'redes', 'footer'))->with('variable',$variable);
     }
 
     public function login(){

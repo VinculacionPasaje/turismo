@@ -23,13 +23,15 @@
 <div class= "col-xs-12 col-md-12" aling="center">
  <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
-
+@if(count($material) >0)  
 @foreach($material as $item)
 
 {!! $item->contenido !!}
 
 
 @endforeach
+
+@endif
 
 @endsection
 

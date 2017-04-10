@@ -445,7 +445,10 @@ Author URL: http://shapebootstrap.net
 
  @media (min-width: 993px) { 
 
-  
+  .desaparecer{
+    display: none;
+
+  }
 
    .rulo_slider {
     
@@ -667,7 +670,7 @@ top: 190px;
     
   
  
-}
+
 
 h2 {
   color: #313338;  

@@ -25,6 +25,8 @@
 
 <p> Preguntas Frecuentes </p>
 
+@if(count($preguntas) >0)  
+
 @foreach($preguntas as $item)
 
 <div class="content">
@@ -45,6 +47,7 @@
 
 
 @endforeach
+@endif
 
 @endsection
 

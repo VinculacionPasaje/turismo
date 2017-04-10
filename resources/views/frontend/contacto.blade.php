@@ -290,6 +290,8 @@
 
             <div class="social-box">
 
+            @if(count($redes) >0)  
+
              @foreach($redes as $red)
 
                                 @if($red->id==1) 
@@ -355,6 +357,7 @@
                                 
 
                     @endforeach 
+            @endif
   
             </div>
 
@@ -364,6 +367,7 @@
                 <legend><b> Más Información </b></legend>
                 <p class="text-align: left;">
                     <address>
+                    @if(count($footer) >0)  
                     @foreach($footer as $item)
                     
 
@@ -375,6 +379,7 @@
                         <b>FAX: </b> {{$item->fax}}<br>
                         <b>Web:</b>    {{$item->web}}<br>
                 @endforeach
+                @endif
                        
                     </address>
                 </p>

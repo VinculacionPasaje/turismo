@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/perfect-scrollbar.min.css')}}">
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
     <!-- CSRF Token -->
@@ -153,7 +154,8 @@
 
                         <div class="redessocial" align="center" >
                                 <ul class="social-network social-circle">
-                            
+
+                                 @if(count($redes) >0)                           
 
                                         @foreach($redes as $red)
 
@@ -182,6 +184,8 @@
 
                                         @endforeach
 
+                                @endif
+
                                     
                                             
                                             
@@ -198,6 +202,8 @@
                      <img class="orla" src="{{url('frontend/images/orla.png')}}" alt="logo">  
                      
                      </div>
+
+          @if(count($videos) >0)  
             @foreach($videos as $video)
                 <a id="bgndVideo" class="player" data-property="{videoURL:'{{$video->url}}',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
                         <div class="container">
@@ -227,6 +233,8 @@
                             
                         </div>
                 @endforeach
+            @endif
+            
                 </div>
             </div>
             </section>
@@ -876,6 +884,8 @@
     <script src="{{url('frontend/js/main.js')}}"></script>
     
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+     <script src="{{url('frontend/js/perfect-scrollbar.jquery.min.js')}}"></script>
+     <script src="{{url('frontend/js/perfect-scrollbar.min.js')}}"></script>
 
     
 
@@ -919,6 +929,26 @@
             $(".player").mb_YTPlayer();
 
         });
+
+        function changeSize() {
+            var width = parseInt($("#Width").val());
+            var height = parseInt($("#Height").val());
+
+            $("#Demo").width(width).height(height);
+
+            // update scrollbars
+            $('#Demo').perfectScrollbar('update');
+
+            // or even with vanilla JS!
+            Ps.update(document.getElementById('Demo'));
+        }
+
+    $(function() {
+        $('#Demo').perfectScrollbar();
+
+        // with vanilla JS!
+        Ps.initialize(document.getElementById('Demo'));
+    });
 
 
         $(document).ready(function(){

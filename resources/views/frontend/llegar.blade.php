@@ -9,7 +9,7 @@
    
   <!-- /meta -->
 
-   <title>Mapas</title>
+   <title>¿Cómo Llegar?</title>
 
    <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/font-awesome.min.css')}}">
@@ -239,7 +239,7 @@
        
 
         
-        <div class="alert alert-success alert-dismissable">
+        <div class="alert alert-success alert-dismissable desaparecer">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <p><strong>El mapa aparecerá en la sección de abajo </strong></p>
         </div>
@@ -247,6 +247,8 @@
         
             <!-- begin panel group -->
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+            @if(count($llegar) >0)  
 
             @foreach($llegar as $item)
                 
@@ -268,6 +270,7 @@
                 <!-- / panel 1 -->
                 
                 @endforeach
+            @endif
             </div> <!-- / panel-group -->
 
             
@@ -283,6 +286,8 @@
                         <div class="tab-featured-image">
                             <div class="tab-content">
 
+                            @if(count($llegar) >0)  
+
                                @foreach($llegar as $item)
                                 <div class="tab-pane" id="tab{{$item->id}}">
 										{!! $item->script !!}
@@ -290,6 +295,7 @@
                                 </div>
 
                                 @endforeach
+                            @endif
                                 
                             </div>
                         </div>

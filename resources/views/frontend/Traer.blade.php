@@ -25,12 +25,16 @@
  <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
 
+@if(count($traer) >0)  
+
 @foreach($traer as $item)
 
 {!! $item->contenido !!}
 
 
 @endforeach
+
+@endif
 
 @endsection
 

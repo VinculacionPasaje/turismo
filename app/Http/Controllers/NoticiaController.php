@@ -18,10 +18,11 @@ class NoticiaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $noticias = Noticia::where('estado',1)->orderBy('id')->paginate(6);
-        return View('administracion.noticias.index',compact('noticias'));
+        $busqueda= Noticia::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.noticias.index',compact('noticias', 'busqueda'));
     }
 
     /**
@@ -186,4 +187,7 @@ class NoticiaController extends Controller
             ]);
         }
     }
+
+     
+    
 }

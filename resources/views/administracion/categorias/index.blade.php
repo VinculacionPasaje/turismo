@@ -23,18 +23,26 @@
                     <h3 class="box-title">Categorias Registradas</h3>
 
                     <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                        {!! Form::open(['route'=>'categorias.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
+                        <div class="input-group input-group-sm" style="width: 200px;">
+                            {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por nombre']) !!}
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
                 <!-- /.box-header -->
-                @if(count($categorias) >0)
-                    <div class="ajax-tabla">
+               
+                @if(count($categorias) >0)  <!-- este if es para ver si hay datos registrados en la BD -->
+                     @if(count($cat) >0) <!-- este if es para la busqueda y muestreo de datos -->
+
+                
+                
+                 <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
                             <table class="table table-hover" >
                                 <tr>
@@ -43,7 +51,8 @@
                                     <th>Descipción</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($categorias as $categoria)
+                                @foreach($cat as $categoria)
+                                 @if($categoria->estado !=0)
                                     <tr data-id="{{$categoria->id}}">
                                         <td class="sorting_1">{{$categoria->id}}</td>
                                         <td>{{$categoria->nombre}}</td>
@@ -55,14 +64,17 @@
                                         </td>
 
                                     </tr>
+                                    @endif
                                 @endforeach
                             </table>
                             {{$categorias->links()}}
                         </div>
                     </div>
+                     @endif
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ninguna categoria...</label>  </div>
                 @endif
+                
             </div>
             <!-- /.box -->
         </div>

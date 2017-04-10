@@ -23,18 +23,26 @@
                     <h3 class="box-title">Contenido Registrados</h3>
 
                     <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                        {!! Form::open(['route'=>'llegar.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
+                        <div class="input-group input-group-sm" style="width: 200px;">
+                            {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Buscar por título']) !!}
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
                 <!-- /.box-header -->
-                @if(count($llegar) >0)
-                    <div class="ajax-tabla">
+
+                  @if(count($llegar) >0)
+                        @if(count($busqueda) >0) <!-- este if es para la busqueda -->
+
+                 
+
+                  <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
                             <table class="table table-hover" >
                                 <tr>
@@ -42,7 +50,8 @@
                                     <th>Contenido</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($llegar as $item)
+                                @foreach($busqueda as $item)
+                                 @if($item->estado !=0)
                                     <tr data-id="{{$item->id}}">
                                         
                                         <td WIDTH="100">{{$item->titulo}}</td>
@@ -55,14 +64,22 @@
                                         </td>
 
                                     </tr>
+                                    @endif
                                 @endforeach
                             </table>
                             {{$llegar->links()}}
                         </div>
                     </div>
+
+                     @endif
+
+              
+              
+    
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ningún contenido...</label>  </div>
                 @endif
+               
             </div>
             <!-- /.box -->
         </div>

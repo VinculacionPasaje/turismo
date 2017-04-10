@@ -23,18 +23,24 @@
                     <h3 class="box-title">Noticias Registradas</h3>
 
                     <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                         {!! Form::open(['route'=>'noticias.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
+                        <div class="input-group input-group-sm" style="width: 200px;">
+                            {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Buscar por título']) !!}
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
                 <!-- /.box-header -->
                 @if(count($noticias) >0)
-                    <div class="ajax-tabla">
+
+                   @if(count($busqueda) >0) <!-- este if es para la busqueda -->
+
+                  <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
                             <table class="table table-hover" >
                                 <tr>
@@ -44,7 +50,8 @@
                                     <th>Fecha</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($noticias as $noticia)
+                                @foreach($busqueda as $noticia)
+                                 @if($noticia->estado !=0)
                                     <tr data-id="{{$noticia->id}}">
                                         <td>
                                             <img src="{{url('fotos/'.$noticia->path)}}" alt="" style="width:70px;"/>
@@ -59,14 +66,19 @@
                                         </td>
 
                                     </tr>
+                                    @endif
                                 @endforeach
                             </table>
                             {{$noticias->links()}}
                         </div>
                     </div>
+                          @endif
+
+               
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ninguna noticia...</label>  </div>
                 @endif
+          
             </div>
             <!-- /.box -->
         </div>

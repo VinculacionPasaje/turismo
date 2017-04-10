@@ -17,10 +17,11 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $usuarios = User::where('estado',1)->orderBy('id')->paginate(6);
-        return View('administracion.usuarios.index',compact('usuarios'));
+         $busqueda= User::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.usuarios.index',compact('usuarios', 'busqueda'));
     }
 
 

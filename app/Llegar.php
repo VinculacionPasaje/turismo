@@ -17,4 +17,11 @@ class Llegar extends Model
         'estado',
        
     ];
+
+     public function scopeName($query, $table_search){
+       if(trim($table_search) != ""){
+           $query->where('titulo', "LIKE", "%$table_search%");
+
+       }
+    }
 }

@@ -56,4 +56,13 @@ class User extends Authenticatable
         }
 
     }
+
+     public function scopeName($query, $table_search){
+       if(trim($table_search) != ""){
+           $query->where('name', "LIKE", "%$table_search%");
+
+       }
+        
+
+    }
 }

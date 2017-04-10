@@ -11,10 +11,13 @@ use Illuminate\Support\Facades\Redirect;
 class CategoriaController extends Controller
 {
     public function index(Request $request){
+       
 
          $categorias = Categoria::where('estado',1)->orderBy('id')->paginate(6);
+         $cat= Categoria::name($request->get('table_search'))->orderBy('id')->paginate(6);
+         
         
-          return view('administracion.categorias.index',compact('categorias'));
+          return view('administracion.categorias.index',compact('categorias', 'cat'));
 
     }
 

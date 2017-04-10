@@ -14,10 +14,11 @@ class LlegarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $llegar = Llegar::where('estado',1)->orderBy('id')->paginate(6);
-        return View('administracion.llegar.index',compact('llegar'));
+        $busqueda= Llegar::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.llegar.index',compact('llegar', 'busqueda'));
     }
 
     /**

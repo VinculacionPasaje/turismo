@@ -23,18 +23,24 @@
                     <h3 class="box-title">Usuarios Registrados</h3>
 
                     <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                         {!! Form::open(['route'=>'usuarios.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
+                        <div class="input-group input-group-sm" style="width: 200px;">
+                            {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por nombre']) !!}
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
                 <!-- /.box-header -->
-                @if(count($usuarios) >0)
-                    <div class="ajax-tabla">
+                 @if(count($usuarios) >0)
+
+                   @if(count($busqueda) >0) <!-- este if es para la busqueda -->
+
+                 <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
                             <table class="table table-hover" >
                                 <tr>
@@ -44,7 +50,8 @@
                                     <th>Email</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($usuarios as $usuario)
+                                @foreach($busqueda as $usuario)
+                                @if($usuario->estado !=0)
                                     <tr data-id="{{$usuario->id}}">
                                         <td>
                                             <img src="{{url('uploads/'.$usuario->path)}}" alt="" style="width:70px;"/>
@@ -67,14 +74,18 @@
                                         </td>
 
                                     </tr>
+                                    @endif
                                 @endforeach
                             </table>
                             {{$usuarios->links()}}
                         </div>
                     </div>
+
+                  @endif
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ningun Usuario...</label>  </div>
                 @endif
+              
             </div>
             <!-- /.box -->
         </div>

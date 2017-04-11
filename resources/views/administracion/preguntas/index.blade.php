@@ -20,20 +20,44 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Preguntas Registradas</h3>
+                    <div class= "col-xs-6 col-md-6" aling="center">
+                        <h3 class="box-title">Preguntas Registradas</h3>
 
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                    </div>
+                    
+                     <div class= "col-xs-6 col-md-6">
 
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
+                            <div class="box-tools">
+                                {!! Form::open(['route'=>'preguntas.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
+                                <div class="input-group input-group-sm" style="width: 350px;">
+                                
+                                    {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Buscar por pregunta']) !!}
+
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
+
+                                     <div class="input-group-btn">
+                                    <a href="{{route('preguntas.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
+                                     </div>
+
+                                    
+                                    
+                                </div>
+                                
+
+                                {!! Form::close() !!}
+                                
+                                    
+                            
+                                
+                                </div>
                     </div>
                 </div>
+
                 <!-- /.box-header -->
                 @if(count($preguntas) >0)
+                 @if(count($busqueda) >0) <!-- este if es para la busqueda -->
                     <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
                             <table class="table table-hover" >
@@ -43,7 +67,8 @@
                                     <th>Respuestas</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($preguntas as $preguntita)
+                                @foreach($busqueda as $preguntita)
+                                 @if($preguntita->estado !=0)
                                     <tr data-id="{{$preguntita->id}}">
                                        
                                         <td>{{$preguntita->pregunta}}</td>
@@ -56,11 +81,13 @@
                                         </td>
 
                                     </tr>
+                                    @endif
                                 @endforeach
                             </table>
                             {{$preguntas->links()}}
                         </div>
                     </div>
+                     @endif
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ninguna pregunta...</label>  </div>
                 @endif

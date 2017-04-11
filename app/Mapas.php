@@ -33,4 +33,12 @@ class Mapas extends Model
             \Storage::disk('local')->put($name, \File::get($path));
         }
     }
+
+
+    public function scopeName($query, $table_search){
+       if(trim($table_search) != ""){
+           $query->where('titulo', "LIKE", "%$table_search%");
+
+       }
+    }
 }

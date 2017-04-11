@@ -16,10 +16,11 @@ class PreguntasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $preguntas = Preguntas::where('estado',1)->orderBy('id')->paginate(6);
-        return View('administracion.preguntas.index',compact('preguntas'));
+         $busqueda= Preguntas::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.preguntas.index',compact('preguntas', 'busqueda'));
     }
 
     /**

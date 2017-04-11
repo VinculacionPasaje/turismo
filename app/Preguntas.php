@@ -15,4 +15,11 @@ class Preguntas extends Model
         'estado',
       
     ];
+
+    public function scopeName($query, $table_search){
+       if(trim($table_search) != ""){
+           $query->where('pregunta', "LIKE", "%$table_search%");
+
+       }
+    }
 }

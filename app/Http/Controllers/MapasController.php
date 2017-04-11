@@ -16,10 +16,11 @@ class MapasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $mapas = Mapas::where('estado',1)->orderBy('id')->paginate(6);
-        return View('administracion.mapas.index',compact('mapas'));
+        $busqueda= Mapas::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.mapas.index',compact('mapas', 'busqueda'));
     }
 
     /**

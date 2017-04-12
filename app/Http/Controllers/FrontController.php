@@ -119,6 +119,13 @@ class FrontController extends Controller
         return view('frontend/llegar', compact('llegar', 'redes', 'footer'))->with('variable',$variable);
     }
 
+     public function deportivas(){
+          $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+       
+        return view('frontend/deportivas', compact('redes', 'footer'));
+    }
+
     public function login(){
        
         return view('auth/login');

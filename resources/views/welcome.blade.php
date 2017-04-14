@@ -244,7 +244,7 @@
          
 
 
-         <nav id="main-menu" class="navbar navbar-default menu " role="banner">
+         <nav id="main-menu" class="navbar navbar-default menu " style="z-index: 100000;" role="banner">
 
             
             
@@ -295,23 +295,23 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Actividades</a>
+                                        <a href="#">Actividades</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Deportes de Aventura</a></li>
-                                                <li><a tabindex="-1" href="#">Otras Actividades</a></li>
+                                                <li><a href="#">Deportes de Aventura</a></li>
+                                                <li><a href="#">Otras Actividades</a></li>
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Atractivos Turísticos</a>
+                                        <a href="#">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Parroquias</a></li>
-                                                <li><a tabindex="-1" href="#">Iglesias</a></li>
-                                                <li><a tabindex="-1" href="#">Parques y Monumentos</a></li>
-                                                <li><a tabindex="-1" href="#">Rutas Turísticas</a></li>
-                                                <li><a tabindex="-1" href="#">Sitios Tradicionales</a></li>
-                                                 <li><a tabindex="-1" href="#">Manifestaciones Culturales</a></li>
-                                                  <li><a tabindex="-1" href="#">Sitios Arqueológicos</a></li>
-                                                   <li><a tabindex="-1" href="#">Sitios Naturales</a></li>
+                                                <li><a  href="#">Parroquias</a></li>
+                                                <li><a  href="#">Iglesias</a></li>
+                                                <li><a href="#">Parques y Monumentos</a></li>
+                                                <li><a  href="#">Rutas Turísticas</a></li>
+                                                <li><a  href="#">Sitios Tradicionales</a></li>
+                                                 <li><a  href="#">Manifestaciones Culturales</a></li>
+                                                  <li><a  href="#">Sitios Arqueológicos</a></li>
+                                                   <li><a href="#">Sitios Naturales</a></li>
                                         </ul>
                                  </li>   
                                  <li><a href="#">Turismo Comunitario</a></li>           
@@ -324,30 +324,30 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Hospedaje</a>
+                                        <a  href="#">Hospedaje</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Hosterías</a></li>
-                                                <li><a tabindex="-1" href="#">Hoteles</a></li>
-                                                 <li><a tabindex="-1" href="#">Hostales</a></li>
+                                                <li><a  href="#">Hosterías</a></li>
+                                                <li><a  href="#">Hoteles</a></li>
+                                                 <li><a  href="#">Hostales</a></li>
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Alimentación</a>
+                                        <a  href="#">Alimentación</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Restaurantes</a></li>
-                                                <li><a tabindex="-1" href="#">Cafeterias</a></li>
-                                                <li><a tabindex="-1" href="#">Fuentes de Soda</a></li>
+                                                <li><a  href="#">Restaurantes</a></li>
+                                                <li><a  href="#">Cafeterias</a></li>
+                                                <li><a  href="#">Fuentes de Soda</a></li>
                                                 
                                         </ul>
                                  </li> 
 
                                   <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Diversión</a>
+                                        <a  href="#">Diversión</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Discotecas</a></li>
-                                                <li><a tabindex="-1" href="#">Centro de eventos</a></li>
-                                                <li><a tabindex="-1" href="#">Bares</a></li>
-                                                 <li><a tabindex="-1" href="#">Karaokes</a></li>
+                                                <li><a href="#">Discotecas</a></li>
+                                                <li><a  href="#">Centro de eventos</a></li>
+                                                <li><a  href="#">Bares</a></li>
+                                                 <li><a  href="#">Karaokes</a></li>
                                                 
                                         </ul>
                                  </li>   
@@ -430,7 +430,7 @@
          <div class="row">
             
                 <div class="col-lg-8 col-md-8 col-sm-6">
-                    <div class="blog-post blog-large">
+                    <div class="blog-post blog-large" >
                         <article>
                             <header class="entry-header">
                                 <div class="entry-thumbnail">
@@ -510,7 +510,7 @@
 
                 </div><!--/.col-sm-8-->
 
-                 <div class="col-lg-4 col-md-4 col-sm-6">
+                 <div class="col-lg-4 col-md-4 col-sm-6" >
                     
                     <h3 class="column-title">Noticias</h3>
                     <div class="panel panel-default" style="background: #f5f5f5;">

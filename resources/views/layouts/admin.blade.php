@@ -130,33 +130,88 @@
                     </ul>
                 </li>
 
+
                 <li class="treeview">
-                    <a href="">
-                        <i class="fa fa-user-circle-o"></i>
-                        <span>CATEGORIAS</span>
+                    <a href="#">
+                        <i class="fa fa-address-card-o"></i><span>NOTICIAS</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('categorias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i> Categorias Noticias
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('categorias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
                        
-                          <li><a href="{{route('categorias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
-                   
+                                <li><a href="{{route('categorias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-video-camera"></i> Noticias
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('noticias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                       
+                          <li><a href="{{route('noticias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+                        
+
+        
+
+                        
                     </ul>
                 </li>
 
+
                 <li class="treeview">
-                    <a href="">
-                        <i class="fa fa-user-circle-o"></i>
-                        <span>NOTICIAS</span>
+                    <a href="#">
+                        <i class="fa fa-address-card-o"></i><span>ACTIVIDADES</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('noticias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i> Categorias Actividades
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('categoriasActividades.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
                        
-                          <li><a href="{{route('noticias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
-                   
+                                <li><a href="{{route('categoriasActividades.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-video-camera"></i> Actividades
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="fa fa-circle-o"></i>Listado</a></li>
+                       
+                             <li><a href=""><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+                        
+
+        
+
+                        
                     </ul>
                 </li>
+
+
+
 
                         
 

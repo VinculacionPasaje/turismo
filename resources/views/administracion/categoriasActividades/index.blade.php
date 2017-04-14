@@ -28,17 +28,17 @@
                      <div class= "col-xs-6 col-md-6">
 
                             <div class="box-tools">
-                                {!! Form::open(['route'=>'categorias.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
+                                {!! Form::open(['route'=>'categoriasActividades.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
                                 <div class="input-group input-group-sm" style="width: 350px;">
                                 
-                                    {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por nombre']) !!}
+                                    {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por categoria']) !!}
 
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                     </div>
 
                                      <div class="input-group-btn">
-                                    <a href="{{route('categorias.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
+                                    <a href="{{route('categoriasActividades.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
                                      </div>
 
                                     
@@ -66,18 +66,20 @@
                             <table class="table table-hover" >
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>
+                                    <th>Categoria</th>
                                     <th>Descripción</th>
+                                    <th>Visitas</th>
                                     <th>Acción</th>
                                 </tr>
                                 @foreach($cat as $categoria)
                                  @if($categoria->estado !=0)
                                     <tr data-id="{{$categoria->id}}">
                                         <td class="sorting_1">{{$categoria->id}}</td>
-                                        <td>{{$categoria->nombre}}</td>
-                                        <td>{{$categoria->descripcion}}</td>
+                                        <td>{{$categoria->categoria}}</td>
+                                        <td>{!! $categoria->descripcion !!}</td>
+                                         <td>{{$categoria->contador_visitas}}</td>
                                         <td>
-                                            {!!link_to_route('categorias.edit', $title = 'Editar', $parameters = $categoria->id, $attributes = ['class'=>'btn  btn-primary btn-sm'])!!}
+                                            {!!link_to_route('categoriasActividades.edit', $title = 'Editar', $parameters = $categoria->id, $attributes = ['class'=>'btn  btn-primary btn-sm'])!!}
                                             <button type="button" class="btn btn-danger btn-sm btn-delete"  ><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp;Eliminar</button>
 
                                         </td>
@@ -99,11 +101,11 @@
         </div>
     </div>
 
-    {!! Form::open(['route' => ['categorias.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+    {!! Form::open(['route' => ['categoriasActividades.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
     {!! Form::close() !!}
 @endsection
 @section('script')
-    <script src="{{url('administration/dist/js/categorias/java-categoria.js')}}"></script>
+    <script src="{{url('administration/dist/js/categorias/java-categoriasAct.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             setTimeout(function() {

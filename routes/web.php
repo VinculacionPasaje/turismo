@@ -48,6 +48,7 @@
         Route::resource('administracion/noticias','NoticiaController');
         Route::resource('administracion/mapas','MapasController');
         Route::resource('administracion/llegar','LlegarController');
+        Route::resource('administracion/actividades','ActividadesController');
         Route::resource('administracion/categoriasActividades','CatActividadesController');
 
 

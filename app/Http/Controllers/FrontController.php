@@ -12,6 +12,8 @@ use App\Video;
 use App\Footer;
 use App\Mapas;
 use App\Llegar;
+use App\CategoriaActividades;
+use App\Actividades;
 class FrontController extends Controller
 {
 
@@ -23,18 +25,20 @@ class FrontController extends Controller
     public function index(){
 
         $categorias= Categoria::where('estado',1)->get();
+        $categoriasAct= CategoriaActividades::where('estado',1)->get();
         $redes= Redes::where('estado',1)->get();
         $videos= Video::where('id',1)->get();
         $footer= Footer::where('estado',1)->get();
       
        
-        return view('welcome', compact('categorias', 'redes', 'videos', 'footer'));
+        return view('welcome', compact('categorias', 'redes', 'videos', 'footer', 'categoriasAct'));
     }
 
     public function traer(){
           $traer= Traer::where('id',1)->get();
           $redes= Redes::where('estado',1)->get();
           $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
 
           $variable=0;
        
@@ -47,7 +51,18 @@ class FrontController extends Controller
         
 
         
-        return view('frontend/Traer', compact('traer', 'redes', 'footer'))->with('variable',$variable);
+        return view('frontend/Traer', compact('traer', 'redes', 'footer', 'categoriasAct'))->with('variable',$variable);
+    }
+
+    public function todas_actividades(){
+
+        $redes= Redes::where('estado',1)->get();
+          $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
+           $actividades= Actividades::where('estado',1)->get();
+            return view('frontend/todasActividades', compact('redes', 'footer', 'categoriasAct', 'actividades'));
+
+
     }
 
 
@@ -57,6 +72,7 @@ class FrontController extends Controller
         $material= Material::where('id',1)->get();
          $redes= Redes::where('estado',1)->get();
           $footer= Footer::where('estado',1)->get();
+           $categoriasAct= CategoriaActividades::where('estado',1)->get();
 
            $variable=0;
        
@@ -67,14 +83,15 @@ class FrontController extends Controller
              $item->save();
          }
        
-        return view('frontend/Material', compact('material', 'redes', 'footer'))->with('variable',$variable);
+        return view('frontend/Material', compact('material', 'redes', 'footer', 'categoriasAct'))->with('variable',$variable);
     }
 
      public function pregunta(){
         $preguntas= Preguntas::where('estado',1)->get();
         $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
-        return view('frontend/Preguntas', compact('preguntas', 'redes', 'footer'));
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
+        return view('frontend/Preguntas', compact('preguntas', 'redes', 'footer', 'categoriasAct'));
     }
 
     public function mapas(){
@@ -82,6 +99,7 @@ class FrontController extends Controller
        $mapita= Mapas::where('id',5000)->get();
         $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
 
          $variable=0;
        if($mapita->count())
@@ -95,7 +113,7 @@ class FrontController extends Controller
 
        }
         
-        return view('frontend/mapas', compact('mapas', 'redes', 'footer'))->with('variable',$variable);
+        return view('frontend/mapas', compact('mapas', 'redes', 'footer', 'categoriasAct'))->with('variable',$variable);
     }
 
     public function llegar(){
@@ -103,6 +121,7 @@ class FrontController extends Controller
        $llegada= Llegar::where('id',5000)->get();
         $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
 
          $variable=0;
        if($llegada->count())
@@ -116,14 +135,15 @@ class FrontController extends Controller
 
        }
         
-        return view('frontend/llegar', compact('llegar', 'redes', 'footer'))->with('variable',$variable);
+        return view('frontend/llegar', compact('llegar', 'redes', 'footer', 'categoriasAct'))->with('variable',$variable);
     }
 
      public function deportivas(){
           $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
        
-        return view('frontend/deportivas', compact('redes', 'footer'));
+        return view('frontend/deportivas', compact('redes', 'footer', 'categoriasAct'));
     }
 
     public function login(){

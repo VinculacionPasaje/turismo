@@ -75,8 +75,8 @@
                                         <td>
                                             <img src="{{url('fotos/'.$noticia->path)}}" alt="" style="width:70px;"/>
                                         </td>
-                                        <td>{{$noticia->titulo}}</td>
-                                        <td>{{$noticia->descripcion}}</td>
+                                        <td width="130px">{{$noticia->titulo}}</td>
+                                        <td width="500px">{{$noticia->descripcion}}</td>
                                         <td>{{$noticia->fecha_post}}</td>
                                        
                                         <td>

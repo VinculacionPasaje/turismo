@@ -15,6 +15,7 @@
         Route::get('/', 'FrontController@index');
         Route::get('administracion','FrontController@admin');
         Route::get('traer', 'FrontController@traer');
+         Route::get('actividades', 'FrontController@todas_actividades');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');
         Route::get('mapas', 'FrontController@mapas');

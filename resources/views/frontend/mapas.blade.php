@@ -111,10 +111,18 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Actividades</a>
+                                        <a href="{{url ('actividades')}}">Actividades</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Deportes de Aventura</a></li>
-                                                <li><a tabindex="-1" href="#">Otras Actividades</a></li>
+
+                                        @if($categoriasAct->count())
+                                            @foreach($categoriasAct as $cat)
+
+                                                <li><a href="#">{{$cat->categoria}}</a></li>
+                                               
+
+
+                                            @endforeach
+                                        @endif
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">

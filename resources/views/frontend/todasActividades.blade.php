@@ -221,9 +221,9 @@
 <img class="oculto" src="{{url('frontend/images/actividad2.jpg')}}" alt="">
 
 </div>
-<p class="sliderTitle"> ACTIVIDADES </p>
+<p class="sliderTitle4"> ACTIVIDADES </p>
 
-<div class="container">
+<div class="container" style="padding-bottom: 70px;">
 
 
 
@@ -231,24 +231,84 @@
             <div class="col-md-12">
 
                     <p class="contact"> Todas las Actividades </p>
+
+
                 
             </div>
         </div>
 
+         <div class= "col-xs-12 col-md-12">
+            <p style="font-color='black';text-align: justify; font-size: 16px" > En las áreas naturales del Cantón Pasaje se encuentran zonas adecuadas para la práctica de actividades como: 
+            @foreach($actividades as $act)            
+                       
+                                        
+               <font style="text-transform: lowercase;">{{$act->titulo}}, </font>
+                                
+                                            
+                                    
+                                    
+                     @endforeach   
+            
+            
+             entre otros. El clima ideal del cantón Pasaje y sus múltiples espacios nos invitan a adentrarnos en experiencias maravillosas tanto de deportes extremos como a ser parte de las diferentes actividades que pueden realizarse en este lugar. 
+             </p>
+
+            
+        </div>
+
+
+        
+
+
+
            @foreach($categoriasAct as $cat)
-            <p>{{$cat->categoria}}</p>
+
+          <div class="col-md-12">
+
+                    <p class="actividades"> {{$cat->categoria}} </p>
+
+
+                
+            </div>
+        
+          
+
+            
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
                     @foreach($actividades as $act)            
                         @if($cat->id == $act->id_categorias )
                                         
-                                          <p>{{$act->titulo}}</p>   
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom:25px;">
+
+                                <div class="blog-post blog-large">
+                                    <article>
+                                        <header class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt="">
+                                                
+                                            </div>
+                                            <div class="entry-date">{{$act->fecha_post}}</div>
+                                            <h2 class="entry-title"><a href="#">{{$act->titulo}}</a></h2>
+                                        </header>
+
+                                        <div class="entry-content">
+                                            <P class="negro2">{{$act->descripcion}}</P>
+                                            <a class="btn btn-danger" href="#">Leer más</a>
+                                        </div>
+
+                                    </article>
+                                </div>
+                         </div>
                                 
                                             
                                     
                                             
                                         
                             @endif
-                     @endforeach   
+                     @endforeach 
+                 </div>
+               
                                      
                                            
          @endforeach   

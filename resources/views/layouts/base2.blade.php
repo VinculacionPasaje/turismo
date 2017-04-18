@@ -138,7 +138,7 @@
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
 
-             @yield('menu')
+             @yield('menu2')
                
             </ul>
         </div>

@@ -1,23 +1,10 @@
 @extends('layouts.base2')
 
 @section('title')
-<title>Actividades Deportivas</title>
+<title>{{$actividad->titulo}}</title>
 
 @endsection
 
-@section('menu')
-
-                <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-chevron-right"></i>Widgets</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-file-o fa-fw"></i>Pages</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-bar-chart-o fa-fw"></i>Charts</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-table fa-fw"></i>Table</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-tasks fa-fw"></i>Forms</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-calendar fa-fw"></i>Calender</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-book fa-fw"></i>Library</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-pencil fa-fw"></i>Applications</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
-@endsection
 
 @section('menu')
 
@@ -28,10 +15,10 @@
                                         <a href="{{url ('actividades')}}">Actividades</a>
                                         <ul class="dropdown-menu">
 
-                                        @if($categoriasAct->count())
-                                            @foreach($categoriasAct as $cat)
+                                        @if($categorias->count())
+                                            @foreach($categorias as $cat)
 
-                                                <li><a href="#">{{$cat->categoria}}</a></li>
+                                                <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
 
 
@@ -110,10 +97,22 @@
 
 @endsection
 
+@section('menu2')
+
+        @if($actividades->count())
+                @foreach($actividades as $act)
+
+                    <li><a href="{{url('actividades/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right"></i>{{$act->titulo}}</a></li>
+
+                @endforeach
+        @endif
+
+@endsection
+
 
 @section('contenido')
 
-<p>Bloque central</p>
+{!! $actividad->contenido !!}
 @endsection
 
 

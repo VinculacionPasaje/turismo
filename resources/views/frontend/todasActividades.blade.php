@@ -120,7 +120,7 @@
                                         @if($categoriasAct->count())
                                             @foreach($categoriasAct as $cat)
 
-                                                <li><a href="#">{{$cat->categoria}}</a></li>
+                                                <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
 
 
@@ -289,12 +289,13 @@
                                                 
                                             </div>
                                             <div class="entry-date">{{$act->fecha_post}}</div>
-                                            <h2 class="entry-title"><a href="#">{{$act->titulo}}</a></h2>
+                                            <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
                                         </header>
 
                                         <div class="entry-content">
                                             <P class="negro2">{{$act->descripcion}}</P>
-                                            <a class="btn btn-danger" href="#">Leer más</a>
+                                            {!!link_to('actividades/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'btn btn-danger btn-md'], $secure = null)!!}
+                                          
                                         </div>
 
                                     </article>

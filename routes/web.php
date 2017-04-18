@@ -16,11 +16,13 @@
         Route::get('administracion','FrontController@admin');
         Route::get('traer', 'FrontController@traer');
          Route::get('actividades', 'FrontController@todas_actividades');
+         Route::get('actividades/{id}', 'FrontController@actividades');
+         Route::get('categoria/{id}', 'FrontController@category');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');
         Route::get('mapas', 'FrontController@mapas');
         Route::get('llegar', 'FrontController@llegar');
-        Route::get('deportivas', 'FrontController@deportivas');
+        
         Route::get('contactos', 'MailController@index');
         Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
 

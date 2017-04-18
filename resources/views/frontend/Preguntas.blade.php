@@ -32,7 +32,7 @@
                                         @if($categoriasAct->count())
                                             @foreach($categoriasAct as $cat)
 
-                                                <li><a href="#">{{$cat->categoria}}</a></li>
+                                                <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
 
 

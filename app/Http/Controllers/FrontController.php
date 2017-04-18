@@ -66,6 +66,38 @@ class FrontController extends Controller
     }
 
 
+     public function actividades($id){
+        
+        $actividad = Actividades::find($id); //aqui encuentro la actividad selecciona
+        $categoriasAct = CategoriaActividades::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece
+        $actividades= Actividades::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+         $redes= Redes::where('estado',1)->get(); //para las redes sociales
+         $footer= Footer::where('estado',1)->get(); //footer
+        $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+      
+        
+       
+        return view('frontend/actividades',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias'));
+     
+    }
+
+
+    public function category($id){
+        
+       
+        $categoriasAct = CategoriaActividades::find($id); //aqui encuentro a cual categoria pertenece
+        $actividades= Actividades::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+         $redes= Redes::where('estado',1)->get(); //para las redes sociales
+         $footer= Footer::where('estado',1)->get(); //footer
+         $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+      
+        
+       
+        return view('frontend/catActividades',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias'));
+     
+    }
+
+
      
 
      public function material(){
@@ -138,13 +170,7 @@ class FrontController extends Controller
         return view('frontend/llegar', compact('llegar', 'redes', 'footer', 'categoriasAct'))->with('variable',$variable);
     }
 
-     public function deportivas(){
-          $redes= Redes::where('estado',1)->get();
-         $footer= Footer::where('estado',1)->get();
-          $categoriasAct= CategoriaActividades::where('estado',1)->get();
-       
-        return view('frontend/deportivas', compact('redes', 'footer', 'categoriasAct'));
-    }
+     
 
     public function login(){
        

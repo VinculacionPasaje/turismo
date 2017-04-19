@@ -102,7 +102,7 @@
          @if($actividades->count())
                 @foreach($actividades as $act)
 
-                    <li><a href="{{url('actividades/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right"></i>{{$act->titulo}}</a></li>
+                    <li><a href="{{url('actividades/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right" style="padding-right: 15px;"></i>{{$act->titulo}}</a></li>
 
                 @endforeach
         @endif
@@ -110,6 +110,12 @@
                 
                 
                 
+@endsection
+
+@section('encabezado')
+
+{{$categoriasAct->categoria}}
+
 @endsection
 
 

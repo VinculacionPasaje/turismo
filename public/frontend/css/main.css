@@ -2894,6 +2894,25 @@ font-family: arial;
 .fa-fw {width: 2em;}
 
 
+.module-title{
+  
+    background: rgb(138, 25, 30);
+    padding-top: 10px;
+}
+
+.encabezado{
+color: #ffffff;
+font-size: 20px;
+text-align: center;
+}
+
+.wel2{
+  padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+}
+
+
 
 
 

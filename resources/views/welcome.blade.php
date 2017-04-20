@@ -38,7 +38,7 @@
  
 </head><!--/head-->
 
-<body id="home" class="homepage"  style="background: #f5f5f5;">
+<body id="home" class="homepage"  style="background: #f2f2f2;">
 
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"></a>

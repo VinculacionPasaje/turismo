@@ -25,7 +25,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: #f5f5f5;">
+<body id="home" class="homepage" style="background: #f2f2f2;">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -135,7 +135,7 @@
 
  
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" >
           <div class="module-title">
 					<h2 class="encabezado">
 
@@ -143,9 +143,9 @@
                     
                     </h2>			
             </div>
-           <div class="panel panel-default" style="background: #f5f5f5;">
+           <div class="panel panel-default">
                     
-                        <div class="panel-body" id="menu2">
+                        <div class="panel-body" style="background: white;">
                             <ul class="nav nav-pills nav-stacked" style="font-size: 17px;">
 
                             @yield('menu2')
@@ -154,7 +154,7 @@
                
             </ul>
         </div>
-        <div class="col-md-8 wel2">
+        <div class="col-md-8 wel2" style="background: white;">
 
          @yield('contenido')
 

@@ -74,10 +74,15 @@ class FrontController extends Controller
          $redes= Redes::where('estado',1)->get(); //para las redes sociales
          $footer= Footer::where('estado',1)->get(); //footer
         $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+
+         $variable=0;
+         $actividad->contador_visitas++;
+         $variable= $actividad;
+         $actividad->save();
       
         
        
-        return view('frontend/actividades',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias'));
+        return view('frontend/actividades',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias'))->with('variable',$variable);
      
     }
 
@@ -90,10 +95,16 @@ class FrontController extends Controller
          $redes= Redes::where('estado',1)->get(); //para las redes sociales
          $footer= Footer::where('estado',1)->get(); //footer
          $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+
+         $variable=0;
+         $categoriasAct->contador_visitas++;
+         $variable= $categoriasAct;
+         $categoriasAct->save();
+         
       
         
        
-        return view('frontend/catActividades',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias'));
+        return view('frontend/catActividades',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias'))->with('variable',$variable);
      
     }
 

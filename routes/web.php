@@ -53,6 +53,7 @@
         Route::resource('administracion/llegar','LlegarController');
         Route::resource('administracion/actividades','ActividadesController');
         Route::resource('administracion/categoriasActividades','CatActividadesController');
+        Route::resource('administracion/categoriasTuristicas','CategoriaTuristicaController');
 
 
         Route::get('/error',function(){

@@ -19,5 +19,13 @@ class CategoriaActividadesSeeder extends Seeder
             'contador_visitas'=>'0',
 
         ]);
+
+         CategoriaActividades::create([
+            'categoria'=>'Otras Actividades',
+            'descripcion'=>'<p>Categoria para otras actividades en Pasaje</p>',
+            'estado'=>'1',
+            'contador_visitas'=>'0',
+
+        ]);
     }
 }

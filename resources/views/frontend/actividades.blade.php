@@ -118,6 +118,11 @@
 
 @section('contenido')
 
+<div class= "col-xs-12 col-md-12" aling="center">
+ <p class="contact2"> {{$actividad->titulo}} </p>
+        <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
+</div>
+
 {!! $actividad->contenido !!}
 @endsection
 

@@ -40,7 +40,14 @@
                             <select class="form-control select2" name="id_categorias" id="categorias" style="width: 100%;" >
                                 <option value="" disabled selected>Seleccione la categoria</option>
                                 @foreach($categorias as $categoria)
-                                    <option value="{{$categoria->id}}" >  {{ $categoria->categoria }} </option>
+
+                                 @if (old('id_categorias') == $categoria->id)
+                                        <option value="{{$categoria->id}}" selected> {{ $categoria->categoria }}</option>
+                                    @else
+                                        <option value="{{$categoria->id}}"> {{ $categoria->categoria }}</option>
+                                    @endif             
+
+                                   
                                 @endforeach
                             </select>
                         </div>

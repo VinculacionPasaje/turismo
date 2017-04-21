@@ -5,9 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Actividades extends Model
+class Turistico extends Model
 {
-    protected $table ='actividades';
+    protected $table ='turistico';
     protected $primaryKey='id';
     public $timestamps = false;
     protected $fillable=[
@@ -21,8 +21,8 @@ class Actividades extends Model
         'id_categorias',
     ];
 
-    public function categorias_actividades(){
-        return $this->belongsTo(CategoriaActividades::class,'id_categorias','id');
+    public function categorias_turisticas(){
+        return $this->belongsTo(CategoriaTuristica::class,'id_categorias','id');
     }
 
 

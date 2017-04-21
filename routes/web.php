@@ -52,6 +52,7 @@
         Route::resource('administracion/mapas','MapasController');
         Route::resource('administracion/llegar','LlegarController');
         Route::resource('administracion/actividades','ActividadesController');
+         Route::resource('administracion/turistico','TuristicoController');
         Route::resource('administracion/categoriasActividades','CatActividadesController');
         Route::resource('administracion/categoriasTuristicas','CategoriaTuristicaController');
 

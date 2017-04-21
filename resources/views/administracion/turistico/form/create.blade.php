@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-md-6 col-xs-12">
                          <div class="form-group">
-                            {!! Form::label('Fecha Noticia') !!}
+                            {!! Form::label('Fecha del Post') !!}
                             <div class="input-group">
                             <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
@@ -36,38 +36,23 @@
                 </div>
                 <div class="col-md-6 col-xs-12">
                         <div class="form-group">
-                            <label>Categoria</label>
+                            <label>Eliga la Categoria</label>
                             <select class="form-control select2" name="id_categorias" id="categorias" style="width: 100%;" >
                                 <option value="" disabled selected>Seleccione la categoria</option>
                                 @foreach($categorias as $categoria)
-                                   @if (old('id_categorias') == $categoria->id)
-                                        <option value="{{$categoria->id}}" selected>{{ $categoria->nombre }}</option>
+
+                                @if (old('id_categorias') == $categoria->id)
+                                        <option value="{{$categoria->id}}" selected> {{ $categoria->categoria }}</option>
                                     @else
-                                        <option value="{{$categoria->id}}">{{ $categoria->nombre }}</option>
-                                    @endif             
+                                        <option value="{{$categoria->id}}"> {{ $categoria->categoria }}</option>
+                                    @endif       
+                                    
                                 @endforeach
-                                 
                             </select>
                         </div>
                 </div>
 
 </div>
-
-<div class="row" ><!--Inicio de row -->
-                 <div class="col-md-6 col-xs-12">
-                        <div class="form-group">
-                            {!!Form::label('destacado','Destacado:')!!}
-                            {{ Form::checkbox('destacado', 1) }}
-                        </div>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                        
-                     {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
-                </div>
-
-</div>
-
-
 
 
 
@@ -82,9 +67,11 @@
                                 
 </div>
 
- 
+<div class="row" ><!--Inicio de row -->
+                 
+                <div class="col-md-6 col-xs-12">
+                        
+                     {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
+                </div>
 
-
-
-
-
+</div>

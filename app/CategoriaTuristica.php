@@ -16,6 +16,10 @@ class CategoriaTuristica extends Model
         'contador_visitas',
     ];
 
+    public function turistico(){
+        return $this->hasMany(Turistico::class);
+    }
+
      
     public function scopeName($query, $table_search){
        if(trim($table_search) != ""){

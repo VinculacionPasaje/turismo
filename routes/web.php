@@ -14,10 +14,18 @@
         //Para las vistas principales
         Route::get('/', 'FrontController@index');
         Route::get('administracion','FrontController@admin');
-        Route::get('traer', 'FrontController@traer');
+        
+        // para los menus de actividades
          Route::get('actividades', 'FrontController@todas_actividades');
          Route::get('actividades/{id}', 'FrontController@actividades');
          Route::get('categoria/{id}', 'FrontController@category');
+
+           // para los menus de atractivos turisticos
+         Route::get('atractivosTuristicos', 'FrontController@todos_actractivos');
+         Route::get('categoriaTuristico/{id}', 'FrontController@category_turistico');
+         Route::get('atractivosTuristicos/{id}', 'FrontController@atractivosTuristicos');
+
+        Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');
         Route::get('mapas', 'FrontController@mapas');

@@ -27,16 +27,17 @@
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Atractivos Turísticos</a>
+                                         <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Parroquias</a></li>
-                                                <li><a tabindex="-1" href="#">Iglesias</a></li>
-                                                <li><a tabindex="-1" href="#">Parques y Monumentos</a></li>
-                                                <li><a tabindex="-1" href="#">Rutas Turísticas</a></li>
-                                                <li><a tabindex="-1" href="#">Sitios Tradicionales</a></li>
-                                                 <li><a tabindex="-1" href="#">Manifestaciones Culturales</a></li>
-                                                  <li><a tabindex="-1" href="#">Sitios Arqueológicos</a></li>
-                                                   <li><a tabindex="-1" href="#">Sitios Naturales</a></li>
+                                                @if($categoriasTu->count())
+                                                    @foreach($categoriasTu as $cat)
+
+                                                        <li><a href="{{url('categoriaTuristico/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
                                         </ul>
                                  </li>   
                                  <li><a href="#">Turismo Comunitario</a></li>           

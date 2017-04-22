@@ -1,23 +1,10 @@
-@extends('layouts.base')
+@extends('layouts.base2')
+
 @section('title')
-<title>Materiales Turisticos</title>
+<title>{{$actividad->titulo}}</title>
 
 @endsection
 
-@section('header')
-
-<div class='oculto'>
-
-<img src="{{url('frontend/images/material.jpg')}}" alt="">
-
-</div>
-
-<p class="sliderTitle2"> Material Turístico </p>
-
-
-
-
-@endsection
 
 @section('menu')
 
@@ -28,10 +15,10 @@
                                         <a href="{{url ('actividades')}}">Actividades</a>
                                         <ul class="dropdown-menu">
 
-                                        @if($categoriasAct->count())
-                                            @foreach($categoriasAct as $cat)
+                                        @if($categorias->count())
+                                            @foreach($categorias as $cat)
 
-                                               <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
 
 
@@ -42,7 +29,7 @@
                                  <li class="dropdown-submenu">
                                          <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
-                                               @if($categoriasTu->count())
+                                                @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
 
                                                         <li><a href="{{url('categoriaTuristico/'.$cat->id)}}">{{$cat->categoria}}</a></li>
@@ -111,21 +98,43 @@
 
 @endsection
 
-@section('contenido')
-<div class= "col-xs-12 col-md-12" aling="center">
- <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
-</div>
-@if(count($material) >0)  
-@foreach($material as $item)
+@section('encabezado')
 
-{!! $item->contenido !!}
-
-
-@endforeach
-
-@endif
+{{$categoriasAct->categoria}}
 
 @endsection
+
+@section('menu2')
+
+        @if($actividades->count())
+                @foreach($actividades as $act)
+
+                    <li><a href="{{url('atractivosTuristicos/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right" style="padding-right: 15px;"></i>{{$act->titulo}}</a></li>
+
+                @endforeach
+        @endif
+
+@endsection
+
+
+@section('contenido')
+
+<div class= "col-xs-12 col-md-12" aling="center">
+ <p class="contact2"> {{$actividad->titulo}} </p>
+        <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
+</div>
+
+{!! $actividad->contenido !!}
+@endsection
+
+
+
+
+
+
+
+
+
 
 @section('footer')
 

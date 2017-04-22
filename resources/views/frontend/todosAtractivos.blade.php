@@ -9,7 +9,7 @@
    
   <!-- /meta -->
 
-   <title>Mapas</title>
+   <title>Actividades</title>
 
    <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/font-awesome.min.css')}}">
@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/jquery.fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
+    <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
+    <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
+
 
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
@@ -28,7 +31,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: #f5f5f5;">
+<body id="home" class="homepage" style="background: #fff;">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -126,9 +129,10 @@
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                       <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                       
                                         <ul class="dropdown-menu">
-                                               @if($categoriasTu->count())
+                                                @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
 
                                                         <li><a href="{{url('categoriaTuristico/'.$cat->id)}}">{{$cat->categoria}}</a></li>
@@ -214,63 +218,101 @@
     </header>
 
 
-<div class="container" style="padding-bottom:50px; ">
-  
-        <div class="row header">
+<div class='oculto'>
+
+<img class="oculto" src="{{url('frontend/images/actividad2.jpg')}}" alt="">
+
+</div>
+<p class="sliderTitle4"> Atractivos Turísticos </p>
+
+<div class="container" style="padding-bottom: 70px;">
+
+
+
+       <div class="row header">
             <div class="col-md-12">
 
-                    <p class="contact"> Mapas </p>
+                    <p class="contact"> Todas los atractivos turísticos </p>
+
+
                 
             </div>
         </div>
 
-        <div class= "col-xs-12 col-md-12" aling="center">
-            <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
+         <div class= "col-xs-12 col-md-12">
+            <p style="font-color='black';text-align: justify; font-size: 16px" > 
+
+            Hay una ciudad por descubrir, una sociedad por investigar, una gente por amar y un tiempo por recordar. A través de éstos espacios pretendemos perpetuar la conciencia colectiva con imágenes, documentos, vídeos que sin duda tendrán un valor positivo para el conocimiento de nuestra identidad como asentamiento urbano y para el reconocimiento de nuestros espacios que son paraíso en la tierra.
+
+             </p>
 
             
         </div>
 
-        <div class= "col-xs-12 col-md-12">
-            <p style="font-color='black';text-align: justify; font-size: 16px" > Con la finalidad de ofrecer información de ubicación de atractivos, áreas rurales y museos. El cantón Pasaje ha trabajado en el diseño de algunos mapas con información importante para conocer Pasaje y sus alrededores. </p>
 
-            
-        </div>
+        
 
 
-        <div class="row">
-		<div class='list-group gallery'>
 
-        @if(count($mapas) >0)  
+           @foreach($categoriasTu as $cat)
 
-         @foreach($mapas as $map)
+          <div class="col-md-12">
 
-          <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3' style="padding-bottom:15px;">
+                    <p class="actividades"> {{$cat->categoria}} </p>
 
-                <a class="fancybox" rel="ligthbox" href="{{url('fotos/'.$map->path)}}">
-                    <div class="img-contenedor">
 
-                    <img class="img-responsive4" alt="" src="{{url('fotos/'.$map->path)}}"  />
-                     <h2 class="texto5" style="padding-left:5px;"><span class="fondotexto2">{{$map->titulo}}</span></h2>
-                     
-                     <h2 class="texto4" style="font-weight: normal;padding-left: 5px;padding-bottom: -;padding-bottom: 0px;padding-right: 5px;"><span class="fondotexto">{{$map->descripcion}}</span></h2>
-                    </div>
-                </a>
-            
-            </div> <!-- col-6 / end -->
-
-         @endforeach
-
-         @endif
-
-         
-           
+                
+            </div>
+        
           
 
-            </div> <!-- list-group / end -->
-        </div> <!-- row / end -->
+            
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    @foreach($actividades as $act)            
+                        @if($cat->id == $act->id_categorias )
+                                        
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom:25px;">
+
+                                <div class="blog-post blog-large">
+                                    <article>
+                                        <header class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt="">
+                                                
+                                            </div>
+                                            <div class="entry-date">{{$act->fecha_post}}</div>
+                                            <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
+                                        </header>
+
+                                        <div class="entry-content">
+                                            <P class="negro2">{{$act->descripcion}}</P>
+                                            {!!link_to('atractivosTuristicos/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'btn btn-danger btn-md'], $secure = null)!!}
+                                          
+                                        </div>
+
+                                    </article>
+                                </div>
+                         </div>
+                                
+                                            
+                                    
+                                            
+                                        
+                            @endif
+                     @endforeach 
+                 </div>
+               
+                                     
+                                           
+         @endforeach   
+        
 
 
-</div>
+        
+
+    
+</div> <!-- /container -->
 
 
 
@@ -368,23 +410,14 @@
     
     <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
-    <script src="{{url('frontend/js/jquery.fancybox.min.js')}}"></script>
+    <script src="{{url('administration/dist/js/alertify.js')}}"></script>
+     <script src="{{url('administration/dist/js/sweetalert.min.js')}}"></script>
+
     
  
     <script src="{{url('frontend/js/main.js')}}"></script>
 
-    <script>
-        $(document).ready(function(){
-            //FANCYBOX
-            //https://github.com/fancyapps/fancyBox
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
-        });
    
-
-    </script>
 
 
 
@@ -398,4 +431,3 @@
 </body>
 
 </html>
-

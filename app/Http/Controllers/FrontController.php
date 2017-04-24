@@ -16,6 +16,7 @@ use App\CategoriaActividades;
 use App\Actividades;
 use App\CategoriaTuristica;
 use App\Turistico;
+use App\TurismoComunitario;
 
 class FrontController extends Controller
 {
@@ -37,6 +38,29 @@ class FrontController extends Controller
        
         return view('welcome', compact('categorias', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
     }
+
+
+    public function turismo_comunitario(){
+          $turismo= TurismoComunitario::where('id',1)->get();
+          $redes= Redes::where('estado',1)->get();
+          $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
+          $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+
+          $variable=0;
+       
+         foreach($turismo as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+        
+
+        
+        return view('frontend/TurismoComunitario', compact('turismo', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+    }
+
 
     public function traer(){
           $traer= Traer::where('id',1)->get();

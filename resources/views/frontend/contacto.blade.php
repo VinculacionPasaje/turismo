@@ -145,7 +145,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="#">Turismo Comunitario</a></li>           
+                               <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>     
                             </ul>
                         </li>    
 

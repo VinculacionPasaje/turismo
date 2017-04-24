@@ -8,6 +8,7 @@ use App\Http\Requests\ContactRequest;
 use Mail;
 use App\Redes;
 use App\Footer;
+use App\CategoriaTuristica;
 use App\CategoriaActividades;
 use Illuminate\Support\Facades\Redirect;
 
@@ -19,7 +20,8 @@ class MailController extends Controller
         $redes= Redes::where('estado',1)->get();
          $footer= Footer::where('estado',1)->get();
            $categoriasAct= CategoriaActividades::where('estado',1)->get();
-        return view('frontend/contacto', compact('redes', 'footer', 'categoriasAct'));
+           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        return view('frontend/contacto', compact('redes', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 

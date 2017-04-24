@@ -30,6 +30,7 @@
         Route::get('preguntas', 'FrontController@pregunta');
         Route::get('mapas', 'FrontController@mapas');
         Route::get('llegar', 'FrontController@llegar');
+        Route::get('turismoComunitario', 'FrontController@turismo_comunitario');
         
         Route::get('contactos', 'MailController@index');
         Route::post('send', ['as' => 'send', 'uses' => 'MailController@send'] );
@@ -50,6 +51,7 @@
         //vistas de administracion
         Route::resource('administracion/usuarios','UsuarioController');
         Route::resource('administracion/traer','TraerController');
+        Route::resource('administracion/turismo','TurismoController');
         Route::resource('administracion/material','MaterialController');
         Route::resource('administracion/categorias','CategoriaController');
         Route::resource('administracion/preguntas','PreguntasController');

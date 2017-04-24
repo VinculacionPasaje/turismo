@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @section('title')
-<title>Materiales Turisticos</title>
+<title>Turismo Comunitario</title>
 
 @endsection
 
@@ -8,11 +8,11 @@
 
 <div class='oculto'>
 
-<img src="{{url('frontend/images/material.jpg')}}" alt="">
-
+<img src="{{url('frontend/images/imagen.jpg')}}" alt="">
 </div>
 
-<p class="sliderTitle2"> Material Turístico </p>
+<p class="sliderTitle"> Turismo Comunitario </p>
+
 
 
 
@@ -31,7 +31,7 @@
                                         @if($categoriasAct->count())
                                             @foreach($categoriasAct as $cat)
 
-                                               <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
 
 
@@ -40,7 +40,7 @@
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                         <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                        <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
                                                @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
@@ -53,7 +53,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>              
+                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>           
                             </ul>
                         </li>    
 
@@ -112,11 +112,14 @@
 @endsection
 
 @section('contenido')
+
 <div class= "col-xs-12 col-md-12" aling="center">
  <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
-@if(count($material) >0)  
-@foreach($material as $item)
+
+@if(count($turismo) >0)  
+
+@foreach($turismo as $item)
 
 {!! $item->contenido !!}
 
@@ -126,6 +129,7 @@
 @endif
 
 @endsection
+
 
 @section('footer')
 
@@ -205,6 +209,16 @@
            
         </div>
     </footer><!--/#footer-->
+
+
+
+@endsection
+
+
+@section('script')
+
+
+
 
 
 

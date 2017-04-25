@@ -112,6 +112,11 @@ class FrontController extends Controller
      public function actividades($id){
         
         $actividad = Actividades::find($id); //aqui encuentro la actividad selecciona
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+        
         $categoriasAct = CategoriaActividades::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece
         $actividades= Actividades::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
          $redes= Redes::where('estado',1)->get(); //para las redes sociales
@@ -127,27 +132,37 @@ class FrontController extends Controller
         
        
         return view('frontend/actividades',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+
+        }
+        
+      
      
     }
 
     public function atractivosTuristicos($id){
         
         $actividad = Turistico::find($id); //aqui encuentro la actividad selecciona
-        $categoriasAct = CategoriaTuristica::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece
-        $actividades= Turistico::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
-         $redes= Redes::where('estado',1)->get(); //para las redes sociales
-         $footer= Footer::where('estado',1)->get(); //footer
-        $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
-        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
 
-         $variable=0;
-         $actividad->contador_visitas++;
-         $variable= $actividad;
-         $actividad->save();
-      
-        
-       
-        return view('frontend/atractivosTuristicos',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+                $categoriasAct = CategoriaTuristica::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece
+                $actividades= Turistico::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+                $redes= Redes::where('estado',1)->get(); //para las redes sociales
+                $footer= Footer::where('estado',1)->get(); //footer
+                $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+                $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+
+                $variable=0;
+                $actividad->contador_visitas++;
+                $variable= $actividad;
+                $actividad->save();
+            
+                
+            
+                return view('frontend/atractivosTuristicos',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        }
      
     }
 
@@ -156,6 +171,11 @@ class FrontController extends Controller
         
        
         $categoriasAct = CategoriaActividades::find($id); //aqui encuentro a cual categoria pertenece
+        if($categoriasAct==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
         $actividades= Actividades::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
          $redes= Redes::where('estado',1)->get(); //para las redes sociales
          $footer= Footer::where('estado',1)->get(); //footer
@@ -171,6 +191,7 @@ class FrontController extends Controller
         
        
         return view('frontend/catActividades',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        }
      
     }
 
@@ -179,6 +200,11 @@ class FrontController extends Controller
         
        
         $categoriasAct = CategoriaTuristica::find($id); //aqui encuentro a cual categoria pertenece
+        if($categoriasAct==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
         $actividades= Turistico::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
          $redes= Redes::where('estado',1)->get(); //para las redes sociales
          $footer= Footer::where('estado',1)->get(); //footer
@@ -194,6 +220,7 @@ class FrontController extends Controller
         
        
         return view('frontend/catTuristico',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        }
      
     }
 

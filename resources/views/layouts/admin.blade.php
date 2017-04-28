@@ -73,7 +73,7 @@
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" 
                                                      class="btn btn-default btn-flat">
-                                            Logout
+                                            Salir
                                         </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -121,11 +121,11 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('usuarios.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                        <li><a href="{{route('usuarios.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                         @if(Auth::user()->id_roles == 2)
-                        <li class="disabled"><a href="{{route('usuarios.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                        <li class="disabled"><a href="{{route('usuarios.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                          @else
-                          <li><a href="{{route('usuarios.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                          <li><a href="{{route('usuarios.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                         @endif
                     </ul>
                 </li>
@@ -133,31 +133,31 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-address-card-o"></i><span>NOTICIAS</span>
+                        <i class="fa fa-newspaper-o"></i><span>NOTICIAS</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
 
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i> Categorias Noticias
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias Noticias
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                               <li><a href="{{route('categorias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                               <li><a href="{{route('categorias.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                                <li><a href="{{route('categorias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                <li><a href="{{route('categorias.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                              
                             </ul>
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-video-camera"></i> Noticias
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Noticias
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('noticias.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                                <li><a href="{{route('noticias.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                          <li><a href="{{route('noticias.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                          <li><a href="{{route('noticias.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                                 
                              
                             </ul>
@@ -173,31 +173,31 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-address-card-o"></i><span>ACTIVIDADES</span>
+                        <i class="fa fa-pencil-square-o"></i><span>ACTIVIDADES</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
 
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i> Categorias Actividades
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias Actividades
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                               <li><a href="{{route('categoriasActividades.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                               <li><a href="{{route('categoriasActividades.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                                <li><a href="{{route('categoriasActividades.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                <li><a href="{{route('categoriasActividades.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                              
                             </ul>
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-video-camera"></i> Actividades
+                            <a href="#"><i class="fa fa-pencil-square-o"></i> Actividades
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('actividades.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                                <li><a href="{{route('actividades.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                             <li><a href="{{route('actividades.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                             <li><a href="{{route('actividades.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                                 
                              
                             </ul>
@@ -214,31 +214,31 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-address-card-o"></i><span>ATRACTIVOS TURISTICOS</span>
+                        <i class="fa fa-suitcase"></i><span>ATRACTIVOS TURISTICOS</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
 
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i> Categorias
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                               <li><a href="{{route('categoriasTuristicas.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                               <li><a href="{{route('categoriasTuristicas.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                                <li><a href="{{route('categoriasTuristicas.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                <li><a href="{{route('categoriasTuristicas.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                              
                             </ul>
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-video-camera"></i> Atractivos turisticos
+                            <a href="#"><i class="fa fa-suitcase"></i> Atractivos turisticos
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('turistico.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                                <li><a href="{{route('turistico.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                             <li><a href="{{route('turistico.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                             <li><a href="{{route('turistico.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                                 
                              
                             </ul>
@@ -255,31 +255,31 @@
 
                  <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-address-card-o"></i><span>HOSPEDAJE</span>
+                        <i class="fa fa-bed"></i><span>HOSPEDAJE</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
 
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i> Categorias
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                               <li><a href="{{route('categoriasHospedaje.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                               <li><a href="{{route('categoriasHospedaje.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                                <li><a href="{{route('categoriasHospedaje.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                <li><a href="{{route('categoriasHospedaje.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                              
                             </ul>
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-video-camera"></i> Hospedaje
+                            <a href="#"><i class="fa fa-bed"></i> Hospedaje
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-circle-o"></i>Listado</a></li>
+                                <li><a href="{{route('hospedaje.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                             <li><a href=""><i class="fa fa-circle-o"></i> Agregar</a></li>
+                             <li><a href="{{route('hospedaje.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                                 
                              
                             </ul>
@@ -301,7 +301,7 @@
                 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-address-card-o"></i><span>ACTUALIZACIONES</span>
+                        <i class="fa fa-server"></i><span>ACTUALIZACIONES</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -311,7 +311,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('redes.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('redes.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                              
                             </ul>
                         </li>
@@ -321,7 +321,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('videos.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('videos.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                                 
                              
                             </ul>
@@ -329,11 +329,11 @@
                         
 
                         <li>
-                            <a href="#"><i class="fa fa-video-camera"></i> Footer
+                            <a href="#"><i class="fa fa-bookmark"></i> Footer
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('footer.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('footer.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                                 
                              
                             </ul>
@@ -353,45 +353,45 @@
                     <ul class="treeview-menu">
 
                         <li>
-                            <a href="#"><i class="fa fa-book"></i> ¿Cómo Llegar?
+                            <a href="#"><i class="fa fa-map-marker"></i> ¿Cómo Llegar?
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                  <li><a href="{{route('llegar.index')}}"><i class="fa fa-circle-o"></i>Listar</a></li>
-                                <li><a href="{{route('llegar.create')}}"><i class="fa fa-circle-o"></i>Agregar</a></li>
+                                  <li><a href="{{route('llegar.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('llegar.create')}}"><i class="fa fa-file"></i>Agregar</a></li>
                              
                             </ul>
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-book"></i> Mapas
+                            <a href="#"><i class="fa fa-map-o"></i> Mapas
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                 <li><a href="{{route('mapas.index')}}"><i class="fa fa-circle-o"></i>Listado</a></li>
+                                 <li><a href="{{route('mapas.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                                    <li><a href="{{route('mapas.create')}}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                                    <li><a href="{{route('mapas.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                              
                             </ul>
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-book"></i> Preguntas
+                            <a href="#"><i class="fa fa-question-circle"></i> Preguntas
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('preguntas.index')}}"><i class="fa fa-circle-o"></i>Listar</a></li>
-                                <li><a href="{{route('preguntas.create')}}"><i class="fa fa-circle-o"></i>Agregar</a></li>
+                                <li><a href="{{route('preguntas.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('preguntas.create')}}"><i class="fa fa-file"></i>Agregar</a></li>
                              
                             </ul>
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-book"></i> ¿Que traer?
+                            <a href="#"><i class="fa fa-shopping-bag"></i> ¿Que traer?
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('traer.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('traer.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                              
                             </ul>
                         </li>
@@ -401,18 +401,18 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('material.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('material.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                              
                             </ul>
                         </li>
 
 
                            <li>
-                            <a href="#"><i class="fa fa-book"></i> Turismo Comunitario
+                            <a href="#"><i class="fa fa-plane"></i> Turismo Comunitario
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('turismo.index')}}"><i class="fa fa-circle-o"></i>Actualizar</a></li>
+                                <li><a href="{{route('turismo.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                              
                             </ul>
                         </li>

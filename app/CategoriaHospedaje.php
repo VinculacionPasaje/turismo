@@ -16,6 +16,10 @@ class CategoriaHospedaje extends Model
         'contador_visitas',
     ];
 
+    public function hospedaje(){
+        return $this->hasMany(Hospedaje::class);
+    }
+
   
      
     public function scopeName($query, $table_search){

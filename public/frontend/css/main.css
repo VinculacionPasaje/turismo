@@ -332,7 +332,7 @@ Author URL: http://shapebootstrap.net
 
 
 .slider_btn {  
-  background: #ae0600;
+  background: #c3221d;;
   font-weight: bold;
 
   border-radius: 5px;
@@ -350,7 +350,8 @@ Author URL: http://shapebootstrap.net
 .slider_btn:hover,.slider_btn:focus{   
   text-decoration: none;
   outline: none;
-  color: yellow;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
 
 .slider_btn2 {  

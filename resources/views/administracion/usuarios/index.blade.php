@@ -24,12 +24,16 @@
 
                     <div class="box-tools">
                          {!! Form::open(['route'=>'usuarios.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
-                        <div class="input-group input-group-sm" style="width: 200px;">
+                        <div class="input-group input-group-sm" style="width: 350px;">
                             {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por nombre']) !!}
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                             </div>
+
+                            <div class="input-group-btn">
+                                    <a href="{{route('usuarios.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
+                           </div>
                         </div>
 
                         {!! Form::close() !!}

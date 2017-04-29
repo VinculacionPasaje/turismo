@@ -67,6 +67,7 @@
         Route::resource('administracion/categoriasActividades','CatActividadesController');
         Route::resource('administracion/categoriasTuristicas','CategoriaTuristicaController');
          Route::resource('administracion/categoriasHospedaje','CategoriaHospedajeController');
+           Route::resource('administracion/categoriasAlimentacion','CategoriaAlimentacionController');
 
 
         Route::get('/error',function(){

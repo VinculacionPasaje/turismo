@@ -293,7 +293,7 @@
                 </li>
 
 
-                    <li class="treeview">
+                <li class="treeview">
                     <a href="#">
                         <i class="fa fa-cutlery"></i><span>ALIMENTACIÓN</span>
                         <i class="fa fa-angle-left pull-right"></i>
@@ -314,6 +314,47 @@
 
                          <li>
                             <a href="#"><i class="fa fa-cutlery"></i> Alimentación
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                             <li><a href=""><i class="fa fa-file"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+                        
+
+        
+
+                        
+                    </ul>
+                </li>
+
+
+
+                 <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-sign-language"></i><span>DIVERSIÓN</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('categoriasDiversion.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                                <li><a href="{{route('categoriasDiversion.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-sign-language"></i> Diversión
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">

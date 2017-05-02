@@ -16,7 +16,9 @@ class CategoriaAlimentacion extends Model
         'contador_visitas',
     ];
 
-    
+      public function alimentacion(){
+        return $this->hasMany(Alimentacion::class);
+    }
 
   
      

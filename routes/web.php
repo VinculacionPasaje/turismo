@@ -64,6 +64,8 @@
         Route::resource('administracion/actividades','ActividadesController');
         Route::resource('administracion/hospedaje','HospedajeController');
          Route::resource('administracion/turistico','TuristicoController');
+          Route::resource('administracion/alimentacion','AlimentacionController');
+          Route::resource('administracion/diversion','DiversionController');
         Route::resource('administracion/categoriasActividades','CatActividadesController');
         Route::resource('administracion/categoriasTuristicas','CategoriaTuristicaController');
          Route::resource('administracion/categoriasHospedaje','CategoriaHospedajeController');

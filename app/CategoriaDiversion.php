@@ -16,7 +16,9 @@ class CategoriaDiversion extends Model
         'contador_visitas',
     ];
 
-    
+    public function diversion(){
+        return $this->hasMany(Diversion::class);
+    }
 
   
      

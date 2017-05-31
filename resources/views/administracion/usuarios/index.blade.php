@@ -57,9 +57,15 @@
                                 @foreach($busqueda as $usuario)
                                 @if($usuario->estado !=0)
                                     <tr data-id="{{$usuario->id}}">
-                                        <td>
-                                            <img src="{{url('uploads/'.$usuario->path)}}" alt="" style="width:70px;"/>
-                                        </td>
+                                        @if($usuario->path!=null)
+                                            <td>
+                                                <img src="{{url('fotos/'.$usuario->path)}}" alt="" style="width:50px;"/>
+                                            </td>
+                                        @else
+                                            <td>
+                                                <img src="{{url('fotos/no-avatar.png')}}" alt="" style="width:50px;"/>
+                                            </td>
+                                        @endif
                                        
                                         <td>{{$usuario->name}}</td>
                                         <td>{{$usuario->apellido}}</td>

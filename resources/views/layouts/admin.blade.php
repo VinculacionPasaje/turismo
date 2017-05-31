@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
-    <link rel="shortcut icon" href="{{url('frontend/images/ico/icon.ico')}}">
+    <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="background: #ecf0f5 !important;">
 <div class="wrapper" id="contenido_principal">
@@ -51,17 +51,35 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <small class="bg-red">Online</small>
-                            <img src="" class="user-image" alt="User Image">
+                            @if(Auth::user()->path!=null)
+                                    <td>
+                                        <img src="{{url('fotos/'.Auth::user()->path)}}" class="user-image" alt="User Image"/>
+                                    </td>
+                                @else
+                                    <td>
+                                        <img src="{{url('fotos/no-avatar.png')}}" class="user-image" alt="User Image"/>
+                                    </td>
+                                @endif
+
+                            
                             <span class="hidden-xs">{!! Auth::user()->name.' '.Auth::user()->apellido !!}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
 
-                                <img src="" class="img-circle" alt="User Image">
+                                  @if(Auth::user()->path!=null)
+                                    <td>
+                                        <img src="{{url('fotos/'.Auth::user()->path)}}" class="img-circle" alt="User Image"/>
+                                    </td>
+                                @else
+                                    <td>
+                                        <img src="{{url('fotos/no-avatar.png')}}" class="img-circle" alt="User Image"/>
+                                    </td>
+                                @endif
 
                                 <p>
-                                    Administrador
+                                   {!! Auth::user()->name.' '.Auth::user()->apellido !!}
                                 </p>
                             </li>
 
@@ -97,7 +115,16 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                <img src="" class="img-circle" alt="User Image">
+                @if(Auth::user()->path!=null)
+                    <td>
+                        <img src="{{url('fotos/'.Auth::user()->path)}}" class="img-circle" alt="User Image"/>
+                    </td>
+                @else
+                     <td>
+                        <img src="{{url('fotos/no-avatar.png')}}" class="img-circle" alt="User Image"/>
+                    </td>
+                @endif
+                
                 </div>
                 <div class="pull-left info">
                 <p>{!! Auth::user()->name.' '.Auth::user()->apellido !!}</p>

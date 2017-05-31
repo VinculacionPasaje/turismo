@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/perfect-scrollbar.min.css')}}">
+  
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
     <!-- CSRF Token -->
@@ -127,7 +127,7 @@
             <div class="pattern-overlay" style="background: url({{url('frontend/images/trama1.gif')}});">
 
                           
-
+                            <!--
                         <div id="topbar">
                                     <div class="line ">
 
@@ -137,6 +137,7 @@
                                                                                     
                                     </div>  
                             </div> 
+                            -->
 
                          
 
@@ -224,7 +225,7 @@
                                
                                
 
-                                <a class="slider_btn" href="#">Ven a descubrirlo</a>
+                                <a class="slider_btn" href="#turismo">Descubre los Atractivos Turísticos</a>
 
                                 </div>
 
@@ -380,11 +381,11 @@
 
                        
                         
-                        <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
+                        <li class="negrita"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
 
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">LOGIN</a></li>
+                            <li class="negrita"><a href="{{ route('login') }}">LOGIN</a></li>
                         
                         @else
                             <li class="dropdown">
@@ -432,7 +433,7 @@
  <section id="blog">
      <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center">Últimas noticias</h2>
+                <h2 class="section-title text-center"><a id="turismo">Últimas noticias</a></h2>
                 
             </div>
 
@@ -966,6 +967,33 @@
                 });
 		
 		
+        });
+
+        $(function(){
+
+            $('a[href*=#]').click(function() {
+
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+                && location.hostname == this.hostname) {
+
+                    var $target = $(this.hash);
+
+                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+
+                    if ($target.length) {
+
+                        var targetOffset = $target.offset().top;
+
+                        $('html,body').animate({scrollTop: targetOffset}, 1000);
+
+                        return false;
+
+                    }
+
+            }
+
+        });
+
         });
 
 

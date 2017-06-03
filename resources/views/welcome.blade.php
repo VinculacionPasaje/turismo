@@ -334,11 +334,18 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  <li class="dropdown-submenu">
-                                        <a  href="#">Hospedaje</a>
+                                        <a href="{{url ('hospedaje')}}">Hospedaje</a>
                                         <ul class="dropdown-menu">
-                                                <li><a  href="#">Hosterías</a></li>
-                                                <li><a  href="#">Hoteles</a></li>
-                                                 <li><a  href="#">Hostales</a></li>
+                                            @if($categoriasHospedaje->count())
+                                                    @foreach($categoriasHospedaje as $cat)
+
+                                                        <li><a href="{{url('categoriaHospedaje/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
@@ -370,7 +377,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  
-                                <li><a href="#">Dirección de Turismo</a></li>
+                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="#">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               
@@ -433,11 +440,163 @@
  <section id="blog">
      <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center"><a id="turismo">Últimas noticias</a></h2>
+                <h2 class="section-title text-center"><a id="turismo">Atractivos Turísticos</a></h2>
                 
-            </div>
+     </div>
 
          <div class="row">
+
+         <div class="col-lg-8 col-md-8 col-sm-12">
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+
+                        <article class="card">
+                                    <div class="card__wrapper">
+
+                                        <figure class="card__feature">
+                                        <img src="https://www.dropbox.com/s/z7gp2vanse5djxf/waves.jpg?raw=1" class="card__img" alt="waves" width="275" height="240">
+                                        </figure>
+
+                                        <div class="card__box">
+
+                                        <header class="card__item card__header">
+                                            
+                                            <h2 class="card__item card__item--small card__title">Blue Ocean Waves Crash</h2>
+                                        </header>
+
+                                        
+
+                                        <section class="card__item card__body">
+                                            <p>See the beautiful oceans of the Pacific coast where the water is so clean you can see the sand.</p>
+                                        </section>
+
+                                        </div>
+
+                                    </div>
+                        </article>
+                        </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+                <article class="card">
+                        <div class="card__wrapper">
+
+                            <figure class="card__feature">
+                            <img src="https://www.dropbox.com/s/r06tebu17sjfcca/bridge.jpg?raw=1" class="card__img" alt="Bridge" width="275" height="240">
+                            </figure>
+
+                            <div class="card__box">
+
+                            <header class="card__item card__header">
+                            
+                                <h2 class="card__item card__item--small card__title">Long Exposure River Bridge</h2>
+                            </header>
+
+                            
+
+                            <section class="card__item card__body">
+                                <p>Long exposure photography is when you leave the shutter open longers than usual to pick up more light.</p>
+                            </section>
+
+                            </div>
+
+                        </div>
+                </article>
+
+                </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+                <article class="card">
+                        <div class="card__wrapper">
+
+                            <figure class="card__feature">
+                            <img src="https://www.dropbox.com/s/r06tebu17sjfcca/bridge.jpg?raw=1" class="card__img" alt="Bridge" width="275" height="240">
+                            </figure>
+
+                            <div class="card__box">
+
+                            <header class="card__item card__header">
+                            
+                                <h2 class="card__item card__item--small card__title">Long Exposure River Bridge</h2>
+                            </header>
+
+                            
+
+                            <section class="card__item card__body">
+                                <p>Long exposure photography is when you leave the shutter open longers than usual to pick up more light.</p>
+                            </section>
+
+                            </div>
+
+                        </div>
+                </article>
+
+                </div>
+
+                 <div class="col-lg-6 col-md-6 col-sm-6">
+
+                     <div class="blog-post blog-large">
+                        <article>
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
+                                    
+                                </div>
+                                <div class="entry-date">25 November 2014</div>
+                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
+                            </header>
+
+                            <div class="entry-content">
+                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
+                                <a class="btn btn-danger" href="#">Leer más</a>
+                            </div>
+
+                            <footer class="entry-meta">
+                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
+                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                            </footer>
+                        </article>
+                    </div>
+                    </div>
+
+
+                     <div class="col-lg-6 col-md-6 col-sm-6">
+
+                     <div class="blog-post blog-large">
+                        <article>
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
+                                    
+                                </div>
+                                <div class="entry-date">25 November 2014</div>
+                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
+                            </header>
+
+                            <div class="entry-content">
+                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
+                                <a class="btn btn-danger" href="#">Leer más</a>
+                            </div>
+
+                            <footer class="entry-meta">
+                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
+                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                            </footer>
+                        </article>
+                    </div>
+                    </div>
+
+         </div>
+
+         
+     
+
+                <!--
             
                 <div class="col-lg-8 col-md-8 col-sm-6">
                     <div class="blog-post blog-large" >
@@ -463,6 +622,7 @@
                             </footer>
                         </article>
                     </div>
+                   
 
                     <div class="col-lg-6 col-md-6 col-sm-6">
 
@@ -518,7 +678,9 @@
                     </div>
                     </div>
 
-                </div><!--/.col-sm-8-->
+                </div>-->
+
+              
 
                  <div class="col-lg-4 col-md-4 col-sm-6" >
                     

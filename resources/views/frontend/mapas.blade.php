@@ -41,29 +41,7 @@
         <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner">
 
             
-            <div id="topbar">
-                        <div class="line ">
-
-                            <div  class="col-xs-4 col-md-4 fondo1">
-                                        
-                                        
-                                    </div>
-
-                            <div  class="col-xs-4 col-md-4 fondo2">
-                                        
-                                        
-                                    </div>
-
-                            <div  class="col-xs-4 col-md-4 fondo3">
-                                        
-                                        
-                                    </div>
-
-                         
-                        
-                        
-                        </div>  
-            </div> 
+            
 
             
 

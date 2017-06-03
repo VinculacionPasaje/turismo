@@ -9,7 +9,7 @@
    
   <!-- /meta -->
 
-   <title>¿Cómo Llegar?</title>
+   <title>Hospedaje</title>
 
    <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/font-awesome.min.css')}}">
@@ -31,7 +31,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: #f5f5f5;">
+<body id="home" class="homepage" style="background: #fff;">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -92,13 +92,13 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  <li class="dropdown-submenu">
-                                       <a href="{{url ('actividades')}}">Actividades</a>
+                                        <a href="{{url ('actividades')}}">Actividades</a>
                                         <ul class="dropdown-menu">
 
                                         @if($categoriasAct->count())
                                             @foreach($categoriasAct as $cat)
 
-                                               <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
 
 
@@ -107,9 +107,10 @@
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                       <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                       
                                         <ul class="dropdown-menu">
-                                               @if($categoriasTu->count())
+                                                @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
 
                                                         <li><a href="{{url('categoriaTuristico/'.$cat->id)}}">{{$cat->categoria}}</a></li>
@@ -120,7 +121,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>               
+                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>              
                             </ul>
                         </li>    
 
@@ -129,12 +130,19 @@
                           <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Hospedaje</a>
+                                  <li class="dropdown-submenu">
+                                        <a href="{{url ('hospedaje')}}">Hospedaje</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Hosterías</a></li>
-                                                <li><a tabindex="-1" href="#">Hoteles</a></li>
-                                                 <li><a tabindex="-1" href="#">Hostales</a></li>
+                                            @if($categoriasHospedaje->count())
+                                                    @foreach($categoriasHospedaje as $cat)
+
+                                                        <li><a href="{{url('categoriaHospedaje/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
@@ -195,16 +203,33 @@
     </header>
 
 
-<div class="container">
+<div class='oculto'>
+
+<img class="oculto" src="{{url('frontend/images/actividad2.jpg')}}" alt="">
+
+</div>
+<p class="sliderTitle4"> Hospedaje </p>
+
+<div class="container" style="padding-bottom: 70px;">
+
+
+
        <div class="row header">
             <div class="col-md-12">
 
-                    <p class="contact"> ¿Cómo llegar? </p>
+                    <p class="contact"> Todas los Hospedajes </p>
+
+
                 
             </div>
         </div>
-         <div class= "col-xs-12 col-md-12" aling="center">
-            <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
+
+         <div class= "col-xs-12 col-md-12">
+            <p style="font-color='black';text-align: justify; font-size: 16px" > 
+
+            Falta descripcion de hospedaje
+
+             </p>
 
             
         </div>
@@ -212,89 +237,66 @@
 
         
 
-     
-
-    <div class="row" style="padding-top:35px;">
-
-        @if(count($llegar) >0)
-
-         
 
 
-        <div class="col-md-6 col-lg-6">
+           @foreach($categoriasHospedaje as $cat)
 
-       
+          <div class="col-md-12">
 
-        
-        <div class="alert alert-success alert-dismissable desaparecer">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <p><strong>El mapa aparecerá en la sección de abajo </strong></p>
-        </div>
+                    <p class="actividades"> {{$cat->categoria}} </p>
 
-        
-            <!-- begin panel group -->
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            @if(count($llegar) >0)  
-
-            @foreach($llegar as $item)
                 
-                <!-- panel 1 -->
-                <div class="panel panel-default">
-                    <!--wrap panel heading in span to trigger image change as well as collapse -->
-                    <span class="side-tab" data-target="#tab{{$item->id}}" data-toggle="tab" role="tab" aria-expanded="false">
-                        <div class="panel-heading" role="tab" id="headingOne"data-toggle="collapse" data-parent="#accordion" href="#{{$item->id}}" aria-expanded="true" aria-controls="{{$item->id}}">
-                            <h4 class="panel-title">{{$item->titulo}}</h4>
-                        </div>
-                    </span>
-                    
-                    <div id="{{$item->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            {!! $item->contenido !!}
-                        </div>
-                    </div>
-                </div> 
-                <!-- / panel 1 -->
-                
-                @endforeach
-            @endif
-            </div> <!-- / panel-group -->
+            </div>
+        
+          
 
             
-             
-        </div> <!-- /col-md-6 -->
-        
-        <div class="col-md-6 col-lg-6">
-            <!-- begin macbook pro mockup -->
-            <div class="md-macbook-pro md-glare">
-                <div class="md-lid">
-                    <div class="md-screen">
-                    <!-- content goes here -->                
-                        <div class="tab-featured-image">
-                            <div class="tab-content">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
-                            @if(count($llegar) >0)  
-
-                               @foreach($llegar as $item)
-                                <div class="tab-pane" id="tab{{$item->id}}">
-										{!! $item->script !!}
+                    @foreach($actividades as $act)            
+                        @if($cat->id == $act->id_categorias )
                                         
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom:25px;">
+
+                                <div class="blog-post blog-large">
+                                    <article>
+                                        <header class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt="">
+                                                
+                                            </div>
+                                            <div class="entry-date">{{$act->fecha_post}}</div>
+                                            <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
+                                        </header>
+
+                                        <div class="entry-content">
+                                            <P class="negro2">{{$act->descripcion}}</P>
+                                            {!!link_to('hospedaje/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'btn btn-danger btn-md'], $secure = null)!!}
+                                          
+                                        </div>
+
+                                    </article>
                                 </div>
-
-                                @endforeach
-                            @endif
+                         </div>
                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </div> <!-- /col-md-6 -->
+                                            
+                                    
+                                            
+                                        
+                            @endif
+                     @endforeach 
+                 </div>
+               
+                                     
+                                           
+         @endforeach   
+        
 
 
-       
-        @endif
-    </div>  <!-- /row -->
+        
+
+    
 </div> <!-- /container -->
 
 
@@ -414,10 +416,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-

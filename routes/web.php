@@ -25,6 +25,11 @@
          Route::get('categoriaTuristico/{id}', 'FrontController@category_turistico');
          Route::get('atractivosTuristicos/{id}', 'FrontController@atractivosTuristicos');
 
+         // para los menus de Hospedaje
+         Route::get('hospedaje', 'FrontController@todos_hospedajes');
+         Route::get('categoriaHospedaje/{id}', 'FrontController@category_hospedaje');
+         Route::get('hospedaje/{id}', 'FrontController@hospedaje');
+
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');

@@ -30,6 +30,16 @@
          Route::get('categoriaHospedaje/{id}', 'FrontController@category_hospedaje');
          Route::get('hospedaje/{id}', 'FrontController@hospedaje');
 
+          // para los menus de Alimentacion
+         Route::get('alimentacion', 'FrontController@todos_alimentacion');
+         Route::get('categoriaAlimentacion/{id}', 'FrontController@category_alimentacion');
+         Route::get('alimentacion/{id}', 'FrontController@alimentacion');
+
+         // para los menus de Diversion
+         Route::get('diversion', 'FrontController@todos_diversion');
+         Route::get('categoriaDiversion/{id}', 'FrontController@category_diversion');
+         Route::get('diversion/{id}', 'FrontController@diversion');
+
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');

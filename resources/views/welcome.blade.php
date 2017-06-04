@@ -349,25 +349,36 @@
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a  href="#">Alimentación</a>
+                                        <a href="{{url ('alimentacion')}}">Alimentacion</a>
                                         <ul class="dropdown-menu">
-                                                <li><a  href="#">Restaurantes</a></li>
-                                                <li><a  href="#">Cafeterias</a></li>
-                                                <li><a  href="#">Fuentes de Soda</a></li>
-                                                
-                                        </ul>
-                                 </li> 
+                                            @if($categoriasAlimentacion->count())
+                                                    @foreach($categoriasAlimentacion as $cat)
 
-                                  <li class="dropdown-submenu">
-                                        <a  href="#">Diversión</a>
-                                        <ul class="dropdown-menu">
-                                                <li><a href="#">Discotecas</a></li>
-                                                <li><a  href="#">Centro de eventos</a></li>
-                                                <li><a  href="#">Bares</a></li>
-                                                 <li><a  href="#">Karaokes</a></li>
+                                                        <li><a href="{{url('categoriaAlimentacion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
                                                 
                                         </ul>
-                                 </li>   
+                                 </li>
+
+                                 <li class="dropdown-submenu">
+                                        <a href="{{url ('diversion')}}">Diversion</a>
+                                        <ul class="dropdown-menu">
+                                            @if($categoriasDiversion->count())
+                                                    @foreach($categoriasDiversion as $cat)
+
+                                                        <li><a href="{{url('categoriaDiversion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
+                                        </ul>
+                                 </li>
                                          
                             </ul>
                         </li>    

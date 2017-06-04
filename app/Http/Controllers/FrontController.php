@@ -17,6 +17,8 @@ use App\Actividades;
 use App\CategoriaTuristica;
 use App\Turistico;
 use App\Hospedaje;
+use App\Diversion;
+use App\Alimentacion;
 use App\CategoriaHospedaje;
 use App\CategoriaDiversion;
 use App\CategoriaAlimentacion;
@@ -132,6 +134,38 @@ class FrontController extends Controller
 
     }
 
+    public function todos_alimentacion(){
+
+        $redes= Redes::where('estado',1)->get();
+        $footer= Footer::where('estado',1)->get();
+        $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
+        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        $actividades= Alimentacion::where('estado',1)->get();
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+        
+        return view('frontend/todosAlimentacion', compact('redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+
+
+    }
+
+     public function todos_diversion(){
+
+        $redes= Redes::where('estado',1)->get();
+        $footer= Footer::where('estado',1)->get();
+        $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
+        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        $actividades= Diversion::where('estado',1)->get();
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+        
+        return view('frontend/todosDiversion', compact('redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+
+
+    }
+
 
      public function actividades($id){
         
@@ -218,6 +252,68 @@ class FrontController extends Controller
                 
             
                 return view('frontend/hospedaje',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
+        }
+     
+    }
+
+     public function alimentacion($id){
+        
+        $actividad = Alimentacion::find($id); //aqui encuentro la actividad selecciona
+
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+                $categoriasAct = CategoriaAlimentacion::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece
+                $actividades= Alimentacion::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+                $redes= Redes::where('estado',1)->get(); //para las redes sociales
+                $footer= Footer::where('estado',1)->get(); //footer
+                $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+                $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+                $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+                $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+                $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+
+                $variable=0;
+                $actividad->contador_visitas++;
+                $variable= $actividad;
+                $actividad->save();
+            
+                
+            
+                return view('frontend/alimentacion',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
+        }
+     
+    }
+
+    public function diversion($id){
+        
+        $actividad = Diversion::find($id); //aqui encuentro la actividad selecciona
+
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+                $categoriasAct = CategoriaDiversion::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece
+                $actividades= Diversion::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+                $redes= Redes::where('estado',1)->get(); //para las redes sociales
+                $footer= Footer::where('estado',1)->get(); //footer
+                $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+                $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+                $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+                $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+                $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+
+                $variable=0;
+                $actividad->contador_visitas++;
+                $variable= $actividad;
+                $actividad->save();
+            
+                
+            
+                return view('frontend/diversion',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
         }
      
     }
@@ -309,6 +405,71 @@ class FrontController extends Controller
         
        
         return view('frontend/catHospedaje',compact('categoriasAct', 'categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        }
+     
+    }
+
+     public function category_alimentacion($id){
+        
+       
+        $categoriasAct = CategoriaAlimentacion::find($id); //aqui encuentro a cual categoria pertenece
+        if($categoriasAct==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
+        $actividades= Alimentacion::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+         $redes= Redes::where('estado',1)->get(); //para las redes sociales
+         $footer= Footer::where('estado',1)->get(); //footer
+         $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+
+         $variable=0;
+         $categoriasAct->contador_visitas++;
+         $variable= $categoriasAct;
+         $categoriasAct->save();
+         
+      
+        
+       
+        return view('frontend/catAlimentacion',compact('categoriasAct', 'categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        }
+     
+    }
+
+
+ public function category_diversion($id){
+        
+       
+        $categoriasAct = CategoriaDiversion::find($id); //aqui encuentro a cual categoria pertenece
+        if($categoriasAct==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
+        $actividades= Diversion::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+         $redes= Redes::where('estado',1)->get(); //para las redes sociales
+         $footer= Footer::where('estado',1)->get(); //footer
+         $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+
+         $variable=0;
+         $categoriasAct->contador_visitas++;
+         $variable= $categoriasAct;
+         $categoriasAct->save();
+         
+      
+        
+       
+        return view('frontend/catDiversion',compact('categoriasAct', 'categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
         }
      
     }

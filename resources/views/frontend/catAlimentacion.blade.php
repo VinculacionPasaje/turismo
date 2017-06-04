@@ -1,7 +1,7 @@
 @extends('layouts.base2')
 
 @section('title')
-<title>{{$actividad->titulo}}</title>
+<title>{{$categoriasAct->categoria}}</title>
 
 @endsection
 
@@ -29,7 +29,7 @@
                                  <li class="dropdown-submenu">
                                          <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
-                                                @if($categoriasTu->count())
+                                               @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
 
                                                         <li><a href="{{url('categoriaTuristico/'.$cat->id)}}">{{$cat->categoria}}</a></li>
@@ -40,7 +40,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>         
+                               <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>              
                             </ul>
                         </li>    
 
@@ -64,26 +64,37 @@
                                                 
                                         </ul>
                                  </li>
-                                 <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Alimentación</a>
-                                        <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Restaurantes</a></li>
-                                                <li><a tabindex="-1" href="#">Cafeterias</a></li>
-                                                <li><a tabindex="-1" href="#">Fuentes de Soda</a></li>
-                                                
-                                        </ul>
-                                 </li> 
-
                                   <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Diversión</a>
+                                        <a href="{{url ('alimentacion')}}">Alimentacion</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Discotecas</a></li>
-                                                <li><a tabindex="-1" href="#">Centro de eventos</a></li>
-                                                <li><a tabindex="-1" href="#">Bares</a></li>
-                                                 <li><a tabindex="-1" href="#">Karaokes</a></li>
+                                            @if($categoriasAlimentacion->count())
+                                                    @foreach($categoriasAlimentacion as $cat)
+
+                                                        <li><a href="{{url('categoriaAlimentacion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
                                                 
                                         </ul>
-                                 </li>   
+                                 </li>
+
+                                 <li class="dropdown-submenu">
+                                        <a href="{{url ('diversion')}}">Diversion</a>
+                                        <ul class="dropdown-menu">
+                                            @if($categoriasDiversion->count())
+                                                    @foreach($categoriasDiversion as $cat)
+
+                                                        <li><a href="{{url('categoriaDiversion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
+                                        </ul>
+                                 </li>
                                          
                             </ul>
                         </li>    
@@ -105,33 +116,38 @@
 
 @endsection
 
+@section('menu2')
+
+         @if($actividades->count())
+                @foreach($actividades as $act)
+
+                    <li><a href="{{url('alimentacion/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right" style="padding-right: 15px;"></i>{{$act->nombre_lugar}}</a></li>
+
+                @endforeach
+        @endif
+
+                
+                
+                
+@endsection
+
 @section('encabezado')
 
 {{$categoriasAct->categoria}}
 
 @endsection
 
-@section('menu2')
-
-        @if($actividades->count())
-                @foreach($actividades as $act)
-
-                    <li><a href="{{url('hospedaje/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right" style="padding-right: 15px;"></i>{{$act->titulo}}</a></li>
-
-                @endforeach
-        @endif
-
-@endsection
-
 
 @section('contenido')
 
+
+
 <div class= "col-xs-12 col-md-12" aling="center">
- <p class="contact2"> {{$actividad->titulo}} </p>
+ <p class="contact2"> {{$categoriasAct->categoria}} </p>
         <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
 
-{!! $actividad->contenido !!}
+{!! $categoriasAct->descripcion !!}
 @endsection
 
 

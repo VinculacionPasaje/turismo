@@ -1,7 +1,7 @@
 @extends('layouts.base2')
 
 @section('title')
-<title>{{$actividad->titulo}}</title>
+<title>{{$actividad->nombre_lugar}}</title>
 
 @endsection
 
@@ -64,26 +64,37 @@
                                                 
                                         </ul>
                                  </li>
-                                 <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Alimentación</a>
+                                   <li class="dropdown-submenu">
+                                        <a href="{{url ('alimentacion')}}">Alimentacion</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Restaurantes</a></li>
-                                                <li><a tabindex="-1" href="#">Cafeterias</a></li>
-                                                <li><a tabindex="-1" href="#">Fuentes de Soda</a></li>
-                                                
-                                        </ul>
-                                 </li> 
+                                            @if($categoriasAlimentacion->count())
+                                                    @foreach($categoriasAlimentacion as $cat)
 
-                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Diversión</a>
-                                        <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Discotecas</a></li>
-                                                <li><a tabindex="-1" href="#">Centro de eventos</a></li>
-                                                <li><a tabindex="-1" href="#">Bares</a></li>
-                                                 <li><a tabindex="-1" href="#">Karaokes</a></li>
+                                                        <li><a href="{{url('categoriaAlimentacion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
                                                 
                                         </ul>
-                                 </li>   
+                                 </li>
+
+                                 <li class="dropdown-submenu">
+                                        <a href="{{url ('diversion')}}">Diversion</a>
+                                        <ul class="dropdown-menu">
+                                            @if($categoriasDiversion->count())
+                                                    @foreach($categoriasDiversion as $cat)
+
+                                                        <li><a href="{{url('categoriaDiversion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
+                                        </ul>
+                                 </li>
                                          
                             </ul>
                         </li>    
@@ -116,7 +127,7 @@
         @if($actividades->count())
                 @foreach($actividades as $act)
 
-                    <li><a href="{{url('hospedaje/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right" style="padding-right: 15px;"></i>{{$act->titulo}}</a></li>
+                    <li><a href="{{url('diversion/'.$act->id)}}"><i class="glyphicon glyphicon-chevron-right" style="padding-right: 15px;"></i>{{$act->nombre_lugar}}</a></li>
 
                 @endforeach
         @endif
@@ -127,7 +138,7 @@
 @section('contenido')
 
 <div class= "col-xs-12 col-md-12" aling="center">
- <p class="contact2"> {{$actividad->titulo}} </p>
+ <p class="contact2"> {{$actividad->nombre_lugar}} </p>
         <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
 

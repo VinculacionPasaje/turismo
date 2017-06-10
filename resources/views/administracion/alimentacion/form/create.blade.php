@@ -9,9 +9,9 @@
                         </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
-                         <div class="form-group">
+                    <div class="form-group">
                             {!! Form::label('Fecha de Publicación') !!}
-                            <div class="input-group">
+                        <div class="input-group">
                             <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                             </div>

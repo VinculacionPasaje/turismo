@@ -310,11 +310,12 @@ Author URL: http://shapebootstrap.net
 
 
 .slider_btn3 {  
-  background: rgb(181, 0, 8);
+  background: rgb(0, 92, 163);
 
   border-radius: 5px;
   color: #fff;
-  font-size: 16px;
+      font-size: 18px;
+    font-weight: bold;
   display: inline-block;
   font-family: "Varela",sans-serif;
   margin-top: 10px;
@@ -327,7 +328,7 @@ Author URL: http://shapebootstrap.net
 .slider_btn3:hover,.slider_btn3:focus{   
   text-decoration: none;
   outline: none;
-  color: yellow;
+  text-shadow: 1px 1px 1px black;
 }
 
 
@@ -1421,11 +1422,11 @@ margin: 0;
   border-color: #eee;
 }
 .panel-default > .panel-heading {
-  background-color: #d52b1e;
+  background-color: #005ca3;
   border-color: #eee;
 }
 .panel-default > .panel-heading .panel-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: normal;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
@@ -2971,10 +2972,9 @@ text-align: center;
   transform: scale(1) translateY(0px);
 }
 .card__box {
-  padding-right: 35px;
-  padding-left: 35px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 15px;
 }
 
 .card__item--small  {
@@ -3039,6 +3039,17 @@ text-align: center;
   transform: scale(0.95) translateY(10px);
 }
 */
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+.card:hover .card__wrapper {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.05);
+}
+.card:hover .card__wrapper:after {
+  transform: scale(0.95) translateY(10px);
+}
 
 .card {
   display: inline-block;

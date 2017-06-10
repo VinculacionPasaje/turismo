@@ -104,7 +104,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  
-                                <li><a href="#">Dirección de Turismo</a></li>
+                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="#">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               

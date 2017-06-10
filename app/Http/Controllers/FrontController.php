@@ -43,10 +43,11 @@ class FrontController extends Controller
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+        $actividades= Actividades::where('estado',1)->get();
 
       
        
-        return view('welcome', compact('categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
+        return view('welcome', compact('actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 
@@ -56,6 +57,9 @@ class FrontController extends Controller
           $footer= Footer::where('estado',1)->get();
           $categoriasAct= CategoriaActividades::where('estado',1)->get();
           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+          $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+            $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+            $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
           $variable=0;
        
@@ -68,7 +72,7 @@ class FrontController extends Controller
         
 
         
-        return view('frontend/TurismoComunitario', compact('turismo', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/TurismoComunitario', compact('turismo', 'categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
 
@@ -78,7 +82,9 @@ class FrontController extends Controller
           $footer= Footer::where('estado',1)->get();
           $categoriasAct= CategoriaActividades::where('estado',1)->get();
           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-
+            $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
           $variable=0;
        
          foreach($traer as $item){
@@ -90,7 +96,7 @@ class FrontController extends Controller
         
 
         
-        return view('frontend/Traer', compact('traer', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/Traer', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion','traer', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
     public function todas_actividades(){
@@ -100,7 +106,10 @@ class FrontController extends Controller
           $categoriasAct= CategoriaActividades::where('estado',1)->get();
           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
            $actividades= Actividades::where('estado',1)->get();
-            return view('frontend/todasActividades', compact('redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+           $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+            return view('frontend/todasActividades', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -112,8 +121,11 @@ class FrontController extends Controller
         $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
         $actividades= Turistico::where('estado',1)->get();
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
         
-        return view('frontend/todosAtractivos', compact('redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+        return view('frontend/todosAtractivos', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -181,6 +193,9 @@ class FrontController extends Controller
          $footer= Footer::where('estado',1)->get(); //footer
         $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
          $variable=0;
          $actividad->contador_visitas++;
@@ -189,7 +204,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/actividades',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/actividades',compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         
@@ -211,7 +226,9 @@ class FrontController extends Controller
                 $footer= Footer::where('estado',1)->get(); //footer
                 $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
                 $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-                
+                $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
                 $variable=0;
                 $actividad->contador_visitas++;
@@ -220,7 +237,7 @@ class FrontController extends Controller
             
                 
             
-                return view('frontend/atractivosTuristicos',compact('actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+                return view('frontend/atractivosTuristicos',compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
         }
      
     }
@@ -333,6 +350,9 @@ class FrontController extends Controller
          $footer= Footer::where('estado',1)->get(); //footer
          $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
          $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
          $variable=0;
          $categoriasAct->contador_visitas++;
@@ -342,7 +362,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/catActividades',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/catActividades',compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
         }
      
     }
@@ -362,6 +382,9 @@ class FrontController extends Controller
          $footer= Footer::where('estado',1)->get(); //footer
          $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
          $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
          $variable=0;
          $categoriasAct->contador_visitas++;
@@ -371,7 +394,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/catTuristico',compact('categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/catTuristico',compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
         }
      
     }
@@ -483,6 +506,9 @@ class FrontController extends Controller
           $footer= Footer::where('estado',1)->get();
            $categoriasAct= CategoriaActividades::where('estado',1)->get();
            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+           $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
            $variable=0;
        
@@ -493,7 +519,7 @@ class FrontController extends Controller
              $item->save();
          }
        
-        return view('frontend/Material', compact('material', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/Material', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'material', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
      public function pregunta(){
@@ -502,7 +528,10 @@ class FrontController extends Controller
          $footer= Footer::where('estado',1)->get();
           $categoriasAct= CategoriaActividades::where('estado',1)->get();
           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-        return view('frontend/Preguntas', compact('preguntas', 'redes', 'footer', 'categoriasAct', 'categoriasTu'));
+          $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+        return view('frontend/Preguntas', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'preguntas', 'redes', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
     public function mapas(){
@@ -512,6 +541,9 @@ class FrontController extends Controller
          $footer= Footer::where('estado',1)->get();
           $categoriasAct= CategoriaActividades::where('estado',1)->get();
           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+          $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
          $variable=0;
        if($mapita->count())
@@ -525,7 +557,7 @@ class FrontController extends Controller
 
        }
         
-        return view('frontend/mapas', compact('mapas', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/mapas', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'mapas', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
     public function llegar(){
@@ -535,6 +567,9 @@ class FrontController extends Controller
          $footer= Footer::where('estado',1)->get();
           $categoriasAct= CategoriaActividades::where('estado',1)->get();
           $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+          $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
          $variable=0;
        if($llegada->count())
@@ -548,7 +583,7 @@ class FrontController extends Controller
 
        }
         
-        return view('frontend/llegar', compact('llegar', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/llegar', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'llegar', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
      

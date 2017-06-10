@@ -11,6 +11,9 @@ use App\Footer;
 use App\CategoriaTuristica;
 use App\CategoriaActividades;
 use Illuminate\Support\Facades\Redirect;
+use App\CategoriaHospedaje;
+use App\CategoriaDiversion;
+use App\CategoriaAlimentacion;
 
 class MailController extends Controller
 {
@@ -21,7 +24,11 @@ class MailController extends Controller
          $footer= Footer::where('estado',1)->get();
            $categoriasAct= CategoriaActividades::where('estado',1)->get();
            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-        return view('frontend/contacto', compact('redes', 'footer', 'categoriasAct', 'categoriasTu'));
+            $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+        return view('frontend/contacto', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion','redes', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 

@@ -453,99 +453,72 @@
             <div class="section-header">
                 <h2 class="section-title text-center"><a id="turismo">Atractivos Turísticos</a></h2>
                 
-     </div>
+            </div>
 
-         <div class="row">
+         
 
-         <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="col-lg-8 col-md-8 col-sm-12">
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
 
-                        <article class="card">
-                                    <div class="card__wrapper">
 
-                                        <figure class="card__feature">
-                                        <img src="https://www.dropbox.com/s/z7gp2vanse5djxf/waves.jpg?raw=1" class="card__img" alt="waves" width="275" height="240">
-                                        </figure>
+                
+                    @foreach($categoriasAct as $cat)
 
-                                        <div class="card__box">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                        <header class="card__item card__header">
-                                            
-                                            <h2 class="card__item card__item--small card__title">Blue Ocean Waves Crash</h2>
-                                        </header>
+                                    <p class="actividades"> {{$cat->categoria}} </p>
 
-                                        
 
-                                        <section class="card__item card__body">
-                                            <p>See the beautiful oceans of the Pacific coast where the water is so clean you can see the sand.</p>
-                                        </section>
-
-                                        </div>
-
-                                    </div>
-                        </article>
+                                
                         </div>
+                    
+                    
 
-            <div class="col-lg-6 col-md-6 col-sm-12">
+                        
+                        
+                                @foreach($actividades as $act)            
+                                    @if($cat->id == $act->id_categorias )
 
-
-                <article class="card">
-                        <div class="card__wrapper">
-
-                            <figure class="card__feature">
-                            <img src="https://www.dropbox.com/s/r06tebu17sjfcca/bridge.jpg?raw=1" class="card__img" alt="Bridge" width="275" height="240">
-                            </figure>
-
-                            <div class="card__box">
-
-                            <header class="card__item card__header">
-                            
-                                <h2 class="card__item card__item--small card__title">Long Exposure River Bridge</h2>
-                            </header>
-
-                            
-
-                            <section class="card__item card__body">
-                                <p>Long exposure photography is when you leave the shutter open longers than usual to pick up more light.</p>
-                            </section>
-
-                            </div>
-
-                        </div>
-                </article>
-
-                </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
 
 
-                <article class="card">
-                        <div class="card__wrapper">
+                                        <article class="card">
+                                            <a href="{{url ('actividades/'.$act->id)}}">
+                                                <div class="card__wrapper">
 
-                            <figure class="card__feature">
-                            <img src="https://www.dropbox.com/s/r06tebu17sjfcca/bridge.jpg?raw=1" class="card__img" alt="Bridge" width="275" height="240">
-                            </figure>
+                                                    <figure class="card__feature">
+                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
+                                                    </figure>
 
-                            <div class="card__box">
+                                                    <div class="card__box">
 
-                            <header class="card__item card__header">
-                            
-                                <h2 class="card__item card__item--small card__title">Long Exposure River Bridge</h2>
-                            </header>
+                                                    <header class="card__item card__header">
+                                                        
+                                                        <h2 class="card__item card__item--small card__title">{{$act->titulo}}</h2>
+                                                    </header>
 
-                            
+                                                    
 
-                            <section class="card__item card__body">
-                                <p>Long exposure photography is when you leave the shutter open longers than usual to pick up more light.</p>
-                            </section>
+                                                    <section class="card__item card__body">
+                                                       <P class="negro2">{{$act->descripcion}}</P>
+                                                    </section>
 
-                            </div>
+                                                    </div>
 
-                        </div>
-                </article>
+                                                </div>
+                                            </a>
+                                         </article>
+                                     </div>
+              
+                                        @endif
+                                @endforeach 
+                           
+                        
+                                                
+                                                    
+                    @endforeach   
 
-                </div>
+                <!--
 
                  <div class="col-lg-6 col-md-6 col-sm-6">
 
@@ -603,7 +576,7 @@
                     </div>
 
          </div>
-
+        -->
          
      
 
@@ -693,7 +666,12 @@
 
               
 
-                 <div class="col-lg-4 col-md-4 col-sm-6" >
+        
+                
+                    
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6" >
                     
                     <h3 class="column-title">Noticias</h3>
                     <div class="panel panel-default" style="background: #f5f5f5;">
@@ -805,45 +783,32 @@
 
                       <h3 class="column-title">Categorias</h3>
 
-                        @if($categorias->count())
-                        @foreach($categorias as $categoria)
-                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingOne">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
-                                                <b>{{$categoria->nombre}}</b>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="{{$categoria->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                        <div class="panel-body">
-                                            <b><a href="#"> Prueba 1 </a> </b>
-                                            <br>
-                                            <b><a href="#"> Prueba 2 </a> </b>
+                                @if($categorias->count())
+                                @foreach($categorias as $categoria)
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
+                                                        <b>{{$categoria->nombre}}</b>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="{{$categoria->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <b><a href="#"> Prueba 1 </a> </b>
+                                                    <br>
+                                                    <b><a href="#"> Prueba 2 </a> </b>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
-						</div>
-                        
-
-
-                            
-                        
-                       
-
-                
-
-
-                
-                    
-                </div>
+                                    @endforeach
+                                @endif
+						       </div>
                 
             
 
-        </div>
+       
 	</div>
   </section>
 
@@ -1142,32 +1107,7 @@
 		
         });
 
-        $(function(){
-
-            $('a[href*=#]').click(function() {
-
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-                && location.hostname == this.hostname) {
-
-                    var $target = $(this.hash);
-
-                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
-
-                    if ($target.length) {
-
-                        var targetOffset = $target.offset().top;
-
-                        $('html,body').animate({scrollTop: targetOffset}, 1000);
-
-                        return false;
-
-                    }
-
-            }
-
-        });
-
-        });
+        
 
 
         (function () {
@@ -1200,6 +1140,34 @@
        previousScroll = currentScroll;
     });
 }()); //run this anonymous function immediately
+
+
+        $(function(){
+
+            $('a[href*=#turismo]').click(function() {
+
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+                && location.hostname == this.hostname) {
+
+                    var $target = $(this.hash);
+
+                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+
+                    if ($target.length) {
+
+                        var targetOffset = $target.offset().top;
+
+                        $('html,body').animate({scrollTop: targetOffset}, 1000);
+
+                        return false;
+
+                    }
+
+            }
+
+        });
+
+        });
 
        
 

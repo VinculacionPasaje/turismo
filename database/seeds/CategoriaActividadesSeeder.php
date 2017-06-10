@@ -21,7 +21,7 @@ class CategoriaActividadesSeeder extends Seeder
         ]);
 
          CategoriaActividades::create([
-            'categoria'=>'Otras Actividades',
+            'categoria'=>'Turismo Alternativo',
             'descripcion'=>'<p>Categoria para otras actividades en Pasaje</p>',
             'estado'=>'1',
             'contador_visitas'=>'0',

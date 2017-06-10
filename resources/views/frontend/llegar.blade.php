@@ -129,34 +129,52 @@
                           <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Hospedaje</a>
+                                   <li class="dropdown-submenu">
+                                        <a href="{{url ('hospedaje')}}">Hospedaje</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Hosterías</a></li>
-                                                <li><a tabindex="-1" href="#">Hoteles</a></li>
-                                                 <li><a tabindex="-1" href="#">Hostales</a></li>
+                                            @if($categoriasHospedaje->count())
+                                                    @foreach($categoriasHospedaje as $cat)
+
+                                                        <li><a href="{{url('categoriaHospedaje/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Alimentación</a>
+                                        <a href="{{url ('alimentacion')}}">Alimentacion</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Restaurantes</a></li>
-                                                <li><a tabindex="-1" href="#">Cafeterias</a></li>
-                                                <li><a tabindex="-1" href="#">Fuentes de Soda</a></li>
-                                                
-                                        </ul>
-                                 </li> 
+                                            @if($categoriasAlimentacion->count())
+                                                    @foreach($categoriasAlimentacion as $cat)
 
-                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Diversión</a>
-                                        <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Discotecas</a></li>
-                                                <li><a tabindex="-1" href="#">Centro de eventos</a></li>
-                                                <li><a tabindex="-1" href="#">Bares</a></li>
-                                                 <li><a tabindex="-1" href="#">Karaokes</a></li>
+                                                        <li><a href="{{url('categoriaAlimentacion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
                                                 
                                         </ul>
-                                 </li>   
+                                 </li>
+
+                                 <li class="dropdown-submenu">
+                                        <a href="{{url ('diversion')}}">Diversion</a>
+                                        <ul class="dropdown-menu">
+                                            @if($categoriasDiversion->count())
+                                                    @foreach($categoriasDiversion as $cat)
+
+                                                        <li><a href="{{url('categoriaDiversion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
+                                        </ul>
+                                 </li>
                                          
                             </ul>
                         </li>    
@@ -166,7 +184,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  
-                                <li><a href="#">Dirección de Turismo</a></li>
+                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="#">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               

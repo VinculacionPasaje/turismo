@@ -132,34 +132,52 @@
                           <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Hospedaje</a>
+                                   <li class="dropdown-submenu">
+                                        <a href="{{url ('hospedaje')}}">Hospedaje</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Hosterías</a></li>
-                                                <li><a tabindex="-1" href="#">Hoteles</a></li>
-                                                 <li><a tabindex="-1" href="#">Hostales</a></li>
+                                            @if($categoriasHospedaje->count())
+                                                    @foreach($categoriasHospedaje as $cat)
+
+                                                        <li><a href="{{url('categoriaHospedaje/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Alimentación</a>
+                                        <a href="{{url ('alimentacion')}}">Alimentacion</a>
                                         <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Restaurantes</a></li>
-                                                <li><a tabindex="-1" href="#">Cafeterias</a></li>
-                                                <li><a tabindex="-1" href="#">Fuentes de Soda</a></li>
-                                                
-                                        </ul>
-                                 </li> 
+                                            @if($categoriasAlimentacion->count())
+                                                    @foreach($categoriasAlimentacion as $cat)
 
-                                  <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="#">Diversión</a>
-                                        <ul class="dropdown-menu">
-                                                <li><a tabindex="-1" href="#">Discotecas</a></li>
-                                                <li><a tabindex="-1" href="#">Centro de eventos</a></li>
-                                                <li><a tabindex="-1" href="#">Bares</a></li>
-                                                 <li><a tabindex="-1" href="#">Karaokes</a></li>
+                                                        <li><a href="{{url('categoriaAlimentacion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
                                                 
                                         </ul>
-                                 </li>   
+                                 </li>
+
+                                 <li class="dropdown-submenu">
+                                        <a href="{{url ('diversion')}}">Diversion</a>
+                                        <ul class="dropdown-menu">
+                                            @if($categoriasDiversion->count())
+                                                    @foreach($categoriasDiversion as $cat)
+
+                                                        <li><a href="{{url('categoriaDiversion/'.$cat->id)}}">{{$cat->categoria}}</a></li>
+                                                    
+
+
+                                                    @endforeach
+                                                @endif
+                                                
+                                        </ul>
+                                 </li>
                                          
                             </ul>
                         </li>    
@@ -169,7 +187,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  
-                                <li><a href="#">Dirección de Turismo</a></li>
+                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="#">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               
@@ -198,7 +216,7 @@
     </header>
 
 
-<div class="container text-center card" style="padding-bottom:50px">
+<div class="container text-center" style="padding-bottom:50px">
    @if (session('mensaje-registro'))
         @include('mensajes.msj_correcto')
     @endif
@@ -229,8 +247,15 @@
                         
                             <div class="col-md-6 col-xs-12">
                                 <div class="form-group">
-                                    {!! Form::label('name', 'Nombres') !!}
-                                    {!! Form::text('nombre', null, ['class' => 'form-control' ]) !!}
+                                    {!! Form::label('name', 'Nombres y Apellidos') !!}
+
+                                     <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <i class="fa fa-user"></i>
+                                        </div>
+                                        {!! Form::text('nombre', null, ['placeholder'=>'Nombres y Apellidos*', 'class' => 'form-control' ]) !!}
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="text-danger" id='error_nombre'>{{$errors->first('nombre')}}</div>
@@ -241,7 +266,13 @@
 
                                 <div class="form-group">
                                     {!! Form::label('subject', 'Asunto') !!}
-                                    {!! Form::text('subject', null, ['class' => 'form-control' ]) !!}
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <i class="fa fa-envelope-o"></i>
+                                        </div>
+                                       {!! Form::text('subject', null, ['placeholder'=>'Asunto*', 'class' => 'form-control' ]) !!}
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="text-danger" id='error_subject'>{{$errors->first('subject')}}</div>
@@ -253,14 +284,14 @@
                             
                             <div class="form-group">
                                 {!! Form::label('email', 'E-Mail') !!}
-                                {!! Form::email('email', null, ['class' => 'form-control' ]) !!}
+                                {!! Form::email('email', null, ['placeholder'=>'Email*', 'class' => 'form-control' ]) !!}
                             </div>
                              <div class="text-danger" id='error_email'>{{$errors->first('email')}}</div>
                             
                             
                             <div class="form-group">
                                 {!! Form::label('body', 'Mensaje') !!}
-                                {!! Form::textarea('body', null, ['class' => 'form-control' ]) !!}
+                                {!! Form::textarea('body', null, ['placeholder'=>'Mensaje*', 'class' => 'form-control' ]) !!}
                             </div>
                              <div class="text-danger" id='error_mensaje'>{{$errors->first('body')}}</div>
 
@@ -372,7 +403,7 @@
                 </p>
             </div>
             
-            <iframe width="100%" height="230" frameborder="0" style="border-radius:0px;" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?client=firefox-a&ie=UTF8&q=ethane+web+technologies&fb=1&gl=in&hq=ethane+web+technologies&cid=8183905562449910042&t=m&ll=28.639225,77.390442&spn=0.052731,0.154495&z=13&iwloc=A&output=embed"  style="border-radius:20px;"></iframe>
+            <iframe width="100%" height="230" frameborder="0" style="border-radius:0px;" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0872999560816!2d-79.80886235618735!3d-3.3286075841479597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9033148ad7283497%3A0x4679366e0276b535!2sMunicipio+de+Pasaje%2C+Pasaje!5e0!3m2!1ses!2sec!4v1497075532766"  style="border-radius:20px;"></iframe>
             
 
 

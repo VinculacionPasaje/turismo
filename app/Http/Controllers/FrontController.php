@@ -35,19 +35,26 @@ class FrontController extends Controller
     public function index(){
 
         $categorias= Categoria::where('estado',1)->get();
-        $categoriasAct= CategoriaActividades::where('estado',1)->get();
-        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
         $redes= Redes::where('estado',1)->get();
         $videos= Video::where('id',1)->get();
         $footer= Footer::where('estado',1)->get();
+
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+        $categoriasAct= CategoriaActividades::where('estado',1)->get();
+        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        
         $actividades= Actividades::where('estado',1)->get();
+        $hospedaje= Hospedaje::where('estado',1)->get();
+        $diversion= Diversion::where('estado',1)->get();
+        $alimentacion= Alimentacion::where('estado',1)->get();
+        $actividadesTu= Turistico::where('estado',1)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+
 
       
        
-        return view('welcome', compact('actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
+        return view('welcome', compact('alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 
@@ -227,8 +234,8 @@ class FrontController extends Controller
                 $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
                 $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
                 $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
-        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
-        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+                $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+                $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
                 $variable=0;
                 $actividad->contador_visitas++;

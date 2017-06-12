@@ -312,7 +312,7 @@ Author URL: http://shapebootstrap.net
 .slider_btn3 {  
   background: rgb(0, 92, 163);
 
-  border-radius: 5px;
+  border-radius: 20px;
   color: #fff;
       font-size: 18px;
     font-weight: bold;
@@ -336,7 +336,7 @@ Author URL: http://shapebootstrap.net
   background: #005ca3;
   font-weight: bold;
 
-  border-radius: 5px;
+  border-radius: 20px;
   color: #fff;
   font-size: 16px;
   display: inline-block;
@@ -355,10 +355,61 @@ Author URL: http://shapebootstrap.net
   text-shadow: 2px 2px 2px black;
 }
 
+.slider_btn4 {  
+  background: #005ca3;
+  font-weight: bold;
+
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  font-family: "Varela",sans-serif;
+  margin-top: 10px;
+  padding: 9px 15px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;  
+}
+.slider_btn4:hover,.slider_btn4:focus{   
+  text-decoration: none;
+  outline: none;
+  color: #fffe00;
+  
+}
+
+
+.btn_noticias {  
+  background: #005ca3;
+  font-weight: bold;
+
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  display: inline-block;
+  font-family: "Varela",sans-serif;
+  padding: 5px 15px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;  
+}
+.btn_noticias:hover,.btn_noticias:focus{   
+  text-decoration: none;
+  outline: none;
+  color: #fffe00;
+  
+}
+
+.espaciado{
+   padding-top: 5%;
+   padding-bottom: 5%;
+}
+
 .slider_btn2 {  
   background: #45aed6;
   border-color: #2a95be;
-  border-radius: 5px;
+  border-radius: 20px;
   color: #fff;
   font-size: 13px;
   display: inline-block;
@@ -776,6 +827,25 @@ hr {
   width: 40%;
   border-bottom: 1px solid #45aed6;
 }
+.column-title2 {
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  position: relative;
+}
+.column-title2:after {
+  content: " ";
+  position: absolute;
+  margin-left: 30%;
+  bottom: -1px;
+  left: 0;
+  width: 40%;
+  border-bottom: 1px solid #45aed6;
+}
+
 ul.nostyle {
   list-style: none;
   padding: 0;
@@ -2388,7 +2458,7 @@ a.socialIcon:hover, .socialHoverClass {
 .content-quality p span{display:block;}
 .tabtop li a{font-family:'Lato', sans-serif;font-weight:700;color:#1b2834;border-radius:0px;margin-right:22.008px;border:1px solid #ebebeb !important;}
 .tabtop .active a:before{position:absolute;top:15px;left:82px;color:#07689F;font-size:30px;}
-.tabtop li a:hover{color:#07689F !important;text-decoration:none;}
+.tabtop li a:hover{color:#fffe00 !important;text-decoration:none;}
 .tabtop .active a:hover{color:#fff !important;}
 .tabtop .active a{background-color:#07689F !important;color:#FFF !important;}
 .margin-tops{margin-top:30px;}
@@ -2918,7 +2988,7 @@ font-family: arial;
 
 .module-title{
   
-    background: rgb(138, 25, 30);
+    background: rgb(0, 93, 154);;
     padding-top: 10px;
 }
 

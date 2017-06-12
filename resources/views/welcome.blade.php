@@ -466,7 +466,7 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <p class="actividades"> {{$cat->categoria}} </p>
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
 
 
                                 
@@ -512,11 +512,270 @@
               
                                         @endif
                                 @endforeach 
+
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                <a class="slider_btn4" href="{{url('categoria/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                
+                                </div>
                            
                         
                                                 
                                                     
                     @endforeach   
+
+                    
+
+                 
+
+
+
+                     @foreach($categoriasTu as $cat)
+
+                        <div  class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
+
+
+                                
+                        </div>
+                    
+                    
+
+                        
+                        
+                                @foreach($actividadesTu as $act)            
+                                    @if($cat->id == $act->id_categorias )
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+                                        <article class="card">
+                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">
+                                                <div class="card__wrapper">
+
+                                                    <figure class="card__feature">
+                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
+                                                    </figure>
+
+                                                    <div class="card__box">
+
+                                                    <header class="card__item card__header">
+                                                        
+                                                        <h2 class="card__item card__item--small card__title">{{$act->titulo}}</h2>
+                                                    </header>
+
+                                                    
+
+                                                    <section class="card__item card__body">
+                                                       <P class="negro2">{{$act->descripcion}}</P>
+                                                    </section>
+
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                         </article>
+                                     </div>
+              
+                                        @endif
+                                @endforeach 
+
+                                  <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                <a class="slider_btn4" href="{{url('categoriaTuristico/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                
+                                </div>
+                           
+                        
+                                                
+                                                    
+                    @endforeach   
+
+                    
+
+                    @foreach($categoriasHospedaje as $cat)
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
+
+
+                                
+                        </div>
+                    
+                    
+
+                        
+                        
+                                @foreach($hospedaje as $act)            
+                                    @if($cat->id == $act->id_categorias )
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+                                        <article class="card">
+                                            <a href="{{url ('hospedaje/'.$act->id)}}">
+                                                <div class="card__wrapper">
+
+                                                    <figure class="card__feature">
+                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
+                                                    </figure>
+
+                                                    <div class="card__box">
+
+                                                    <header class="card__item card__header">
+                                                        
+                                                        <h2 class="card__item card__item--small card__title">{{$act->titulo}}</h2>
+                                                    </header>
+
+                                                    
+
+                                                    <section class="card__item card__body">
+                                                       <P class="negro2">{{$act->descripcion}}</P>
+                                                    </section>
+
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                         </article>
+                                     </div>
+              
+                                        @endif
+                                @endforeach 
+
+                                  <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                <a class="slider_btn4" href="{{url('categoriaHospedaje/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                
+                                </div>
+                           
+                        
+                                                
+                                                    
+                    @endforeach
+
+                     @foreach($categoriasDiversion as $cat)
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
+
+
+                                
+                        </div>
+                    
+                    
+
+                        
+                        
+                                @foreach($diversion as $act)            
+                                    @if($cat->id == $act->id_categorias )
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+                                        <article class="card">
+                                            <a href="{{url ('diversion/'.$act->id)}}">
+                                                <div class="card__wrapper">
+
+                                                    <figure class="card__feature">
+                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
+                                                    </figure>
+
+                                                    <div class="card__box">
+
+                                                    <header class="card__item card__header">
+                                                        
+                                                        <h2 class="card__item card__item--small card__title">{{$act->nombre_lugar}}</h2>
+                                                    </header>
+
+                                                    
+
+                                                    <section class="card__item card__body">
+                                                       <P class="negro2">{{$act->descripcion}}</P>
+                                                    </section>
+
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                         </article>
+                                     </div>
+              
+                                        @endif
+                                @endforeach 
+
+                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                <a class="slider_btn4" href="{{url('categoriaDiversion/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                
+                                </div>
+                           
+                        
+                                                
+                                                    
+                    @endforeach
+
+
+
+                    @foreach($categoriasAlimentacion as $cat)
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
+
+
+                                
+                        </div>
+                    
+                    
+
+                        
+                        
+                                @foreach($alimentacion as $act)            
+                                    @if($cat->id == $act->id_categorias )
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+                                        <article class="card">
+                                            <a href="{{url ('alimentacion/'.$act->id)}}">
+                                                <div class="card__wrapper">
+
+                                                    <figure class="card__feature">
+                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
+                                                    </figure>
+
+                                                    <div class="card__box">
+
+                                                    <header class="card__item card__header">
+                                                        
+                                                        <h2 class="card__item card__item--small card__title">{{$act->nombre_lugar}}</h2>
+                                                    </header>
+
+                                                    
+
+                                                    <section class="card__item card__body">
+                                                       <P class="negro2">{{$act->descripcion}}</P>
+                                                    </section>
+
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                         </article>
+                                     </div>
+              
+                                        @endif
+                                @endforeach 
+
+                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                <a class="slider_btn4" href="{{url('categoriaAlimentacion/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                
+                                </div>
+                           
+                        
+                                                
+                                                    
+                    @endforeach
 
                 <!--
 
@@ -775,7 +1034,7 @@
                                     
 
                                 </div>
-                                <a class="btn btn-danger" href="#">Ver Más Noticias</a>
+                                <a class="btn_noticias" href="#">Ver Más Noticias</a>
                       
                             </div>
                     </div>
@@ -843,7 +1102,7 @@
                     <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                     
-                    <a class="btn btn-danger" href="#">Read More</a>
+                    <a class="btn_noticias" href="#">Read More</a>
                 </div>
                  </div>
 
@@ -858,7 +1117,7 @@
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
 
                         
-                         <a class="btn btn-danger" href="#">Read More</a>
+                         <a class="btn_noticias" href="#">Read More</a>
                 </div>
                 </div>
 
@@ -874,7 +1133,7 @@
                    <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                     
-                    <a class="btn btn-danger" href="#">Read More</a>
+                    <a class="btn_noticias" href="#">Read More</a>
                 </div>
                  </div>
 
@@ -887,7 +1146,7 @@
                     <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                         
-                       <a class="btn btn-danger" href="#">Read More</a>
+                       <a class="btn_noticias" href="#">Read More</a>
                 </div>
                 </div>
 
@@ -902,7 +1161,7 @@
                 <div class="col-md-8">
                    <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                     <a class="btn btn-danger" href="#">Read More</a>
+                     <a class="btn_noticias" href="#">Read More</a>
                 </div>
                  </div>
 
@@ -915,7 +1174,7 @@
                         <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
                     <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
                         
-                         <a class="btn btn-danger" href="#">Read More</a>
+                         <a class="btn_noticias" href="#">Read More</a>
                 </div>
                 </div>
 

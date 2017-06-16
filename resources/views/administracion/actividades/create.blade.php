@@ -26,7 +26,7 @@
     <div class="box box-primary">
         <div class="box-header">
             <h3 class="box-title">Nueva Actividad</h3>
-        </div><!-- /.box-header -->
+        </div><!-- /.box-header holaaaa -->
         <div class="box-body">
             {!!Form::open(['route' => 'actividades.store','method'=>'POST','files' => true,'id'=>'form'])!!}
             <div id="msj-success" class="alert alert-success alert-dismissible aprobado" role="alert" style="display:none">

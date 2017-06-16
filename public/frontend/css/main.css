@@ -352,7 +352,9 @@ Author URL: http://shapebootstrap.net
   text-decoration: none;
   outline: none;
   color: white;
-  text-shadow: 2px 2px 2px black;
+  cursor: pointer;
+  transform: scale(1.05);
+  
 }
 
 .slider_btn4 {  
@@ -367,6 +369,7 @@ Author URL: http://shapebootstrap.net
   margin-top: 10px;
   padding: 9px 15px;
   text-decoration: none;
+  
   -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;  
@@ -374,7 +377,8 @@ Author URL: http://shapebootstrap.net
 .slider_btn4:hover,.slider_btn4:focus{   
   text-decoration: none;
   outline: none;
-  color: #fffe00;
+  color:white;
+  box-shadow:  1px 5px 5px #888888;
   
 }
 
@@ -397,7 +401,7 @@ Author URL: http://shapebootstrap.net
 .btn_noticias:hover,.btn_noticias:focus{   
   text-decoration: none;
   outline: none;
-  color: #fffe00;
+  color: white;
   
 }
 
@@ -3060,7 +3064,7 @@ text-align: center;
 .card__img {
   display: block;
   max-width: 100%;
-  height: 200px;
+  height: 170px;
   width: 100%;
 }
 .card__header {

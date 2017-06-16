@@ -285,13 +285,19 @@
                                                 <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt="">
                                                 
                                             </div>
+                                            
+                                            <h3 class="entry-title" align="center"><a href="#">{{$act->titulo}}</a></h3>
                                             <div class="entry-date">{{$act->fecha_post}}</div>
-                                            <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
                                         </header>
 
                                         <div class="entry-content">
                                             <P class="negro2">{{$act->descripcion}}</P>
-                                            {!!link_to('actividades/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'btn btn-danger btn-md'], $secure = null)!!}
+                                            <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                                     {!!link_to('actividades/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn4'], $secure = null)!!}
+
+                                
+                                            </div>
+
                                           
                                         </div>
 

@@ -104,7 +104,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                  
-                                <li><a href="#">Proceso de Licencia Turistica LOAF/a></li>
+                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="#">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               
@@ -161,7 +161,7 @@
     <div class="comments-nav">
       <ul class="nav nav-pills">
         <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px; margin-bottom: 10px;">
                   Hay 2 comments <span class="caret"></span>
                 </a>
           <ul class="dropdown-menu">

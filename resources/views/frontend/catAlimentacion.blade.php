@@ -163,7 +163,7 @@
     <div class="comments-nav">
       <ul class="nav nav-pills">
         <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px; margin-bottom: 10px;">
                   Hay 2 comments <span class="caret"></span>
                 </a>
           <ul class="dropdown-menu">

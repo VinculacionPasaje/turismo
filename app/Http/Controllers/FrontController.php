@@ -23,6 +23,7 @@ use App\CategoriaHospedaje;
 use App\CategoriaDiversion;
 use App\CategoriaAlimentacion;
 use App\TurismoComunitario;
+use App\Noticia;
 
 class FrontController extends Controller
 {
@@ -49,12 +50,16 @@ class FrontController extends Controller
         $hospedaje= Hospedaje::where('estado',1)->get();
         $diversion= Diversion::where('estado',1)->get();
         $alimentacion= Alimentacion::where('estado',1)->get();
+        $noticias= Noticia::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
+        $noticiasVistas= Noticia::where('estado',1)->orderBy('contador_visitas', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas vistas
+
+        
         $actividadesTu= Turistico::where('estado',1)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
 
 
       
        
-        return view('welcome', compact('alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
+        return view('welcome', compact('noticiasVistas', 'noticias', 'alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 

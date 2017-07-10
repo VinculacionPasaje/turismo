@@ -28,6 +28,7 @@ class UsuarioRequest extends FormRequest
             'apellido' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|between:6,12',
+             'path'=>'required|file|mimes:jpeg,bmp,png|max:10240',
         ];
     }
 }

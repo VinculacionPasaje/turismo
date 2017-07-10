@@ -932,98 +932,38 @@
 
                 <div class="col-lg-4 col-md-4 col-sm-6" >
                     
-                    <h3 class="column-title">Noticias</h3>
+                    <h3 class="column-title">Últimas Noticias</h3>
                     <div class="panel panel-default" style="background: #f5f5f5;">
                     
                     <div class="panel-body" id="menu2">
                     
                     <ul class="demo1" style="overflow-y: hidden; margin-bottom: 0px;">
-
-
+                      
+                      
+                        @foreach($noticias as $noticia)   
                             <li style="" class="news-item">
                             <table cellpadding="4">
                             <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%"> </tr>
+                            <tr><img src="{{url('fotos/'.$noticia->path)}}" style="width: 100%;height: 200px;"> </tr>
                             <td>
-                                 <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
+                                 <h5 class="negro"><a class="negro" href="#">{{$noticia->titulo}}</a></h5>
                                  
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
+                                <p class="negro2" > {{$noticia->descripcion}} </p>  
                                 
                                 </td>
                             </tr>
                             </tbody></table>
                             </li>
+
+
+                        @endforeach
+
+
+                           
                             
-                            <li style="" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%"> </tr>
-                            <td>
-                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p> 
-                            </tr>
-                            </tbody></table>
-                            </li>
                             
-                            <li style="display:none;" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
-                            <td>
-                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
-                            </td>
-                            </tr>
-                            </tbody></table>
-                            </li>
                             
-                            <li style="display:none;" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
-                            <td>
-                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
-                            </td>
-                            </tr>
-                            </tbody></table>
-                            </li>
                             
-                            <li style="display:none;" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
-                            <td>
-                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
-                            </td>
-                            </tr>
-                            </tbody></table>
-                            </li>
-                            
-                            <li style="display:none;" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
-                            <td>
-                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p> 
-                            </td>
-                            </tr>
-                            </tbody></table>
-                            </li>
-                            
-                            <li style="display:none;" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('frontend/images/slider/bg1.jpg')}}" width="100%" ></tr>
-                            <td>
-                                <h5 class="negro"><a class="negro" href="#">While now the fated Pequod had been so long afloat this</a></h5>
-                                <p class="negro2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... </p>  
-                            </td>
-                            </tr>
-                            </tbody></table>
-                            </li>
                         </ul>
                     </div>
 
@@ -1040,7 +980,7 @@
                     </div>
 
 
-                      <h3 class="column-title">Categorias</h3>
+                      <h3 class="column-title">Categorias Noticias</h3>
 
                                 @if($categorias->count())
                                 @foreach($categorias as $categoria)
@@ -1055,9 +995,17 @@
                                             </div>
                                             <div id="{{$categoria->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                                 <div class="panel-body">
-                                                    <b><a href="#"> Prueba 1 </a> </b>
-                                                    <br>
-                                                    <b><a href="#"> Prueba 2 </a> </b>
+
+                                                @foreach($noticias as $noticia)            
+                                                    @if($categoria->id == $noticia->id_categorias )
+                                                     <b><a href="#"> {{$noticia->titulo}} </a> </b>
+                                                     <br>
+
+                                                    @endif
+
+                                                @endforeach
+                                                   
+                                                  
                                                 </div>
                                             </div>
                                         </div>
@@ -1094,89 +1042,77 @@
         </ul>
         <div class="tab-content margin-tops">
           <div class="tab-pane active fade in" id="tab_default_1">
+             @foreach($noticias as $noticia) 
                <div class="row" style="padding-bottom: 10px;">
-                <div class="col-md-4">
-                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive2"> </div>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
-                    <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                    
-                    <a class="btn_noticias" href="#">Read More</a>
-                </div>
-                 </div>
+                  
+                        <div class="col-md-4">
+                        <div class="row"> <img src="{{url('fotos/'.$noticia->path)}}" class="img-responsive2"> </div>
+                        </div>
 
-                 <div class="row" style="padding-bottom: 10px;">
-
-                <div class="col-md-4">
-                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive2"> </div>
-                </div>
-                <div class="col-md-8">
-
-                <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
-                    <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-
+                           <div class="col-md-8">
+                                <a href="#"><h4 class="heading4 negro">{{$noticia->titulo}}</h4> </a>
+                                <p class="negro2" >{{$noticia->descripcion}} </p>
+                                
+                                <a class="btn_noticias" href="#">Leer Más</a>
+                            </div>
                         
-                         <a class="btn_noticias" href="#">Read More</a>
-                </div>
-                </div>
+
+
+               
+
+
+                
+             
+                 </div>
+              @endforeach
+
+              
 
           </div>
           <div class="tab-pane fade" id="tab_default_2">
             
 
-            <div class="row" style="padding-bottom: 10px;">
-                <div class="col-md-4">
-                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive2"> </div>
-                </div>
-                <div class="col-md-8">
-                   <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
-                    <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                    
-                    <a class="btn_noticias" href="#">Read More</a>
-                </div>
+             @foreach($noticiasVistas as $noticia) 
+               <div class="row" style="padding-bottom: 10px;">
+                  
+                        <div class="col-md-4">
+                        <div class="row"> <img src="{{url('fotos/'.$noticia->path)}}" class="img-responsive2"> </div>
+                        </div>
+
+                           <div class="col-md-8">
+                                <a href="#"><h4 class="heading4 negro">{{$noticia->titulo}}</h4> </a>
+                                <p class="negro2" >{{$noticia->descripcion}} </p>
+                                
+                                <a class="btn_noticias" href="#">Leer Más</a>
+                            </div>
+             
                  </div>
-
-                 <div class="row" style="padding-bottom: 10px;">
-
-                <div class="col-md-4">
-                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive2"> </div>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
-                    <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                        
-                       <a class="btn_noticias" href="#">Read More</a>
-                </div>
-                </div>
+              @endforeach
 
 
           </div>
           <div class="tab-pane fade" id="tab_default_3">
+
+           @foreach($noticias as $noticia) 
+                @if($noticia->destacado==1)
+                <div class="row" style="padding-bottom: 10px;">
+                    
+                            <div class="col-md-4">
+                            <div class="row"> <img src="{{url('fotos/'.$noticia->path)}}" class="img-responsive2"> </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                    <a href="#"><h4 class="heading4 negro">{{$noticia->titulo}}</h4> </a>
+                                    <p class="negro2" >{{$noticia->descripcion}} </p>
+                                    
+                                    <a class="btn_noticias" href="#">Leer Más</a>
+                                </div>
+                
+                    </div>
+                @endif
+              @endforeach
             
-            <div class="row" style="padding-bottom: 10px;">
-                <div class="col-md-4">
-                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive2"> </div>
-                </div>
-                <div class="col-md-8">
-                   <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
-                    <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                     <a class="btn_noticias" href="#">Read More</a>
-                </div>
-                 </div>
-
-                 <div class="row" style="padding-bottom: 10px;">
-
-                <div class="col-md-4">
-                <div class="row"> <img src="{{url('frontend/images/slider/bg2.jpg')}}" class="img-responsive2"> </div>
-                </div>
-                <div class="col-md-8">
-                        <a href="#"><h4 class="heading4 negro">Magento Product Upload Services</h4> </a>
-                    <p class="negro2" >Are you looking for someone who could upload products on your Magento based website? At webenlance India, we can effectively help you with our top quality Magento product upload services. With the pool of well experienced and talented experts, we ensure that your customers have an enriching experience every time they visit your website. Our comprehensive range of services is available all over the globe at extremely low cost. </p>
-                        
-                         <a class="btn_noticias" href="#">Read More</a>
-                </div>
-                </div>
+           
 
 
           </div>

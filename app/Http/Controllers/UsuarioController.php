@@ -48,6 +48,7 @@ class UsuarioController extends Controller
             'name' => $request['name'],
             'apellido' => $request['apellido'],
             'email' => $request['email'],
+            'path'=> $request['path'],
             'password' => bcrypt($request['password']),
             'id_roles'=>'2',
            

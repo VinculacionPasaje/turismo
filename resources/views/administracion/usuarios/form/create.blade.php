@@ -15,6 +15,10 @@
     {!! Form::email('email',old('email'),['placeholder'=>'Ingrese el correo','class'=>'form-control']) !!}
 </div>
 <div class="form-group">
+    {!!Form::label('Foto','Foto:')!!}
+    {!!Form::file('path',['class'=>'form-control'])!!}
+</div>
+<div class="form-group">
     {!! Form::label('Contraseña') !!}
     {!! Form::password('password',old('password'),['class' => 'form-control', 'placeholder' => 'Password']) !!}
 </div>

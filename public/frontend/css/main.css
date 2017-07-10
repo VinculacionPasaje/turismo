@@ -78,7 +78,7 @@ Author URL: http://shapebootstrap.net
 
 .scrollToTop {
   background: url("../images/bootom-top-arrow.png") no-repeat scroll 13px 12px #ffffff;
-  border: 3px solid rgba(26, 28, 40, 0.9);
+  border: 2px solid rgb(0, 92, 163);
   border-radius: 5px;
   bottom: 20px;
   display: inline-block;
@@ -97,7 +97,7 @@ Author URL: http://shapebootstrap.net
 .scrollToTop:hover{
   background-position: 13px -50px;  
   text-decoration: none;
-  border: 3px solid #D62929;
+  border: 2px solid black;
   outline: none;
 }
 

@@ -22,5 +22,11 @@ class RolTableSeeder extends Seeder
             'descripcion'=>'Usuario con altos privilegios pero menores que el SuperAdmin  ',
 
         ]);
+
+         Rol::create([
+            'nombre'=>'Usuario',
+            'descripcion'=>'Usuario que se registra en el sitio web desde el frontend  ',
+
+        ]);
     }
 }

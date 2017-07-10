@@ -2905,7 +2905,7 @@ font-size: 15px;
 width: 100%;
 display:none;
 line-height: 37px;
-background: rgba(174, 6, 0, 0.90);
+background: rgb(0, 92, 163);
 }
 
 .texto5{
@@ -2975,7 +2975,7 @@ font-family: arial;
     }
     .panel-heading {
         border: none;
-        background-color:#b3322e;
+        background-color:rgb(0, 92, 163);
     
     }
     .panel-body {

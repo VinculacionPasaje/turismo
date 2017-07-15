@@ -26,6 +26,10 @@ class Noticia extends Model
         return $this->belongsTo(Categoria::class,'id_categorias','id');
     }
 
+    public function comentarios(){
+        return $this->hasMany(ComentariosNoticias::class);
+    }
+
 
     public function setPathAttribute($path){
 

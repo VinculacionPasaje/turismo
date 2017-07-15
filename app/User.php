@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this->belongsTo(Rol::class,'id_roles','id');
     }
 
+     public function comentarios(){
+        return $this->hasMany(ComentariosNoticias::class);
+
+    }
+
 
     public function setPathAttribute($path){
 

@@ -94,6 +94,31 @@
                        
                         
                         <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li class="negrita"><a href="{{ route('login') }}">LOGIN</a></li>
+                        
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Salir
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
 
                      
                       
@@ -137,7 +162,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <!-- Carousel
-                    ================================================== -->
+                    ================================================== 
                     <div id="myCarousel" class="carousel slide">        
                         <div class="carousel-inner">           
                             <div class="item active"> 
@@ -162,13 +187,13 @@
                                 </div>                        
                             </div>                                                                                   
                         </div>
-                        <!-- Indicators -->
+                       
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                         </ol>                                                                 
-                    </div><!-- End Carousel -->  
+                    </div>-->  
                 </div>
             </div>
        
@@ -180,6 +205,9 @@
 
 
 <div class="container">
+
+ <!-- 
+
     <div class="row">
         <div class="row">
             <div class="col-md-9">
@@ -187,7 +215,7 @@
                     Auction Ends Today</h3>
             </div>
             <div class="col-md-3">
-                <!-- Controls -->
+               
                 <div class="controls pull-right hidden-xs">
                     <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
                         data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
@@ -196,7 +224,7 @@
             </div>
         </div>
         <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-            <!-- Wrapper for slides -->
+           
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="row">
@@ -442,6 +470,7 @@
             </div>
         </div>
     </div>
+     -->
 
 </div>
  

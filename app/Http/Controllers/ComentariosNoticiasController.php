@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ComentarioNoticiaRequest;
+use App\Http\Requests\ComentariosEditNoticiasRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Noticia;
@@ -19,10 +20,38 @@ class ComentariosNoticiasController extends Controller
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosNoticias::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosNoticias::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.comentariosNoticias.index',compact('comentarios', 'busqueda'));
+         $data = $request; //obtengo el request y lo almaceno en la variable data
+      
+        $search = $data['table_search']; //obtengo el dato del campo table_Search y lo almaceno en la variable search
+        if($search!=""){ // si esta vacio que no me haga una busqueda de los usuarios
+             $user= User::name($request->get('table_search'))->orderBy('id')->paginate(6); //busco al usuario
+                if((count($user) >0)){ // pregunto si la busqueda obtuvo al menos 1 resultado
+                    foreach($user as $usuario){ // recorro el arreglo para obtener los datos
+                       
+                        
+                         $busqueda= ComentariosNoticias::name($usuario->id)->orderBy('id')->paginate(6); //busco el comentario segun el ID del usuario
+                         
+
+                    }
+                   
+                }else{ // caso contrario de que no halla ningun usuario que posteo algun comentario, lo que hago es retornar 6 comentarios con estado 1
+                     
+                     $busqueda= ComentariosNoticias::where('estado',1)->orderBy('id')->paginate(6);
+                }
+
+        }else{ //caso contrario que el usuario halla ingresado un valor vacio en la caja de texto, retorno 6 comentarios con estado 1
+             $busqueda= ComentariosNoticias::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        }
+       
+        $comentarios = ComentariosNoticias::where('estado',1)->orderBy('id')->paginate(6); //busco 6 comentarios con estado 1
+        
+       
+
+        
+        return View('administracion.comentariosNoticias.index',compact('comentarios', 'busqueda')); // retorno los resultados en a vista Index de comentariosNoticias
     }
+
+   
 
     /**
      * Show the form for creating a new resource.
@@ -81,9 +110,7 @@ class ComentariosNoticiasController extends Controller
     {
 
         $comentario = ComentariosNoticias::find($id);
-        $usuarios = User::where('estado',1)->get();
-         $noticias = Noticia::where('estado',1)->get();
-        return view('administracion.comentariosNoticias.edit',compact('noticias','comentario', 'usuarios'));
+        return view('administracion.comentariosNoticias.edit',compact('comentario'));
 
     }
 
@@ -94,7 +121,7 @@ class ComentariosNoticiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ComentarioNoticiaRequest $request, $id)
+    public function update(ComentariosEditNoticiasRequest $request, $id)
     {
         $comentario = ComentariosNoticias::find($id);
         $comentario->fill($request->all());

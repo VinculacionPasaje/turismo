@@ -75,6 +75,7 @@
         Route::resource('administracion/footer','FooterController');
         Route::resource('administracion/noticias','NoticiaController');
         Route::resource('administracion/comentariosNoticias','ComentariosNoticiasController');
+        Route::resource('administracion/respuestaComentariosNoticias','RespuestaComentariosNoticiasController');
         Route::resource('administracion/mapas','MapasController');
         Route::resource('administracion/llegar','LlegarController');
         Route::resource('administracion/actividades','ActividadesController');

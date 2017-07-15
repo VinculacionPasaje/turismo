@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('title')
     <section class="content-header">
-        <h1>Comentarios<small>Editar</small></h1>
+        <h1>Respuestas a Comentarios <small>Agregar</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-            <li class="active">Comentarios</li>
-            <li class="active">Editar</li>
+            <li class="active">Respuestas Comentarios</li>
+            <li class="active">Agregar</li>
         </ol>
     </section>
 @endsection
@@ -25,35 +25,23 @@
     @endif
     <div class="box box-primary">
         <div class="box-header">
-            <h3 class="box-title">Editar Comentario</h3>
+            <h3 class="box-title">Nueva Respuesta de Comentario</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            {{Form::model($comentario, ['route' => ['comentariosNoticias.update',$comentario->id],'method'=>'PUT','files' => true ])}}
+            {!!Form::open(['route' => 'respuestaComentariosNoticias.store','method'=>'POST','files' => true,'id'=>'form'])!!}
             <div id="msj-success" class="alert alert-success alert-dismissible aprobado" role="alert" style="display:none">
-                <strong> Comentario Agregado Correctamente.</strong>
+                <strong> Respuesta Agregada Correctamente.</strong>
             </div>
             <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-            <input type="hidden" name="ruta" id ="ruta" value="{{url('')}}">
-
-            <div class="form-group">
-               
-                {!! Form::label('Comentario') !!}                                                
-                {!! Form::textarea('comentario',null,['class'=>'form-control', 'rows' => 5]) !!}
-           
-            </div>
-
-
-            
-
-            {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
+            @include('administracion.respuestaComentariosNoticias.form.create')
+            {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
 @endsection
 @section('script')
-     <script src="{{url('administration/dist/js/comentarios/java-comentarios.js')}}"></script>
-
-
+    <script src="{{url('administration/dist/js/comentarios/java-comentarios.js')}}"></script>
+    <script src="{{url('administration/dist/js/alertify.js')}}"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -61,6 +49,6 @@
                 $(".aprobado").fadeOut(300);
             },3000);
         });
-        
     </script>
+ 
 @endsection

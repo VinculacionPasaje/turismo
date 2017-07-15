@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('title')
     <section class="content-header">
-        <h1>Comentarios<small>Editar</small></h1>
+        <h1>Respuesta Comentarios<small>Editar</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-            <li class="active">Comentarios</li>
+            <li class="active">Respuesta Comentarios</li>
             <li class="active">Editar</li>
         </ol>
     </section>
@@ -25,19 +25,19 @@
     @endif
     <div class="box box-primary">
         <div class="box-header">
-            <h3 class="box-title">Editar Comentario</h3>
+            <h3 class="box-title">Editar Respuesta de Comentario</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            {{Form::model($comentario, ['route' => ['comentariosNoticias.update',$comentario->id],'method'=>'PUT','files' => true ])}}
+            {{Form::model($respuesta, ['route' => ['respuestaComentariosNoticias.update',$respuesta->id],'method'=>'PUT','files' => true ])}}
             <div id="msj-success" class="alert alert-success alert-dismissible aprobado" role="alert" style="display:none">
-                <strong> Comentario Agregado Correctamente.</strong>
+                <strong> Respuesta Comentario Agregado Correctamente.</strong>
             </div>
             <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
             <input type="hidden" name="ruta" id ="ruta" value="{{url('')}}">
 
             <div class="form-group">
                
-                {!! Form::label('Comentario') !!}                                                
+                {!! Form::label('Respuesta') !!}                                                
                 {!! Form::textarea('comentario',null,['class'=>'form-control', 'rows' => 5]) !!}
            
             </div>

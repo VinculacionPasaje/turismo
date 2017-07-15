@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ComentariosNoticias extends Model
+class RespuestaComentariosNoticias extends Model
 {
-    protected $table ='comentarios_noticias';
+      protected $table ='respuestas_comentarios_noticias';
     protected $primaryKey='id';
     public $timestamps = false;
     protected $fillable=[
@@ -16,20 +16,13 @@ class ComentariosNoticias extends Model
         'fecha',
         'hora',
         'estado',
-        'noticias_id',
-        'usuario_id',
+        'comentario_id',
+       
 
     ];
 
-    public function usuario(){
-        return $this->belongsTo(User::class,'usuario_id','id');
-    }
-    public function noticias(){
-    return $this->belongsTo(Noticia::class,'noticias_id','id');
-    }
-
-    public function respuestas(){
-        return $this->hasMany(RespuestaComentariosNoticias::class);
+    public function comentarios(){
+        return $this->belongsTo(ComentariosNoticias::class,'comentario_id','id');
     }
 
       public function scopeName($query, $table_search){
@@ -38,6 +31,4 @@ class ComentariosNoticias extends Model
 
        }
     }
-
-     
 }

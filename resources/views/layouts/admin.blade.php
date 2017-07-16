@@ -264,6 +264,46 @@
                 </li>
 
 
+                  <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pencil-square-o"></i><span>ZONAS / PARROQUIAS</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="#"><i class="fa fa-folder-open"></i> Zonas
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('zonas.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                                <li><a href="{{route('zonas.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-pencil-square-o"></i> Parroquias
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                             <li><a href=""><i class="fa fa-file"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+                        
+
+        
+
+                        
+                    </ul>
+                </li>
+
+
 
                 <li class="treeview">
                     <a href="#">

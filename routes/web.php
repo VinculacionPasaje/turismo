@@ -89,6 +89,7 @@
            Route::resource('administracion/categoriasAlimentacion','CategoriaAlimentacionController');
             Route::resource('administracion/categoriasDiversion','CategoriaDiversionController');
             Route::resource('administracion/zonas','ZonasController');
+            Route::resource('administracion/parroquias','ParroquiasController');
 
 
         Route::get('/error',function(){

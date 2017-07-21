@@ -288,9 +288,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-list-ul"></i>Listado</a></li>
+                                <li><a href="{{route('parroquias.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
-                             <li><a href=""><i class="fa fa-file"></i> Agregar</a></li>
+                             <li><a href="{{route('parroquias.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
                                 
                              
                             </ul>

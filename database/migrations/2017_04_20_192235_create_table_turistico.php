@@ -25,6 +25,10 @@ class CreateTableTuristico extends Migration
             $table->integer('id_categorias')->unsigned()->nullable();
             $table->foreign('id_categorias')
                 ->references('id')->on('categorias_turistico');
+
+            $table->integer('id_parroquias')->unsigned()->nullable();
+            $table->foreign('id_parroquias')
+                ->references('id')->on('parroquias');
         });
     }
 

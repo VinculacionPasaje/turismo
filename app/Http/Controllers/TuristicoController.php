@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Turistico;
 use App\CategoriaTuristica;
+use App\Parroquias;
 
 class TuristicoController extends Controller
 {
@@ -31,8 +32,9 @@ class TuristicoController extends Controller
     public function create()
     {
         $categorias = CategoriaTuristica::where('estado',1)->get();
+         $parroquias = Parroquias::where('estado',1)->get();
         
-        return View('administracion.turistico.create',compact('categorias'));
+        return View('administracion.turistico.create',compact('categorias', 'parroquias'));
     }
 
     /**
@@ -54,6 +56,7 @@ class TuristicoController extends Controller
             'contenido'=> $request['contenido'],
             'contador_visitas'=>0,
             'id_categorias'=> $request['id_categorias'],
+             'id_parroquias'=> $request['id_parroquias'],
            
         ]);
 
@@ -86,7 +89,8 @@ class TuristicoController extends Controller
 
         $actividades = Turistico::find($id);
         $categorias = CategoriaTuristica::where('estado',1)->get();
-        return view('administracion.turistico.edit',compact('actividades','categorias'));
+        $parroquias = Parroquias::where('estado',1)->get();
+        return view('administracion.turistico.edit',compact('actividades','categorias', 'parroquias'));
 
     }
 
@@ -112,6 +116,7 @@ class TuristicoController extends Controller
                     'path'=> $request['path'],
                     'contenido'=> $request['contenido'],
                     'id_categorias'=> $request['id_categorias'],
+                    'id_parroquias'=> $request['id_parroquias'],
                    
                 ]);
 

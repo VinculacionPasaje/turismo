@@ -28,6 +28,7 @@ class TuristicoEditRequest extends FormRequest
             'descripcion'=>'required|max:255',
             'fecha_post'=>'required',
             'id_categorias'=>'required',
+            'id_parroquias'=>'required',
             'contenido'=>'required',
             
         ];

@@ -15,6 +15,7 @@ class Parroquias extends Model
         'fecha_post',
         'path',
         'contenido',
+        'traer',
         'contador_visitas',
         'estado',
         'id_zonas',
@@ -22,6 +23,14 @@ class Parroquias extends Model
 
     public function zona(){
         return $this->belongsTo(Zonas::class,'id_zonas','id');
+    }
+
+      public function turistico(){
+        return $this->hasMany(Turistico::class);
+    }
+
+     public function hospedaje(){
+        return $this->hasMany(Hospedaje::class);
     }
 
  

@@ -19,10 +19,15 @@ class Turistico extends Model
         'contador_visitas',
         'estado',
         'id_categorias',
+        'id_parroquias',
     ];
 
     public function categorias_turisticas(){
         return $this->belongsTo(CategoriaTuristica::class,'id_categorias','id');
+    }
+
+      public function parroquias(){
+        return $this->belongsTo(Parroquias::class,'id_parroquias','id');
     }
 
 

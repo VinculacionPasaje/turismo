@@ -54,6 +54,35 @@
 
 </div>
 
+<div class="row" ><!--Inicio de row -->
+
+            <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Eliga la Parroquia</label>
+                            <select class="form-control select2" name="id_parroquias" id="parroquias" style="width: 100%;" >
+                                <option value="" disabled selected>Seleccione la Parroquia</option>
+                                @foreach($parroquias as $parroquia)
+
+                                @if (old('id_parroquias') == $parroquia->id)
+                                        <option value="{{$parroquia->id}}" selected> {{ $parroquia->parroquia }}</option>
+                                    @else
+                                        <option value="{{$parroquia->id}}"> {{ $parroquia->parroquia }}</option>
+                                    @endif       
+                                    
+                                @endforeach
+                            </select>
+                        </div>
+                </div>
+                 <div class="col-md-6 col-xs-12">
+                          <div class="form-group">
+                        
+                                {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
+                            </div>
+                </div>
+                
+
+</div>
+
 
 
 
@@ -67,11 +96,3 @@
                                 
 </div>
 
-<div class="row" ><!--Inicio de row -->
-                 
-                <div class="col-md-6 col-xs-12">
-                        
-                     {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
-                </div>
-
-</div>

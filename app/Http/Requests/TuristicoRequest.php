@@ -29,6 +29,7 @@ class TuristicoRequest extends FormRequest
             'fecha_post'=>'required',
             'id_categorias'=>'required',
             'contenido'=>'required',
+            'id_parroquias'=>'required',
             'path'=>'required|file|mimes:jpeg,bmp,png|max:10240',
         ];
     }

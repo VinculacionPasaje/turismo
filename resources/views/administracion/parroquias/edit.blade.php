@@ -90,14 +90,7 @@
             </div>
 
 
-            <div class="row" ><!--Inicio de row -->
-                 
-                <div class="col-md-6 col-xs-12">
-                        
-                     {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
-                </div>
-
-            </div>
+           
 
             <div class="form-group">
                     {!! Form::label('Contenido') !!}
@@ -105,6 +98,22 @@
                     {!! Form::textarea('contenido',null,['class'=>'form-control', 'rows' => 50]) !!}
                    
                 </div>        
+
+             <div class="form-group">
+                    {!! Form::label('¿Que Traer?') !!}
+                                   
+                    {!! Form::textarea('traer',null,['class'=>'form-control', 'rows' => 50]) !!}
+                   
+                </div>    
+
+            <div class="row" ><!--Inicio de row -->
+                 
+                <div class="col-md-6 col-xs-12">
+                        
+                     {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
+                </div>
+
+            </div>    
 
            
 

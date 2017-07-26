@@ -95,7 +95,7 @@
 
 
             <div class="row" ><!--Inicio de row -->
-                 <div class="col-md-6 col-xs-12">
+                 <div class="col-md-4 col-xs-12">
                        <div class="form-group">
                             <label>Número de Estrellas</label>
                             <select class="form-control" name="estrellas" id="estrellas" style="width: 100%;" >
@@ -120,7 +120,30 @@
                             </select>
                         </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
+
+                <div class="col-md-4 col-xs-12">
+
+                 <label>Seleccione la Ubicación del Hospedaje</label>
+                    
+                  
+                    <select class="form-control" name="id_parroquias" id="parroquias" style="width: 100%;" >
+                         <option value="" disabled selected>Seleccione la Parroquia</option>
+
+                            @foreach($parroquias as $parroquia)
+                                    @if($parroquia->id == $hospedaje->parroquias->id)
+                                        <option value="{{$parroquia->id}}" selected>  {{ $parroquia->parroquia }} </option>
+                                    @else
+                                        <option value="{{$parroquia->id}}">  {{ $parroquia->parroquia }} </option>
+                                    @endif
+                                @endforeach
+                    </select>
+
+
+
+                </div>
+
+
+                <div class="col-md-4 col-xs-12">
                         
                      {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
                 </div>

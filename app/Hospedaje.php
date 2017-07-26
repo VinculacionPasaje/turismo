@@ -20,10 +20,15 @@ class Hospedaje extends Model
         'contador_visitas',
         'estado',
         'id_categorias',
+        'id_parroquias',
     ];
 
     public function categoria(){
         return $this->belongsTo(CategoriaHospedaje::class,'id_categorias','id');
+    }
+
+     public function parroquias(){
+        return $this->belongsTo(Parroquias::class,'id_parroquias','id');
     }
 
 

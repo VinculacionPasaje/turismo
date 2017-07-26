@@ -19,8 +19,9 @@ class CreateTableParroquias extends Migration
             $table->date('fecha_post');
             $table->string('path')->nullable();
             $table->text('contenido');
-            $table->integer('contador_visitas')->default(0); // el contador de visitas permitira valores nulos por ahora
-             $table->char('estado',1)->default(1);
+            $table->text('traer');
+            $table->integer('contador_visitas')->default(0);
+            $table->char('estado',1)->default(1);
             $table->integer('id_zonas')->unsigned()->nullable();
             $table->foreign('id_zonas')
                 ->references('id')->on('zonas');

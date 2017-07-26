@@ -7,6 +7,7 @@ use App\Http\Requests\HospedajeEditRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Hospedaje;
+use App\Parroquias;
 use App\CategoriaHospedaje;
 
 class HospedajeController extends Controller
@@ -31,8 +32,9 @@ class HospedajeController extends Controller
     public function create()
     {
         $categorias = CategoriaHospedaje::where('estado',1)->get();
+        $parroquias = Parroquias::where('estado',1)->get();
         
-        return View('administracion.hospedaje.create',compact('categorias'));
+        return View('administracion.hospedaje.create',compact('categorias', 'parroquias'));
     }
 
     /**
@@ -52,6 +54,7 @@ class HospedajeController extends Controller
             'contenido'=> $request['contenido'],
             'contador_visitas'=>0,
             'id_categorias'=> $request['id_categorias'],
+            'id_parroquias'=> $request['id_parroquias'],
            
         ]);
 
@@ -76,7 +79,8 @@ class HospedajeController extends Controller
 
         $hospedaje = Hospedaje::find($id);
         $categorias = CategoriaHospedaje::where('estado',1)->get();
-        return view('administracion.hospedaje.edit',compact('hospedaje','categorias'));
+         $parroquias = Parroquias::where('estado',1)->get();
+        return view('administracion.hospedaje.edit',compact('hospedaje','categorias', 'parroquias'));
 
     }
 

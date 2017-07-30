@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Alimentacion;
 use App\CategoriaAlimentacion;
+use App\Parroquias;
 
 class AlimentacionController extends Controller
 {
@@ -31,8 +32,9 @@ class AlimentacionController extends Controller
     public function create()
     {
         $categorias = CategoriaAlimentacion::where('estado',1)->get();
+        $parroquias = Parroquias::where('estado',1)->get();
         
-        return View('administracion.alimentacion.create',compact('categorias'));
+        return View('administracion.alimentacion.create',compact('categorias', 'parroquias'));
     }
 
     /**
@@ -66,7 +68,8 @@ class AlimentacionController extends Controller
 
         $alimentacion = Alimentacion::find($id);
         $categorias = CategoriaAlimentacion::where('estado',1)->get();
-        return view('administracion.alimentacion.edit',compact('alimentacion','categorias'));
+        $parroquias = Parroquias::where('estado',1)->get();
+        return view('administracion.alimentacion.edit',compact('alimentacion','categorias', 'parroquias'));
 
     }
 

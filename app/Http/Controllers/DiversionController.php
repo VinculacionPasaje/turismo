@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Diversion;
 use App\CategoriaDiversion;
+use App\Parroquias;
 
 class DiversionController extends Controller
 {
@@ -31,8 +32,9 @@ class DiversionController extends Controller
     public function create()
     {
         $categorias = CategoriaDiversion::where('estado',1)->get();
+        $parroquias = Parroquias::where('estado',1)->get();
         
-        return View('administracion.diversion.create',compact('categorias'));
+        return View('administracion.diversion.create',compact('categorias', 'parroquias'));
     }
 
     /**
@@ -66,7 +68,8 @@ class DiversionController extends Controller
 
         $diversion = Diversion::find($id);
         $categorias = CategoriaDiversion::where('estado',1)->get();
-        return view('administracion.diversion.edit',compact('diversion','categorias'));
+          $parroquias = Parroquias::where('estado',1)->get();
+        return view('administracion.diversion.edit',compact('diversion','categorias', 'parroquias'));
 
     }
 

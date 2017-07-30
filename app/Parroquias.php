@@ -33,6 +33,14 @@ class Parroquias extends Model
         return $this->hasMany(Hospedaje::class);
     }
 
+    public function alimentacion(){
+        return $this->hasMany(Alimentacion::class);
+    }
+
+    public function diversion(){
+        return $this->hasMany(Diversion::class);
+    }
+
  
 
 

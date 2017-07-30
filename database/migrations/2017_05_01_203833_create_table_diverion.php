@@ -28,6 +28,10 @@ class CreateTableDiverion extends Migration
             $table->foreign('id_categorias')
                 ->references('id')->on('categorias_diversion');
             
+            $table->integer('id_parroquias')->unsigned()->nullable();
+            $table->foreign('id_parroquias')
+                ->references('id')->on('parroquias');
+            
 
         });
     }

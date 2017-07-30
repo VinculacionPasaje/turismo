@@ -107,13 +107,35 @@
 
 
             <div class="row" ><!--Inicio de row -->
-                 <div class="col-md-6 col-xs-12">
+                 <div class="col-md-4 col-xs-12">
                        <div class="form-group">
                             <label for="telefono">Teléfono de Local</label>
                             <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="20" value="{{$diversion->telefono }}">
                         </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
+
+                 <div class="col-md-4 col-xs-12">
+
+                 <label>Seleccione la Ubicación</label>
+                    
+                  
+                    <select class="form-control" name="id_parroquias" id="parroquias" style="width: 100%;" >
+                         <option value="" disabled selected>Seleccione la Parroquia</option>
+
+                            @foreach($parroquias as $parroquia)
+                                    @if($parroquia->id == $diversion->parroquias->id)
+                                        <option value="{{$parroquia->id}}" selected>  {{ $parroquia->parroquia }} </option>
+                                    @else
+                                        <option value="{{$parroquia->id}}">  {{ $parroquia->parroquia }} </option>
+                                    @endif
+                                @endforeach
+                    </select>
+
+
+
+                </div>
+
+                <div class="col-md-4 col-xs-12">
                         
                      {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
                 </div>

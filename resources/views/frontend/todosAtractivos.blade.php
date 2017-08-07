@@ -22,6 +22,12 @@
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
 
 
+     <link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
+
+
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
   
@@ -197,6 +203,31 @@
                        
                         
                         <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li class="negrita"><a href="{{ route('login') }}">LOGIN</a></li>
+                        
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Salir
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
 
                      
                       
@@ -214,14 +245,62 @@
     </header>
 
 
-<div class='oculto'>
+<div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme"> 
 
-<img class="oculto" src="{{url('frontend/images/actividad2.jpg')}}" alt="">
 
-</div>
-<p class="sliderTitle4"> Atractivos Turísticos </p>
+            @foreach($categoriasTu as $cat)
 
-<div class="container" style="padding-bottom: 70px;">
+                 <?php $cont = 1?>
+
+                     @foreach($actividades as $act)            
+                            @if($cat->id == $act->id_categorias )
+                                     @if($cont==1)
+
+                                            <div class="item">
+                                                <img src="{{url('fotos/'.$act->path)}}" alt="">
+                                                <div class="line"> 
+                                                    <div class="text hide-s">
+                                                        <div class="line"> 
+                                                        <div class="prev-arrow">
+                                                            <i class="fa fa-chevron-left"></i>
+                                                        </div>
+                                                        <div class="next-arrow">
+                                                            <i class="fa fa-chevron-right"></i>
+                                                        </div>
+                                                        </div> 
+                                                        <h2>{{$act->titulo}}</h2>
+                                                        <p>{{$act->descripcion}}
+
+                                                        </p>
+                                                         {!!link_to('atractivosTuristicos/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn_banner'], $secure = null)!!}
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                     @endif 
+                                      <?php $cont = $cont+1?> 
+                                                             
+                                                    
+                                @endif
+                         @endforeach 
+                           
+                  
+                        
+                                                
+                                                    
+            @endforeach   
+
+            
+
+            </div>
+         </div>
+
+
+<div class="container" style="padding-bottom: 70px; padding-top:25px;">
 
 
 
@@ -412,6 +491,101 @@
     
  
     <script src="{{url('frontend/js/main.js')}}"></script>
+
+     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+
+    <script type="text/javascript">
+         jQuery(document).ready(function($) {
+            var theme_slider = $("#owl-demo");
+            $("#owl-demo").owlCarousel({
+                navigation: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                autoPlay: 6000,
+                addClassActive: true,
+             // transitionStyle: "fade",
+                singleItem: true
+            });
+            $("#owl-demo2").owlCarousel({
+                slideSpeed: 300,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["&#xf007","&#xf006"],
+                pagination: false,
+                singleItem: true
+            });
+
+            
+        
+            // Custom Navigation Events
+            $(".next-arrow").click(function() {
+                theme_slider.trigger('owl.next');
+            })
+            $(".prev-arrow").click(function() {
+                theme_slider.trigger('owl.prev');
+            })     
+        }); 
+
+      
+
+     
+
+
+        $(document).ready(function(){
+            var altura = $('.menu').offset().top;
+            
+            $(window).on('scroll', function(){
+                if ( $(window).scrollTop() > altura ){
+                    $('.menu').addClass('menu-fixed');
+                } else {
+                    $('.menu').removeClass('menu-fixed');
+                }
+            });
+        
+        });
+
+      
+
+        
+
+
+        (function () {
+                var previousScroll = 0;
+
+                $(window).scroll(function(){
+                var currentScroll = $(this).scrollTop();
+                if (currentScroll > previousScroll){
+
+                        //$('.menu').hide('slow');
+
+                    $('.menu').addClass('desaparece');
+                    $('.menu').removeClass('aparece');
+
+                    //para abajo
+                    
+                } else {
+
+                    //$('.menu').show('slow');
+                    
+                        
+
+                    $('.menu').addClass('aparece');
+                    $('.menu').removeClass('desaparece');
+                    
+                    
+
+                    //para arriba
+                }
+                previousScroll = currentScroll;
+                });
+            }()); //run this anonymous function immediately
+
+
+      
+
+       
+
+      </script>
 
    
 

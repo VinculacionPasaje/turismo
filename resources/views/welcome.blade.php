@@ -280,7 +280,7 @@
                         <li class="scroll active"><a href="{{url ('/')}}">INICIO</a></li>
 						
 						
-                          <li class="dropdown">
+                        <li class="dropdown">
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -290,7 +290,175 @@
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
-                             </li> 
+                        </li> 
+
+                        <li class="dropdown mega-dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>				
+                            <div class="dropdown-menu mega-dropdown-menu">
+                                <div class="col-sm-4">
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="men">
+                                            <ul class="nav-list list-inline">
+                                                 <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                            </ul>
+                                        </div>
+                                    <div class="tab-pane" id="women">
+                                        <ul class="nav-list list-inline">
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>                                
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="kids">
+                                        <ul class="nav-list list-inline">
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="sports">
+                                        <ul class="nav-list list-inline">                                
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                                        </ul>
+                                    </div>
+                                    </div>
+
+                                      <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
+                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
+                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
+                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
+                                        </ul> 
+                                </div>
+                                
+                                            
+                                
+                                <div class="col-sm-4">
+                                    <!-- Tab panes -->
+                                    <div class="tab-content ">
+                                        <div class="tab-pane active" id="men">
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="women">
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>                                
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="kids">
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="sports">
+                                            <ul class="nav-list list-inline">                                
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                                <ul class="nav nav-tabs" role="tablist">
+                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
+                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
+                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
+                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
+                                        </ul> 
+                                </div>
+                                
+                             
+                                <div class="col-sm-4">
+                                    <!-- Tab panes -->
+                                    <div class="tab-content ">
+                                        <div class="tab-pane active" id="men">
+                                            <ul class="nav-list list-inline">
+                                                 <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="women">
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>                                
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="kids">
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="sports">
+                                            <ul class="nav-list list-inline">                                
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
+                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                                <ul class="nav nav-tabs" role="tablist">
+                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
+                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
+                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
+                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
+                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
+                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
+                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
+                                        </ul> 
+                                </div>         
+
+                               
+                                
+                                
+                                
+                            </div>				
+                        </li>
+
+                             
+
+
+
+
+
+
+
 
                         <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
@@ -481,33 +649,26 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-12">
 
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                            <div class="cat">{{$cat->categoria}}</div>
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
 
-                                        <article class="card">
-                                            <a href="{{url ('actividades/'.$act->id)}}">
-                                                <div class="card__wrapper">
+                                                        <div class="title">
+                                                            <h1>{{$act->titulo}}</h1>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
 
-                                                    <figure class="card__feature">
-                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
-                                                    </figure>
-
-                                                    <div class="card__box">
-
-                                                    <header class="card__item card__header">
-                                                        
-                                                        <h2 class="card__item card__item--small card__title">{{$act->titulo}}</h2>
-                                                    </header>
-
-                                                    
-
-                                                    <section class="card__item card__body">
-                                                       <P class="negro2">{{$act->descripcion}}</P>
-                                                    </section>
-
-                                                    </div>
-
+                                                        <p class="more">
+                                                            <a href="{{url ('actividades/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
                                                 </div>
-                                            </a>
-                                         </article>
+
+
+                                        
                                      </div>
               
                                         @endif
@@ -548,33 +709,26 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-12">
 
+                                                <div class="news">
+                                                        <div class="img-figure">
+                                                            <div class="cat">{{$cat->categoria}}</div>
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
 
-                                        <article class="card">
-                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">
-                                                <div class="card__wrapper">
+                                                        <div class="title">
+                                                            <h1>{{$act->titulo}}</h1>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
 
-                                                    <figure class="card__feature">
-                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
-                                                    </figure>
-
-                                                    <div class="card__box">
-
-                                                    <header class="card__item card__header">
-                                                        
-                                                        <h2 class="card__item card__item--small card__title">{{$act->titulo}}</h2>
-                                                    </header>
-
-                                                    
-
-                                                    <section class="card__item card__body">
-                                                       <P class="negro2">{{$act->descripcion}}</P>
-                                                    </section>
-
-                                                    </div>
-
+                                                        <p class="more">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
                                                 </div>
-                                            </a>
-                                         </article>
+
+
+                             
                                      </div>
               
                                         @endif
@@ -612,32 +766,27 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12">
 
 
-                                        <article class="card">
-                                            <a href="{{url ('hospedaje/'.$act->id)}}">
-                                                <div class="card__wrapper">
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                            <div class="cat">{{$cat->categoria}}</div>
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
 
-                                                    <figure class="card__feature">
-                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
-                                                    </figure>
+                                                        <div class="title">
+                                                            <h1>{{$act->titulo}}</h1>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
 
-                                                    <div class="card__box">
-
-                                                    <header class="card__item card__header">
-                                                        
-                                                        <h2 class="card__item card__item--small card__title">{{$act->titulo}}</h2>
-                                                    </header>
-
-                                                    
-
-                                                    <section class="card__item card__body">
-                                                       <P class="negro2">{{$act->descripcion}}</P>
-                                                    </section>
-
-                                                    </div>
-
+                                                        <p class="more">
+                                                            <a href="{{url ('hospedaje/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
                                                 </div>
-                                            </a>
-                                         </article>
+
+
+
+                                       
                                      </div>
               
                                         @endif
@@ -672,33 +821,25 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-12">
 
+                                    <div class="news">
+                                            <div class="img-figure">
+                                                <div class="cat">{{$cat->categoria}}</div>
+                                                <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                            </div>	
 
-                                        <article class="card">
-                                            <a href="{{url ('diversion/'.$act->id)}}">
-                                                <div class="card__wrapper">
+                                            <div class="title">
+                                                <h1>{{$act->nombre_lugar}}</h1>
+                                            </div>
+                                            <p class="description">
+                                                {{$act->descripcion}}
+                                            </p>
 
-                                                    <figure class="card__feature">
-                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
-                                                    </figure>
+                                            <p class="more">
+                                                <a href="{{url ('diversion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                            </p>
+                                    </div>
 
-                                                    <div class="card__box">
 
-                                                    <header class="card__item card__header">
-                                                        
-                                                        <h2 class="card__item card__item--small card__title">{{$act->nombre_lugar}}</h2>
-                                                    </header>
-
-                                                    
-
-                                                    <section class="card__item card__body">
-                                                       <P class="negro2">{{$act->descripcion}}</P>
-                                                    </section>
-
-                                                    </div>
-
-                                                </div>
-                                            </a>
-                                         </article>
                                      </div>
               
                                         @endif
@@ -735,33 +876,26 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-12">
 
+                                        <div class="news">
+                                                <div class="img-figure">
+                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                    <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                </div>	
 
-                                        <article class="card">
-                                            <a href="{{url ('alimentacion/'.$act->id)}}">
-                                                <div class="card__wrapper">
-
-                                                    <figure class="card__feature">
-                                                    <img src="{{url('fotos/'.$act->path)}}" class="card__img" alt="waves" width="275" height="240">
-                                                    </figure>
-
-                                                    <div class="card__box">
-
-                                                    <header class="card__item card__header">
-                                                        
-                                                        <h2 class="card__item card__item--small card__title">{{$act->nombre_lugar}}</h2>
-                                                    </header>
-
-                                                    
-
-                                                    <section class="card__item card__body">
-                                                       <P class="negro2">{{$act->descripcion}}</P>
-                                                    </section>
-
-                                                    </div>
-
+                                                <div class="title">
+                                                    <h1>{{$act->nombre_lugar}}</h1>
                                                 </div>
-                                            </a>
-                                         </article>
+                                                <p class="description">
+                                                    {{$act->descripcion}}
+                                                </p>
+
+                                                <p class="more">
+                                                    <a href="{{url ('alimentacion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                </p>
+                                        </div>
+
+
+                                  
                                      </div>
               
                                         @endif

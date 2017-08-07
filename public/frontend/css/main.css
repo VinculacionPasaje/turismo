@@ -30,7 +30,7 @@ Author URL: http://shapebootstrap.net
 .owl-item img, .full-img {
   max-width: none;
 	width:100%;
-  height: 600px;
+  height: 480px;
 	} 
 
 ::-webkit-scrollbar-track
@@ -213,7 +213,7 @@ Author URL: http://shapebootstrap.net
 
 #carousel .text {
 	position: absolute;
-	top: 35%;
+	top: 25%;
 	z-index: 10;
   padding-left: 25px;
 }
@@ -259,7 +259,7 @@ Author URL: http://shapebootstrap.net
 }
 
 .prev-arrow, .next-arrow {
-	background: none repeat scroll 0 0 #20212b;
+	background: none repeat scroll 0 0 #1c373f;
 	cursor: pointer;
 	float: left;
 	height: 30px;
@@ -310,7 +310,7 @@ Author URL: http://shapebootstrap.net
 
 
 .slider_btn3 {  
-  background: rgb(0, 92, 163);
+  background: #004880;
 
   border-radius: 20px;
   color: #fff;
@@ -333,7 +333,7 @@ Author URL: http://shapebootstrap.net
 
 
 .slider_btn {  
-  background: #005ca3;
+  background: #004880;
   font-weight: bold;
 
   border-radius: 20px;
@@ -348,6 +348,25 @@ Author URL: http://shapebootstrap.net
     -o-transition: all 0.5s;
     transition: all 0.5s;  
 }
+
+.slider_btn_banner {  
+  background: rgba(24, 46, 53, 0.8);
+  font-weight: bold;
+
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  font-family: "Varela",sans-serif;
+  margin-top: 10px;
+  padding: 9px 15px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;  
+}
+
+
 .slider_btn:hover,.slider_btn:focus{   
   text-decoration: none;
   outline: none;
@@ -357,8 +376,17 @@ Author URL: http://shapebootstrap.net
   
 }
 
+.slider_btn_banner:hover,.slider_btn_banner:focus{   
+  text-decoration: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.05);
+  
+}
+
 .slider_btn4 {  
-  background: #005ca3;
+  background: #004880;
   font-weight: bold;
 
   border-radius: 20px;
@@ -384,7 +412,7 @@ Author URL: http://shapebootstrap.net
 
 
 .btn_noticias {  
-  background: #005ca3;
+  background: #004880;
   font-weight: bold;
 
   border-radius: 20px;
@@ -588,7 +616,7 @@ font-size: 25px;
     
 #carousel .text {
 	position: absolute;
-	top: 35%;
+	top: 25%;
 	z-index: 10;
   padding-left: 25px;
 }
@@ -727,7 +755,7 @@ top: 190px;
     
 #carousel .text {
 	position: absolute;
-	top: 35%;
+	top: 25%;
 	z-index: 10;
   padding-left: 25px;
 }
@@ -1081,7 +1109,7 @@ margin: 0;
 #main-slider .owl-next {
   position: absolute;
   top: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #1c373f;
   color: #fff;
   font-size: 30px;
   display: inline-block;
@@ -1486,12 +1514,7 @@ margin: 0;
 .nav.main-tab > li:last-child > a {
   border-radius: 0 3px 0 0;
 }
-.tab-content {
-  border: 1px solid #eee;
-  border-top: 0;
-  padding: 20px 20px 10px;
-  border-radius: 0 0 3px 3px;
-}
+
 .panel-default {
   border-color: #eee;
 }
@@ -3174,6 +3197,180 @@ Comentarios
 }
 .media-body{
   width: 100%;
+}
+
+
+.nav-tabs {
+  display: inline-block;
+  border-bottom: none;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.nav-tabs > li > a, 
+.nav-tabs > li > a:hover, 
+.nav-tabs > li > a:focus, 
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: none;
+  border-radius: 0;
+}
+
+
+
+
+.nav-list > li > a:hover { text-decoration: none; }
+.nav-list > li > a > span {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mega-dropdown { position: static !important; }
+.mega-dropdown-menu {
+  padding: 20px 15px 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.news {
+    background: #fff;
+	position: relative;
+	overflow: hidden;
+	z-index:1;
+ 	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;	
+
+	border: 1px solid #eaeaea;
+}
+
+.news .img-figure {
+	position: relative;
+}
+
+.news .img-figure img {
+	position: relative;	
+	overflow: hidden;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.news:hover .img-figure img {
+	-webkit-transform: scale(1.10);
+	-moz-transform: scale(1.10);
+	-ms-transform: scale(1.10);
+	-o-transform: scale(1.10);
+	transform: scale(1.10);
+}
+
+.news .title {
+	/*padding: 29px 30px;*/
+	padding: 45px 30px;
+	position: absolute;
+	left: 0;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;	
+}
+
+.news .title h1 {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 19px;
+/*	color: #3D6AA2;*/
+	text-align: center;
+}
+
+.news:hover .title  {
+	margin-top: -90px;
+	background: #fff;
+}
+
+.news  p.description {
+	position: relative;
+	font-weight: normal;
+	line-height: 22px;
+	opacity: 0;
+
+	text-align: center;
+
+	padding: 15px 30px 0px 30px;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;	
+}
+
+.news:hover p.description  {
+	opacity: 1;
+}
+
+p.more {
+	text-align: center;
+}
+
+.more a {
+    position: relative;
+    font-size: 13px;
+    margin-top: 30px;
+    display: block;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: inline-block;
+    color: rgb(0, 92, 163);;
+}
+
+.more a:after {
+    content: '';
+    width: 18px;
+    height: 1px;
+
+    position: absolute;
+    left: 55px;
+    top: 9px;
+
+    background: rgb(0, 92, 163);;
+
+    vertical-align: middle;
+    margin-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.news:hover a:after {
+    width: 30px;
+}
+
+.cat {
+	background: rgb(0, 92, 163);;
+	color: #fff;
+	text-transform: uppercase;
+	position: absolute;
+	left: 0;
+	top: 20px;
+	z-index: 1;
+	padding: 3px 15px;
 }
 
 

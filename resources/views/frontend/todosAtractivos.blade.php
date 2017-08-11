@@ -47,7 +47,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner">
+        <nav id="main-menu" class="navbar navbar-default menu" style="z-index: 100000;" role="banner">
 
             
             
@@ -360,9 +360,9 @@
                                             <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
                                         </header>
 
-                                        <div class="entry-content">
+                                        <div align="center">
                                             <P class="negro2">{{$act->descripcion}}</P>
-                                            {!!link_to('atractivosTuristicos/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'btn btn-danger btn-md'], $secure = null)!!}
+                                            {!!link_to('atractivosTuristicos/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn4'], $secure = null)!!}
                                           
                                         </div>
 

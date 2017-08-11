@@ -23,6 +23,12 @@
 
 
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
+
+    
+    <link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
   
   
 
@@ -41,7 +47,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner">
+        <nav id="main-menu" class="navbar navbar-default menu" style="z-index: 100000;" role="banner">
 
             
             
@@ -239,14 +245,63 @@
     </header>
 
 
-<div class='oculto'>
+     <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme"> 
 
-<img class="oculto" src="{{url('frontend/images/actividad2.jpg')}}" alt="">
 
-</div>
-<p class="sliderTitle4"> Diversion </p>
+            @foreach($categoriasDiversion as $cat)
 
-<div class="container" style="padding-bottom: 70px;">
+                 <?php $cont = 1?>
+
+                     @foreach($actividades as $act)            
+                            @if($cat->id == $act->id_categorias )
+                                     @if($cont==1)
+
+                                            <div class="item">
+                                                <img src="{{url('fotos/'.$act->path)}}" alt="">
+                                                <div class="line"> 
+                                                    <div class="text hide-s">
+                                                        <div class="line"> 
+                                                        <div class="prev-arrow">
+                                                            <i class="fa fa-chevron-left"></i>
+                                                        </div>
+                                                        <div class="next-arrow">
+                                                            <i class="fa fa-chevron-right"></i>
+                                                        </div>
+                                                        </div> 
+                                                        <h2>{{$act->nombre_lugar}}</h2>
+                                                        <p>{{$act->descripcion}}
+
+                                                        </p>
+                                                         {!!link_to('diversion/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn_banner'], $secure = null)!!}
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                     @endif 
+                                      <?php $cont = $cont+1?> 
+                                                             
+                                                    
+                                @endif
+                         @endforeach 
+                           
+                  
+                        
+                                                
+                                                    
+            @endforeach   
+
+            
+
+            </div>
+         </div>
+
+
+
+<div class="container" style="padding-bottom: 70px; padding-top:25px;">
 
 
 
@@ -306,9 +361,9 @@
                                             <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
                                         </header>
 
-                                        <div class="entry-content">
+                                        <div align="center">
                                             <P class="negro2">{{$act->descripcion}}</P>
-                                            {!!link_to('diversion/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'btn btn-danger btn-md'], $secure = null)!!}
+                                            {!!link_to('diversion/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn4'], $secure = null)!!}
                                           
                                         </div>
 
@@ -437,6 +492,103 @@
     
  
     <script src="{{url('frontend/js/main.js')}}"></script>
+
+
+    <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+
+    <script type="text/javascript">
+         jQuery(document).ready(function($) {
+            var theme_slider = $("#owl-demo");
+            $("#owl-demo").owlCarousel({
+                navigation: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                autoPlay: 6000,
+                addClassActive: true,
+             // transitionStyle: "fade",
+                singleItem: true
+            });
+            $("#owl-demo2").owlCarousel({
+                slideSpeed: 300,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["&#xf007","&#xf006"],
+                pagination: false,
+                singleItem: true
+            });
+
+            
+        
+            // Custom Navigation Events
+            $(".next-arrow").click(function() {
+                theme_slider.trigger('owl.next');
+            })
+            $(".prev-arrow").click(function() {
+                theme_slider.trigger('owl.prev');
+            })     
+        }); 
+
+      
+
+     
+
+
+        $(document).ready(function(){
+            var altura = $('.menu').offset().top;
+            
+            $(window).on('scroll', function(){
+                if ( $(window).scrollTop() > altura ){
+                    $('.menu').addClass('menu-fixed');
+                } else {
+                    $('.menu').removeClass('menu-fixed');
+                }
+            });
+        
+        });
+
+      
+
+        
+
+
+        (function () {
+                var previousScroll = 0;
+
+                $(window).scroll(function(){
+                var currentScroll = $(this).scrollTop();
+                if (currentScroll > previousScroll){
+
+                        //$('.menu').hide('slow');
+
+                    $('.menu').addClass('desaparece');
+                    $('.menu').removeClass('aparece');
+
+                    //para abajo
+                    
+                } else {
+
+                    //$('.menu').show('slow');
+                    
+                        
+
+                    $('.menu').addClass('aparece');
+                    $('.menu').removeClass('desaparece');
+                    
+                    
+
+                    //para arriba
+                }
+                previousScroll = currentScroll;
+                });
+            }()); //run this anonymous function immediately
+
+
+      
+
+       
+
+      </script>
+
 
    
 

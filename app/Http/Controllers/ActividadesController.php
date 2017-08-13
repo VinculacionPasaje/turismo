@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Actividades;
 use App\CategoriaActividades;
+use App\Parroquias;
+use App\ParroquiasActividades;
 
 
 class ActividadesController extends Controller
@@ -32,8 +34,9 @@ class ActividadesController extends Controller
     public function create()
     {
         $categorias = CategoriaActividades::where('estado',1)->get();
+        $parroquias = Parroquias::where('estado',1)->get();
         
-        return View('administracion.actividades.create',compact('categorias'));
+        return View('administracion.actividades.create',compact('categorias', 'parroquias'));
     }
 
     /**
@@ -47,7 +50,7 @@ class ActividadesController extends Controller
 
         
 
-            Actividades::create([
+            $actividades = Actividades::create([
             'titulo' => $request['titulo'],
             'descripcion' => $request['descripcion'],
             'fecha_post' => $request['fecha_post'],
@@ -57,6 +60,14 @@ class ActividadesController extends Controller
             'id_categorias'=> $request['id_categorias'],
            
         ]);
+
+        $total_parroquias = $request->parroquias;
+        foreach($total_parroquias as $parroquias){
+            ParroquiasActividades::create([
+                'actividades_id'=>$actividades->id,
+                'parroquias_id'=>$parroquias,
+            ]);
+        }
 
             
                
@@ -85,9 +96,11 @@ class ActividadesController extends Controller
     public function edit($id)
     {
 
-        $actividades = Actividades::find($id);
+        $actividad = Actividades::find($id);                           
         $categorias = CategoriaActividades::where('estado',1)->get();
-        return view('administracion.actividades.edit',compact('actividades','categorias'));
+        $parroquias = Parroquias::where('estado',1)->get();
+        $parroquias_actividades = ParroquiasActividades::all();
+        return view('administracion.actividades.edit',compact('actividad','categorias', 'parroquias', 'parroquias_actividades'));
 
     }
 
@@ -115,6 +128,10 @@ class ActividadesController extends Controller
                     'id_categorias'=> $request['id_categorias'],
                    
                 ]);
+
+                $actividades->parroquias()->sync($request->get('parroquias'));
+
+                
 
                   
 

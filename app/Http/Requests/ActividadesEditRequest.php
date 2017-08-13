@@ -29,6 +29,7 @@ class ActividadesEditRequest extends FormRequest
             'fecha_post'=>'required',
             'id_categorias'=>'required',
             'contenido'=>'required',
+              'parroquias'=>'required',
             
         ];
     }

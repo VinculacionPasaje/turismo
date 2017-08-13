@@ -28,7 +28,7 @@
             <h3 class="box-title">Editar Contenido</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            {{Form::model($actividades, ['route' => ['actividades.update',$actividades->id],'method'=>'PUT','files' => true ])}}
+            {{Form::model($actividad, ['route' => ['actividades.update',$actividad->id],'method'=>'PUT','files' => true ])}}
             <div id="msj-success" class="alert alert-success alert-dismissible aprobado" role="alert" style="display:none">
                 <strong> Noticia Editada Correctamente.</strong>
             </div>
@@ -49,19 +49,55 @@
                             <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="datepicker" name = "fecha_post" value="{{$actividades->fecha_post}}">
+                            <input type="text" class="form-control pull-right" id="datepicker" name = "fecha_post" value="{{$actividad->fecha_post}}">
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            
 
-            <div class="form-group">
-                {!! Form::label('Descripción') !!}
-                {!! Form::text('descripcion',null,['placeholder'=>'Descripcion','class'=>'form-control']) !!}
+            
+            <div class="row" ><!--Inicio de row -->
+                 <div class="col-md-6 col-xs-12">
+
+                    <div class="form-group">
+                        {!! Form::label('Descripción') !!}
+                        {!! Form::text('descripcion',null,['placeholder'=>'Descripcion','class'=>'form-control']) !!}
+                    </div>
+
+
+                 </div>
+
+                  <div class="col-md-6 col-xs-12">
+
+                      <div class="form-group">
+                            <label>Eliga la /las parroquias</label>
+                            <select class="form-control select2" multiple="multiple" data-placeholder="Selecione las parroquias" name ="parroquias[]" style="width: 100%;">
+                                    <?php $array = array(); ?>
+                                    @foreach($parroquias_actividades as $parro)
+                                          @if($parro->actividades_id == $actividad->id)
+                                              <?php $array[] = $parro->parroquias_id;?>
+
+                                          @endif
+                                       
+                                    @endforeach
+                                    @foreach($parroquias as $parroquia)
+                                        @if(in_array($parroquia->id,$array) )
+                                            <option value="{{$parroquia->id}}" selected> {{ $parroquia->parroquia }} </option>
+                                        @else
+                                            <option value="{{$parroquia->id}}" > {{ $parroquia->parroquia }} </option>
+                                        @endif
+                                    @endforeach
+
+                            </select>
+                        </div>
+
+
+                 </div>
+            
             </div>
+
 
             <div class="row" ><!--Inicio de row -->
                  <div class="col-md-6 col-xs-12">
@@ -78,7 +114,7 @@
                         <option value="" disabled selected>Seleccione la categoria</option>
 
                             @foreach($categorias as $categoria)
-                                    @if($categoria->id == $actividades->categorias_actividades->id)
+                                    @if($categoria->id == $actividad->categorias_actividades->id)
                                         <option value="{{$categoria->id}}" selected>  {{ $categoria->categoria }} </option>
                                     @else
                                         <option value="{{$categoria->id}}">  {{ $categoria->categoria }} </option>
@@ -122,6 +158,20 @@
 @section('script')
     <script src="{{url('administration/dist/js/actividades/java-actividades.js')}}"></script>
      <script src="{{url('administration/dist/js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+       <script src="{{url('administration/plugins/select2/select2.full.min.js')}}"></script>
+
+        <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $(".select2").select2();
+            //Datemask dd/mm/yyyy
+            $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+            //Datemask2 mm/dd/yyyy
+            $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+            //Money Euro
+            $("[data-mask]").inputmask();
+        });
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {

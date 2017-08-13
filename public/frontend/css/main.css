@@ -3249,6 +3249,7 @@ Comentarios
 
 .news .img-figure {
 	position: relative;
+  height: 200px;
 }
 
 .news .img-figure img {

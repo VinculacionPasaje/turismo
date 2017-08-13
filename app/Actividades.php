@@ -25,6 +25,11 @@ class Actividades extends Model
         return $this->belongsTo(CategoriaActividades::class,'id_categorias','id');
     }
 
+    public function parroquias(){
+        return $this->belongsToMany(Parroquias::class, 'parroquias_actividades');
+
+    }
+
 
     public function setPathAttribute($path){
 

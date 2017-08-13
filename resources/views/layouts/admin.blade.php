@@ -264,6 +264,47 @@
                 </li>
 
 
+
+                 <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pencil-square-o"></i><span>EVENTOS</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias Eventos
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('categoriasEventos.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                                <li><a href="{{route('categoriasEventos.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-pencil-square-o"></i> Eventos
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                             <li><a href="#"><i class="fa fa-file"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+                        
+
+        
+
+                        
+                    </ul>
+                </li>
+
+
                   <li class="treeview">
                     <a href="#">
                         <i class="fa fa-pencil-square-o"></i><span>ZONAS / PARROQUIAS</span>

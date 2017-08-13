@@ -22,16 +22,41 @@
 
 </div>
 
-<div class="form-group">
-    {!! Form::label('Descripción') !!}
-    {!! Form::text('descripcion',null,['placeholder'=>'Descripcion','class'=>'form-control']) !!}
+
+<div class="row" ><!--Inicio de row -->
+                 <div class="col-md-6 col-xs-12">
+
+                    <div class="form-group">
+                        {!! Form::label('Descripción') !!}
+                        {!! Form::text('descripcion',null,['placeholder'=>'Descripcion','class'=>'form-control']) !!}
+                    </div>
+
+                 </div>
+
+                <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            {!!Form::label('Foto','Foto:')!!}
+                            {!!Form::file('path',['class'=>'form-control'])!!}
+                        </div>
+                </div>
+
+
 </div>
+
+
+
+
+
 
 <div class="row" ><!--Inicio de row -->
                  <div class="col-md-6 col-xs-12">
                         <div class="form-group">
-                            {!!Form::label('Foto','Foto:')!!}
-                            {!!Form::file('path',['class'=>'form-control'])!!}
+                                <label>Eliga la/las Parroquias</label>
+                                <select class="form-control select2" multiple="multiple" data-placeholder="Seleccione las parroquias" name ="parroquias[]" style="width: 100%;">
+                                    @foreach($parroquias as $parroquia)
+                                        <option value="{{$parroquia->id}}" >  {{ $parroquia->parroquia }} </option>
+                                    @endforeach
+                                </select>
                         </div>
                 </div>
                 <div class="col-md-6 col-xs-12">

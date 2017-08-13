@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ActividadesRequest extends FormRequest
+class CategoriaEventosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,9 @@ class ActividadesRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo'=>'required|max:500',
-            'descripcion'=>'required|max:255',
-            'fecha_post'=>'required',
-            'id_categorias'=>'required',
-            'contenido'=>'required',
-            'parroquias'=>'required',
-            'path'=>'required|file|mimes:jpeg,bmp,png|max:10240',
+            'categoria'=>'required|max:255',
+            'descripcion'=>'max:255',
+
         ];
     }
 }

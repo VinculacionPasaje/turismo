@@ -44,6 +44,7 @@
     <script src="{{url('administration/dist/js/actividades/java-actividades.js')}}"></script>
     <script src="{{url('administration/dist/js/alertify.js')}}"></script>
       <script src="{{url('administration/dist/js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+          <script src="{{url('administration/plugins/select2/select2.full.min.js')}}"></script>
     
 
     <script type="text/javascript">
@@ -53,6 +54,35 @@
             },3000);
         });
     </script>
+
+    <script>
+        $(function() {
+            $(".select2").select2();
+            $.fn.datepicker.dates['en'] = {
+                days: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+                daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+                daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+                    "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+                monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
+                    "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+                today: "Hoy",
+                clear: "Clear",
+                titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+                weekStart: 0
+            };
+            $("#datepicker").datepicker({
+                format: 'dd/mm/yyyy',
+                language:'en'
+            })
+            $("#datepicker2").datepicker({
+                format: 'dd/mm/yyyy',
+                language:'en'
+            })
+        });
+    </script>
+
+    
     <script>
         $(function() {
                 $.fn.datepicker.dates['en'] = {

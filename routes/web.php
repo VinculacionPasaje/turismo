@@ -91,6 +91,7 @@
             Route::resource('administracion/categoriasEventos','CategoriaEventosController');
             Route::resource('administracion/zonas','ZonasController');
             Route::resource('administracion/parroquias','ParroquiasController');
+             Route::resource('administracion/eventos','EventosController');
 
 
         Route::get('/error',function(){

@@ -45,6 +45,10 @@ class Parroquias extends Model
          return $this->belongsToMany(Actividades::class, 'parroquias_actividades');
     }
 
+    public function eventos(){
+        return $this->hasMany(Eventos::class);
+    }
+
  
 
 

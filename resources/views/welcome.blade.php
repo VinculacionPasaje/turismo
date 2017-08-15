@@ -625,7 +625,7 @@
 
          
 
-            <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="col-lg-8 col-md-8 col-sm-12 ">
 
 
 
@@ -647,7 +647,7 @@
                                 @foreach($actividades as $act)            
                                     @if($cat->id == $act->id_categorias )
 
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
                                             <div class="news">
                                                         <div class="img-figure">
@@ -707,7 +707,7 @@
                                 @foreach($actividadesTu as $act)            
                                     @if($cat->id == $act->id_categorias )
 
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
                                                 <div class="news">
                                                         <div class="img-figure">
@@ -763,7 +763,7 @@
                                 @foreach($hospedaje as $act)            
                                     @if($cat->id == $act->id_categorias )
 
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
 
                                             <div class="news">
@@ -819,7 +819,7 @@
                                 @foreach($diversion as $act)            
                                     @if($cat->id == $act->id_categorias )
 
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
                                     <div class="news">
                                             <div class="img-figure">
@@ -874,7 +874,7 @@
                                 @foreach($alimentacion as $act)            
                                     @if($cat->id == $act->id_categorias )
 
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
                                         <div class="news">
                                                 <div class="img-figure">

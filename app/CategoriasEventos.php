@@ -15,6 +15,11 @@ class CategoriasEventos extends Model
         'estado',
     ];
 
+    public function eventos(){
+        return $this->hasMany(Eventos::class);
+
+    }
+
    
   
      

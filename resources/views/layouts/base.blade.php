@@ -206,7 +206,7 @@
 
 <div class="container">
 
- <!-- 
+
 
     <div class="row">
         <div class="row">
@@ -216,76 +216,106 @@
             </div>
             <div class="col-md-3">
                
-                <div class="controls pull-right hidden-xs">
+                <div class="controls pull-right">
                     <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
                         data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
                             data-slide="next"></a>
                 </div>
             </div>
         </div>
-        <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
            
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="row">
                         <div class="col-sm-3">
-                            <span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No : gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
+                                <span class="thumbnail text-center">
+                                <img src="http://placehold.it/350x280" alt="...">
+                                <h4 class="text-danger">Toyota Fortuner</h4>
+                                <div class="ratings">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </div>
+                                <p>Uttar Pradesh (North Zone)</p>
+                                <p>Registration No : gaadiexpert.com</p>
+                                <p>Auction End in 5 days</p>
 
 
 
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
-      				</div>
-      				
-      			</div>
-    		</span>
+                                    <hr class="line">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <button type="button" class="btn btn-link">Add to Wishlist</button>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <button class="btn btn-danger right" > BID NOW</button>
+                                        </div>
+                                        
+                                    </div>
+                                </span>
+
+                                   <span class="thumbnail text-center">
+                                    <img src="http://placehold.it/350x280" alt="...">
+                                    <h4 class="text-danger">Toyota Fortuner</h4>
+                                    <div class="ratings">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </div>
+                                    <p>Uttar Pradesh (North Zone)</p>
+                                    <p>Registration No : gaadiexpert.com</p>
+                                    <p>Auction End in 5 days</p>
+
+
+
+                                    <hr class="line">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <button type="button" class="btn btn-link">Add to Wishlist</button>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <button class="btn btn-danger right" > BID NOW</button>
+                                        </div>
+                                        
+                                    </div>
+                                </span>
                         </div>
+
                         <div class="col-sm-3">
                             <span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No : gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
+                                    <img src="http://placehold.it/350x280" alt="...">
+                                    <h4 class="text-danger">Toyota Fortuner</h4>
+                                    <div class="ratings">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </div>
+                                    <p>Uttar Pradesh (North Zone)</p>
+                                    <p>Registration No : gaadiexpert.com</p>
+                                    <p>Auction End in 5 days</p>
 
 
 
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
-      				</div>
-      				
-      			</div>
-    		</span>
+                                    <hr class="line">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <button type="button" class="btn btn-link">Add to Wishlist</button>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <button class="btn btn-danger right" > BID NOW</button>
+                                        </div>
+                                        
+                                    </div>
+                                </span>
                         </div>
+
                         <div class="col-sm-3">
                             <span class="thumbnail text-center">
       			<img src="http://placehold.it/350x280" alt="...">
@@ -470,7 +500,7 @@
             </div>
         </div>
     </div>
-     -->
+
 
 </div>
  

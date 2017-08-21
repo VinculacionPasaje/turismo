@@ -292,174 +292,6 @@
                             </ul>
                         </li> 
 
-                        <li class="dropdown mega-dropdown active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>				
-                            <div class="dropdown-menu mega-dropdown-menu">
-                                <div class="col-sm-4">
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="men">
-                                            <ul class="nav-list list-inline">
-                                                 <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                            </ul>
-                                        </div>
-                                    <div class="tab-pane" id="women">
-                                        <ul class="nav-list list-inline">
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>                                
-                                        </ul>
-                                    </div>
-                                    <div class="tab-pane" id="kids">
-                                        <ul class="nav-list list-inline">
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="tab-pane" id="sports">
-                                        <ul class="nav-list list-inline">                                
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                            <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                        </ul>
-                                    </div>
-                                    </div>
-
-                                      <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
-                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
-                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-                                        </ul> 
-                                </div>
-                                
-                                            
-                                
-                                <div class="col-sm-4">
-                                    <!-- Tab panes -->
-                                    <div class="tab-content ">
-                                        <div class="tab-pane active" id="men">
-                                            <ul class="nav-list list-inline">
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="tab-pane" id="women">
-                                            <ul class="nav-list list-inline">
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>                                
-                                            </ul>
-                                        </div>
-                                        <div class="tab-pane" id="kids">
-                                            <ul class="nav-list list-inline">
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="tab-pane" id="sports">
-                                            <ul class="nav-list list-inline">                                
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                                <ul class="nav nav-tabs" role="tablist">
-                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
-                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-                                        </ul> 
-                                </div>
-                                
-                             
-                                <div class="col-sm-4">
-                                    <!-- Tab panes -->
-                                    <div class="tab-content ">
-                                        <div class="tab-pane active" id="men">
-                                            <ul class="nav-list list-inline">
-                                                 <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="tab-pane" id="women">
-                                            <ul class="nav-list list-inline">
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>                                
-                                            </ul>
-                                        </div>
-                                        <div class="tab-pane" id="kids">
-                                            <ul class="nav-list list-inline">
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="tab-pane" id="sports">
-                                            <ul class="nav-list list-inline">                                
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                                <ul class="nav nav-tabs" role="tablist">
-                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
-                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-                                        </ul> 
-                                </div>         
-
-                               
-                                
-                                
-                                
-                            </div>				
-                        </li>
-
-                             
-
-
-
-
-
-
-
-
                         <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >OFERTA<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -627,31 +459,25 @@
 
             <div class="col-lg-8 col-md-8 col-sm-12 ">
 
+                     <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h2 class="column-title2"> Actividades </h2>
+                     </div>
 
-
-                
-                    @foreach($categoriasAct as $cat)
-
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
-
-
-                                
-                        </div>
-                    
-                    
-
-                        
-                        
                                 @foreach($actividades as $act)            
-                                    @if($cat->id == $act->id_categorias )
+                                    
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
                                             <div class="news">
                                                         <div class="img-figure">
-                                                            <div class="cat">{{$cat->categoria}}</div>
+                                                               @foreach($categoriasAct as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
                                                             <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
                                                         </div>	
 
@@ -671,47 +497,41 @@
                                         
                                      </div>
               
-                                        @endif
+                                      
                                 @endforeach 
 
                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                <a class="slider_btn4" href="{{url('categoria/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                        <a class="slider_btn4" href="{{url ('actividades')}}">Ver Más Actividades</a>
                                 
-                                </div>
-                           
-                        
-                                                
-                                                    
-                    @endforeach   
+                                 </div>
 
-                    
+
+
 
                  
+       
 
+                     <div class="col-lg-12 col-md-12 col-sm-12">
 
+                                    <h2 class="column-title2"> Atractivos Turisticos </h2>
+   
+                    </div>
 
-                     @foreach($categoriasTu as $cat)
-
-                        <div  class="col-lg-12 col-md-12 col-sm-12">
-
-                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
-
-
-                                
-                        </div>
-                    
-                    
-
-                        
-                        
                                 @foreach($actividadesTu as $act)            
-                                    @if($cat->id == $act->id_categorias )
+                                    
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
-                                                <div class="news">
+                                            <div class="news">
                                                         <div class="img-figure">
-                                                            <div class="cat">{{$cat->categoria}}</div>
+                                                               @foreach($categoriasTu as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
                                                             <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
                                                         </div>	
 
@@ -728,47 +548,41 @@
                                                 </div>
 
 
-                             
+                                        
                                      </div>
               
-                                        @endif
+                                      
                                 @endforeach 
 
-                                  <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                <a class="slider_btn4" href="{{url('categoriaTuristico/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                    <a class="slider_btn4" href="{{url ('atractivosTuristicos')}}">Ver Más Atractivos Turísticos</a>
                                 
                                 </div>
-                           
-                        
-                                                
-                                                    
-                    @endforeach   
+
 
                     
 
-                    @foreach($categoriasHospedaje as $cat)
+                      <div class="col-lg-12 col-md-12 col-sm-12">
 
-                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h2 class="column-title2"> Hospedajes </h2>
+   
+                    </div>
 
-                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
-
-
-                                
-                        </div>
-                    
-                    
-
-                        
-                        
                                 @foreach($hospedaje as $act)            
-                                    @if($cat->id == $act->id_categorias )
+                                    
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
-
                                             <div class="news">
                                                         <div class="img-figure">
-                                                            <div class="cat">{{$cat->categoria}}</div>
+                                                               @foreach($categoriasHospedaje as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
                                                             <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
                                                         </div>	
 
@@ -785,132 +599,121 @@
                                                 </div>
 
 
-
-                                       
+                                        
                                      </div>
               
-                                        @endif
+                                      
                                 @endforeach 
 
-                                  <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                <a class="slider_btn4" href="{{url('categoriaHospedaje/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                    <a class="slider_btn4" href="{{url ('hospedaje')}}">Ver Más Hospedajes</a>
                                 
                                 </div>
-                           
-                        
-                                                
-                                                    
-                    @endforeach
 
-                     @foreach($categoriasDiversion as $cat)
-
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
-
-
-                                
-                        </div>
-                    
                     
 
-                        
-                        
+                     <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> Diversion </h2>
+   
+                    </div>
+
                                 @foreach($diversion as $act)            
-                                    @if($cat->id == $act->id_categorias )
+                                    
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
 
-                                    <div class="news">
-                                            <div class="img-figure">
-                                                <div class="cat">{{$cat->categoria}}</div>
-                                                <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
-                                            </div>	
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasDiversion as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
 
-                                            <div class="title">
-                                                <h1>{{$act->nombre_lugar}}</h1>
-                                            </div>
-                                            <p class="description">
-                                                {{$act->descripcion}}
-                                            </p>
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
 
-                                            <p class="more">
-                                                <a href="{{url ('diversion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </p>
-                                    </div>
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
 
+                                                        <div class="title">
+                                                            <h1>{{$act->nombre_lugar}}</h1>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
 
-                                     </div>
-              
-                                        @endif
-                                @endforeach 
-
-                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                <a class="slider_btn4" href="{{url('categoriaDiversion/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
-                                
-                                </div>
-                           
-                        
-                                                
-                                                    
-                    @endforeach
-
-
-
-                    @foreach($categoriasAlimentacion as $cat)
-
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
-
-
-                                
-                        </div>
-                    
-                    
-
-                        
-                        
-                                @foreach($alimentacion as $act)            
-                                    @if($cat->id == $act->id_categorias )
-
-                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
-
-                                        <div class="news">
-                                                <div class="img-figure">
-                                                    <div class="cat">{{$cat->categoria}}</div>
-                                                    <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
-                                                </div>	
-
-                                                <div class="title">
-                                                    <h1>{{$act->nombre_lugar}}</h1>
+                                                        <p class="more">
+                                                            <a href="{{url ('diversion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
                                                 </div>
-                                                <p class="description">
-                                                    {{$act->descripcion}}
-                                                </p>
-
-                                                <p class="more">
-                                                    <a href="{{url ('alimentacion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                </p>
-                                        </div>
 
 
-                                  
+                                        
                                      </div>
               
-                                        @endif
+                                      
                                 @endforeach 
 
-                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                <a class="slider_btn4" href="{{url('categoriaAlimentacion/'.$cat->id)}}">Ver Más {{$cat->categoria}} </a>
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                    <a class="slider_btn4" href="{{url ('diversion')}}">Ver Más Diversión</a>
+                                
+                                </div>
+
+                
+
+
+                     <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> Alimentación </h2>
+   
+                    </div>
+
+                                @foreach($alimentacion as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasAlimentacion as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <h1>{{$act->nombre_lugar}}</h1>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                                @endforeach 
+
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                    <a class="slider_btn4" href="{{url ('alimentacion')}}">Ver Más Alimentación</a>
                                 
                                 </div>
                            
-                        
-                                                
-                                                    
-                    @endforeach
 
+                     
+                   
                 <!--
 
                  <div class="col-lg-6 col-md-6 col-sm-6">

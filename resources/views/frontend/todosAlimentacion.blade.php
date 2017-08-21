@@ -251,16 +251,9 @@
     <div id="carousel">
             <div id="owl-demo" class="owl-carousel owl-theme"> 
 
+                         @foreach($actividades_filtradas as $act) 
 
-            @foreach($categoriasAlimentacion as $cat)
-
-                 <?php $cont = 1?>
-
-                     @foreach($actividades as $act)            
-                            @if($cat->id == $act->id_categorias )
-                                     @if($cont==1)
-
-                                            <div class="item">
+                                        <div class="item">
                                                 <img src="{{url('fotos/'.$act->path)}}" alt="">
                                                 <div class="line"> 
                                                     <div class="text hide-s">
@@ -280,27 +273,19 @@
                                                         
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>   
 
 
+                             @endforeach
 
-                                     @endif 
-                                      <?php $cont = $cont+1?> 
-                                                             
-                                                    
-                                @endif
-                         @endforeach 
-                           
-                  
-                        
-                                                
-                                                    
-            @endforeach   
+
+            
 
             
 
             </div>
-         </div>
+    </div>
+
 
 
 
@@ -336,13 +321,11 @@
 
            @foreach($categoriasAlimentacion as $cat)
 
-          <div class="col-md-12">
+                   <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <p class="actividades"> {{$cat->categoria}} </p>
-
-
-                
-            </div>
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
+   
+                    </div>
         
           
 

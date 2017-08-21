@@ -388,10 +388,8 @@ Author URL: http://shapebootstrap.net
 .slider_btn4 {  
   background: #004880;
   font-weight: bold;
-
-  border-radius: 20px;
   color: #fff;
-  font-size: 16px;
+  font-size: 13px;
   display: inline-block;
   font-family: "Varela",sans-serif;
   margin-top: 10px;
@@ -406,7 +404,7 @@ Author URL: http://shapebootstrap.net
   text-decoration: none;
   outline: none;
   color:white;
-  box-shadow:  1px 5px 5px #888888;
+  box-shadow:  1px 3px 3px #888888;
   
 }
 
@@ -414,8 +412,6 @@ Author URL: http://shapebootstrap.net
 .btn_noticias {  
   background: #004880;
   font-weight: bold;
-
-  border-radius: 20px;
   color: #fff;
   font-size: 13px;
   display: inline-block;
@@ -434,7 +430,7 @@ Author URL: http://shapebootstrap.net
 }
 
 .espaciado{
-   padding-top: 5%;
+
    padding-bottom: 5%;
 }
 
@@ -1523,7 +1519,7 @@ margin: 0;
   border-color: #eee;
 }
 .panel-default > .panel-heading .panel-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {

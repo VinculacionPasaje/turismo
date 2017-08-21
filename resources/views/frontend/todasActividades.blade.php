@@ -243,7 +243,7 @@
         </nav>
     </header>
 
-
+<!--
    <div id="carousel">
             <div id="owl-demo" class="owl-carousel owl-theme"> 
 
@@ -296,7 +296,48 @@
             
 
             </div>
-         </div>
+    </div>
+
+    -->
+
+
+       <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme"> 
+
+                         @foreach($actividades_filtradas as $act) 
+
+                                        <div class="item">
+                                                <img src="{{url('fotos/'.$act->path)}}" alt="">
+                                                <div class="line"> 
+                                                    <div class="text hide-s">
+                                                        <div class="line"> 
+                                                        <div class="prev-arrow">
+                                                            <i class="fa fa-chevron-left"></i>
+                                                        </div>
+                                                        <div class="next-arrow">
+                                                            <i class="fa fa-chevron-right"></i>
+                                                        </div>
+                                                        </div> 
+                                                        <h2>{{$act->titulo}}</h2>
+                                                        <p>{{$act->descripcion}}
+
+                                                        </p>
+                                                         {!!link_to('actividades/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn_banner'], $secure = null)!!}
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>   
+
+
+                             @endforeach
+
+
+            
+
+            
+
+            </div>
+    </div>
 
 
 <div class="container" style="padding-bottom: 70px; padding-top: 25px;">
@@ -339,13 +380,12 @@
 
            @foreach($categoriasAct as $cat)
 
-          <div class="col-md-12">
+             <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <p class="actividades"> {{$cat->categoria}} </p>
+                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
+   
+                    </div>
 
-
-                
-            </div>
         
           
 

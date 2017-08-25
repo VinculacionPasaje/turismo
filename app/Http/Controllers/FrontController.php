@@ -117,13 +117,21 @@ class FrontController extends Controller
         return view('frontend/Traer', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion','traer', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
-    public function todas_actividades(){
+    public function todas_actividades(Request $request){
 
             $redes= Redes::where('estado',1)->get();
             $footer= Footer::where('estado',1)->get();
             $categoriasAct= CategoriaActividades::where('estado',1)->get();
             $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-            $actividades= Actividades::where('estado',1)->get();
+            
+            $actividades= Actividades::where('estado',1)->orderBy('id')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/actividades',compact('actividades', 'categoriasAct'))->render();
+                return response()->json(['html'=>$view]);
+            }
+
+
             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
             $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
             $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
@@ -136,13 +144,21 @@ class FrontController extends Controller
 
     }
 
-    public function todos_actractivos(){
+    public function todos_actractivos(Request $request){
 
         $redes= Redes::where('estado',1)->get();
         $footer= Footer::where('estado',1)->get();
         $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-        $actividades= Turistico::where('estado',1)->get();
+
+         $actividades= Turistico::where('estado',1)->orderBy('id')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/turistico',compact('actividades', 'categoriasTu'))->render();
+                return response()->json(['html'=>$view]);
+            }
+
+
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
@@ -154,16 +170,26 @@ class FrontController extends Controller
 
     }
 
-     public function todos_hospedajes(){
+     public function todos_hospedajes(Request $request){
 
         $redes= Redes::where('estado',1)->get();
         $footer= Footer::where('estado',1)->get();
         $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-        $actividades= Hospedaje::where('estado',1)->get();
+
+        
+
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+
+         $actividades= Hospedaje::where('estado',1)->orderBy('id')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/hospedaje',compact('actividades', 'categoriasHospedaje'))->render();
+                return response()->json(['html'=>$view]);
+            }
 
 
          $actividades_filtradas= Hospedaje::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
@@ -173,16 +199,24 @@ class FrontController extends Controller
 
     }
 
-    public function todos_alimentacion(){
+    public function todos_alimentacion(Request $request){
 
         $redes= Redes::where('estado',1)->get();
         $footer= Footer::where('estado',1)->get();
         $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-        $actividades= Alimentacion::where('estado',1)->get();
+       
+
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+          $actividades= Alimentacion::where('estado',1)->orderBy('id')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/alimentacion',compact('actividades', 'categoriasAlimentacion'))->render();
+                return response()->json(['html'=>$view]);
+            }
 
          $actividades_filtradas= Alimentacion::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
         
@@ -191,17 +225,25 @@ class FrontController extends Controller
 
     }
 
-     public function todos_diversion(){
+     public function todos_diversion(Request $request){
 
         $redes= Redes::where('estado',1)->get();
         $footer= Footer::where('estado',1)->get();
         $categoriasAct= CategoriaActividades::where('estado',1)->get(); //categoria de actividades
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
-        $actividades= Diversion::where('estado',1)->get();
+
+        
+
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
+         $actividades= Diversion::where('estado',1)->orderBy('id')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/diversion',compact('actividades', 'categoriasDiversion'))->render();
+                return response()->json(['html'=>$view]);
+            }
 
          $actividades_filtradas= Diversion::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
         

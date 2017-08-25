@@ -291,9 +291,9 @@
 
 
        <div class="row header">
-            <div class="col-md-12">
+           <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <p class="contact"> Todas los atractivos turísticos </p>
+                    <h1 class="column-title2"> Todos los Atractivos Turísticos </h1>
 
 
                 
@@ -315,57 +315,24 @@
 
 
 
-           @foreach($categoriasTu as $cat)
+            <div class="col-lg-12 col-md-12 col-sm-12" id="post-data">
 
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                       @include('ajax-frontend/turistico')
 
-                                    <h2 class="column-title2"> {{$cat->categoria}} </h2>
-   
-                    </div>
-        
-          
+                        
 
-            
-            <div class="col-lg-12 col-md-12 col-sm-12">
+                        
+                </div>
 
-                    @foreach($actividades as $act)            
-                        @if($cat->id == $act->id_categorias )
-                                        
-                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom:25px;">
+                <div class="col-lg-12 col-md-12 col-sm-12" align="center">
 
-                                <div class="blog-post blog-large">
-                                    <article>
-                                        <header class="entry-header">
-                                            <div class="entry-thumbnail">
-                                                <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt="">
-                                                
-                                            </div>
-                                            <div class="entry-date">{{$act->fecha_post}}</div>
-                                            <h3 class="entry-title"><a href="#">{{$act->titulo}}</a></h3>
-                                        </header>
+                        <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
 
-                                        <div align="center">
-                                            <P class="negro2">{{$act->descripcion}}</P>
-                                            {!!link_to('atractivosTuristicos/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn4'], $secure = null)!!}
-                                          
-                                        </div>
-
-                                    </article>
-                                </div>
-                         </div>
-                                
-                                            
-                                    
-                                            
-                                        
-                            @endif
-                     @endforeach 
-                 </div>
-               
-                                     
-                                           
-         @endforeach   
-        
+                        </div>
+                
+                <div class="ajax-load text-center" style="display:none">
+                            <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
+                        </div>
 
 
         
@@ -477,6 +444,54 @@
     <script src="{{url('frontend/js/main.js')}}"></script>
 
      <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+
+
+     <script type="text/javascript">
+            var page = 1;
+
+
+            $(document).ready(function(){
+
+                            $('.loadMore').click(function(){
+
+                                page++;
+                                loadMoreData(page);
+
+                        
+
+
+                                });
+
+                        });
+
+            function loadMoreData(page){
+            $.ajax(
+                    {
+                        url: '?page=' + page,
+                        type: "get",
+                        beforeSend: function()
+                        {
+                            $('.ajax-load').show();
+                        }
+                    })
+                    .done(function(data)
+                    {
+                        if(data.html.length == "0"){
+                            $("button").text("Ya no hay más posts").attr("disabled", "disabled");
+                            $('.ajax-load').html("Ya no hay mas resultados");
+                        return;
+                        }
+                        $('.ajax-load').hide();
+                        $("#post-data").append(data.html);
+                    })
+                    .fail(function(jqXHR, ajaxOptions, thrownError)
+                    {
+                        alert('error al cargar los datos...');
+                    });
+            }
+        </script>
+
+
 
     <script type="text/javascript">
          jQuery(document).ready(function($) {

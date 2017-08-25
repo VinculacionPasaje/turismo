@@ -3131,7 +3131,7 @@ text-align: center;
 .card:hover .card__wrapper:after {
   transform: scale(0.95) translateY(10px);
 }
-*/
+
 
 .card:hover {
   cursor: pointer;
@@ -3150,6 +3150,8 @@ text-align: center;
   margin-right: 15px;
  
 }
+
+*/
 
 /**
 Comentarios
@@ -3374,6 +3376,8 @@ p.more {
       padding-bottom: 25px;
 
 }
+
+
 
 
 

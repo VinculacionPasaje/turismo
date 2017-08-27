@@ -482,7 +482,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->titulo}}</h1>
+                                                           <a href="{{url ('actividades/'.$act->id)}}"> <h1>{{$act->titulo}}</h1> </a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}
@@ -536,7 +536,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->titulo}}</h1>
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}
@@ -587,7 +587,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->titulo}}</h1>
+                                                             <a href="{{url ('hospedaje/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}
@@ -637,7 +637,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->nombre_lugar}}</h1>
+                                                           <a href="{{url ('diversion/'.$act->id)}}"> <h1>{{$act->nombre_lugar}}</h1></a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}
@@ -661,6 +661,8 @@
                                 </div>
 
                 
+
+
 
 
                      <div class="col-lg-12 col-md-12 col-sm-12">
@@ -688,7 +690,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->nombre_lugar}}</h1>
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}"><h1>{{$act->nombre_lugar}}</h1></a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}
@@ -970,11 +972,12 @@
     <div class="clearfix"></div>
     <h1 class="heading1">Noticias de Pasaje</h1>
     <div class="tabbable-panel margin-tops4 ">
-      <div class="tabbable-line">
+      <div align="center" class="tabbable-line">
         <ul class="nav nav-tabs tabtop  tabsetting">
-          <li  class="active"> <a href="#tab_default_1" data-toggle="tab" > <span class="glyphicon glyphicon-list-alt"></span>  Noticias </a> </li>
-          <li> <a href="#tab_default_2" data-toggle="tab"> <span class="glyphicon glyphicon-eye-open"></span>  Interesantes</a> </li>
-          <li> <a href="#tab_default_3" data-toggle="tab"> <span class="glyphicon glyphicon-check"></span> Destacado </a> </li>
+          <li  class="active" style="padding-bottom: 5px;"> <a href="#tab_default_1" data-toggle="tab" > <span class="glyphicon glyphicon-list-alt"></span>  Noticias </a> </li>
+          <li style="padding-bottom: 5px;"> <a href="#tab_default_2" data-toggle="tab"> <span class="glyphicon glyphicon-eye-open"></span>  Interesantes</a> </li>
+          <li style="padding-bottom: 5px;"> <a href="#tab_default_3" data-toggle="tab"> <span class="glyphicon glyphicon-check"></span> Destacado </a> </li>
+          
           
         </ul>
         <div class="tab-content margin-tops">
@@ -1238,6 +1241,24 @@
 		
 		
         });
+
+
+        //<!--    portfolio  JS  =================    -->
+       
+        $(function() {
+                var selectedClass = "";
+                $(".fil-cat").click(function(){ 
+                selectedClass = $(this).attr("data-rel"); 
+            $("#portfolio").fadeTo(100, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
+            setTimeout(function() {
+            $("."+selectedClass).fadeIn().addClass('scale-anm');
+            $("#portfolio").fadeTo(300, 1);
+            }, 300); 
+                
+            });
+        });
+
 
         
 

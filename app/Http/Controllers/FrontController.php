@@ -22,8 +22,10 @@ use App\Alimentacion;
 use App\CategoriaHospedaje;
 use App\CategoriaDiversion;
 use App\CategoriaAlimentacion;
+use App\CategoriasEventos;
 use App\TurismoComunitario;
 use App\Noticia;
+use App\Eventos;
 
 class FrontController extends Controller
 {
@@ -140,6 +142,50 @@ class FrontController extends Controller
 
         
             return view('frontend/todasActividades', compact('actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+
+
+    }
+
+
+    public function todos_eventos(Request $request){
+
+            $redes= Redes::where('estado',1)->get();
+            $footer= Footer::where('estado',1)->get();
+            $categoriasAct= CategoriaActividades::where('estado',1)->get();
+            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+            $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+            $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+           $actividades_filtradas= Eventos::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
+
+            $categoriasEventos= CategoriasEventos::where('estado',1)->get(); //categorias para eventos
+
+           
+            
+            $actividades= Eventos::where('estado',1)->orderBy('id')->paginate(6);
+
+            if ($request->ajax()) {
+                return view('ajax-frontend/eventos', compact('actividades', 'categoriasEventos'));
+            }
+
+            
+/*
+            if ($request->ajax()) {
+
+                return view('ajax-frontend.eventos', compact('actividades', 'categoriasEventos'))->render();  
+              
+            }
+*/
+            
+
+
+           
+
+           
+
+        
+            return view('frontend/todosEventos', compact('categoriasEventos','actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }

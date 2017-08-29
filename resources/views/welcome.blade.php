@@ -389,7 +389,7 @@
                             <ul class="dropdown-menu" role="menu">
                                  
                                 <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
-                                <li><a href="#">Agenda de Eventos</a></li>
+                                <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               
                             </ul>
@@ -666,7 +666,6 @@
 
 
                      <div class="col-lg-12 col-md-12 col-sm-12">
-
                                     <h2 class="column-title2"> Alimentación </h2>
    
                     </div>

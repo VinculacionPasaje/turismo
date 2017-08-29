@@ -40,6 +40,10 @@
          Route::get('categoriaDiversion/{id}', 'FrontController@category_diversion');
          Route::get('diversion/{id}', 'FrontController@diversion');
 
+          // para el menu de agenda de eventos
+         Route::get('eventos', 'FrontController@todos_eventos');
+         Route::get('eventos/{id}', 'FrontController@eventos');
+
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');

@@ -21,8 +21,8 @@ class ActividadesController extends Controller
      */
     public function index(Request $request)
     {
-        $actividades = Actividades::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= Actividades::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        $actividades = Actividades::where('estado',1)->orderBy('id')->paginate(2);
+        $busqueda= Actividades::name($request->get('table_search'))->orderBy('id')->paginate(2);
         return View('administracion.actividades.index',compact('actividades', 'busqueda'));
     }
 

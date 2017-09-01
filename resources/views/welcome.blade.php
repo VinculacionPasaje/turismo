@@ -181,6 +181,10 @@
                                                     <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
                                                 @endif
 
+                                                 @if($red->id==5)
+                                                    <li><a href="{{$red->url}}" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                                @endif
+
                                                 
 
                                         @endforeach
@@ -391,7 +395,7 @@
                                 <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="http://localhost/comunidad/">Catastros Turísticos</a></li>               
                             </ul>
                         </li>  
 
@@ -884,7 +888,7 @@
                             <tbody><tr>
                             <tr><img src="{{url('fotos/'.$noticia->path)}}" style="width: 100%;height: 200px;"> </tr>
                             <td>
-                                 <h5 class="negro"><a class="negro" href="#">{{$noticia->titulo}}</a></h5>
+                                 <h5 class="negro"><a class="negro" href="noticias/{{$noticia->id}}">{{$noticia->titulo}}</a></h5>
                                  
                                 <p class="negro2" > {{$noticia->descripcion}} </p>  
                                 
@@ -912,7 +916,7 @@
                                     
 
                                 </div>
-                                <a class="btn_noticias" href="#">Ver Más Noticias</a>
+                                <a class="btn_noticias" href="{{url ('noticias')}}">Ver Más Noticias</a>
                       
                             </div>
                     </div>
@@ -920,13 +924,14 @@
 
                       <h3 class="column-title">Categorias Noticias</h3>
 
+                              
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                 @if($categorias->count())
                                 @foreach($categorias as $categoria)
-                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab" id="headingOne">
                                                 <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
+                                                    <a class= "alternativo" data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
                                                         <b>{{$categoria->nombre}}</b>
                                                     </a>
                                                 </h4>
@@ -936,7 +941,7 @@
 
                                                 @foreach($noticias as $noticia)            
                                                     @if($categoria->id == $noticia->id_categorias )
-                                                     <b><a href="#"> {{$noticia->titulo}} </a> </b>
+                                                     <b><a href="noticias/{{$noticia->id}}"> {{$noticia->titulo}} </a> </b>
                                                      <br>
 
                                                     @endif
@@ -1132,6 +1137,10 @@
 
                                                 @if($red->id==4)
                                                     <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                                                @endif
+
+                                                 @if($red->id==5)
+                                                    <li><a href="{{$red->url}}" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
                                                 @endif
 
                                                 

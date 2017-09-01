@@ -35,7 +35,7 @@
     
      <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner">
+        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner" style="z-index: 100000;">
 
             
             

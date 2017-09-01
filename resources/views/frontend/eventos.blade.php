@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="home no-js" lang="">
 
@@ -9,34 +10,22 @@
    
   <!-- /meta -->
 
-   <title>Actividades</title>
+   <title> {{ $actividad->titulo}}</title>
 
    <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
-
-
-    <link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/owl.transitions.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
-
-
+    
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
-
-    <style type="text/css">
-  		.ajax-load{
-  			
-		    padding: 10px 0px;
-		    width: 100%;
-  		}
-  	</style>
   
   
 
@@ -45,7 +34,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: #fff;">
+<body id="home" class="homepage">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -55,10 +44,10 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default menu" style="z-index: 100000;" role="banner">
+        <nav id="main-menu" class="navbar navbar-default menu" role="banner" style= " z-index: 1000;">
 
             
-            
+          
 
             
 
@@ -109,8 +98,8 @@
                                         <a href="{{url ('actividades')}}">Actividades</a>
                                         <ul class="dropdown-menu">
 
-                                        @if($categoriasAct->count())
-                                            @foreach($categoriasAct as $cat)
+                                        @if($categorias->count())
+                                            @foreach($categorias as $cat)
 
                                                 <li><a href="{{url('categoria/'.$cat->id)}}">{{$cat->categoria}}</a></li>
                                                
@@ -123,7 +112,7 @@
                                  <li class="dropdown-submenu">
                                          <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
                                         <ul class="dropdown-menu">
-                                               @if($categoriasTu->count())
+                                                @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
 
                                                         <li><a href="{{url('categoriaTuristico/'.$cat->id)}}">{{$cat->categoria}}</a></li>
@@ -134,7 +123,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>       
+                               <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>     
                             </ul>
                         </li>    
 
@@ -210,31 +199,6 @@
                        
                         
                         <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li class="negrita"><a href="{{ route('login') }}">LOGIN</a></li>
-                        
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
 
                      
                       
@@ -243,7 +207,7 @@
                        
                 </div>
 
-            
+                
 
 
 
@@ -251,183 +215,176 @@
         </nav>
     </header>
 
-<!--
-   <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
 
+<div class="container" style="padding-bottom:50px">
 
-            @foreach($categoriasAct as $cat)
-
-                 <?php $cont = 1?>
-
-                     @foreach($actividades as $act)            
-                            @if($cat->id == $act->id_categorias )
-                                     @if($cont==1)
-
-                                            <div class="item">
-                                                <img src="{{url('fotos/'.$act->path)}}" alt="">
-                                                <div class="line"> 
-                                                    <div class="text hide-s">
-                                                        <div class="line"> 
-                                                        <div class="prev-arrow">
-                                                            <i class="fa fa-chevron-left"></i>
-                                                        </div>
-                                                        <div class="next-arrow">
-                                                            <i class="fa fa-chevron-right"></i>
-                                                        </div>
-                                                        </div> 
-                                                        <h2>{{$act->titulo}}</h2>
-                                                        <p>{{$act->descripcion}}
-
-                                                        </p>
-                                                         {!!link_to('actividades/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn_banner'], $secure = null)!!}
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                     @endif 
-                                      <?php $cont = $cont+1?> 
-                                                             
-                                                    
-                                @endif
-                         @endforeach 
-                           
-                  
-                        
-                                                
-                                                    
-            @endforeach   
-
-            
-
-            </div>
-    </div>
-
-    -->
-
-
-       <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
-
-                         @foreach($actividades_filtradas as $act) 
-
-                                        <div class="item">
-                                                <img src="{{url('fotos/'.$act->path)}}" alt="">
-                                                <div class="line"> 
-                                                    <div class="text hide-s">
-                                                        <div class="line"> 
-                                                        <div class="prev-arrow">
-                                                            <i class="fa fa-chevron-left"></i>
-                                                        </div>
-                                                        <div class="next-arrow">
-                                                            <i class="fa fa-chevron-right"></i>
-                                                        </div>
-                                                        </div> 
-                                                        <h2>{{$act->titulo}}</h2>
-                                                        <p>{{$act->descripcion}}
-
-                                                        </p>
-                                                         {!!link_to('actividades/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn_banner'], $secure = null)!!}
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>   
-
-
-                             @endforeach
-
-
-            
-
-            
-
-            </div>
-    </div>
-
-
-<div class="container" style="padding-bottom: 70px; padding-top: 25px;">
-
-
-
-       <div class="row header">
+       
             <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <h1 class="column-title2"> Todas las Actividades </h1>
+                   <h1 class="column-title3">   {{ $actividad->titulo}}  </h1>
 
 
                 
             </div>
-        </div>
+   
+  
 
-         <div class= "col-xs-12 col-md-12">
-            <p style="font-color='black';text-align: justify; font-size: 16px" > En las áreas naturales del Cantón Pasaje se encuentran zonas adecuadas para la práctica de actividades como: 
-            @foreach($actividades as $act)            
-                       
-                                        
-                    <font style="text-transform: lowercase;">{{$act->titulo}}, </font>
-                                
-                                            
-                                    
-                                    
-            @endforeach   
-            
-            
-             entre otros. El clima ideal del cantón Pasaje y sus múltiples espacios nos invitan a adentrarnos en experiencias maravillosas tanto de deportes extremos como a ser parte de las diferentes actividades que pueden realizarse en este lugar. 
-             </p>
+        <div class=" col-md-8"   >
 
-            
-        </div>
+   
+                <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 
-
-        
-
-
-
-     
-
-            
-            
-
+                Categoria:  {!! $categoriasAct->categoria !!}
                 
-                <div class="col-lg-12 col-md-12 col-sm-12" id="post-data">
-
-                       @include('ajax-frontend/actividades')
-
-                        
-
-                        
-                </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12" align="center">
-
-                        <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
-
-                        </div>
-                
-                <div class="ajax-load text-center" style="display:none">
-                            <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
-                        </div>
-                
-                                        
-
-
-
-        
-
-    
-</div> <!-- /container -->
-
+                 {!! $actividad->contenido !!}
 
 
        
+                            
+        </div>
+
+        <div class="col-md-4">
+
+         <h1 class="column-title4">   Datos del Evento  </h1>
+
+         <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 7px;"> <i class="fa fa-calendar fa-1x"></i> </div> <span> Del {{$actividad->fecha_desde}} al {{$actividad->fecha_hasta}} </span></P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 10px;"> <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i>  </div> <span> {{$actividad->hora_inicio}} </span> </P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 14px; margin-left: 3px;"><i class="fa fa-map-marker fa-1x"></i> </div> <span> {{$actividad->direccion}}</span> </P>
+
+
+                
+        </div>
+
+            <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                   <h1 class="column-title3">   Más eventos </h1>
+
+
+                
+            </div>
+        </div>
+
+
+        <section class="team-sec">
+            <div class="container">
+                
+                <div class="row">
+                    <div id="carousel-example" class="carousel slide team team-web-view" data-ride="carousel">
+                        <div class="carousel-line">
+                            <div class="controls pull-right">
+                                <a class="left fa fa-angle-left btn" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-angle-right btn " href="#carousel-example" data-slide="next"></a>
+                            </div>
+                        </div>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="row">
+
+                                        <?php 
+                                        
+                                        $cont =0;
+                                        $arreglo=array();
+                                        
+                                        
+                                        ?>
+
+
+                                        @foreach($todosEventos as $evento)     
+
+
+                                            @if($cont >= 3)
+
+                                                <?php 
+
+                                                    $arreglo[] =$evento;
+
+
+                                                 ?>
+                                            
+                                            @else
+
+                                                    <div class="col-sm-4">
+                                                            <div class="col-item">
+                                                                <div class="photo-shadow"></div>
+                                                                <div class="photo">
+                                                                    <img class="img-responsive5" src="{{url('fotos/'.$evento->path)}}" alt="{{$evento->titulo}}">
+                                                                </div>
+                                                                <div class="info">
+                                                                    <div class="name">{{$evento->titulo}}</div>
+                                                                    <div class="degination">{{$evento->descripcion}}</div>
+                                                                    
+                                                                    <div class="clearfix"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                            
+
+
+
+                                              @endif
+
+                                              <?php $cont++?>
+
+                                                
+
+
+                                        @endforeach
+
+
+                                        
+                                        
+
+                                        </div>
+                                    </div>
+
+
+                           <div class="item ">
+                                <div class="row">
+                                    
+                                    @foreach($arreglo as $evento2) 
+
+                                        <div class="col-sm-4">
+                                                            <div class="col-item">
+                                                                <div class="photo-shadow"></div>
+                                                                <div class="photo">
+                                                                    <img class="img-responsive5" src="{{url('fotos/'.$evento2->path)}}" alt="{{$evento2->titulo}}">
+                                                                </div>
+                                                                <div class="info">
+                                                                    <div class="name">{{$evento2->titulo}}</div>
+                                                                    <div class="degination">{{$evento2->descripcion}}</div>
+                                                                    
+                                                                    <div class="clearfix"></div>
+                                                                </div>
+                                                            </div>
+                                         </div>
+
+                                    @endforeach
+
+                                </div>
+                            </div>
+
+
+                     
+                        </div> <!-- Wrapper for slides -->
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
 
 
         
+
+        
                 
- 
+ </div>
                     
        
 
@@ -523,99 +480,14 @@
     <script src="{{url('administration/dist/js/alertify.js')}}"></script>
      <script src="{{url('administration/dist/js/sweetalert.min.js')}}"></script>
 
-    
  
     <script src="{{url('frontend/js/main.js')}}"></script>
-
-
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 
 
     <script type="text/javascript">
-            var page = 1;
 
-
-            $(document).ready(function(){
-
-                            $('.loadMore').click(function(){
-
-                                page++;
-                                loadMoreData(page);
-
-                        
-
-
-                                });
-
-                        });
-
-            function loadMoreData(page){
-            $.ajax(
-                    {
-                        url: '?page=' + page,
-                        type: "get",
-                        beforeSend: function()
-                        {
-                            $('.ajax-load').show();
-                        }
-                    })
-                    .done(function(data)
-                    {
-                        if(data.html.length == "0"){
-                            $("button").text("Ya no hay más posts").attr("disabled", "disabled");
-                            $('.ajax-load').html("Ya no hay mas resultados");
-                        return;
-                        }
-                        $('.ajax-load').hide();
-                        $("#post-data").append(data.html);
-                    })
-                    .fail(function(jqXHR, ajaxOptions, thrownError)
-                    {
-                        alert('error al cargar los datos...');
-                    });
-            }
-        </script>
-
-
-
-    <script type="text/javascript">
-         jQuery(document).ready(function($) {
-            var theme_slider = $("#owl-demo");
-            $("#owl-demo").owlCarousel({
-                navigation: false,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                autoPlay: 6000,
-                addClassActive: true,
-             // transitionStyle: "fade",
-                singleItem: true
-            });
-            $("#owl-demo2").owlCarousel({
-                slideSpeed: 300,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["&#xf007","&#xf006"],
-                pagination: false,
-                singleItem: true
-            });
-
-            
-        
-            // Custom Navigation Events
-            $(".next-arrow").click(function() {
-                theme_slider.trigger('owl.next');
-            })
-            $(".prev-arrow").click(function() {
-                theme_slider.trigger('owl.prev');
-            })     
-        }); 
-
-      
-
-     
-
-
-        $(document).ready(function(){
+          $(document).ready(function(){
             var altura = $('.menu').offset().top;
             
             $(window).on('scroll', function(){
@@ -664,22 +536,7 @@
                 });
             }()); //run this anonymous function immediately
 
-
-
-       
-
-
-      
-
-       
-
-      </script>
-
-
-   
-
-
-
+    </script>
   
 
 

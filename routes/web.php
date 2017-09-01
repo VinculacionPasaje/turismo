@@ -44,6 +44,11 @@
          Route::get('eventos', 'FrontController@todos_eventos');
          Route::get('eventos/{id}', 'FrontController@eventos');
 
+
+          // para las noticias
+         Route::get('noticias', 'FrontController@todas_noticias');
+         Route::get('noticias/{id}', 'FrontController@noticias');
+
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');

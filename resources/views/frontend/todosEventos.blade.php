@@ -9,7 +9,7 @@
    
   <!-- /meta -->
 
-   <title>Actividades</title>
+   <title>Eventos</title>
 
    <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/font-awesome.min.css')}}">
@@ -360,186 +360,12 @@
                         </div>
         
 
-        <section class="team-sec">
-            <div class="container">
-                <h1 class="text-center">MEET OUR TEAM</h1>
-                <p class="home-paragraph text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has<br> been the industry's standard dummy text ever since the 1500s, when an</p>
-                <div class="row">
-                    <div id="carousel-example" class="carousel slide team team-web-view" data-ride="carousel">
-                        <div class="carousel-line">
-                            <div class="controls pull-right">
-                                <a class="left fa fa-angle-left btn" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-angle-right btn " href="#carousel-example" data-slide="next"></a>
-                            </div>
-                        </div>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg" alt="User one">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Rohit Sharma</div>
-                                                <div class="degination">Director</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="http://www.charlottenursey.co.uk/wp-content/themes/charlotte-nursey/images/charlotte-nursey-profile.jpg" class="img-responsive" alt="Charles John">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Giselle Childs</div>
-                                                <div class="degination">Expert Agent</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="http://www.appstate.edu/academics/profiles/_images/scott-collier-400x400.jpg" class="img-responsive" alt="Charlotte Law">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Scott Collier</div>
-                                                <div class="degination">Expert Agent</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="http://ina-law.co.za/wp-content/uploads/Illse-Nieuwoudt-Profile.jpg" alt="Coleman Harmon">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Notary</div>
-                                                <div class="degination">Expert Agent</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="http://www.charlottenursey.co.uk/wp-content/themes/charlotte-nursey/images/charlotte-nursey-profile.jpg" class="img-responsive" alt="Charles John">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Giselle Childs</div>
-                                                <div class="degination">Expert Agent</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="http://ina-law.co.za/wp-content/uploads/Illse-Nieuwoudt-Profile.jpg" alt="Coleman Harmon">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Notary</div>
-                                                <div class="degination">Expert Agent</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="http://www.appstate.edu/academics/profiles/_images/scott-collier-400x400.jpg" class="img-responsive" alt="Charlotte Law">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Scott Collier</div>
-                                                <div class="degination">Expert Agent</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo-shadow"></div>
-                                            <div class="photo">
-                                                <img class="img-responsive5" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg" alt="User one">
-                                            </div>
-                                            <div class="info">
-                                                <div class="name">Rohit Sharma</div>
-                                                <div class="degination">Director</div>
-                                                <div class="social-connect">
-                                                    <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a>
-                                                    <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+    
 
-                                </div>
-                            </div>
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
+
+        
 
                     
               
@@ -628,6 +454,10 @@
 
                                                 @if($red->id==4)
                                                     <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                                                @endif
+
+                                                @if($red->id==5)
+                                                    <li><a href="{{$red->url}}" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
                                                 @endif
 
                                                 

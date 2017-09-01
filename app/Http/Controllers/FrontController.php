@@ -190,6 +190,53 @@ class FrontController extends Controller
 
     }
 
+
+     public function todas_noticias(Request $request){
+
+            $redes= Redes::where('estado',1)->get();
+            $footer= Footer::where('estado',1)->get();
+            $categoriasAct= CategoriaActividades::where('estado',1)->get(); 
+            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+            $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+            $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+           //$actividades_filtradas= Eventos::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
+
+            $categoriasNoticias= Categoria::where('estado',1)->get(); //categorias para las noticias
+
+             $noticias= Noticia::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
+            $categorias= Categoria::where('estado',1)->get();
+
+           
+            
+            $actividades= Noticia::where('estado',1)->orderBy('id')->paginate(2);
+
+            if ($request->ajax()) {
+                return view('ajax-frontend/noticias', compact('actividades', 'categoriasNoticias'));
+            }
+
+            
+/*
+            if ($request->ajax()) {
+
+                return view('ajax-frontend.eventos', compact('actividades', 'categoriasEventos'))->render();  
+              
+            }
+*/
+            
+
+
+           
+
+           
+
+        
+            return view('frontend/todosNoticias', compact('categorias','noticias','categoriasNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+
+
+    }
+
     public function todos_actractivos(Request $request){
 
         $redes= Redes::where('estado',1)->get();
@@ -331,6 +378,85 @@ class FrontController extends Controller
       
      
     }
+
+     public function eventos($id){
+        
+        $actividad = Eventos::find($id); //aqui encuentro la actividad selecciona
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
+        
+         $todosEventos= Eventos::where('estado',1)->inRandomOrder()->take(6)->get(); // obtengo 8 eventos aleatorios
+        
+        $categoriasAct = CategoriasEventos::find($actividad->categoria_id); //aqui encuentro a cual categoria pertenece
+        $actividades= Eventos::where('categoria_id',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+        $redes= Redes::where('estado',1)->get(); //para las redes sociales
+        $footer= Footer::where('estado',1)->get(); //footer
+        $categorias= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+         $variable=0;
+         $actividad->contador_visitas++;
+         $variable= $actividad;
+         $actividad->save();
+      
+        
+       
+        return view('frontend/eventos',compact('todosEventos','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+
+        }
+        
+      
+     
+    }
+
+
+     public function noticias($id){
+        
+        $actividad = Noticia::find($id); //aqui encuentro la actividad selecciona
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
+        
+        $todosNoticias= Noticia::where('estado',1)->inRandomOrder()->take(6)->get(); // obtengo 6 noticias aleatorios
+        
+        $categoriasAct = Categoria::find($actividad->id_categorias); //aqui encuentro a cual categoria pertenece la noticia
+        $actividades= Noticia::where('id_categorias',$categoriasAct->id)->get(); //aqui encuentro a todas las actividades que pertenecen a esa categoria
+        $redes= Redes::where('estado',1)->get(); //para las redes sociales
+        $footer= Footer::where('estado',1)->get(); //footer
+        $categoriasActividades= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+
+         $noticias= Noticia::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
+            $categorias= Categoria::where('estado',1)->get();
+
+
+         $variable=0;
+         $actividad->contador_visitas++;
+         $variable= $actividad;
+         $actividad->save();
+      
+        
+       
+        return view('frontend/noticias',compact('categoriasActividades', 'categorias','noticias','todosNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+
+        }
+        
+      
+     
+    }
+
 
     public function atractivosTuristicos($id){
         

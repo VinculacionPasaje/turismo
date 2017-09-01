@@ -182,7 +182,7 @@
                             <ul class="dropdown-menu" role="menu">
                                  
                                 <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
-                                <li><a href="#">Agenda de Eventos</a></li>
+                                <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
                                 <li><a href="#">Catastros Turísticos</a></li>               
                             </ul>
@@ -335,6 +335,10 @@
 
                                                 @if($red->id==4)
                                                     <li><a href="{{$red->url}}" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
+                                                @endif
+
+                                                @if($red->id==5)
+                                                    <li><a href="{{$red->url}}" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
                                                 @endif
 
                                                 

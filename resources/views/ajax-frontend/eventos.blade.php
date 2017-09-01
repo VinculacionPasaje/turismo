@@ -10,7 +10,7 @@
                                             <article>
                                                 <header class="entry-header">
                                                     <div class="entry-thumbnail">
-                                                       <a href="eventos/{{$act->id}}" > <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt=""> </a>
+                                                       <a href="eventos/{{$act->id}}" > <img class="img-responsive5" src="{{url('fotos/'.$act->path)}}" alt="{{$act->titulo}}"> </a>
                                                         
                                                     </div>
                                                     
@@ -21,9 +21,9 @@
                                                 <div class="entry-content">
                                                     <P class="home-paragraph " style="text-align: justify; font-size:14px;">{{$act->descripcion}}</P>
 
-                                                    <P class="negro2" style="text-align: justify; font-size:14px;"> <div style= "float: left; margin-right: 7px;"> <i class="fa fa-calendar fa-2x"></i> </div> <span> Del {{$act->fecha_desde}} al {{$act->fecha_hasta}} </span></P>
-                                                    <P class="negro2" style="text-align: justify; font-size:14px;"> <div style= "float: left; margin-right: 10px;"> <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>  </div> <span> {{$act->hora_inicio}} </span> </P>
-                                                    <P class="negro2" style="text-align: justify; font-size:14px;"> <div style= "float: left; margin-right: 14px; margin-left: 5px;"><i class="fa fa-map-marker fa-2x"></i> </div> <span> {{$act->direccion}}</span> </P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 7px;"> <i class="fa fa-calendar fa-1x"></i> </div> <span> Del {{$act->fecha_desde}} al {{$act->fecha_hasta}} </span></P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 10px;"> <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i>  </div> <span> {{$act->hora_inicio}} </span> </P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 14px; margin-left: 3px;"><i class="fa fa-map-marker fa-1x"></i> </div> <span> {{$act->direccion}}</span> </P>
                                                    
 
                                                 

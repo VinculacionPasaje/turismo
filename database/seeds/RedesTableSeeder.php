@@ -39,5 +39,12 @@ class RedesTableSeeder extends Seeder
             'descripcion'=>'Red social para youtub',
 
         ]);
+
+          Redes::create([
+              'id'=> 5,
+            'url'=>'https://www.pinterest.com',
+            'descripcion'=>'Red social para pinterest',
+
+        ]);
     }
 }

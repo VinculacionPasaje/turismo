@@ -395,7 +395,7 @@
                                 <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
-                                <li><a href="http://localhost/comunidad/">Catastros Turísticos</a></li>               
+                                <li><a href="#">Catastros Turísticos</a></li>               
                             </ul>
                         </li>  
 
@@ -404,6 +404,7 @@
                        
                         
                         <li class="negrita"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
+                      
 
                         <!-- Authentication Links -->
                         @if (Auth::guest())

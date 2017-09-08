@@ -30,6 +30,14 @@ class Actividades extends Model
 
     }
 
+    public function comentarios(){
+        return $this->hasMany(ComentariosActividades::class);
+    }
+
+    
+    
+    
+
 
     public function setPathAttribute($path){
 

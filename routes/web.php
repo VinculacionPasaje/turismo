@@ -49,6 +49,10 @@
          Route::get('noticias', 'FrontController@todas_noticias');
          Route::get('noticias/{id}', 'FrontController@noticias');
 
+
+         //comentarios Actividades
+         Route::post('comentariosActividades/{actividades_id}', ['uses' => 'ComentariosActividadesController@store', 'as'=> 'comentariosActividades.store']);
+
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
         Route::get('preguntas', 'FrontController@pregunta');

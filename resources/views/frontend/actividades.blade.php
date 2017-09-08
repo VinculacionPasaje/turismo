@@ -146,6 +146,50 @@
 </div>
 
 {!! $actividad->contenido !!}
+
+
+
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			@foreach($actividad->comentarios as $comment)
+				<div class="comment">
+					<p><strong>Nombre:</strong> {{ $comment->nombre }}</p>
+					<p><strong>Comentario:</strong><br/>{{ $comment->comentario }}</p><br>
+				</div>
+			@endforeach
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="comment-form" class="col-md-8 col-md-offset-2" style="margin-top: 50px;">
+			{{ Form::open(['route' => ['comentariosActividades.store', $actividad->id], 'method' => 'POST']) }}
+				
+				<div class="row">
+					<div class="col-md-6">
+						{{ Form::label('name', "Nombre:") }}
+						{{ Form::text('nombre', null, ['class' => 'form-control']) }}
+					</div>
+
+					<div class="col-md-6">
+						{{ Form::label('email', 'Email:') }}
+						{{ Form::text('email', null, ['class' => 'form-control']) }}
+					</div>
+
+					<div class="col-md-12">
+						{{ Form::label('comment', "Comentario:") }}
+						{{ Form::textarea('comentario', null, ['class' => 'form-control', 'rows' => '5']) }}
+
+						{{ Form::submit('Comentar', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:15px;']) }}
+					</div>
+				</div>
+
+			{{ Form::close() }}
+		</div>
+	</div>
+
+
+
 <div class= "col-xs-12 col-md-12">
 
 <div class="post-comments">

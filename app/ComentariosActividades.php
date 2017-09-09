@@ -28,4 +28,12 @@ class ComentariosActividades extends Model
     public function actividades(){
     return $this->belongsTo(Actividades::class,'actividades_id','id');
     }
+    public function scopeName($query, $table_search){
+       if(trim($table_search) != ""){
+           $query->where('nombre', "LIKE", "%$table_search%");
+
+       }
+    }
+
+
 }

@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
+    <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
+    <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
+    <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
@@ -40,7 +43,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner" style="z-index: 100000;">
+        <nav id="main-menu" class="navbar navbar-default menu" role="banner" style="z-index: 100000;">
 
             
            
@@ -154,7 +157,13 @@
                                         </ul>
                                     </div>
                             @endif
+
+                            @if (session('mensaje-registro'))
+                                @include('mensajes.msj_correcto')
+                            @endif
                     @yield('contenido')
+
+                    
 
                 </div>
 
@@ -190,6 +199,65 @@
         $('#myCarousel').carousel({
             interval:   4000
         });
+      </script>
+
+      <script type="text/javascript">
+
+        $(document).ready(function(){
+            var altura = $('.menu').offset().top;
+            
+            $(window).on('scroll', function(){
+                if ( $(window).scrollTop() > altura ){
+                    $('.menu').addClass('menu-fixed');
+                } else {
+                    $('.menu').removeClass('menu-fixed');
+                }
+            });
+        
+        });
+
+        (function () {
+    var previousScroll = 0;
+
+    $(window).scroll(function(){
+       var currentScroll = $(this).scrollTop();
+       if (currentScroll > previousScroll){
+
+            //$('.menu').hide('slow');
+
+           $('.menu').addClass('desaparece');
+           $('.menu').removeClass('aparece');
+
+           //para abajo
+          
+       } else {
+
+           //$('.menu').show('slow');
+          
+            
+
+           $('.menu').addClass('aparece');
+           $('.menu').removeClass('desaparece');
+           
+          
+
+         //para arriba
+       }
+       previousScroll = currentScroll;
+    });
+}()); //run this anonymous function immediately
+
+
+       </script>
+
+       <script src="{{url('administration/dist/js/alertify.js')}}"></script>
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+              setTimeout(function() {
+                  $(".aprobado").fadeOut(300);
+              },3000);
+          });
       </script>
   
 

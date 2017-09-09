@@ -105,6 +105,8 @@
             Route::resource('administracion/zonas','ZonasController');
             Route::resource('administracion/parroquias','ParroquiasController');
              Route::resource('administracion/eventos','EventosController');
+               Route::resource('administracion/comentariosActividades','ComentariosActividadesController');
+
 
 
         Route::get('/error',function(){

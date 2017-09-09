@@ -26,6 +26,7 @@ use App\CategoriasEventos;
 use App\TurismoComunitario;
 use App\Noticia;
 use App\Eventos;
+use App\ComentariosActividades;
 
 class FrontController extends Controller
 {
@@ -346,7 +347,7 @@ class FrontController extends Controller
     }
 
 
-     public function actividades($id){
+     public function actividades(Request $request, $id){
         
         $actividad = Actividades::find($id); //aqui encuentro la actividad selecciona
         if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
@@ -364,6 +365,16 @@ class FrontController extends Controller
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
+
+          $comentarios= ComentariosActividades::where('actividades_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/comentariosActividades',compact('comentarios'))->render();
+                return response()->json(['html'=>$view]);
+            }
+
+
+
          $variable=0;
          $actividad->contador_visitas++;
          $variable= $actividad;
@@ -371,7 +382,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/actividades',compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/actividades',compact('categoriasHospedaje', 'comentarios','categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         

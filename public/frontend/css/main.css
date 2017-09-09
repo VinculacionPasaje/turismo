@@ -780,6 +780,10 @@ h2 {
   font-family: 'Varela', sans-serif;	 
 }
 
+textarea {
+	resize: none;
+}
+
 body {
  
   background: #fff;
@@ -3237,8 +3241,7 @@ Comentarios
 }
 
 .post-comments .media {
-  border-left: 1px dotted #000;
-  border-bottom: 1px dotted #000;
+  background-color: #f2f2f2;
   margin-bottom: 5px;
   padding-left: 10px;
   width: 100%;

@@ -3,6 +3,8 @@
 @section('title')
 <title>{{$actividad->titulo}}</title>
 
+
+
 @endsection
 
 
@@ -144,44 +146,56 @@
  <p class="contact2"> {{$actividad->titulo}} </p>
         <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
+    
 
 {!! $actividad->contenido !!}
 
 
+ <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
+                    <h2 class="column-title2"> Deja tu Comentario </h2>
+
+
+                
+            </div>
+  </div>
+
+	
 
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			@foreach($actividad->comentarios as $comment)
-				<div class="comment">
-					<p><strong>Nombre:</strong> {{ $comment->nombre }}</p>
-					<p><strong>Comentario:</strong><br/>{{ $comment->comentario }}</p><br>
-				</div>
-			@endforeach
-		</div>
-	</div>
-
-	<div class="row">
-		<div id="comment-form" class="col-md-8 col-md-offset-2" style="margin-top: 50px;">
+		<div id="comment-form" class="col-xs-12 col-md-12" style="margin-top: 20px;">
 			{{ Form::open(['route' => ['comentariosActividades.store', $actividad->id], 'method' => 'POST']) }}
+      <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+          
 				
 				<div class="row">
 					<div class="col-md-6">
 						{{ Form::label('name', "Nombre:") }}
-						{{ Form::text('nombre', null, ['class' => 'form-control']) }}
+            <input id="nombre" type="text" class="form-control" name="nombre" required placeholder="Ingrese su nombre *">
+					
 					</div>
 
 					<div class="col-md-6">
 						{{ Form::label('email', 'Email:') }}
-						{{ Form::text('email', null, ['class' => 'form-control']) }}
+            
+					 <input id="email" type="email" class="form-control" name="email" required placeholder="Correo Electronico *">
 					</div>
 
 					<div class="col-md-12">
 						{{ Form::label('comment', "Comentario:") }}
-						{{ Form::textarea('comentario', null, ['class' => 'form-control', 'rows' => '5']) }}
 
-						{{ Form::submit('Comentar', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:15px;']) }}
+            <textarea name="comentario" id="comentario" required placeholder="Comentario *" class="form-control" rows="5"></textarea>
+					
+
+						
 					</div>
+
+          <div align="center" class="col-lg-12 col-md-12 col-sm-12">
+
+          {{ Form::submit('Comentar', ['class' => ' slider_btn4', 'style' => 'margin-top:15px;']) }}
+
+          </div>
 				</div>
 
 			{{ Form::close() }}
@@ -192,144 +206,53 @@
 
 <div class= "col-xs-12 col-md-12">
 
-<div class="post-comments">
+      <div class="row header">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
 
-    <form>
-      <div class="form-group">
-        <label for="comment">Tu comentario</label>
-        <textarea name="comment" class="form-control" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+                          <h4 class="column-title2"> Comentarios </h4>
 
-    <div class="comments-nav">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px; margin-bottom: 10px;">
-                  Hay 2 comments <span class="caret"></span>
-                </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Más votado</a></li>
-            <li><a href="#">Recientes</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+                             
 
-    <div class="row">
 
-      <div class="media">
-        <!-- first comment -->
-
-        <div class="media-heading">
-          <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info">12314</span> 
-          Enviado hace 12 horas
+                      
+                  </div>
         </div>
 
-        <div class="panel-collapse collapse in" id="collapseOne">
-
-          <div class="media-left">
-            <div class="vote-wrap">
-              <div class="save-post">
-                <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
-              </div>
-              <div class="vote up">
-                <i class="glyphicon glyphicon-menu-up"></i>
-              </div>
-              <div class="vote inactive">
-                <i class="glyphicon glyphicon-menu-down"></i>
-              </div>
-            </div>
-            <!-- vote-wrap -->
-          </div>
-          <!-- media-left -->
 
 
-          <div class="media-body">
-            <p>este es un comentario</p>
-            <div class="comment-meta">
-              <span><a href="#">Borrar</a></span>
-              <span><a href="#">Reportar</a></span>
-              <span><a href="#">Ocultar</a></span>
-              <span>
-                        <a class="" role="button" data-toggle="collapse" href="#replyCommentT" aria-expanded="false" aria-controls="collapseExample">Responder</a>
-                      </span>
-              <div class="collapse" id="replyCommentT">
-                <form>
-                  <div class="form-group">
-                    <label for="comment">Tu comentario</label>
-                    <textarea name="comment" class="form-control" rows="3"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-              </div>
-            </div>
-            <!-- comment-meta -->
 
-            <div class="media">
-              <!-- answer to the first comment -->
+  <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
 
-              <div class="media-heading">
-                <button class="btn btn-default btn-collapse btn-xs" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info">12314</span> Enviado hace 5 horas
-              </div>
+          
+      @include('ajax-frontend/comentariosActividades')
 
-              <div class="panel-collapse collapse in" id="collapseTwo">
-
-                <div class="media-left">
-                  <div class="vote-wrap">
-                    <div class="save-post">
-                      <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
-                    </div>
-                    <div class="vote up">
-                      <i class="glyphicon glyphicon-menu-up"></i>
-                    </div>
-                    <div class="vote inactive">
-                      <i class="glyphicon glyphicon-menu-down"></i>
-                    </div>
-                  </div>
-                  <!-- vote-wrap -->
-                </div>
-                <!-- media-left -->
+    </div>   <!-- post-comments -->
 
 
-                <div class="media-body">
-                  <p>Te responde a tu comentario.</p>
-                  <div class="comment-meta">
-                    <span><a href="#">Borrar</a></span>
-                    <span><a href="#">Reportar</a></span>
-                    <span><a href="#">Ocultar</a></span>
-                            <span>
-                              <a class="" role="button" data-toggle="collapse" href="#replyCommentThree" aria-expanded="false" aria-controls="collapseExample">Responder</a>
-                            </span>
-                    <div class="collapse" id="replyCommentThree">
-                      <form>
-                        <div class="form-group">
-                          <label for="comment">Tu comentario</label>
-                          <textarea name="comment" class="form-control" rows="3"></textarea>
+    @if(count($comentarios) >0)
+
+     <div class="col-lg-12 col-md-12 col-sm-12" align="center">
+
+                        <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
+
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                      </form>
-                    </div>
-                  </div>
-                  <!-- comment-meta -->
-                </div>
-              </div>
-              <!-- comments -->
+                
+                <div class="ajax-load text-center" style="display:none">
+                            <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
+                        </div>
+      @else
 
-            </div>
-            <!-- answer to the first comment -->
+                         <div class="col-lg-12 col-md-12 col-sm-12" align="center">
 
-          </div>
-        </div>
-        <!-- comments -->
+                             <img src="{{url('frontend/images/sad.png')}}">
 
-      </div>
+                                    <p> No se encontraron resultados </p>
 
-     
-    </div> <!-- row -->
+                             </div>
 
-  </div>   <!-- post-comments -->
 
+
+      @endif
 
 </div>
 @endsection
@@ -426,6 +349,59 @@
         </div>
     </footer><!--/#footer-->
 
+
+
+@endsection
+
+@section('script')
+
+ 
+
+
+   <script type="text/javascript">
+            var page = 1;
+
+
+            $(document).ready(function(){
+
+                            $('.loadMore').click(function(){
+
+                                page++;
+                                loadMoreData(page);
+
+                        
+
+
+                                });
+
+                        });
+
+            function loadMoreData(page){
+            $.ajax(
+                    {
+                        url: '?page=' + page,
+                        type: "get",
+                        beforeSend: function()
+                        {
+                            $('.ajax-load').show();
+                        }
+                    })
+                    .done(function(data)
+                    {
+                        if(data.html.length == "0"){
+                            $('.loadMore').text("Ya no hay más comentarios").attr("disabled", "disabled");
+                            $('.ajax-load').html("Ya no hay mas resultados");
+                        return;
+                        }
+                        $('.ajax-load').hide();
+                        $("#post-data").append(data.html);
+                    })
+                    .fail(function(jqXHR, ajaxOptions, thrownError)
+                    {
+                        alert('error al cargar los datos...');
+                    });
+            }
+        </script>
 
 
 @endsection

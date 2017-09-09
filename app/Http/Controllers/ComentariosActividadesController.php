@@ -16,9 +16,11 @@ class ComentariosActividadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $comentarios = ComentariosActividades::where('estado',1)->orderBy('id')->paginate(6);
+        $busqueda= ComentariosActividades::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.comentariosActividades.index',compact('comentarios', 'busqueda'));
     }
 
     /**
@@ -39,14 +41,14 @@ class ComentariosActividadesController extends Controller
      */
     public function store(Request $request, $id)
     {
+
+        
         $date = Carbon::now();
         $date = $date->format('d-m-Y');
-        $this->validate($request, array(
-            'nombre'      =>  'required|max:255',
-            'email'     =>  'required|email|max:255',
-            'comentario'   =>  'required|min:5|max:2000'
-            ));
+     
         $post = Actividades::find($id);
+
+         
         
         $comment = new ComentariosActividades();
         $comment->nombre = $request->nombre;
@@ -55,7 +57,14 @@ class ComentariosActividadesController extends Controller
         $comment->fecha = $date;
         $comment->hora= Carbon::now()->toTimeString();
         $comment->actividades_id= $id;
-        $comment->save();
+
+
+
+
+         if($comment->save()){
+            return Redirect::to('actividades/'.$id)->with('mensaje-registro', 'Comentario enviado, pasará por moderación antes de ser publicado en el sitio web');
+
+         }
        
 
          
@@ -81,7 +90,9 @@ class ComentariosActividadesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comentarios = ComentariosActividades::find($id);
+      
+        return view('administracion.comentariosActividades.edit',compact('comentarios'));
     }
 
     /**
@@ -93,7 +104,15 @@ class ComentariosActividadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comentarios = ComentariosActividades::find($id);
+        $comentarios->fill($request->all());
+        
+
+
+        if($comentarios->save()){
+            return Redirect::to('administracion/comentariosActividades')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
+        }
+
     }
 
     /**

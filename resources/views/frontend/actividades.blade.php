@@ -165,7 +165,7 @@
 
 	<div class="row">
 		<div id="comment-form" class="col-xs-12 col-md-12" style="margin-top: 20px;">
-			{{ Form::open(['route' => ['comentariosActividades.store', $actividad->id], 'method' => 'POST']) }}
+			{{ Form::open(['route' => ['comentariosActividades2.store', $actividad->id], 'method' => 'POST']) }}
       <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
           
 				

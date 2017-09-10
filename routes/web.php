@@ -51,7 +51,20 @@
 
 
          //comentarios Actividades
-         Route::post('comentariosActividades/{actividades_id}', ['uses' => 'ComentariosActividadesController@store', 'as'=> 'comentariosActividades.store']);
+         Route::post('comentariosActividades/{actividades_id}', ['uses' => 'ComentariosActividadesController@store', 'as'=> 'comentariosActividades2.store']);
+
+         //comentarios Turistico
+         Route::post('comentariosTuristico/{turistico_id}', ['uses' => 'ComentariosTuristicosController@store', 'as'=> 'comentariosTuristicos2.store']);
+
+         //comentarios Alimentacion
+         Route::post('comentariosAlimentacion/{alimentacion_id}', ['uses' => 'ComentariosAlimentacionController@store', 'as'=> 'comentariosAlimentacion2.store']);
+
+         //comentarios DIversion
+         Route::post('comentariosDiversion/{diversion_id}', ['uses' => 'ComentariosDiversionController@store', 'as'=> 'comentariosDiversion2.store']);
+
+         //comentarios Hospedaje
+         Route::post('comentariosHospedaje/{hospedaje_id}', ['uses' => 'ComentariosHospedajeController@store', 'as'=> 'comentariosHospedaje2.store']);
+
 
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
@@ -106,6 +119,10 @@
             Route::resource('administracion/parroquias','ParroquiasController');
              Route::resource('administracion/eventos','EventosController');
                Route::resource('administracion/comentariosActividades','ComentariosActividadesController');
+                Route::resource('administracion/comentariosTuristicos','ComentariosTuristicosController');
+                 Route::resource('administracion/comentariosAlimentacion','ComentariosAlimentacionController');
+                  Route::resource('administracion/comentariosHospedaje','ComentariosHospedajeController');
+                   Route::resource('administracion/comentariosDiversion','ComentariosDiversionController');
 
 
 

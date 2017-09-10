@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Actividades;
-use App\ComentariosActividades;
+use App\Turistico;
+use App\ComentariosAtractivosT;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
 
-class ComentariosActividadesController extends Controller
+class ComentariosTuristicosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class ComentariosActividadesController extends Controller
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosActividades::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosActividades::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.comentariosActividades.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosAtractivosT::where('estado',1)->orderBy('id')->paginate(6);
+        $busqueda= ComentariosAtractivosT::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.ComentariosAtractivosT.index',compact('comentarios', 'busqueda'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ComentariosActividadesController extends Controller
         //
     }
 
-   /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,23 +45,23 @@ class ComentariosActividadesController extends Controller
         $date = Carbon::now();
         $date = $date->format('d-m-Y');
      
-        $post = Actividades::find($id);
+        $post = Turistico::find($id);
 
          
         
-        $comment = new ComentariosActividades();
+        $comment = new ComentariosAtractivosT();
         $comment->nombre = $request->nombre;
         $comment->email = $request->email;
         $comment->comentario = $request->comentario;
         $comment->fecha = $date;
         $comment->hora= Carbon::now()->toTimeString();
-        $comment->actividades_id= $id;
+        $comment->turistico_id= $id;
 
 
 
 
          if($comment->save()){
-            return Redirect::to('actividades/'.$id)->with('mensaje-registro', 'Comentario enviado, pasará por moderación antes de ser publicado en el sitio web');
+            return Redirect::to('atractivosTuristicos/'.$id)->with('mensaje-registro', 'Comentario enviado, pasará por moderación antes de ser publicado en el sitio web');
 
          }
        
@@ -89,9 +89,9 @@ class ComentariosActividadesController extends Controller
      */
     public function edit($id)
     {
-        $comentarios = ComentariosActividades::find($id);
+        $comentarios = ComentariosAtractivosT::find($id);
       
-        return view('administracion.comentariosActividades.edit',compact('comentarios'));
+        return view('administracion.ComentariosAtractivosT.edit',compact('comentarios'));
     }
 
     /**
@@ -103,13 +103,13 @@ class ComentariosActividadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comentarios = ComentariosActividades::find($id);
+        $comentarios = ComentariosAtractivosT::find($id);
         $comentarios->fill($request->all());
         
 
 
         if($comentarios->save()){
-            return Redirect::to('administracion/comentariosActividades')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
+            return Redirect::to('administracion/comentariosTuristicos')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
         }
 
     }
@@ -122,7 +122,7 @@ class ComentariosActividadesController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $comentario = ComentariosActividades::find($id);
+        $comentario = ComentariosAtractivosT::find($id);
         $comentario->estado = 0;
         $comentario->save();
 

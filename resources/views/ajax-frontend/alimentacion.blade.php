@@ -24,7 +24,7 @@
                                                         </p>
 
                                                         <p class="more">
-                                                            <a href="{{url ('diversion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                                                         </p>
                                                 </div>
 

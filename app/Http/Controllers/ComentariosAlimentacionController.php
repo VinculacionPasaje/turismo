@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Actividades;
-use App\ComentariosActividades;
+use App\Alimentacion;
+use App\ComentariosAlimentacion;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
 
-class ComentariosActividadesController extends Controller
+class ComentariosAlimentacionController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosActividades::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosActividades::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.comentariosActividades.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosAlimentacion::where('estado',1)->orderBy('id')->paginate(6);
+        $busqueda= ComentariosAlimentacion::name($request->get('table_search'))->orderBy('id')->paginate(6);
+        return View('administracion.ComentariosAlimentacion.index',compact('comentarios', 'busqueda'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ComentariosActividadesController extends Controller
         //
     }
 
-   /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,23 +45,23 @@ class ComentariosActividadesController extends Controller
         $date = Carbon::now();
         $date = $date->format('d-m-Y');
      
-        $post = Actividades::find($id);
+        $post = Alimentacion::find($id);
 
          
         
-        $comment = new ComentariosActividades();
+        $comment = new ComentariosAlimentacion();
         $comment->nombre = $request->nombre;
         $comment->email = $request->email;
         $comment->comentario = $request->comentario;
         $comment->fecha = $date;
         $comment->hora= Carbon::now()->toTimeString();
-        $comment->actividades_id= $id;
+        $comment->alimentacion_id= $id;
 
 
 
 
          if($comment->save()){
-            return Redirect::to('actividades/'.$id)->with('mensaje-registro', 'Comentario enviado, pasará por moderación antes de ser publicado en el sitio web');
+            return Redirect::to('alimentacion/'.$id)->with('mensaje-registro', 'Comentario enviado, pasará por moderación antes de ser publicado en el sitio web');
 
          }
        
@@ -89,9 +89,9 @@ class ComentariosActividadesController extends Controller
      */
     public function edit($id)
     {
-        $comentarios = ComentariosActividades::find($id);
+        $comentarios = ComentariosAlimentacion::find($id);
       
-        return view('administracion.comentariosActividades.edit',compact('comentarios'));
+        return view('administracion.ComentariosAlimentacion.edit',compact('comentarios'));
     }
 
     /**
@@ -103,13 +103,13 @@ class ComentariosActividadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comentarios = ComentariosActividades::find($id);
+        $comentarios = ComentariosAlimentacion::find($id);
         $comentarios->fill($request->all());
         
 
 
         if($comentarios->save()){
-            return Redirect::to('administracion/comentariosActividades')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
+            return Redirect::to('administracion/comentariosAlimentacion')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
         }
 
     }
@@ -122,7 +122,7 @@ class ComentariosActividadesController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $comentario = ComentariosActividades::find($id);
+        $comentario = ComentariosAlimentacion::find($id);
         $comentario->estado = 0;
         $comentario->save();
 

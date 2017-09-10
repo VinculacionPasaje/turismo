@@ -391,6 +391,19 @@
                              
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Comentarios
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('comentariosTuristicos.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
                         
 
         
@@ -428,6 +441,19 @@
                                 <li><a href="{{route('hospedaje.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
                              <li><a href="{{route('hospedaje.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Comentarios
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('comentariosHospedaje.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                       
                                 
                              
                             </ul>
@@ -472,6 +498,19 @@
                              
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Comentarios
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('comentariosAlimentacion.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
                         
 
         
@@ -509,6 +548,19 @@
                                 <li><a href="{{route('diversion.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
                        
                              <li><a href="{{route('diversion.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Comentarios
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('comentariosDiversion.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                       
                                 
                              
                             </ul>

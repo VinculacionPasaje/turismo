@@ -35,6 +35,10 @@ class Eventos extends Model
     return $this->belongsTo(Parroquias::class,'parroquias_id','id');
     }
 
+      public function comentarios(){
+        return $this->hasMany(ComentariosEventos::class);
+    }
+
       public function scopeName($query, $table_search){
        if(trim($table_search) != ""){
            $query->where('titulo', "=", $table_search);

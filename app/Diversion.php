@@ -32,6 +32,10 @@ class Diversion extends Model
         return $this->belongsTo(Parroquias::class,'id_parroquias','id');
     }
 
+      public function comentarios(){
+        return $this->hasMany(ComentariosDiversion::class);
+    }
+
 
     public function setPathAttribute($path){
 

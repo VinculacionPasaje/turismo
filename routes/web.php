@@ -65,6 +65,9 @@
          //comentarios Hospedaje
          Route::post('comentariosHospedaje/{hospedaje_id}', ['uses' => 'ComentariosHospedajeController@store', 'as'=> 'comentariosHospedaje2.store']);
 
+          //comentarios eventos
+         Route::post('comentariosEventos/{eventos_id}', ['uses' => 'ComentariosEventosController@store', 'as'=> 'comentariosEventos2.store']);
+
 
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
@@ -123,6 +126,7 @@
                  Route::resource('administracion/comentariosAlimentacion','ComentariosAlimentacionController');
                   Route::resource('administracion/comentariosHospedaje','ComentariosHospedajeController');
                    Route::resource('administracion/comentariosDiversion','ComentariosDiversionController');
+                   Route::resource('administracion/comentariosEventos','ComentariosEventosController');
 
 
 

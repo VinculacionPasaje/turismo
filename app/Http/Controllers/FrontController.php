@@ -31,6 +31,7 @@ use App\ComentariosAlimentacion;
 use App\ComentariosAtractivosT;
 use App\ComentariosDiversion;
 use App\ComentariosHospedaje;
+use App\ComentariosEventos;
 
 class FrontController extends Controller
 {
@@ -394,7 +395,7 @@ class FrontController extends Controller
      
     }
 
-     public function eventos($id){
+     public function eventos(Request $request, $id){
         
         $actividad = Eventos::find($id); //aqui encuentro la actividad selecciona
         if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
@@ -415,6 +416,13 @@ class FrontController extends Controller
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
+        $comentarios= ComentariosEventos::where('eventos_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
+
+            if ($request->ajax()) {
+                $view = view('ajax-frontend/comentariosActividades',compact('comentarios'))->render();
+                return response()->json(['html'=>$view]);
+            }
+
          $variable=0;
          $actividad->contador_visitas++;
          $variable= $actividad;
@@ -422,7 +430,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/eventos',compact('todosEventos','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/eventos',compact('comentarios','todosEventos','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         

@@ -31,6 +31,10 @@ class Hospedaje extends Model
         return $this->belongsTo(Parroquias::class,'id_parroquias','id');
     }
 
+      public function comentarios(){
+        return $this->hasMany(ComentariosHospedaje::class);
+    }
+
 
     public function setPathAttribute($path){
 

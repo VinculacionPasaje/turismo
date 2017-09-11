@@ -30,6 +30,10 @@ class Turistico extends Model
         return $this->belongsTo(Parroquias::class,'id_parroquias','id');
     }
 
+      public function comentarios(){
+        return $this->hasMany(ComentariosAtractivosT::class);
+    }
+
 
     public function setPathAttribute($path){
 

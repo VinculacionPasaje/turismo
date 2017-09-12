@@ -21,18 +21,18 @@
             <div class="box">
                 <div class="box-header">
                     <div class= "col-xs-6 col-md-6" aling="center">
-                        <h3 class="box-title">Comentarios Aprobados de Sitios de Diversión de Pasaje</h3>
+                        <h3 class="box-title">Comentarios No Aprobados de los Sitios de Alimentación de Pasaje</h3>
 
                     </div>
                     
                      <div class= "col-xs-6 col-md-6">
 
                             <div class="box-tools">
-                            
-                                    
-                                    <div class="input-group-btn">
-                                    <a href="{{route('comentariosDiversion.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
+                                  <div class="input-group-btn">
+                                    <a href="{{route('comentariosAlimentacion.noAprovados')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
                                      </div>
+                                    
+                            
                                 
                                 </div>
                     </div>
@@ -77,7 +77,7 @@
                                           
                                        
                                         <td>
-                                            {!!link_to_route('comentariosDiversion.edit', $title = 'Editar', $parameters = $noticia->id, $attributes = ['class'=>'btn  btn-primary btn-sm'])!!}
+                                            {!!link_to_route('comentariosAlimentacion.edit', $title = 'Editar', $parameters = $noticia->id, $attributes = ['class'=>'btn  btn-primary btn-sm'])!!}
                                             <button type="button" class="btn btn-danger btn-sm btn-delete"  ><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp;Eliminar</button>
                                         </td>
 
@@ -88,7 +88,7 @@
                             {{$comentarios->links()}}
                         </div>
                     </div>
-                         
+                        
 
                
                 @else
@@ -100,7 +100,7 @@
         </div>
     </div>
 
-    {!! Form::open(['route' => ['comentariosDiversion.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+    {!! Form::open(['route' => ['comentariosAlimentacion.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
     {!! Form::close() !!}
 @endsection
 @section('script')

@@ -10,17 +10,29 @@ use Carbon\Carbon;
 
 class ComentariosAlimentacionController extends Controller
 {
-     /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosAlimentacion::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosAlimentacion::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.ComentariosAlimentacion.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosAlimentacion::where('aprovado',1)->orderBy('id')->paginate(6);
+      
+        return View('administracion.ComentariosAlimentacion.index',compact('comentarios'));
     }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function noAprovados(Request $request)
+    {
+        $comentarios = ComentariosAlimentacion::where('aprovado',0)->orderBy('id')->paginate(10);
+        return View('administracion.ComentariosAlimentacion.noAprovados',compact('comentarios'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

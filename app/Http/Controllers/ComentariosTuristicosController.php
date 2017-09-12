@@ -17,9 +17,20 @@ class ComentariosTuristicosController extends Controller
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosAtractivosT::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosAtractivosT::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.ComentariosAtractivosT.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosAtractivosT::where('aprovado',1)->orderBy('id')->paginate(6);
+      
+        return View('administracion.ComentariosAtractivosT.index',compact('comentarios'));
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function noAprovados(Request $request)
+    {
+        $comentarios = ComentariosAtractivosT::where('aprovado',0)->orderBy('id')->paginate(10);
+        return View('administracion.ComentariosAtractivosT.noAprovados',compact('comentarios'));
     }
 
     /**

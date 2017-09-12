@@ -121,12 +121,25 @@
             Route::resource('administracion/zonas','ZonasController');
             Route::resource('administracion/parroquias','ParroquiasController');
              Route::resource('administracion/eventos','EventosController');
+
                Route::resource('administracion/comentariosActividades','ComentariosActividadesController');
+               Route::get('administracion/comentariosActividadesNoAprobados', ['uses' => 'ComentariosActividadesController@noAprovados', 'as'=> 'comentariosActividades.noAprovados']);
+
                 Route::resource('administracion/comentariosTuristicos','ComentariosTuristicosController');
+                 Route::get('administracion/comentariosTuristicosNoAprobados', ['uses' => 'ComentariosTuristicosController@noAprovados', 'as'=> 'comentariosTuristicos.noAprovados']);
+
                  Route::resource('administracion/comentariosAlimentacion','ComentariosAlimentacionController');
+                  Route::get('administracion/comentariosAlimentacionNoAprobados', ['uses' => 'ComentariosAlimentacionController@noAprovados', 'as'=> 'comentariosAlimentacion.noAprovados']);
+
                   Route::resource('administracion/comentariosHospedaje','ComentariosHospedajeController');
+                   Route::get('administracion/comentariosHospedajeNoAprobados', ['uses' => 'ComentariosHospedajeController@noAprovados', 'as'=> 'comentariosHospedaje.noAprovados']);
+
                    Route::resource('administracion/comentariosDiversion','ComentariosDiversionController');
+                    Route::get('administracion/comentariosDiversionNoAprobados', ['uses' => 'ComentariosDiversionController@noAprovados', 'as'=> 'comentariosDiversion.noAprovados']);
+
                    Route::resource('administracion/comentariosEventos','ComentariosEventosController');
+                    Route::get('administracion/comentariosEventosNoAprobados', ['uses' => 'ComentariosEventosController@noAprovados', 'as'=> 'comentariosEventos.noAprovados']);
+                   
 
 
 

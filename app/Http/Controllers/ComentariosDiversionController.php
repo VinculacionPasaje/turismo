@@ -10,16 +10,27 @@ use Carbon\Carbon;
 
 class ComentariosDiversionController extends Controller
 {
-     /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosDiversion::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosDiversion::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.ComentariosDiversion.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosDiversion::where('aprovado',1)->orderBy('id')->paginate(6);
+      
+        return View('administracion.ComentariosDiversion.index',compact('comentarios'));
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function noAprovados(Request $request)
+    {
+        $comentarios = ComentariosDiversion::where('aprovado',0)->orderBy('id')->paginate(10);
+        return View('administracion.ComentariosDiversion.noAprovados',compact('comentarios'));
     }
 
     /**

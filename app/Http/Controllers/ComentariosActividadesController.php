@@ -17,9 +17,20 @@ class ComentariosActividadesController extends Controller
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosActividades::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosActividades::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.comentariosActividades.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosActividades::where('aprovado',1)->orderBy('id')->paginate(6);
+      
+        return View('administracion.comentariosActividades.index',compact('comentarios'));
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function noAprovados(Request $request)
+    {
+        $comentarios = ComentariosActividades::where('aprovado',0)->orderBy('id')->paginate(10);
+        return View('administracion.comentariosActividades.noAprovados',compact('comentarios'));
     }
 
     /**

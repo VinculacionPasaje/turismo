@@ -45,8 +45,11 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- Messages: style can be found in dropdown.less-->
+           
+                     <!-- aqui va las notificaciones -->
 
+
+                     
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -262,7 +265,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosActividades.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+
+                                <li><a href="{{route('comentariosActividades.index')}}"><i class="fa fa-list-ul"></i>Aprovados</a></li>
+                                <li><a href="{{route('comentariosActividades.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
                        
                                 
@@ -317,7 +322,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosEventos.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                                <li><a href="{{route('comentariosEventos.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
+                                  <li><a href="{{route('comentariosEventos.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
                        
                                 
@@ -411,7 +417,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosTuristicos.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                                <li><a href="{{route('comentariosTuristicos.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
+                                  <li><a href="{{route('comentariosTuristicos.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
                        
                                 
@@ -465,7 +472,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosHospedaje.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                                <li><a href="{{route('comentariosHospedaje.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
+                                   <li><a href="{{route('comentariosHospedaje.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
+                       
                        
                        
                                 
@@ -518,7 +527,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosAlimentacion.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                                <li><a href="{{route('comentariosAlimentacion.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
+                                 <li><a href="{{route('comentariosAlimentacion.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
                        
                                 
@@ -572,7 +582,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosDiversion.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                                <li><a href="{{route('comentariosDiversion.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
+                                 <li><a href="{{route('comentariosDiversion.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
                        
                                 

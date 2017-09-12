@@ -10,17 +10,29 @@ use Carbon\Carbon;
 
 class ComentariosEventosController extends Controller
 {
-     /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $comentarios = ComentariosEventos::where('estado',1)->orderBy('id')->paginate(6);
-        $busqueda= ComentariosEventos::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.ComentariosEventos.index',compact('comentarios', 'busqueda'));
+        $comentarios = ComentariosEventos::where('aprovado',1)->orderBy('id')->paginate(6);
+      
+        return View('administracion.ComentariosEventos.index',compact('comentarios'));
     }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function noAprovados(Request $request)
+    {
+        $comentarios = ComentariosEventos::where('aprovado',0)->orderBy('id')->paginate(10);
+        return View('administracion.ComentariosEventos.noAprovados',compact('comentarios'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

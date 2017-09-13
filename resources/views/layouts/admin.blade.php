@@ -339,6 +339,31 @@
                 </li>
 
 
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pencil-square-o"></i><span>CATASTROS</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="#"><i class="fa fa-folder-open"></i> SUBIR PDF
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('catastros.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                 <li><a href="{{route('catastros.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
+                       
+                              
+                             
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
                   <li class="treeview">
                     <a href="#">
                         <i class="fa fa-pencil-square-o"></i><span>ZONAS / PARROQUIAS</span>

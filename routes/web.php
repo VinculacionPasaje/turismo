@@ -121,6 +121,7 @@
             Route::resource('administracion/zonas','ZonasController');
             Route::resource('administracion/parroquias','ParroquiasController');
              Route::resource('administracion/eventos','EventosController');
+              Route::resource('administracion/catastros','CatastrosController');
 
                Route::resource('administracion/comentariosActividades','ComentariosActividadesController');
                Route::get('administracion/comentariosActividadesNoAprobados', ['uses' => 'ComentariosActividadesController@noAprovados', 'as'=> 'comentariosActividades.noAprovados']);
@@ -140,6 +141,7 @@
                    Route::resource('administracion/comentariosEventos','ComentariosEventosController');
                     Route::get('administracion/comentariosEventosNoAprobados', ['uses' => 'ComentariosEventosController@noAprovados', 'as'=> 'comentariosEventos.noAprovados']);
                    
+
 
 
 

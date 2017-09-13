@@ -963,6 +963,8 @@
 	</div>
   </section>
 
+<input type="button" value="Abrir archivo pdf" onclick="window.open('fotos/prueba.pdf')" />
+
 
 
 

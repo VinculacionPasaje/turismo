@@ -186,7 +186,7 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 
+                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
                                 <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
@@ -314,7 +314,7 @@
 
                                 @if($red->id==1) 
 
-                               <div class="col-xs-4 col-md-4">
+                               <div class="col-xs-3 col-md-3">
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             
@@ -335,7 +335,7 @@
                                 @if($red->id==2)
 
                                
-                                    <div class="col-xs-4 col-md-4">
+                                    <div class="col-xs-3 col-md-3">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
                                                 
@@ -354,7 +354,7 @@
 
                                 @if($red->id==3)
 
-                                  <div class="col-xs-4 col-md-4">
+                                  <div class="col-xs-3 col-md-3">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
                                                 
@@ -370,6 +370,29 @@
                                     </div>
 
                                 @endif
+
+
+
+                                 @if($red->id==5)
+
+                                  <div class="col-xs-3 col-md-3">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                
+                                                    <a href="{{$red->url}}">
+                                                        <i class='fa fa-pinterest icono icon-pinterest'></i>
+                                                    </a>
+                                                
+                                            </div>
+                                            <div class="panel-footer">
+                                                <b>Pinterest</b>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                @endif
+
+
 
                                 
                                 

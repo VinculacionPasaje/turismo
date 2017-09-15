@@ -10,6 +10,13 @@ use App\Alimentacion;
 use App\CategoriaAlimentacion;
 use App\Parroquias;
 
+use App\ComentariosActividades;
+use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
+
 class AlimentacionController extends Controller
 {
     /**
@@ -21,7 +28,16 @@ class AlimentacionController extends Controller
     {
         $alimentacion = Alimentacion::where('estado',1)->orderBy('id')->paginate(6);
         $busqueda= Alimentacion::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.alimentacion.index',compact('alimentacion', 'busqueda'));
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
+        return View('administracion.alimentacion.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','alimentacion', 'busqueda'));
     }
 
     /**
@@ -33,8 +49,17 @@ class AlimentacionController extends Controller
     {
         $categorias = CategoriaAlimentacion::where('estado',1)->get();
         $parroquias = Parroquias::where('estado',1)->get();
+
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
         
-        return View('administracion.alimentacion.create',compact('categorias', 'parroquias'));
+        return View('administracion.alimentacion.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'parroquias'));
     }
 
     /**
@@ -69,7 +94,16 @@ class AlimentacionController extends Controller
         $alimentacion = Alimentacion::find($id);
         $categorias = CategoriaAlimentacion::where('estado',1)->get();
         $parroquias = Parroquias::where('estado',1)->get();
-        return view('administracion.alimentacion.edit',compact('alimentacion','categorias', 'parroquias'));
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
+        return view('administracion.alimentacion.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','alimentacion','categorias', 'parroquias'));
 
     }
 

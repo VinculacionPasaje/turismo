@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use App\CategoriaTuristica;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use App\ComentariosActividades;
+use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
 
 class CategoriaTuristicaController extends Controller
 {
@@ -15,15 +21,33 @@ class CategoriaTuristicaController extends Controller
 
          $categorias = CategoriaTuristica::where('estado',1)->orderBy('id')->paginate(6);
          $cat= CategoriaTuristica::name($request->get('table_search'))->orderBy('id')->paginate(6);
+
+          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
          
         
-          return view('administracion.categoriasTuristicas.index',compact('categorias', 'cat'));
+          return view('administracion.categoriasTuristicas.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'cat'));
 
     }
 
     public function create(){
 
-        return view ('administracion.categoriasTuristicas.create');
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
+        return view ('administracion.categoriasTuristicas.create', compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos'));
     }
 
     public function store(CategoriaTuristicaRequest $request){
@@ -46,7 +70,16 @@ class CategoriaTuristicaController extends Controller
 
     public function edit($id){
         $categoria = CategoriaTuristica::find($id);
-        return view('administracion.categoriasTuristicas.edit',compact('categoria'));
+
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return view('administracion.categoriasTuristicas.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categoria'));
 
 
     }

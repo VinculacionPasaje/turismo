@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Redirect;
 use App\Parroquias;
 use App\Zonas;
 
+use App\ComentariosActividades;
+use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
+
 class ParroquiasController extends Controller
 {
       /**
@@ -20,7 +27,15 @@ class ParroquiasController extends Controller
     {
         $parroquias = Parroquias::where('estado',1)->orderBy('id')->paginate(6);
         $busqueda= Parroquias::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.parroquias.index',compact('parroquias', 'busqueda'));
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return View('administracion.parroquias.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','parroquias', 'busqueda'));
     }
 
     /**
@@ -31,8 +46,16 @@ class ParroquiasController extends Controller
     public function create()
     {
         $zonas = Zonas::where('estado',1)->get();
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
         
-        return View('administracion.parroquias.create',compact('zonas'));
+        return View('administracion.parroquias.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','zonas'));
     }
 
     /**
@@ -67,7 +90,15 @@ class ParroquiasController extends Controller
 
         $parroquia = Parroquias::find($id);
         $zonas = Zonas::where('estado',1)->get();
-        return view('administracion.parroquias.edit',compact('parroquia','zonas'));
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return view('administracion.parroquias.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','parroquia','zonas'));
 
     }
 

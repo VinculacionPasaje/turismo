@@ -10,6 +10,13 @@ use App\Turistico;
 use App\CategoriaTuristica;
 use App\Parroquias;
 
+use App\ComentariosActividades;
+use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
+
 class TuristicoController extends Controller
 {
     /**
@@ -21,7 +28,15 @@ class TuristicoController extends Controller
     {
         $actividades = Turistico::where('estado',1)->orderBy('id')->paginate(6);
         $busqueda= Turistico::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.turistico.index',compact('actividades', 'busqueda'));
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return View('administracion.turistico.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','actividades', 'busqueda'));
     }
 
     /**
@@ -33,8 +48,16 @@ class TuristicoController extends Controller
     {
         $categorias = CategoriaTuristica::where('estado',1)->get();
          $parroquias = Parroquias::where('estado',1)->get();
+          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
         
-        return View('administracion.turistico.create',compact('categorias', 'parroquias'));
+        return View('administracion.turistico.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'parroquias'));
     }
 
     /**
@@ -90,7 +113,15 @@ class TuristicoController extends Controller
         $actividades = Turistico::find($id);
         $categorias = CategoriaTuristica::where('estado',1)->get();
         $parroquias = Parroquias::where('estado',1)->get();
-        return view('administracion.turistico.edit',compact('actividades','categorias', 'parroquias'));
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return view('administracion.turistico.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','actividades','categorias', 'parroquias'));
 
     }
 

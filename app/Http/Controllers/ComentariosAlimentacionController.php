@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alimentacion;
+use App\ComentariosActividades;
 use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
 
@@ -18,8 +23,17 @@ class ComentariosAlimentacionController extends Controller
     public function index(Request $request)
     {
         $comentarios = ComentariosAlimentacion::where('aprovado',1)->orderBy('id')->paginate(6);
+
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
       
-        return View('administracion.ComentariosAlimentacion.index',compact('comentarios'));
+        return View('administracion.ComentariosAlimentacion.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
     }
 
      /**
@@ -30,7 +44,17 @@ class ComentariosAlimentacionController extends Controller
     public function noAprovados(Request $request)
     {
         $comentarios = ComentariosAlimentacion::where('aprovado',0)->orderBy('id')->paginate(10);
-        return View('administracion.ComentariosAlimentacion.noAprovados',compact('comentarios'));
+
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
+        return View('administracion.ComentariosAlimentacion.noAprovados',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
     }
 
 
@@ -102,8 +126,16 @@ class ComentariosAlimentacionController extends Controller
     public function edit($id)
     {
         $comentarios = ComentariosAlimentacion::find($id);
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
       
-        return view('administracion.ComentariosAlimentacion.edit',compact('comentarios'));
+        return view('administracion.ComentariosAlimentacion.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
     }
 
     /**

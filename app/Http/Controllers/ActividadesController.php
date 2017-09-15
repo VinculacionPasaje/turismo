@@ -11,6 +11,13 @@ use App\CategoriaActividades;
 use App\Parroquias;
 use App\ParroquiasActividades;
 
+use App\ComentariosActividades;
+use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
+
 
 class ActividadesController extends Controller
 {
@@ -23,7 +30,17 @@ class ActividadesController extends Controller
     {
         $actividades = Actividades::where('estado',1)->orderBy('id')->paginate(6);
         $busqueda= Actividades::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.actividades.index',compact('actividades', 'busqueda'));
+
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
+        return View('administracion.actividades.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','actividades', 'busqueda'));
     }
 
     /**
@@ -35,8 +52,17 @@ class ActividadesController extends Controller
     {
         $categorias = CategoriaActividades::where('estado',1)->get();
         $parroquias = Parroquias::where('estado',1)->get();
+
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
         
-        return View('administracion.actividades.create',compact('categorias', 'parroquias'));
+        return View('administracion.actividades.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'parroquias'));
     }
 
     /**
@@ -69,6 +95,7 @@ class ActividadesController extends Controller
             ]);
         }
 
+        
             
                
         return Redirect::to('administracion/actividades/create')->with('mensaje-registro', 'Actividad Registrada Correctamente');
@@ -100,7 +127,17 @@ class ActividadesController extends Controller
         $categorias = CategoriaActividades::where('estado',1)->get();
         $parroquias = Parroquias::where('estado',1)->get();
         $parroquias_actividades = ParroquiasActividades::all();
-        return view('administracion.actividades.edit',compact('actividad','categorias', 'parroquias', 'parroquias_actividades'));
+
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
+        return view('administracion.actividades.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','actividad','categorias', 'parroquias', 'parroquias_actividades'));
 
     }
 
@@ -132,7 +169,7 @@ class ActividadesController extends Controller
                 $actividades->parroquias()->sync($request->get('parroquias'));
 
                 
-
+        
                   
 
 

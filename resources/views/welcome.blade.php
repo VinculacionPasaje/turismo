@@ -149,7 +149,7 @@
                             </div>
 
                             <div  class="col-xs-6 col-md-4" align="center">
-                                            <img src="{{url('frontend/images/header2.png')}}" alt="logo">                   
+                                            <img src="{{url('frontend/images/header3.png')}}" alt="logo">                   
                                                                 
                             </div>
 
@@ -395,7 +395,7 @@
                                 <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>               
                             </ul>
                         </li>  
 
@@ -464,6 +464,58 @@
 
             <div class="col-lg-8 col-md-8 col-sm-12 ">
 
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                                    <h2 class="column-title2"> Atractivos Turísticos </h2>
+                
+                                    </div>
+
+                                @foreach($actividadesTu as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasTu as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                                @endforeach 
+
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                    <a class="slider_btn4" href="{{url ('atractivosTuristicos')}}">Ver Más Atractivos Turísticos</a>
+                                
+                                </div>
+
+
+
                      <div class="col-lg-12 col-md-12 col-sm-12">
                                     <h2 class="column-title2"> Actividades </h2>
                      </div>
@@ -516,53 +568,7 @@
                  
        
 
-                     <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                    <h2 class="column-title2"> Atractivos Turisticos </h2>
-   
-                    </div>
-
-                                @foreach($actividadesTu as $act)            
-                                    
-
-                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
-
-                                            <div class="news">
-                                                        <div class="img-figure">
-                                                               @foreach($categoriasTu as $cat)
-                                                                    @if($cat->id == $act->id_categorias )
-
-                                                                    <div class="cat">{{$cat->categoria}}</div>
-                                                                    @endif
-
-                                                               @endforeach
-                                                           
-                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
-                                                        </div>	
-
-                                                        <div class="title">
-                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
-                                                        </div>
-                                                        <p class="description">
-                                                            {{$act->descripcion}}
-                                                        </p>
-
-                                                        <p class="more">
-                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                        </p>
-                                                </div>
-
-
-                                        
-                                     </div>
-              
-                                      
-                                @endforeach 
-
-                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                    <a class="slider_btn4" href="{{url ('atractivosTuristicos')}}">Ver Más Atractivos Turísticos</a>
-                                
-                                </div>
+                    
 
 
                     
@@ -720,153 +726,7 @@
 
                      
                    
-                <!--
-
-                 <div class="col-lg-6 col-md-6 col-sm-6">
-
-                     <div class="blog-post blog-large">
-                        <article>
-                            <header class="entry-header">
-                                <div class="entry-thumbnail">
-                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
-                                    
-                                </div>
-                                <div class="entry-date">25 November 2014</div>
-                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
-                            </header>
-
-                            <div class="entry-content">
-                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-danger" href="#">Leer más</a>
-                            </div>
-
-                            <footer class="entry-meta">
-                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
-                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                            </footer>
-                        </article>
-                    </div>
-                    </div>
-
-
-                     <div class="col-lg-6 col-md-6 col-sm-6">
-
-                     <div class="blog-post blog-large">
-                        <article>
-                            <header class="entry-header">
-                                <div class="entry-thumbnail">
-                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
-                                    
-                                </div>
-                                <div class="entry-date">25 November 2014</div>
-                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
-                            </header>
-
-                            <div class="entry-content">
-                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-danger" href="#">Leer más</a>
-                            </div>
-
-                            <footer class="entry-meta">
-                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
-                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                            </footer>
-                        </article>
-                    </div>
-                    </div>
-
-         </div>
-        -->
-         
-     
-
-                <!--
-            
-                <div class="col-lg-8 col-md-8 col-sm-6">
-                    <div class="blog-post blog-large" >
-                        <article>
-                            <header class="entry-header">
-                                <div class="entry-thumbnail">
-                                    <img class="img-responsive" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
-                                    
-                                </div>
-                                <div class="entry-date">25 November 2014</div>
-                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
-                            </header>
-
-                            <div class="entry-content">
-                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-danger" href="#">Leer más</a>
-                            </div>
-
-                            <footer class="entry-meta">
-                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
-                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                            </footer>
-                        </article>
-                    </div>
-                   
-
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-
-                     <div class="blog-post blog-large">
-                        <article>
-                            <header class="entry-header">
-                                <div class="entry-thumbnail">
-                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
-                                    
-                                </div>
-                                <div class="entry-date">25 November 2014</div>
-                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
-                            </header>
-
-                            <div class="entry-content">
-                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-danger" href="#">Leer más</a>
-                            </div>
-
-                            <footer class="entry-meta">
-                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
-                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                            </footer>
-                        </article>
-                    </div>
-                    </div>
-
-                     <div class="col-lg-6 col-md-6 col-sm-6">
-
-                     <div class="blog-post blog-large">
-                        <article>
-                            <header class="entry-header">
-                                <div class="entry-thumbnail">
-                                    <img class="img-responsive2" src="{{url('frontend/images/blog/01.jpg')}}" alt="">
-                                    
-                                </div>
-                                <div class="entry-date">25 November 2014</div>
-                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
-                            </header>
-
-                            <div class="entry-content">
-                                <P class="negro2">With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
-                                <a class="btn btn-danger" href="#">Leer más</a>
-                            </div>
-
-                            <footer class="entry-meta">
-                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
-                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
-                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
-                            </footer>
-                        </article>
-                    </div>
-                    </div>
-
-                </div>-->
-
-              
+                
 
         
                 
@@ -875,52 +735,109 @@
 
                 <div class="col-lg-4 col-md-4 col-sm-6" >
                     
+                    <h3 class="column-title" align="center">Últimos Eventos</h3>
+                    <div class="panel panel-default" style="background: #f5f5f5;">
+                    
+                            <div class="panel-body" id="menu2">
+                                    
+                                    <ul class="demo1" style="overflow-y: hidden; margin-bottom: 0px;">
+                                    
+                                    
+                                                    @foreach($eventos as $noticia)   
+                                                        <li style="" class="news-item">
+                                                        <table cellpadding="4">
+                                                        <tbody><tr>
+                                                        <tr><img src="{{url('fotos/'.$noticia->path)}}" style="width: 100%;height: 200px;"> </tr>
+                                                        <td>
+                                                            <h5 class="negro"><a class="negro" href="eventos/{{$noticia->id}}">{{$noticia->titulo}}</a></h5>
+                                                            
+                                                            <p class="negro2" > {{$noticia->descripcion}} </p>  
+                                                            
+                                                            </td>
+                                                        </tr>
+                                                        </tbody></table>
+                                                        </li>
+
+
+                                                    @endforeach
+
+
+                                        
+                                            
+                                            
+                                            
+                                            
+                                        </ul>
+                            </div>
+
+                                    <div class="panel-footer">
+                                        
+                                    
+                                        <div class="clearfix">
+                                            
+
+                                        </div>
+                                        <a class="btn_noticias" href="{{url ('eventos')}}">Ver Más Eventos</a>
+                            
+                                    </div>
+                    </div>
+
+
+
+
+
                     <h3 class="column-title">Últimas Noticias</h3>
                     <div class="panel panel-default" style="background: #f5f5f5;">
                     
-                    <div class="panel-body" id="menu2">
-                    
-                    <ul class="demo1" style="overflow-y: hidden; margin-bottom: 0px;">
-                      
-                      
-                        @foreach($noticias as $noticia)   
-                            <li style="" class="news-item">
-                            <table cellpadding="4">
-                            <tbody><tr>
-                            <tr><img src="{{url('fotos/'.$noticia->path)}}" style="width: 100%;height: 200px;"> </tr>
-                            <td>
-                                 <h5 class="negro"><a class="negro" href="noticias/{{$noticia->id}}">{{$noticia->titulo}}</a></h5>
-                                 
-                                <p class="negro2" > {{$noticia->descripcion}} </p>  
-                                
-                                </td>
-                            </tr>
-                            </tbody></table>
-                            </li>
-
-
-                        @endforeach
-
-
-                           
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-
-                            <div class="panel-footer">
-                                
-                               
-                                <div class="clearfix">
+                            <div class="panel-body" id="menu2">
                                     
+                                    <ul class="demo1" style="overflow-y: hidden; margin-bottom: 0px;">
+                                    
+                                    
+                                                    @foreach($noticias as $noticia)   
+                                                        <li style="" class="news-item">
+                                                        <table cellpadding="4">
+                                                        <tbody><tr>
+                                                        <tr><img src="{{url('fotos/'.$noticia->path)}}" style="width: 100%;height: 200px;"> </tr>
+                                                        <td>
+                                                            <h5 class="negro"><a class="negro" href="noticias/{{$noticia->id}}">{{$noticia->titulo}}</a></h5>
+                                                            
+                                                            <p class="negro2" > {{$noticia->descripcion}} </p>  
+                                                            
+                                                            </td>
+                                                        </tr>
+                                                        </tbody></table>
+                                                        </li>
 
-                                </div>
-                                <a class="btn_noticias" href="{{url ('noticias')}}">Ver Más Noticias</a>
-                      
+
+                                                    @endforeach
+
+
+                                        
+                                            
+                                            
+                                            
+                                            
+                                        </ul>
                             </div>
+
+                                    <div class="panel-footer">
+                                        
+                                    
+                                        <div class="clearfix">
+                                            
+
+                                        </div>
+                                        <a class="btn_noticias" href="{{url ('noticias')}}">Ver Más Noticias</a>
+                            
+                                    </div>
                     </div>
+
+
+
+
+
+                    
 
 
                       <h3 class="column-title">Categorias Noticias</h3>
@@ -963,7 +880,6 @@
 	</div>
   </section>
 
-<input type="button" value="Abrir archivo pdf" onclick="window.open('fotos/prueba.pdf')" />
 
 
 

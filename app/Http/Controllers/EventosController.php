@@ -10,6 +10,13 @@ use App\Eventos;
 use App\CategoriasEventos;
 use App\Parroquias;
 
+use App\ComentariosActividades;
+use App\ComentariosAlimentacion;
+use App\ComentariosAtractivosT;
+use App\ComentariosDiversion;
+use App\ComentariosHospedaje;
+use App\ComentariosEventos;
+
 class EventosController extends Controller
 {
     /**
@@ -21,7 +28,15 @@ class EventosController extends Controller
     {
         $eventos = Eventos::where('estado',1)->orderBy('id')->paginate(6);
         $busqueda= Eventos::name($request->get('table_search'))->orderBy('id')->paginate(6);
-        return View('administracion.eventos.index',compact('eventos', 'busqueda'));
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return View('administracion.eventos.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','eventos', 'busqueda'));
     }
 
     /**
@@ -33,8 +48,16 @@ class EventosController extends Controller
     {
         $categorias = CategoriasEventos::where('estado',1)->get();
         $parroquias = Parroquias::where('estado',1)->get();
+         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
         
-        return View('administracion.eventos.create',compact('categorias', 'parroquias'));
+        return View('administracion.eventos.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'parroquias'));
     }
 
     /**
@@ -69,7 +92,15 @@ class EventosController extends Controller
         $evento = Eventos::find($id);
         $categorias = CategoriasEventos::where('estado',1)->get();
           $parroquias = Parroquias::where('estado',1)->get();
-        return view('administracion.eventos.edit',compact('evento','categorias', 'parroquias'));
+           $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+        $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
+        $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
+        $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
+        $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
+        $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
+        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+        return view('administracion.eventos.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','evento','categorias', 'parroquias'));
 
     }
 

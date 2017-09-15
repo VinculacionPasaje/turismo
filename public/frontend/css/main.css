@@ -853,6 +853,7 @@ hr {
 }
 .column-title {
   margin-top: 0;
+  text-align: center;
   padding-bottom: 15px;
   padding-top: 15px;
   border-bottom: 1px solid #eee;
@@ -866,6 +867,7 @@ hr {
   left: 0;
   width: 40%;
   border-bottom: 1px solid #45aed6;
+   margin-left: 30%;
 }
 .column-title2 {
   text-align: center;
@@ -2487,9 +2489,12 @@ a.socialIcon:hover, .socialHoverClass {
   color: #11ac66;
 }
 .alert-info {
-  background-color: transparent;
-  border-color: #15acdc;
-  color: #15acdc;
+  background-color: #dff2fe;
+  border-color: #cfebfe;
+  color: #414345;
+  font-family: "Helvetica" ;
+  font-size: 16px;
+  text-align: justify;
 }
 .alert-info hr {
   border-top-color: #139ac5;

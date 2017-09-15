@@ -12,6 +12,7 @@ use App\Video;
 use App\Footer;
 use App\Mapas;
 use App\Llegar;
+use App\Catastros;
 use App\CategoriaActividades;
 use App\Actividades;
 use App\CategoriaTuristica;
@@ -68,13 +69,15 @@ class FrontController extends Controller
         $noticias= Noticia::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
         $noticiasVistas= Noticia::where('estado',1)->orderBy('contador_visitas', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas vistas
 
+        $eventos= Eventos::where('estado',1)->orderBy('fecha_desde', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
+
         
        
 
 
       
        
-        return view('welcome', compact('noticiasVistas', 'noticias', 'alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
+        return view('welcome', compact('eventos','noticiasVistas', 'noticias', 'alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 
@@ -883,6 +886,36 @@ class FrontController extends Controller
        }
         
         return view('frontend/llegar', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'llegar', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+    }
+
+
+
+    public function catastros(){
+       $catastros= Catastros::where('estado',1)->get();
+       $contador= Catastros::where('id',5000)->get();
+
+
+        $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
+          $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+          $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+         $variable=0;
+       if($contador->count())
+       {
+             foreach($contador as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+
+       }
+        
+        return view('frontend/catastros', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'catastros', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
      

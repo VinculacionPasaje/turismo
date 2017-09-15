@@ -46,7 +46,95 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
            
-                     <!-- aqui va las notificaciones -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">{{$total}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              
+              <li class="header">Tienes {{$total}} comentarios sin aprobar</li>
+              <li>
+           
+                <ul class="menu">
+                  @if($comentariosAtractivosT >0)
+
+                   <li>
+                    <a href="{{route('comentariosTuristicos.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosAtractivosT}} comentarios de Atractivos T.
+                    </a>
+                  </li>
+
+
+                  @endif
+
+                  @if($comentariosHospedaje >0)
+
+                   <li>
+                    <a href="{{route('comentariosHospedaje.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosHospedaje}} comentarios de Hospedaje
+                    </a>
+                  </li>
+
+
+                  @endif
+
+
+                  @if($comentariosDiversion >0)
+
+                   <li>
+                    <a href="{{route('comentariosDiversion.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosDiversion}} comentarios de Diversion
+                    </a>
+                  </li>
+
+
+                  @endif
+
+                  @if($comentariosEventos >0)
+
+                   <li>
+                    <a href="{{route('comentariosEventos.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosEventos}} comentarios de Eventos
+                    </a>
+                  </li>
+
+
+                  @endif
+
+
+                  @if($comentariosAlimentacion >0)
+
+                   <li>
+                    <a href="{{route('comentariosAlimentacion.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosAlimentacion}} comentarios de Alimentacion
+                    </a>
+                  </li>
+
+
+                  @endif
+
+
+                  @if($comentariosActividades >0)
+
+                   <li>
+                    <a href="{{route('comentariosActividades.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosActividades}} comentarios de Actividades
+                    </a>
+                  </li>
+
+
+                  @endif
+                
+                 
+                 
+                </ul>
+              </li>
+              
+            </ul>
+          </li>
+  
+        
 
 
                      

@@ -74,6 +74,7 @@
         Route::get('preguntas', 'FrontController@pregunta');
         Route::get('mapas', 'FrontController@mapas');
         Route::get('llegar', 'FrontController@llegar');
+        Route::get('catastros', 'FrontController@catastros');
         Route::get('turismoComunitario', 'FrontController@turismo_comunitario');
         
         Route::get('contactos', 'MailController@index');

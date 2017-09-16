@@ -27,6 +27,8 @@ class HospedajeRequest extends FormRequest
             'titulo'=>'required|max:500',
             'estrellas'=>'required',
             'descripcion'=>'required|max:255',
+            'direccion'=>'required',
+            'telefono'=>'required',
             'fecha_post'=>'required',
             'id_categorias'=>'required',
             'id_parroquias'=>'required',

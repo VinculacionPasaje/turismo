@@ -231,12 +231,122 @@
 
         <div class=" col-md-8"   >
 
+         @if (session('mensaje-registro'))
+                    @include('mensajes.msj_correcto')
+                @endif
+
    
                 <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 
                 Categoria:  {!! $categoriasAct->nombre !!}
                 
                  {!! $actividad->contenido !!}
+
+
+                 <div class="row header">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> Deja tu Comentario </h2>
+
+
+                                
+                            </div>
+                </div>
+
+	
+
+            <div class="row">
+                <div id="comment-form" class="col-xs-12 col-md-12" style="margin-top: 20px;">
+                    {{ Form::open(['route' => ['comentariosNoticias2.store', $actividad->id], 'method' => 'POST']) }}
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+                
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ Form::label('name', "Nombre:") }}
+                    <input id="nombre" type="text" class="form-control" name="nombre" required placeholder="Ingrese su nombre *">
+                            
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ Form::label('email', 'Email:') }}
+                    
+                            <input id="email" type="email" class="form-control" name="email" required placeholder="Correo Electronico *">
+                            </div>
+
+                            <div class="col-md-12">
+                                {{ Form::label('comment', "Comentario:") }}
+
+                    <textarea name="comentario" id="comentario" required placeholder="Comentario *" class="form-control" rows="5"></textarea>
+                            
+
+                                
+                            </div>
+
+                <div align="center" class="col-lg-12 col-md-12 col-sm-12">
+
+                {{ Form::submit('Comentar', ['class' => ' slider_btn4', 'style' => 'margin-top:15px;']) }}
+
+                </div>
+                        </div>
+
+                    {{ Form::close() }}
+                </div>
+            </div>
+
+
+
+        <div class= "col-xs-12 col-md-12">
+
+            <div class="row header">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                <h4 class="column-title2"> Comentarios </h4>
+
+                                    
+
+
+                            
+                        </div>
+                </div>
+
+
+
+
+        <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
+
+                    
+                @include('ajax-frontend/comentariosActividades')
+
+                </div>   <!-- post-comments -->
+
+
+                @if(count($comentarios) >0)
+
+                <div class="col-lg-12 col-md-12 col-sm-12" align="center">
+
+                                    <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
+
+                                    </div>
+                            
+                            <div class="ajax-load text-center" style="display:none">
+                                        <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
+                                    </div>
+                @else
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12" align="center">
+
+                                        <img src="{{url('frontend/images/sad.png')}}">
+
+                                                <p> No se encontraron resultados </p>
+
+                                        </div>
+
+
+
+                @endif
+
+            </div>
 
 
        
@@ -628,6 +738,62 @@
             }()); //run this anonymous function immediately
 
     </script>
+
+
+    <script type="text/javascript">
+            var page = 1;
+
+
+            $(document).ready(function(){
+
+                            $('.loadMore').click(function(){
+
+                                page++;
+                                loadMoreData(page);
+
+                        
+
+
+                                });
+
+                        });
+
+            function loadMoreData(page){
+            $.ajax(
+                    {
+                        url: '?page=' + page,
+                        type: "get",
+                        beforeSend: function()
+                        {
+                            $('.ajax-load').show();
+                        }
+                    })
+                    .done(function(data)
+                    {
+                        if(data.html.length == "0"){
+                            $('.loadMore').text("Ya no hay más comentarios").attr("disabled", "disabled");
+                            $('.ajax-load').html("Ya no hay mas resultados");
+                        return;
+                        }
+                        $('.ajax-load').hide();
+                        $("#post-data").append(data.html);
+                    })
+                    .fail(function(jqXHR, ajaxOptions, thrownError)
+                    {
+                        alert('error al cargar los datos...');
+                    });
+            }
+        </script>
+
+         <script src="{{url('administration/dist/js/alertify.js')}}"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $(".aprobado").fadeOut(300);
+                },3000);
+            });
+        </script>
   
 
 

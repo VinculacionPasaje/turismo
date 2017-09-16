@@ -21,18 +21,18 @@
             <div class="box">
                 <div class="box-header">
                     <div class= "col-xs-6 col-md-6" aling="center">
-                        <h3 class="box-title">Comentarios Aprobados de las Noticias de Pasaje</h3>
+                        <h3 class="box-title">Comentarios No Aprobados de las Noticias de Pasaje</h3>
 
                     </div>
                     
                      <div class= "col-xs-6 col-md-6">
 
                             <div class="box-tools">
-                            
-                                    
-                                    <div class="input-group-btn">
-                                    <a href="{{route('comentariosNoticias.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
+                                  <div class="input-group-btn">
+                                    <a href="{{route('comentariosNoticias.noAprovados')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
                                      </div>
+                                    
+                            
                                 
                                 </div>
                     </div>
@@ -88,7 +88,7 @@
                             {{$comentarios->links()}}
                         </div>
                     </div>
-                         
+                        
 
                
                 @else

@@ -13,6 +13,9 @@ use App\ComentariosEventos;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
 
+// we will use Mail namespace
+use Mail;
+
 class ComentariosDiversionController extends Controller
 {
       /**
@@ -152,10 +155,53 @@ class ComentariosDiversionController extends Controller
         
 
 
-        if($comentarios->save()){
-            return Redirect::to('administracion/comentariosDiversion')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
-        }
+         $data = $request; 
 
+           
+        
+
+
+        if($comentarios->save()){
+
+
+             $enviarEmail = $data['enviar'];
+     
+        
+            if($enviarEmail==1){ // si el administrador activo para enviar la respuesta por email
+
+                $data = $request->all();
+            
+            
+                //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
+                Mail::send('frontend/body_comentarios', $data, function($message) use ($request)
+                {
+                    //la persona que envia
+                    $message->from('grupoturismopasaje@gmail.com', 'Administrador');
+            
+                    //asunto
+                    $message->subject('Respuesta al comentario realizado en el sitio web turístico de Pasaje');
+            
+                    //la persona que recibe el mensaje
+                    $message->to($request->email, $request->nombre);
+            
+                });
+
+                return Redirect::to('administracion/comentariosDiversion')->with('mensaje-registro', 'Email enviado Correctamente');
+
+
+
+            }else{
+
+                return Redirect::to('administracion/comentariosDiversion')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
+
+            }
+
+
+
+
+            
+            
+        }
     }
 
     /**

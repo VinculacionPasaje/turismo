@@ -18,6 +18,8 @@ class CreateTableHospedaje extends Migration
             $table->string('titulo',500);
             $table->string('descripcion', 255);
             $table->date('fecha_post');
+            $table->string('direccion');
+            $table->string('telefono');
             $table->string('estrellas');
             $table->string('path')->nullable();
             $table->text('contenido');

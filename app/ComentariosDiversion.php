@@ -14,6 +14,7 @@ class ComentariosDiversion extends Model
         'nombre',
         'email',
         'comentario',
+             'respuesta_comentario',
         'fecha',
         'hora',
         'estado',

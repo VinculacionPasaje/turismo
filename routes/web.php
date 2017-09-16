@@ -68,6 +68,10 @@
           //comentarios eventos
          Route::post('comentariosEventos/{eventos_id}', ['uses' => 'ComentariosEventosController@store', 'as'=> 'comentariosEventos2.store']);
 
+          //comentarios noticias
+         Route::post('comentariosNoticias/{noticias_id}', ['uses' => 'ComentariosNoticiasController@store', 'as'=> 'comentariosNoticias2.store']);
+
+
 
         Route::get('traer', 'FrontController@traer');
         Route::get('material', 'FrontController@material');
@@ -104,8 +108,6 @@
         Route::resource('administracion/videos','VideoController');
         Route::resource('administracion/footer','FooterController');
         Route::resource('administracion/noticias','NoticiaController');
-        Route::resource('administracion/comentariosNoticias','ComentariosNoticiasController');
-        Route::resource('administracion/respuestaComentariosNoticias','RespuestaComentariosNoticiasController');
         Route::resource('administracion/mapas','MapasController');
         Route::resource('administracion/llegar','LlegarController');
         Route::resource('administracion/actividades','ActividadesController');
@@ -141,6 +143,10 @@
 
                    Route::resource('administracion/comentariosEventos','ComentariosEventosController');
                     Route::get('administracion/comentariosEventosNoAprobados', ['uses' => 'ComentariosEventosController@noAprovados', 'as'=> 'comentariosEventos.noAprovados']);
+
+              Route::resource('administracion/comentariosNoticias','ComentariosNoticiasController');
+               Route::get('administracion/comentariosNoticiasNoAprobados', ['uses' => 'ComentariosNoticiasController@noAprovados', 'as'=> 'comentariosNoticias.noAprovados']);
+
                    
 
 

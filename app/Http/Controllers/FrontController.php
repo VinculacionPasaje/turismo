@@ -33,6 +33,7 @@ use App\ComentariosAtractivosT;
 use App\ComentariosDiversion;
 use App\ComentariosHospedaje;
 use App\ComentariosEventos;
+use App\ComentariosNoticias;
 
 
 class FrontController extends Controller
@@ -443,7 +444,7 @@ class FrontController extends Controller
     }
 
 
-     public function noticias($id){
+     public function noticias(Request $request,$id){
         
         $actividad = Noticia::find($id); //aqui encuentro la actividad selecciona
         if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
@@ -469,6 +470,15 @@ class FrontController extends Controller
             $categorias= Categoria::where('estado',1)->get();
 
 
+
+            $comentarios= ComentariosNoticias::where('noticias_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
+
+                if ($request->ajax()) {
+                    $view = view('ajax-frontend/comentariosActividades',compact('comentarios'))->render();
+                    return response()->json(['html'=>$view]);
+                }
+
+
          $variable=0;
          $actividad->contador_visitas++;
          $variable= $actividad;
@@ -476,7 +486,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/noticias',compact('categoriasActividades', 'categorias','noticias','todosNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/noticias',compact('comentarios','categoriasActividades', 'categorias','noticias','todosNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         

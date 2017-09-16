@@ -56,6 +56,24 @@
 
             </div>
 
+
+            <div class="row" ><!--Inicio de row -->
+              <div class="col-md-6 col-xs-12">
+                       <div class="form-group">
+                            <label for="telefono">Teléfono de Local</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="20" value="{{$hospedaje->telefono }}">
+                        </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                      <div class="form-group">
+                                {!! Form::label('Dirección del Local') !!}
+                                {!! Form::text('direccion',null,['placeholder'=>'Dirección','class'=>'form-control']) !!}
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+
             
 
             <div class="form-group">

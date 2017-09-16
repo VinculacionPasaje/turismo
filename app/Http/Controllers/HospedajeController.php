@@ -72,6 +72,8 @@ class HospedajeController extends Controller
             'titulo' => $request['titulo'],
             'descripcion' => $request['descripcion'],
             'fecha_post' => $request['fecha_post'],
+            'direccion' => $request['direccion'],
+            'telefono' => $request['telefono'],
             'estrellas' => $request['estrellas'],
             'path'=> $request['path'],
             'contenido'=> $request['contenido'],
@@ -84,7 +86,7 @@ class HospedajeController extends Controller
       
 
         
-        return Redirect::to('administracion/hospedaje/create')->with('mensaje-registro', 'Noticia Registrada Correctamente');
+        return Redirect::to('administracion/hospedaje/create')->with('mensaje-registro', 'Hospedaje Registrado Correctamente');
 
 
     }
@@ -130,7 +132,7 @@ class HospedajeController extends Controller
 
 
         if($hospedaje->save()){
-            return Redirect::to('administracion/hospedaje')->with('mensaje-registro', 'Noticia Actualizada Correctamente');
+            return Redirect::to('administracion/hospedaje')->with('mensaje-registro', 'Contenido Actualizado Correctamente');
         }
 
 

@@ -14,6 +14,8 @@ class Hospedaje extends Model
         'titulo',
         'descripcion',
         'fecha_post',
+         'direccion',
+        'telefono',
         'estrellas',
         'path',
         'contenido',

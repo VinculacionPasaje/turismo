@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title')
     <section class="content-header">
-        <h1>Videos<small>Actualizar</small></h1>
+        <h1>Comentarios<small>Actualizar</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
             <li class="active">Comentarios</li>
@@ -25,29 +25,99 @@
     @endif
     <div class="box box-primary">
         <div class="box-header">
-            <h3 class="box-title">Edición de Comentarios Actividades</h3>
+            <h3 class="box-title">Edición de Comentarios de Actividades de Pasaje</h3>
         </div><!-- /.box-header -->
 
         <div id="notificacion_resul_fanu"></div>
         <div class="box-body">
             {{Form::model($comentarios, ['route' => ['comentariosActividades.update',$comentarios->id],'method'=>'PUT' ])}}
                 <input type="hidden" name="ruta" id ="ruta" value="{{url('')}}">
-                 <div class="col-md-6 col-xs-12">
+
+
+                <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('Comentario: ') !!}
+
+                            {!! Form::textarea('comentario',null,['class'=>'form-control', 'rows' => 5,'readonly' => 'true' ]) !!}
+                           
+                        </div>
+                </div>
+
+                 <div class="col-md-4 col-xs-12">
                         <div class="form-group">
                             {!! Form::label('¿Desea Aprobar o no Aprobar el siguiente comentario?') !!}
                            
                         </div>
                 </div>
 
-                <div class="col-md-6 col-xs-12">
+                <div class="col-md-4 col-xs-12">
                         <div class="form-group">
                            
                             <input type="radio" name="aprovado" value="1"> Si<br>
                             <input type="radio" name="aprovado" value="0"> No<br>
                         </div>
                 </div>
+
+                 <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            {!!Form::label('enviar','¿Desea Enviar por Email la respuesta?:')!!}
+                            {{ Form::checkbox('enviar', 1) }}
+                        </div>
+                </div>
+
+                <div align="center" class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                                {!! Form::label('Respuesta al comentario') !!}
+                                
+                            </div>
+                  
+                </div>
+
+
+                <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('Nombre: ') !!}
+
+                           {!! Form::text('nombre',null,['placeholder'=>'Asunto','class'=>'form-control', 'readonly' => 'true']) !!}
+                           
+                        </div>
+                </div>
+
+
+                 <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('Correo: ') !!}
+
+                           {!! Form::text('email',null,['placeholder'=>'Asunto','class'=>'form-control', 'readonly' => 'true']) !!}
+                           
+                        </div>
+                </div>
+
+
+
+                 <div class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                                {!! Form::label('Escriba la respuesta:') !!}
+                                
+                            </div>
+                  
+                </div>
+
+
+                <div  class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                               
+                                 {!! Form::textarea('respuesta_comentario',null,['class'=>'form-control', 'rows' => 10]) !!}
+                            </div>
+                       
+                </div>
+
+
+                <div align="center" class="col-md-12 col-xs-12">
                 
                 {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
+
+                </div >
                 {!! Form::close() !!}
         </div>
 

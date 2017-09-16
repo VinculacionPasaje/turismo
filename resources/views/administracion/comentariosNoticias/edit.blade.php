@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('title')
     <section class="content-header">
-        <h1>Comentarios<small>Editar</small></h1>
+        <h1>Comentarios<small>Actualizar</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
             <li class="active">Comentarios</li>
-            <li class="active">Editar</li>
+            <li class="active">Actualizar</li>
         </ol>
     </section>
 @endsection
@@ -25,35 +25,106 @@
     @endif
     <div class="box box-primary">
         <div class="box-header">
-            <h3 class="box-title">Editar Comentario</h3>
+            <h3 class="box-title">Edición de Comentarios de Noticias</h3>
         </div><!-- /.box-header -->
+
+        <div id="notificacion_resul_fanu"></div>
         <div class="box-body">
-            {{Form::model($comentario, ['route' => ['comentariosNoticias.update',$comentario->id],'method'=>'PUT','files' => true ])}}
-            <div id="msj-success" class="alert alert-success alert-dismissible aprobado" role="alert" style="display:none">
-                <strong> Comentario Agregado Correctamente.</strong>
-            </div>
-            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-            <input type="hidden" name="ruta" id ="ruta" value="{{url('')}}">
-
-            <div class="form-group">
-               
-                {!! Form::label('Comentario') !!}                                                
-                {!! Form::textarea('comentario',null,['class'=>'form-control', 'rows' => 5]) !!}
-           
-            </div>
+            {{Form::model($comentarios, ['route' => ['comentariosNoticias.update',$comentarios->id],'method'=>'PUT' ])}}
+                <input type="hidden" name="ruta" id ="ruta" value="{{url('')}}">
 
 
-            
+                <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('Comentario: ') !!}
 
-            {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
-            {!! Form::close() !!}
+                             {!! Form::textarea('comentario',null,['class'=>'form-control', 'rows' => 5,'readonly' => 'true' ]) !!}
+                           
+                        </div>
+                </div>
+
+                 <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('¿Desea Aprobar o no Aprobar el siguiente comentario?') !!}
+                           
+                        </div>
+                </div>
+
+                <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                           
+                            <input type="radio" name="aprovado" value="1"> Si<br>
+                            <input type="radio" name="aprovado" value="0"> No<br>
+                        </div>
+                </div>
+
+                 <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            {!!Form::label('enviar','¿Desea Enviar por Email la respuesta?:')!!}
+                            {{ Form::checkbox('enviar', 1) }}
+                        </div>
+                </div>
+
+                <div align="center" class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                                {!! Form::label('Respuesta al comentario') !!}
+                                
+                            </div>
+                  
+                </div>
+
+
+                <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('Nombre: ') !!}
+
+                           {!! Form::text('nombre',null,['placeholder'=>'Asunto','class'=>'form-control', 'readonly' => 'true']) !!}
+                           
+                        </div>
+                </div>
+
+
+                 <div class="col-md-12 col-xs-12">
+                        <div class="form-group">
+                            {!! Form::label('Correo: ') !!}
+
+                           {!! Form::text('email',null,['placeholder'=>'Asunto','class'=>'form-control', 'readonly' => 'true']) !!}
+                           
+                        </div>
+                </div>
+
+
+
+                 <div class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                                {!! Form::label('Escriba la respuesta:') !!}
+                                
+                            </div>
+                  
+                </div>
+
+
+                <div  class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                               
+                                 {!! Form::textarea('respuesta_comentario',null,['class'=>'form-control', 'rows' => 10]) !!}
+                            </div>
+                       
+                </div>
+
+
+                <div align="center" class="col-md-12 col-xs-12">
+                
+                {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
+
+                </div >
+                {!! Form::close() !!}
         </div>
+
     </div>
 @endsection
 @section('script')
-     <script src="{{url('administration/dist/js/comentarios/java-comentarios.js')}}"></script>
-
-
+   
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -61,6 +132,5 @@
                 $(".aprobado").fadeOut(300);
             },3000);
         });
-        
     </script>
 @endsection

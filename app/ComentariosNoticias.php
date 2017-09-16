@@ -11,26 +11,25 @@ class ComentariosNoticias extends Model
     public $timestamps = false;
     protected $fillable=[
         'id',
+        'nombre',
+        'email',
         'comentario',
-        'contador_like',
+        'respuesta_comentario',
         'fecha',
         'hora',
         'estado',
+        'aprovado',
         'noticias_id',
-        'usuario_id',
+  
 
     ];
 
-    public function usuario(){
-        return $this->belongsTo(User::class,'usuario_id','id');
-    }
+
     public function noticias(){
     return $this->belongsTo(Noticia::class,'noticias_id','id');
     }
 
-    public function respuestas(){
-        return $this->hasMany(RespuestaComentariosNoticias::class);
-    }
+  
 
       public function scopeName($query, $table_search){
        if(trim($table_search) != ""){

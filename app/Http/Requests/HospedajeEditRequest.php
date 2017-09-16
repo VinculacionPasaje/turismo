@@ -26,6 +26,8 @@ class HospedajeEditRequest extends FormRequest
         return [
             'titulo'=>'required|max:500',
             'estrellas'=>'required',
+            'direccion'=>'required',
+            'telefono'=>'required',
             'descripcion'=>'required|max:255',
             'fecha_post'=>'required',
             'id_categorias'=>'required',

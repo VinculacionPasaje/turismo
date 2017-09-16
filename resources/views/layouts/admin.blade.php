@@ -285,27 +285,18 @@
                             <a href="#"><i class="fa fa-newspaper-o"></i> Comentarios
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="{{route('comentariosNoticias.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                           <ul class="treeview-menu">
+
+                                <li><a href="{{route('comentariosNoticias.index')}}"><i class="fa fa-list-ul"></i>Aprovados</a></li>
+                                <li><a href="{{route('comentariosNoticias.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
-                          <li><a href="{{route('comentariosNoticias.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                       
                                 
                              
                             </ul>
                         </li>
 
-                         <li>
-                            <a href="#"><i class="fa fa-newspaper-o"></i> Respuestas Comentarios
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="{{route('respuestaComentariosNoticias.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
-                       
-                          <li><a href="{{route('respuestaComentariosNoticias.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
-                                
-                             
-                            </ul>
-                        </li>
+                         
                         
 
         

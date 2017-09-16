@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title')
     <section class="content-header">
-        <h1>Noticias<small>Hospedaje</small></h1>
+        <h1>Crear<small>Hospedaje</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
             <li class="active">Hospedaje</li>

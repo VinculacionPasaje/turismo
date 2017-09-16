@@ -18,6 +18,7 @@ class CreateTableComentariosEventos extends Migration
             $table->string('nombre');
             $table->string('email');
             $table->text('comentario');
+                $table->text('respuesta_comentario')->nullable();
             $table->date('fecha');
             $table->time('hora')->nullable();
             $table->char('estado',1)->default(1);

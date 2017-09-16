@@ -15,18 +15,21 @@ class CreateTableComentariosNoticias extends Migration
     {
         Schema::create('comentarios_noticias', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->string('email');
             $table->text('comentario');
-            $table->integer('contador_like')->default(0);
+            $table->text('respuesta_comentario')->nullable();
             $table->date('fecha');
             $table->time('hora')->nullable();
             $table->char('estado',1)->default(1);
+            $table->char('aprovado',1)->default(0);
+
+
             $table->integer('noticias_id')->unsigned();
-            $table->integer('usuario_id')->unsigned();
 
             $table->foreign('noticias_id')->references('id')->on('noticias')
                 ->onDelete('cascade');
-            $table->foreign('usuario_id')->references('id')->on('users')
-                ->onDelete('cascade');
+
         });
     }
 

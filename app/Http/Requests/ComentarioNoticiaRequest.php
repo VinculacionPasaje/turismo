@@ -24,9 +24,9 @@ class ComentarioNoticiaRequest extends FormRequest
     public function rules()
     {
         return [
-            'comentario'=>'required',
-            'noticias_id'=>'required',
-            'usuario_id'=>'required',
+            'respuesta_comentario'=>'required',
+            'aprovado'=>'required',
+
             
         ];
     }

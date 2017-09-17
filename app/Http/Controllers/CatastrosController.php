@@ -15,6 +15,7 @@ use App\ComentariosAtractivosT;
 use App\ComentariosDiversion;
 use App\ComentariosHospedaje;
 use App\ComentariosEventos;
+use App\ComentariosNoticias;
 
 class CatastrosController extends Controller
 {
@@ -33,10 +34,12 @@ class CatastrosController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+       $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
 
-        return View('administracion.catastros.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','catastros', 'busqueda'));
+
+        return View('administracion.catastros.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','catastros', 'busqueda'));
     }
 
     /**
@@ -53,9 +56,10 @@ class CatastrosController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+        $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-        return View('administracion.catastros.create', compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos'));
+        return View('administracion.catastros.create', compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos'));
     }
 
     /**
@@ -124,10 +128,12 @@ class CatastrosController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+        $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
 
-        return view('administracion.catastros.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','catastro'));
+
+        return view('administracion.catastros.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','catastro'));
 
     }
 

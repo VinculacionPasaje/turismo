@@ -15,6 +15,7 @@ use App\ComentariosAtractivosT;
 use App\ComentariosDiversion;
 use App\ComentariosHospedaje;
 use App\ComentariosEventos;
+use App\ComentariosNoticias;
 
 class ParroquiasController extends Controller
 {
@@ -33,9 +34,11 @@ class ParroquiasController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-        return View('administracion.parroquias.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','parroquias', 'busqueda'));
+
+        return View('administracion.parroquias.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','parroquias', 'busqueda'));
     }
 
     /**
@@ -52,10 +55,12 @@ class ParroquiasController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
 
         
-        return View('administracion.parroquias.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','zonas'));
+        return View('administracion.parroquias.create',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','zonas'));
     }
 
     /**
@@ -96,9 +101,12 @@ class ParroquiasController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+       $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-        return view('administracion.parroquias.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','parroquia','zonas'));
+
+
+        return view('administracion.parroquias.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','parroquia','zonas'));
 
     }
 

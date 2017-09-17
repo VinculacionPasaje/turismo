@@ -68,6 +68,18 @@
 
                   @endif
 
+                  @if($comentariosNoticias >0)
+
+                   <li>
+                    <a href="{{route('comentariosNoticias.noAprovados')}}">
+                      <i class="fa fa-users text-red"></i> Hay {{$comentariosNoticias}} comentarios de Noticias
+                    </a>
+                  </li>
+
+
+                  @endif
+
+
                   @if($comentariosHospedaje >0)
 
                    <li>
@@ -703,6 +715,48 @@
                 </li>
 
 
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-sign-language"></i><span>GASTRONOMÍA</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="#"><i class="fa fa-folder-open"></i> Categorias
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                               <li><a href="{{route('categoriasGastronomia.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                                <li><a href="{{route('categoriasGastronomia.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-sign-language"></i> Gastronomía
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                             <li><a href="#"><i class="fa fa-file"></i> Agregar</a></li>
+                                
+                             
+                            </ul>
+                        </li>
+
+                       
+                        
+
+        
+
+                        
+                    </ul>
+                </li>
+
+
 
 
                         
@@ -861,6 +915,20 @@
 
     <script src="{{url('administration/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{url('administration/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+     <script>
+        $(function () {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+            "paging": false,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": false,
+            "info": true,
+            "autoWidth": false
+            });
+        });
+        </script>
+ 
 
 
 

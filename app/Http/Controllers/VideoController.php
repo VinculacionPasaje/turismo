@@ -14,6 +14,7 @@ use App\ComentariosAtractivosT;
 use App\ComentariosDiversion;
 use App\ComentariosHospedaje;
 use App\ComentariosEventos;
+use App\ComentariosNoticias;
 
 class VideoController extends Controller
 {
@@ -25,9 +26,11 @@ class VideoController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-        return view('administracion.videos.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','video'));
+
+        return view('administracion.videos.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','video'));
 
 
     }
@@ -40,10 +43,12 @@ class VideoController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+       $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
 
         
-        return view('administracion.videos.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','videos'));
+        return view('administracion.videos.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','videos'));
 
     }
 

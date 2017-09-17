@@ -16,6 +16,8 @@ use App\ComentariosAtractivosT;
 use App\ComentariosDiversion;
 use App\ComentariosHospedaje;
 use App\ComentariosEventos;
+use App\ComentariosNoticias;
+
 
 class HospedajeController extends Controller
 {
@@ -34,9 +36,11 @@ class HospedajeController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-        return View('administracion.hospedaje.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','hospedaje', 'busqueda'));
+
+        return View('administracion.hospedaje.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','hospedaje', 'busqueda'));
     }
 
     /**
@@ -54,10 +58,11 @@ class HospedajeController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+        $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
         
-        return View('administracion.hospedaje.create',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'parroquias'));
+        return View('administracion.hospedaje.create',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'parroquias'));
     }
 
     /**
@@ -111,9 +116,10 @@ class HospedajeController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-        return view('administracion.hospedaje.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','hospedaje','categorias', 'parroquias'));
+        return view('administracion.hospedaje.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','hospedaje','categorias', 'parroquias'));
 
     }
 

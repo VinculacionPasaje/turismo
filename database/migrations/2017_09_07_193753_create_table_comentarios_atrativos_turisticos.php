@@ -21,6 +21,8 @@ class CreateTableComentariosAtrativosTuristicos extends Migration
             $table->text('respuesta_comentario')->nullable();
             $table->date('fecha');
             $table->time('hora')->nullable();
+             $table->date('fecha_respuesta')->nullable();
+            $table->time('hora_respuesta')->nullable();
             $table->char('estado',1)->default(1);
             $table->char('aprovado',1)->default(0);
             $table->integer('actividades_id')->unsigned();

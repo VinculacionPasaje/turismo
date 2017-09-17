@@ -15,6 +15,8 @@ class ComentariosHospedaje extends Model
         'email',
         'comentario',
              'respuesta_comentario',
+              'fecha_respuesta',
+        'hora_respuesta',
         'fecha',
         'hora',
         'estado',

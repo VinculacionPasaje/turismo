@@ -16,6 +16,7 @@ use Carbon\Carbon;
 use App\Http\Requests\ComentarioNoticiaRequest;
 
 
+
 // we will use Mail namespace
 use Mail;
 
@@ -159,7 +160,19 @@ class ComentariosNoticiasController extends Controller
     public function update(ComentarioNoticiaRequest $request, $id)
     {
         $comentarios = ComentariosNoticias::find($id);
-        $comentarios->fill($request->all());
+        $date = Carbon::now();
+        $date = $date->format('d-m-Y');
+        $hora= Carbon::now()->toTimeString();
+
+         $comentarios->fill([
+
+                    'respuesta_comentario' => $request['respuesta_comentario'],
+                    'aprovado' => $request['aprovado'],
+                    'fecha_respuesta' => $date,
+                    'hora_respuesta' => $hora,
+                    
+                   
+                ]);
 
             $data = $request; 
 

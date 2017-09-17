@@ -12,6 +12,8 @@ use App\ComentariosHospedaje;
 use App\ComentariosEventos;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
+use App\ComentariosNoticias;
+
 
 // we will use Mail namespace
 use Mail;
@@ -33,11 +35,13 @@ class ComentariosDiversionController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
 
 
       
-        return View('administracion.ComentariosDiversion.index',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
+        return View('administracion.ComentariosDiversion.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
     }
 
      /**
@@ -54,10 +58,13 @@ class ComentariosDiversionController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
 
-        return View('administracion.ComentariosDiversion.noAprovados',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
+
+
+        return View('administracion.ComentariosDiversion.noAprovados',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
     }
 
     /**
@@ -135,10 +142,13 @@ class ComentariosDiversionController extends Controller
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $total= $comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+        $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
+
+
 
       
-        return view('administracion.ComentariosDiversion.edit',compact('total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
+        return view('administracion.ComentariosDiversion.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','comentarios'));
     }
 
     /**
@@ -151,7 +161,19 @@ class ComentariosDiversionController extends Controller
     public function update(Request $request, $id)
     {
         $comentarios = ComentariosDiversion::find($id);
-        $comentarios->fill($request->all());
+        $date = Carbon::now();
+        $date = $date->format('d-m-Y');
+        $hora= Carbon::now()->toTimeString();
+
+         $comentarios->fill([
+
+                    'respuesta_comentario' => $request['respuesta_comentario'],
+                    'aprovado' => $request['aprovado'],
+                    'fecha_respuesta' => $date,
+                    'hora_respuesta' => $hora,
+                    
+                   
+                ]);
         
 
 

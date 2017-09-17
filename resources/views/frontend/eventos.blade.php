@@ -38,7 +38,7 @@
 </head>
 
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" style="background: #f2f2f2;">
   
 
    <!-- SCROLL TOP BUTTON -->

@@ -116,6 +116,7 @@
           Route::resource('administracion/alimentacion','AlimentacionController');
           Route::resource('administracion/diversion','DiversionController');
         Route::resource('administracion/categoriasActividades','CatActividadesController');
+        Route::resource('administracion/categoriasGastronomia','CategoriasGastronomiaController');
         Route::resource('administracion/categoriasTuristicas','CategoriaTuristicaController');
          Route::resource('administracion/categoriasHospedaje','CategoriaHospedajeController');
            Route::resource('administracion/categoriasAlimentacion','CategoriaAlimentacionController');

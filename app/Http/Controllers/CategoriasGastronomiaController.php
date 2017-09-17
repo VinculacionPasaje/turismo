@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CategoriaEventosRequest;
+use App\Http\Requests\CategoriaGastronomiaRequest;
 use Illuminate\Http\Request;
-use App\CategoriasEventos;
+use App\CategoriasGastronomia;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+
 use App\ComentariosActividades;
 use App\ComentariosAlimentacion;
 use App\ComentariosAtractivosT;
@@ -15,14 +16,15 @@ use App\ComentariosHospedaje;
 use App\ComentariosEventos;
 use App\ComentariosNoticias;
 
-class CategoriaEventosController extends Controller
+class CategoriasGastronomiaController extends Controller
 {
     public function index(Request $request){
        
 
-         $categorias = CategoriasEventos::where('estado',1)->orderBy('id')->paginate(6);
-         $cat= CategoriasEventos::name($request->get('table_search'))->orderBy('id')->paginate(6);
-          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
+         $categorias = CategoriasGastronomia::where('estado',1)->orderBy('id')->paginate(6);
+         $cat= CategoriasGastronomia::name($request->get('table_search'))->orderBy('id')->paginate(6);
+
+        $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
         $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
         $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
@@ -34,7 +36,7 @@ class CategoriaEventosController extends Controller
 
          
         
-          return view('administracion.categoriasEventos.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'cat'));
+          return view('administracion.categoriasGastronomia.index',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categorias', 'cat'));
 
     }
 
@@ -48,47 +50,50 @@ class CategoriaEventosController extends Controller
         $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
         $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
-
-
-        return view ('administracion.categoriasEventos.create', compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos'));
+        return view ('administracion.categoriasGastronomia.create', compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos'));
     }
 
-    public function store(CategoriaEventosRequest $request){
-        $categoria= new CategoriasEventos;
+    public function store(CategoriaGastronomiaRequest $request){
+        $categoria= new CategoriasGastronomia;
         $categoria->categoria=$request['categoria'];
         $categoria->descripcion=$request['descripcion'];
         $categoria->estado ='1';
         $categoria->save();
         if($categoria->save()){
-            return Redirect::to('administracion/categoriasEventos/create')->with('mensaje-registro', 'Categoria Registrada Correctamente');
+            return Redirect::to('administracion/categoriasGastronomia/create')->with('mensaje-registro', 'Categoria Registrada Correctamente');
         }
     }
 
-   
+    public function show ($id){
+        $categoria = CategoriasGastronomia::findOrFail($id);
+        return view('administration.categoriasGastronomia.show',compact('categoria'));
+
+    }
 
     public function edit($id){
-        $categoria = CategoriasEventos::find($id);
+        $categoria = CategoriasGastronomia::find($id);
          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
         $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
         $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();
         $comentariosEventos = ComentariosEventos::where('aprovado',0)->count();
         $comentariosAlimentacion = ComentariosAlimentacion::where('aprovado',0)->count();
         $comentariosActividades = ComentariosActividades::where('aprovado',0)->count();
-        $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
+       $comentariosNoticias = ComentariosNoticias::where('aprovado',0)->count();
         $total= $comentariosNoticias+$comentariosAtractivosT+$comentariosHospedaje+$comentariosDiversion+$comentariosEventos+ $comentariosAlimentacion+$comentariosActividades;
 
 
-        return view('administracion.categoriasEventos.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categoria'));
+
+        return view('administracion.categoriasGastronomia.edit',compact('comentariosNoticias','total','comentariosActividades','comentariosAlimentacion','comentariosAtractivosT', 'comentariosHospedaje', 'comentariosDiversion', 'comentariosEventos','categoria'));
 
 
     }
 
-    public function update(CategoriaEventosRequest $request, $id){
-        $categoria = CategoriasEventos::find($id);
+    public function update(CategoriaGastronomiaRequest $request, $id){
+        $categoria = CategoriasGastronomia::find($id);
         $categoria->fill($request->all());
 
         if($categoria->save()){
-            return Redirect::to('administracion/categoriasEventos')->with('mensaje-registro', 'Categoria Actualizada Correctamente');
+            return Redirect::to('administracion/categoriasGastronomia')->with('mensaje-registro', 'Categoria Actualizada Correctamente');
         }
 
 
@@ -97,7 +102,7 @@ class CategoriaEventosController extends Controller
     
     public function destroy($id, Request $request)
     {
-        $categoria = CategoriasEventos::find($id);
+        $categoria = CategoriasGastronomia::find($id);
         $categoria->estado = 0;
         $categoria->save();
 

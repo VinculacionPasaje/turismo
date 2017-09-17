@@ -34,7 +34,7 @@
 </head>
 
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" style="background: #f2f2f2;">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -451,116 +451,7 @@
         </div>
 
 
-        <section class="team-sec">
-            <div class="container">
-                
-                <div class="row">
-                    <div id="carousel-example" class="carousel slide team team-web-view" data-ride="carousel">
-                        <div class="carousel-line">
-                            <div class="controls pull-right">
-                                <a class="left fa fa-angle-left btn" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-angle-right btn " href="#carousel-example" data-slide="next"></a>
-                            </div>
-                        </div>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                                    <div class="item active">
-                                        <div class="row">
-
-                                        <?php 
-                                        
-                                        $cont =0;
-                                        $arreglo=array();
-                                        
-                                        
-                                        ?>
-
-
-                                        @foreach($todosNoticias as $evento)     
-
-
-                                            @if($cont >= 3)
-
-                                                <?php 
-
-                                                    $arreglo[] =$evento;
-
-
-                                                 ?>
-                                            
-                                            @else
-
-                                                    <div class="col-sm-4">
-                                                            <div class="col-item">
-                                                                <div class="photo-shadow"></div>
-                                                                <div class="photo">
-                                                                    <img class="img-responsive5" src="{{url('fotos/'.$evento->path)}}" alt="{{$evento->titulo}}">
-                                                                </div>
-                                                                <div class="info">
-                                                                    <div class="name">{{$evento->titulo}}</div>
-                                                                    <div class="degination">{{$evento->descripcion}}</div>
-                                                                    
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                            
-
-
-
-                                              @endif
-
-                                              <?php $cont++?>
-
-                                                
-
-
-                                        @endforeach
-
-
-                                        
-                                        
-
-                                        </div>
-                                    </div>
-
-
-                           <div class="item ">
-                                <div class="row">
-                                    
-                                    @foreach($arreglo as $evento2) 
-
-                                        <div class="col-sm-4">
-                                                            <div class="col-item">
-                                                                <div class="photo-shadow"></div>
-                                                                <div class="photo">
-                                                                    <img class="img-responsive5" src="{{url('fotos/'.$evento2->path)}}" alt="{{$evento2->titulo}}">
-                                                                </div>
-                                                                <div class="info">
-                                                                    <div class="name">{{$evento2->titulo}}</div>
-                                                                    <div class="degination">{{$evento2->descripcion}}</div>
-                                                                    
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </div>
-                                         </div>
-
-                                    @endforeach
-
-                                </div>
-                            </div>
-
-
-                     
-                        </div> <!-- Wrapper for slides -->
-
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
 
 
 

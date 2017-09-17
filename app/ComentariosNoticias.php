@@ -17,6 +17,8 @@ class ComentariosNoticias extends Model
         'respuesta_comentario',
         'fecha',
         'hora',
+        'fecha_respuesta',
+        'hora_respuesta',
         'estado',
         'aprovado',
         'noticias_id',

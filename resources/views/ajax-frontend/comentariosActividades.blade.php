@@ -1,46 +1,53 @@
  
- @foreach($comentarios as $comments)      
+ @foreach($comentarios as $comments) 
 
- <div class="media">
-        
-        
-        <!-- first comment -->
 
-              <div class="media-heading">
-                <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#{{$comments->id}}" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-                 <span class="label label-info">{{$comments->nombre}}</span> 
-                Enviado el {{$comments->fecha}} a las {{$comments->hora}}
-              </div>
-
-                  <div class="panel-collapse collapse in" id="{{$comments->id}}">
-
+ <div class="row">
+            
+           <div class="media">
                     <div class="media-left">
-                          <div class="vote-wrap">
-                                  <div class="save-post">
-                                    <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
-                                  </div>
-                                  <div class="vote up">
-                                    <i class="glyphicon glyphicon-menu-up"></i>
-                                  </div>
-                                    <div class="vote inactive">
-                                      <i class="glyphicon glyphicon-menu-down"></i>
-                                    </div>
-                          </div>
-                      <!-- vote-wrap -->
+                      <img src="{{url('frontend/images/user.png')}}" class="media-object" style="width:40px">
                     </div>
-                    <!-- media-left -->
-
-
-          <div class="media-body">
-            <p>{{$comments->comentario}}</p>
-
+                    <div class="media-body">
+                      <h4 class="media-heading title">{{$comments->nombre}} -   Enviado el {{$comments->fecha}} a las {{$comments->hora}}</h4>
+                      <p class="komen">
+                          {{$comments->comentario}}<br>
+                      
+                      </p>
+                    </div>
             </div>
+
+            @if($comments->respuesta_comentario=="")
+
+
+            @else
+
+             <div class="geser">
+                 <div class="media">
+                        <div class="media-left">
+                          <img src="{{url('frontend/images/admin.png')}}" class="media-object" style="width:40px">
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading title">Administrador - Enviado el {{$comments->fecha_respuesta}} a las {{$comments->hora_respuesta}}</h4>
+                          <p class="komen">
+                              {{$comments->respuesta_comentario}}<br>
+                            
+                          </p>
+                        </div>
+                </div>
+            </div>
+
+
+
+            @endif
+              
+            
+        
            
-
-          
-        </div>
-        <!-- media -->
-
-      </div>  <!-- media -->
+        
+            
+</div>
+        
+           
 
 @endforeach

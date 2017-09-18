@@ -28,13 +28,17 @@
                 @if(count($redes) >0)
                     <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Url</th>
                                     <th>Descipción</th>
                                     <th>Acción</th>
                                 </tr>
+                            </thead>
+                            <tbody>
+
                                 @foreach($redes as $red)
                                     <tr data-id="{{$red->id}}">
                                         <td class="sorting_1">{{$red->id}}</td>
@@ -48,6 +52,7 @@
 
                                     </tr>
                                 @endforeach
+                            </tbody>
                             </table>
                             {{$redes->links()}}
                         </div>

@@ -25,45 +25,19 @@
 
                     </div>
                     
-                     <div class= "col-xs-6 col-md-6">
-
-                            <div class="box-tools">
-                                {!! Form::open(['route'=>'categoriasActividades.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
-                                <div class="input-group input-group-sm" style="width: 350px;">
-                                
-                                    {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por categoria']) !!}
-
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-
-                                     <div class="input-group-btn">
-                                    <a href="{{route('categoriasActividades.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
-                                     </div>
-
-                                    
-                                    
-                                </div>
-                                
-
-                                {!! Form::close() !!}
-                                
-                                    
-                            
-                                
-                                </div>
-                    </div>
+                     
                 </div>
                 <!-- /.box-header -->
                
                 @if(count($categorias) >0)  <!-- este if es para ver si hay datos registrados en la BD -->
-                     @if(count($cat) >0) <!-- este if es para la busqueda y muestreo de datos -->
+                    
 
                 
                 
                  <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Categoria</th>
@@ -71,7 +45,9 @@
                                     <th>Visitas</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($cat as $categoria)
+                            </thead>
+                            <tbody>
+                                @foreach($categorias as $categoria)
                                  @if($categoria->estado !=0)
                                     <tr data-id="{{$categoria->id}}">
                                         <td class="sorting_1">{{$categoria->id}}</td>
@@ -87,11 +63,12 @@
                                     </tr>
                                     @endif
                                 @endforeach
+                             </tbody>
                             </table>
                             {{$categorias->links()}}
                         </div>
                     </div>
-                     @endif
+                    
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ninguna categoria...</label>  </div>
                 @endif

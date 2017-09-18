@@ -26,6 +26,7 @@ class EventoEditRequest extends FormRequest
         return [
             'titulo'=>'required|max:255',
             'direccion'=>'required',
+            'script'=> 'required',
             'contenido'=>'required',
             'descripcion'=>'required|max:255',
             'hora_inicio'=>'required',

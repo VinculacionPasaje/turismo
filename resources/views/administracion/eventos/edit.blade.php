@@ -170,12 +170,19 @@
 
                 </div>
 
+                
+
                 <div class="col-md-4 col-xs-12">
                         
                      {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
                 </div>
 
             </div>
+
+            <div class="form-group">
+                    {!! Form::label('Script') !!}
+                    {!! Form::text('script',null,['placeholder'=>'ingrese el script de google map','class'=>'form-control']) !!}
+                </div>
 
             <div class="form-group">
                     {!! Form::label('Contenido') !!}

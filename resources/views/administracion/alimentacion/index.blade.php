@@ -25,43 +25,17 @@
 
                     </div>
                     
-                     <div class= "col-xs-6 col-md-6">
-
-                            <div class="box-tools">
-                                {!! Form::open(['route'=>'alimentacion.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
-                                <div class="input-group input-group-sm" style="width: 350px;">
-                                
-                                    {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por Nombre Local']) !!}
-
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-
-                                     <div class="input-group-btn">
-                                    <a href="{{route('alimentacion.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
-                                     </div>
-
-                                    
-                                    
-                                </div>
-                                
-
-                                {!! Form::close() !!}
-                                
-                                    
-                            
-                                
-                                </div>
-                    </div>
+           
                 </div>
                 <!-- /.box-header -->
                 @if(count($alimentacion) >0)
 
-                   @if(count($busqueda) >0) <!-- este if es para la busqueda -->
+                 
 
                   <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>Foto</th>
                                     <th>Nombre Local</th>
@@ -69,7 +43,9 @@
                                     <th>Fecha</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($busqueda as $noticia)
+                                </thead>
+                                <tbody>
+                                @foreach($alimentacion as $noticia)
                                  @if($noticia->estado !=0)
                                     <tr data-id="{{$noticia->id}}">
                                         <td>
@@ -87,11 +63,12 @@
                                     </tr>
                                     @endif
                                 @endforeach
+                                 </tbody>
                             </table>
                             {{$alimentacion->links()}}
                         </div>
                     </div>
-                          @endif
+                       
 
                
                 @else

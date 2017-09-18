@@ -28,13 +28,16 @@
                 @if(count($material) >0)
                     <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>Contenido</th>
                                     <th>Fecha</th>
                                     <th>Visitas</th>
                                     <th>Acción</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 @foreach($material as $item)
                                     <tr data-id="{{$item->id}}">
                                         <td class="sorting_1">{!! $item->contenido !!}</td>
@@ -48,6 +51,7 @@
 
                                     </tr>
                                 @endforeach
+                            </tbody>
                             </table>
                             {{$material->links()}}
                         </div>

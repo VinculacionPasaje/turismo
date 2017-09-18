@@ -26,6 +26,7 @@ class EventoRequest extends FormRequest
         return [
             'titulo'=>'required|max:255',
             'direccion'=>'required',
+            'script'=> 'required',
             'contenido'=>'required',
             'descripcion'=>'required|max:255',
             'fecha_desde'=>'required|before:fecha_hasta|date_format:Y/m/d',

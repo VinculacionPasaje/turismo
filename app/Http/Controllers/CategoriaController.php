@@ -22,7 +22,7 @@ class CategoriaController extends Controller
        
 
          $categorias = Categoria::where('estado',1)->orderBy('id')->paginate(6);
-         $cat= Categoria::name($request->get('table_search'))->orderBy('id')->paginate(6);
+         
         $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
         $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
         $comentariosDiversion = ComentariosDiversion::where('aprovado',0)->count();

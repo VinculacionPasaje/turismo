@@ -320,6 +320,32 @@
 
                 <li class="treeview">
                     <a href="#">
+                        <i class="fa fa-newspaper-o"></i><span>PROYECTOS</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                      
+
+                         <li><a href="{{route('proyectos.index')}}"><i class="fa fa-list-ul"></i>Listado</a></li>
+                       
+                          <li><a href="{{route('proyectos.create')}}"><i class="fa fa-file"></i> Agregar</a></li>
+
+                       
+
+                         
+                        
+
+        
+
+                        
+                    </ul>
+                </li>
+
+
+
+                <li class="treeview">
+                    <a href="#">
                         <i class="fa fa-pencil-square-o"></i><span>ACTIVIDADES</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
@@ -856,6 +882,16 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="{{route('traer.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
+                             
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa fa-shopping-bag"></i> LOAF
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('loaf.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
                              
                             </ul>
                         </li>

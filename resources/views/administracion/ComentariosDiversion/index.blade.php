@@ -25,17 +25,7 @@
 
                     </div>
                     
-                     <div class= "col-xs-6 col-md-6">
-
-                            <div class="box-tools">
-                            
-                                    
-                                    <div class="input-group-btn">
-                                    <a href="{{route('comentariosDiversion.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
-                                     </div>
-                                
-                                </div>
-                    </div>
+                     
                 </div>
                 <!-- /.box-header -->
                 @if(count($comentarios) >0)
@@ -44,7 +34,8 @@
 
                   <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Email</th>
@@ -54,6 +45,8 @@
                                     <th>Aprovado</th>
                                     <th>Acción</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 @foreach($comentarios as $noticia)
                                  @if($noticia->estado !=0)
                                     <tr data-id="{{$noticia->id}}">
@@ -84,6 +77,7 @@
                                     </tr>
                                     @endif
                                 @endforeach
+                                </tbody>
                             </table>
                             {{$comentarios->links()}}
                         </div>

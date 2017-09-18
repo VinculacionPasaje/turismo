@@ -28,7 +28,8 @@
                 @if(count($turismo) >0)
                     <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Contenido</th>
@@ -36,6 +37,8 @@
                                     <th>Visitas</th>
                                     <th>Acción</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 @foreach($turismo as $item)
                                     <tr data-id="{{$item->id}}">
                                         <td>{{$item->titulo}}</td>
@@ -50,6 +53,7 @@
 
                                     </tr>
                                 @endforeach
+                            </tbody>
                             </table>
                             {{$turismo->links()}}
                         </div>

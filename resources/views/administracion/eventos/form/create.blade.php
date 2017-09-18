@@ -107,7 +107,7 @@
 <div class="row" ><!--Inicio de row -->
                 
 
-                 <div class="col-md-6 col-xs-12">
+                 <div class="col-md-4 col-xs-12">
                         <div class="form-group">
                             <label>Seleccione la categoria</label>
                             <select class="form-control select2" name="categoria_id" id="categorias" style="width: 100%;" >
@@ -147,6 +147,11 @@
                      {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
                 </div>
 
+</div>
+
+<div class="form-group">
+    {!! Form::label('Script de Google Maps (Ubicación del Evento))') !!}
+    {!! Form::text('script',null,['placeholder'=>'ingrese el script de google map','class'=>'form-control']) !!}
 </div>
 
 

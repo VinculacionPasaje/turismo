@@ -100,6 +100,7 @@
         //vistas de administracion
         Route::resource('administracion/usuarios','UsuarioController');
         Route::resource('administracion/traer','TraerController');
+         Route::resource('administracion/loaf','LoafController');
         Route::resource('administracion/turismo','TurismoController');
         Route::resource('administracion/material','MaterialController');
         Route::resource('administracion/categorias','CategoriaController');
@@ -108,6 +109,7 @@
         Route::resource('administracion/videos','VideoController');
         Route::resource('administracion/footer','FooterController');
         Route::resource('administracion/noticias','NoticiaController');
+        Route::resource('administracion/proyectos','ProyectosController');
         Route::resource('administracion/mapas','MapasController');
         Route::resource('administracion/llegar','LlegarController');
         Route::resource('administracion/actividades','ActividadesController');

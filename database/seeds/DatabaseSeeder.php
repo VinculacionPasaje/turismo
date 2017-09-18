@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
               $this->call(CategoriaDiversionSeeder::class);
                $this->call(CategoriaEventosSeeder::class);
                $this->call(CatastrosTableSeeder::class);
+               $this->call(LoafTableSeeder::class);
     }
 }

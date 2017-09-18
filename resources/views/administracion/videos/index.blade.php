@@ -28,7 +28,8 @@
                 @if(count($videos) >0)
                     <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     
                                     <th>Titulo</th>
@@ -36,6 +37,8 @@
                                     <th>Url</th>
                                     <th>Acción</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 @foreach($videos as $video)
                                     <tr data-id="{{$video->id}}">
                                         
@@ -51,6 +54,7 @@
 
                                     </tr>
                                 @endforeach
+                            </tbody>
                             </table>
                             {{$videos->links()}}
                         </div>

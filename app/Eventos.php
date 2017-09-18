@@ -18,6 +18,7 @@ class Eventos extends Model
         'descripcion',
         'estado',
         'direccion',
+        'script',
         'contador_visitas',
         'fecha_desde',
         'fecha_hasta',

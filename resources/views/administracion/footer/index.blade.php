@@ -28,7 +28,8 @@
                 @if(count($footer) >0)
                     <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>Direccion</th>
                                     <th>Telefono</th>
@@ -37,6 +38,8 @@
                                     <th>Email</th>
                                     <th>Acción</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 @foreach($footer as $item)
                                     <tr data-id="{{$item->id}}">
                                         <td class="sorting_1">{!! $item->direccion !!}</td>
@@ -52,6 +55,7 @@
 
                                     </tr>
                                 @endforeach
+                            </tbody>
                             </table>
                             {{$footer->links()}}
                         </div>

@@ -22,31 +22,17 @@
                 <div class="box-header">
                     <h3 class="box-title">Usuarios Registrados</h3>
 
-                    <div class="box-tools">
-                         {!! Form::open(['route'=>'usuarios.index', 'method'=> 'GET', 'class'=>'navbar-form navbar-left pull-right', 'role'=>'search']) !!}
-                        <div class="input-group input-group-sm" style="width: 350px;">
-                            {!!Form::text('table_search', null, ['class'=>'form-control pull-right', 'placeholder'=>'Búscar por nombre']) !!}
-
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-
-                            <div class="input-group-btn">
-                                    <a href="{{route('usuarios.index')}}" class="btn btn-primary btn-sm" role="button">Mostrar Todos</a>
-                           </div>
-                        </div>
-
-                        {!! Form::close() !!}
-                    </div>
+                
                 </div>
                 <!-- /.box-header -->
                  @if(count($usuarios) >0)
 
-                   @if(count($busqueda) >0) <!-- este if es para la busqueda -->
+                  
 
                  <div class="ajax-tabla">
                         <div class="box-body table-responsive no-padding" >
-                            <table class="table table-hover" >
+                            <table id="example2" class="table table-hover" >
+                            <thead>
                                 <tr>
                                     <th>Foto</th>
                                     <th>Nombres</th>
@@ -54,7 +40,9 @@
                                     <th>Email</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($busqueda as $usuario)
+                            </thead>
+                            <tbody>
+                                @foreach($usuarios as $usuario)
                                 @if($usuario->estado !=0)
                                     <tr data-id="{{$usuario->id}}">
                                         @if($usuario->path!=null)
@@ -86,12 +74,12 @@
                                     </tr>
                                     @endif
                                 @endforeach
+                            </tbody>
                             </table>
                             {{$usuarios->links()}}
                         </div>
                     </div>
 
-                  @endif
                 @else
                     <br/><div class='rechazado'><label style='color:#FA206A'>...No se ha encontrado ningun Usuario...</label>  </div>
                 @endif

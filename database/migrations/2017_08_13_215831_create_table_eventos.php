@@ -20,6 +20,7 @@ class CreateTableEventos extends Migration
             $table->text('contenido');
             $table->string('descripcion', 255);
             $table->string('direccion', 255);
+            $table->text('script');
             $table->integer('contador_visitas')->default(0);
             $table->date('fecha_desde');
             $table->date('fecha_hasta');

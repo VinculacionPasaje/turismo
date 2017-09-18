@@ -372,10 +372,13 @@
          <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 7px;"> <i class="fa fa-calendar fa-1x"></i> </div> <span> Del {{$actividad->fecha_desde}} al {{$actividad->fecha_hasta}} </span></P>
                                                     <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 10px;"> <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i>  </div> <span> {{$actividad->hora_inicio}} </span> </P>
                                                     <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 14px; margin-left: 3px;"><i class="fa fa-map-marker fa-1x"></i> </div> <span> {{$actividad->direccion}}</span> </P>
+             {!! $actividad->script !!}
 
 
                 
         </div>
+
+       
 
             <div class="row header">
             <div class="col-lg-12 col-md-12 col-sm-12">

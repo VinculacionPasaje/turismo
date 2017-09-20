@@ -34,7 +34,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: #f2f2f2;">
+<body id="home" class="homepage" style="background: rgb(255, 255, 255);">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -85,7 +85,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
-                                <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
+                               
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
@@ -123,7 +123,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                               <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>     
+                               
                             </ul>
                         </li>    
 

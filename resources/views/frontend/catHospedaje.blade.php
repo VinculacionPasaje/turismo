@@ -40,7 +40,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                               <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>              
+                                    
                             </ul>
                         </li>    
 
@@ -148,148 +148,7 @@
 </div>
 
 {!! $categoriasAct->descripcion !!}
-<div class= "col-xs-12 col-md-12">
 
-<div class="post-comments">
-
-    <form>
-      <div class="form-group">
-        <label for="comment">Tu comentario</label>
-        <textarea name="comment" class="form-control" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-
-    <div class="comments-nav">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px; margin-bottom: 10px;">
-                  Hay 2 comments <span class="caret"></span>
-                </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Más votado</a></li>
-            <li><a href="#">Recientes</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div class="row">
-
-      <div class="media">
-        <!-- first comment -->
-
-        <div class="media-heading">
-          <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info">12314</span> 
-          Enviado hace 12 horas
-        </div>
-
-        <div class="panel-collapse collapse in" id="collapseOne">
-
-          <div class="media-left">
-            <div class="vote-wrap">
-              <div class="save-post">
-                <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
-              </div>
-              <div class="vote up">
-                <i class="glyphicon glyphicon-menu-up"></i>
-              </div>
-              <div class="vote inactive">
-                <i class="glyphicon glyphicon-menu-down"></i>
-              </div>
-            </div>
-            <!-- vote-wrap -->
-          </div>
-          <!-- media-left -->
-
-
-          <div class="media-body">
-            <p>este es un comentario</p>
-            <div class="comment-meta">
-              <span><a href="#">Borrar</a></span>
-              <span><a href="#">Reportar</a></span>
-              <span><a href="#">Ocultar</a></span>
-              <span>
-                        <a class="" role="button" data-toggle="collapse" href="#replyCommentT" aria-expanded="false" aria-controls="collapseExample">Responder</a>
-                      </span>
-              <div class="collapse" id="replyCommentT">
-                <form>
-                  <div class="form-group">
-                    <label for="comment">Tu comentario</label>
-                    <textarea name="comment" class="form-control" rows="3"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-              </div>
-            </div>
-            <!-- comment-meta -->
-
-            <div class="media">
-              <!-- answer to the first comment -->
-
-              <div class="media-heading">
-                <button class="btn btn-default btn-collapse btn-xs" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info">12314</span> Enviado hace 5 horas
-              </div>
-
-              <div class="panel-collapse collapse in" id="collapseTwo">
-
-                <div class="media-left">
-                  <div class="vote-wrap">
-                    <div class="save-post">
-                      <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
-                    </div>
-                    <div class="vote up">
-                      <i class="glyphicon glyphicon-menu-up"></i>
-                    </div>
-                    <div class="vote inactive">
-                      <i class="glyphicon glyphicon-menu-down"></i>
-                    </div>
-                  </div>
-                  <!-- vote-wrap -->
-                </div>
-                <!-- media-left -->
-
-
-                <div class="media-body">
-                  <p>Te responde a tu comentario.</p>
-                  <div class="comment-meta">
-                    <span><a href="#">Borrar</a></span>
-                    <span><a href="#">Reportar</a></span>
-                    <span><a href="#">Ocultar</a></span>
-                            <span>
-                              <a class="" role="button" data-toggle="collapse" href="#replyCommentThree" aria-expanded="false" aria-controls="collapseExample">Responder</a>
-                            </span>
-                    <div class="collapse" id="replyCommentThree">
-                      <form>
-                        <div class="form-group">
-                          <label for="comment">Tu comentario</label>
-                          <textarea name="comment" class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                      </form>
-                    </div>
-                  </div>
-                  <!-- comment-meta -->
-                </div>
-              </div>
-              <!-- comments -->
-
-            </div>
-            <!-- answer to the first comment -->
-
-          </div>
-        </div>
-        <!-- comments -->
-
-      </div>
-
-     
-    </div> <!-- row -->
-
-  </div>   <!-- post-comments -->
-
-
-</div>
 @endsection
 
 

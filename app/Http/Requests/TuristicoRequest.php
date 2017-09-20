@@ -30,7 +30,7 @@ class TuristicoRequest extends FormRequest
             'id_categorias'=>'required',
             'contenido'=>'required',
             'id_parroquias'=>'required',
-            'path'=>'required|file|mimes:jpeg,bmp,png|max:10240',
+            'path'=>'required|file|mimes:jpeg,bmp,png|max:25240',
         ];
     }
 }

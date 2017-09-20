@@ -27,6 +27,8 @@ use App\CategoriasEventos;
 use App\TurismoComunitario;
 use App\Noticia;
 use App\Eventos;
+use App\Proyectos;
+use App\Guia;
 use App\ComentariosActividades;
 use App\ComentariosAlimentacion;
 use App\ComentariosAtractivosT;
@@ -52,6 +54,8 @@ class FrontController extends Controller
         $redes= Redes::where('estado',1)->get();
         $videos= Video::where('id',1)->get();
         $footer= Footer::where('estado',1)->get();
+
+        $guia= Guia::where('estado',1)->get();
 
         /* Para los menus del index */
 
@@ -80,7 +84,7 @@ class FrontController extends Controller
 
       
        
-        return view('welcome', compact('eventos','noticiasVistas', 'noticias', 'alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
+        return view('welcome', compact('guia','eventos','noticiasVistas', 'noticias', 'alimentacion','diversion','hospedaje','actividadesTu', 'actividades','categorias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'videos', 'footer', 'categoriasAct', 'categoriasTu'));
     }
 
 
@@ -223,29 +227,45 @@ class FrontController extends Controller
 
            
             
-            $actividades= Noticia::where('estado',1)->orderBy('id')->paginate(2);
+            $actividades= Noticia::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(2);
 
             if ($request->ajax()) {
                 return view('ajax-frontend/noticias', compact('actividades', 'categoriasNoticias'));
-            }
-
-            
-/*
-            if ($request->ajax()) {
-
-                return view('ajax-frontend.eventos', compact('actividades', 'categoriasEventos'))->render();  
-              
-            }
-*/
-            
-
-
-           
-
-           
-
-        
+            }   
+ 
             return view('frontend/todosNoticias', compact('categorias','noticias','categoriasNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+
+
+    }
+
+
+
+         public function todos_proyectos(Request $request){
+
+            $redes= Redes::where('estado',1)->get();
+            $footer= Footer::where('estado',1)->get();
+            $categoriasAct= CategoriaActividades::where('estado',1)->get(); 
+            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+            $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+            $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+          
+
+           // $categoriasNoticias= Categoria::where('estado',1)->get(); //categorias para las noticias
+
+             $noticias= Proyectos::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
+           // $categorias= Categoria::where('estado',1)->get();
+
+           
+            
+            $actividades= Proyectos::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(2);
+
+            if ($request->ajax()) {
+                return view('ajax-frontend/proyectos', compact('actividades'));
+            }   
+ 
+            return view('frontend/todosProyectos', compact('noticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -928,6 +948,12 @@ class FrontController extends Controller
        }
         
         return view('frontend/catastros', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'catastros', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+    }
+
+    public function guia(){
+       
+        
+        return view('frontend/guia');
     }
 
      

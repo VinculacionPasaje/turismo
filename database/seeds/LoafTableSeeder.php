@@ -18,7 +18,7 @@ class LoafTableSeeder extends Seeder
             'contenido'=>'Descripción de Ejemplo',
             'fecha_post'=>'14/09/2017',
             'contador_visitas'=>0,
-            'estado'=>0,
+            'estado'=>1,
 
         ]);
     }

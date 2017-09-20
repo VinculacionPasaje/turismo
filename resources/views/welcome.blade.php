@@ -38,7 +38,7 @@
  
 </head><!--/head-->
 
-<body id="home" class="homepage"  style="background: #f2f2f2;">
+<body id="home" class="homepage"  style="background: rgb(255, 255, 255);">
 
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"></a>
@@ -290,7 +290,6 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
-                                <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
@@ -328,7 +327,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>     
+                                  
                             </ul>
                         </li>    
 
@@ -391,10 +390,10 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
+                                 <li><a href="{{url ('guia')}}">Guía Turística</a></li>
                                 <li><a href="#">Proceso de Licencia Turística LOAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
                                 <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>               
                             </ul>
                         </li>  
@@ -454,6 +453,76 @@
 
 
  <section id="blog">
+
+ <div class="container">
+
+   <div class="section-header">
+                <h2 class="section-title2 text-center">Pasaje</h2>
+                
+            </div>
+
+
+
+ </div>
+
+ <div class="container2" >
+
+
+    @foreach($guia as $guia_turistica)            
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 " style="padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;">
+
+        @if($guia_turistica->path == "")
+
+        <img src="{{url('frontend/images/guia.jpg')}}" alt="Guia de Pasaje" style="width: 100%; height: 500px;">
+
+
+        @else
+
+        <img src="{{url('fotos/'.$guia_turistica->path)}}" alt="Guia de Pasaje" style="width: 100%; height: 500px;">
+
+
+        @endif
+
+        
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 " style=" background: #005ca3; height: 500px;">
+
+                <div class="guiaContainer">
+
+                <h1 class="guiaH1" >{{$guia_turistica->titulo}}</h1>
+                </div>
+
+                <div style="padding-bottom: 10px;">
+                
+                    <p style="text-align: justify;color: #dadada;font-size: 15px;">
+                        {{$guia_turistica->descripcion}}
+                    
+                    </p>
+                
+                </div>
+
+                    <div align="center" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 espaciado">
+                                            <a class="slider_btn_guia" href="{{url ('guia')}} " target="_blank">Ver Guía Turística</a>
+                                            <a class="slider_btn_guia" href="pdf/{{$guia_turistica->pdf}}" download="guia_pasaje">Descargar Guía Turística</a>
+                                        
+                    </div>
+
+                
+
+        </div>
+    
+    @endforeach
+
+
+
+
+ </div>
+
+
      <div class="container">
             <div class="section-header">
                 <h2 class="section-title text-center"><a id="turismo">Atractivos Turísticos</a></h2>
@@ -916,7 +985,7 @@
                                 <a href="#"><h4 class="heading4 negro">{{$noticia->titulo}}</h4> </a>
                                 <p class="negro2" >{{$noticia->descripcion}} </p>
                                 
-                                <a class="btn_noticias" href="#">Leer Más</a>
+                                <a class="btn_noticias" href="noticias/{{$noticia->id}}">Leer Más</a>
                             </div>
                         
 
@@ -946,7 +1015,7 @@
                                 <a href="#"><h4 class="heading4 negro">{{$noticia->titulo}}</h4> </a>
                                 <p class="negro2" >{{$noticia->descripcion}} </p>
                                 
-                                <a class="btn_noticias" href="#">Leer Más</a>
+                                <a class="btn_noticias" href="noticias/{{$noticia->id}}">Leer Más</a>
                             </div>
              
                  </div>
@@ -968,7 +1037,7 @@
                                     <a href="#"><h4 class="heading4 negro">{{$noticia->titulo}}</h4> </a>
                                     <p class="negro2" >{{$noticia->descripcion}} </p>
                                     
-                                    <a class="btn_noticias" href="#">Leer Más</a>
+                                    <a class="btn_noticias" href="noticias/{{$noticia->id}}">Leer Más</a>
                                 </div>
                 
                     </div>

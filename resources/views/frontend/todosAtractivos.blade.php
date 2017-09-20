@@ -37,7 +37,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: #fff;">
+<body id="home" class="homepage" style="background: rgb(255, 255, 255);">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -88,7 +88,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
-                                <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
+                                
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
@@ -127,7 +127,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                                 <li><a href="{{url ('turismoComunitario')}}">Turismo Comunitario</a></li>              
+                                            
                             </ul>
                         </li>    
 
@@ -190,11 +190,11 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
-                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
+                                  <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="#">Proceso de Licencia Turística LOAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>             
                             </ul>
                         </li>  
 

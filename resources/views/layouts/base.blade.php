@@ -33,7 +33,7 @@
 </head>
 
 
-<body id="home" class="homepage" style="background: rgb(242, 242, 242);">
+<body id="home" class="homepage" style="background: rgb(255, 255, 255);">
   
 
    <!-- SCROLL TOP BUTTON -->
@@ -84,7 +84,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
-                                <li><a href="{{url ('traer')}}">¿Que Traer?</a></li> 
+                               
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>

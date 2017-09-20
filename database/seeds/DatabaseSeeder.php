@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
                $this->call(CategoriaEventosSeeder::class);
                $this->call(CatastrosTableSeeder::class);
                $this->call(LoafTableSeeder::class);
+               $this->call(GuiaTableSeeder::class);
     }
 }

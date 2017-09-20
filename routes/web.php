@@ -50,6 +50,11 @@
          Route::get('noticias/{id}', 'FrontController@noticias');
 
 
+          // para los proyectos
+         Route::get('proyectos', 'FrontController@todos_proyectos');
+         Route::get('proyectos/{id}', 'FrontController@proyectos');
+
+
          //comentarios Actividades
          Route::post('comentariosActividades/{actividades_id}', ['uses' => 'ComentariosActividadesController@store', 'as'=> 'comentariosActividades2.store']);
 
@@ -79,6 +84,7 @@
         Route::get('mapas', 'FrontController@mapas');
         Route::get('llegar', 'FrontController@llegar');
         Route::get('catastros', 'FrontController@catastros');
+        Route::get('guia', 'FrontController@guia');
         Route::get('turismoComunitario', 'FrontController@turismo_comunitario');
         
         Route::get('contactos', 'MailController@index');
@@ -101,6 +107,7 @@
         Route::resource('administracion/usuarios','UsuarioController');
         Route::resource('administracion/traer','TraerController');
          Route::resource('administracion/loaf','LoafController');
+         Route::resource('administracion/guia','GuiaController');
         Route::resource('administracion/turismo','TurismoController');
         Route::resource('administracion/material','MaterialController');
         Route::resource('administracion/categorias','CategoriaController');

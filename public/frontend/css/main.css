@@ -301,7 +301,7 @@ Author URL: http://shapebootstrap.net
 .slider_caption p {
   background-color: rgba(49, 59, 61, 0.6);
   color: #fff;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 600;
   padding: 10px;
@@ -317,7 +317,7 @@ Author URL: http://shapebootstrap.net
       font-size: 16px;
 
   display: inline-block;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 10px;
   padding: 9px 15px;
   text-decoration: none;
@@ -333,14 +333,14 @@ Author URL: http://shapebootstrap.net
 
 
 .slider_btn {  
-  background: #004880;
+  background: #005ca3;
   font-weight: bold;
 
   border-radius: 20px;
   color: #fff;
   font-size: 16px;
   display: inline-block;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 10px;
   padding: 9px 15px;
   text-decoration: none;
@@ -357,7 +357,7 @@ Author URL: http://shapebootstrap.net
   color: #fff;
   font-size: 16px;
   display: inline-block;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 10px;
   padding: 9px 15px;
   text-decoration: none;
@@ -397,9 +397,9 @@ Author URL: http://shapebootstrap.net
   background: #005ca3;
   font-weight: bold;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   display: inline-block;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 10px;
   padding: 9px 15px;
   text-decoration: none;
@@ -408,6 +408,35 @@ Author URL: http://shapebootstrap.net
     -o-transition: all 0.5s;
     transition: all 0.5s;  
 }
+
+.slider_btn_guia {  
+  background: #005ca3;
+  border:solid;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12px;
+  display: inline-block;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 10px;
+  padding: 9px 15px;
+  text-decoration: none;
+      margin: 5px;
+  
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;  
+}
+
+.slider_btn_guia:hover,.slider_btn_guia:focus{   
+  text-decoration: none;
+  outline: none;
+  color:yellow;
+
+  
+}
+
+
+
 .slider_btn4:hover,.slider_btn4:focus{   
   text-decoration: none;
   outline: none;
@@ -421,9 +450,9 @@ Author URL: http://shapebootstrap.net
   background: #005ca3;
   font-weight: bold;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   display: inline-block;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 5px 15px;
   text-decoration: none;
   -webkit-transition: all 0.5s;
@@ -449,7 +478,7 @@ Author URL: http://shapebootstrap.net
   color: #fff;
   font-size: 13px;
   display: inline-block;
-  font-family: "Varela",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 9px 15px;
   text-decoration: none;
   -webkit-transition: all 0.5s;
@@ -777,7 +806,7 @@ h2 {
   line-height: 40px;
   margin: 0;
   padding-bottom: 10px; 
-  font-family: 'Varela', sans-serif;	 
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;	 
 }
 
 textarea {
@@ -787,7 +816,7 @@ textarea {
 body {
  
   background: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
@@ -798,7 +827,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #272727;
 }
 a {
@@ -834,9 +863,17 @@ hr {
   font-size: 44px;
   color: #272727;
   text-transform: uppercase;
-  padding-bottom: 20px;
+    padding-top: 80px;
   margin: 0 0 20px;
 }
+
+.section-header .section-title2 {
+  font-size: 44px;
+  color: #272727;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
 
 .btn {
   border-width: 0;
@@ -1698,7 +1735,7 @@ margin: 0;
   color: #fff;
 }
 #blog {
-  padding: 100px 0;
+  padding: 70px 0;
 }
 #blog .blog-post {
   border: 1px solid #eee;
@@ -2273,7 +2310,7 @@ a.socialIcon:hover, .socialHoverClass {
   @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #login-modal .modal-dialog {
@@ -2492,7 +2529,7 @@ a.socialIcon:hover, .socialHoverClass {
   background-color: #dff2fe;
   border-color: #cfebfe;
   color: #414345;
-  font-family: "Helvetica" ;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
   font-size: 16px;
   text-align: justify;
 }
@@ -2731,7 +2768,7 @@ color:#fff;
 
 .video-section h1{
 
-font-family: 'Buenard', serif;
+font-family:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-weight:bold;
 padding-bottom: 15px;
 margin: 40px auto 0px;
@@ -2783,7 +2820,7 @@ text-shadow: 2px 2px 2px #000;
     margin: 0 auto;
     font-size: 60px;
     pointer-events: none;
-    font-family: BreePeruWeb,Arial;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#fffd00;
     font-weight:bold;
@@ -2802,7 +2839,7 @@ text-shadow: 2px 2px 2px #000;
     margin: 0 auto;
 
     pointer-events: none;
-    font-family: BreePeruWeb,Arial;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#fff;
     font-weight:bold;
@@ -2822,7 +2859,7 @@ text-shadow: 2px 2px 2px #000;
     margin: 0 auto;
 
     pointer-events: none;
-    font-family: BreePeruWeb,Arial;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#fff;
     font-weight:bold;
@@ -2841,7 +2878,7 @@ text-shadow: 2px 2px 2px #000;
     margin: 0 auto;
 
     pointer-events: none;
-    font-family: BreePeruWeb,Arial;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#e62d27;
     font-weight:bold;
@@ -2871,7 +2908,7 @@ text-shadow: 2px 2px 2px #000;
   padding-top: 25px;
   padding-bottom: 25px;
 
-   font-family: "Trebuchet MS", "Helvética", "Arial";
+   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#000;
     font-weight:bold;
@@ -2886,7 +2923,7 @@ text-shadow: 2px 2px 2px #000;
  text-align: center;
   padding-bottom: 25px;
 
-   font-family: "Trebuchet MS", "Helvética", "Arial";
+   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#000;
     font-weight:bold;
@@ -2902,7 +2939,7 @@ text-shadow: 2px 2px 2px #000;
   padding-bottom: 25px;
   text-align: center;
 
-   font-family: "Trebuchet MS", "Helvética", "Arial";
+   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     color:#000;
     font-weight:bold;
@@ -2989,7 +3026,7 @@ text-shadow: 2px 2px 2px #000;
   position: absolute;
 
 
-    font-family: arial;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 left: 0;
 font-size: 15px;
 width: 100%;
@@ -3002,7 +3039,7 @@ background: rgb(0, 92, 163);
   position: absolute;
 text-align: center;
 
-    font-family: arial;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 left: 0;
 
 width: 100%;
@@ -3028,7 +3065,7 @@ display:block;
 .fondotexto{
 color: white;
 
-font-family: arial;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 
@@ -3069,7 +3106,7 @@ font-family: arial;
     
     }
     .panel-body {
-        background-color: #f2f2f2;
+        background-color: #ffffff;
     }
     .panel-title {
         font-weight: bold;
@@ -3105,7 +3142,7 @@ text-align: center;
 .card {
   width: 100%;
 
-  font-family: 'Playfair Display', serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
 
   transition: all .125s;
@@ -3171,7 +3208,7 @@ text-align: center;
 .card__label {
   color: #cccccc;
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 8px;
   text-transform: uppercase;
   letter-spacing: .2em;
@@ -3481,7 +3518,7 @@ p.more {
   padding:10px; 
   border-bottom: 1px #ccc dotted; 
   text-decoration: none; 
-  font-family: lato; 
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; 
   text-transform:uppercase; 
   font-size: 12px; 
   color: #333; 
@@ -3503,7 +3540,7 @@ p.more {
 }
 
 #portfolio-container .btn {
-    font-family: Lato;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     font-weight: normal;
     text-decoration: none;
@@ -3569,6 +3606,35 @@ p.more {
     margin-left: 55px;
     margin-top: 5px;
 }
+
+.container2 {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.guiaContainer{
+  padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.guiaH1{
+
+      color: white;
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+
+
 
 
 

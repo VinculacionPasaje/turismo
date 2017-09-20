@@ -896,6 +896,16 @@
                             </ul>
                         </li>
 
+                         <li>
+                            <a href="#"><i class="fa fa-shopping-bag"></i> GUIA TURISTICA FRONTEND
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('guia.index')}}"><i class="fa fa-server"></i>Actualizar</a></li>
+                             
+                            </ul>
+                        </li>
+
                         <li>
                             <a href="#"><i class="fa fa-book"></i> Material Turistico
                                 <i class="fa fa-angle-left pull-right"></i>

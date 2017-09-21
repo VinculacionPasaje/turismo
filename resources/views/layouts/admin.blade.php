@@ -308,6 +308,22 @@
                             </ul>
                         </li>
 
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasNoticias.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasNoticias.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
+
                          
                         
 
@@ -391,6 +407,21 @@
                              
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasActividades.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasActividades.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
                         
 
         
@@ -441,6 +472,21 @@
                             <ul class="treeview-menu">
                                 <li><a href="{{route('comentariosEventos.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
                                   <li><a href="{{route('comentariosEventos.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasEventos.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasEventos.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
                        
                        
                                 
@@ -567,6 +613,21 @@
                              
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasTuristico.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasTuristico.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
                         
 
         
@@ -617,6 +678,21 @@
                                 <li><a href="{{route('comentariosHospedaje.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
                                    <li><a href="{{route('comentariosHospedaje.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
                        
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasHospedajes.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasHospedajes.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
                        
                        
                                 
@@ -677,6 +753,21 @@
                              
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasAlimentacion.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasAlimentacion.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
                         
 
         
@@ -726,6 +817,21 @@
                             <ul class="treeview-menu">
                                 <li><a href="{{route('comentariosDiversion.index')}}"><i class="fa fa-list-ul"></i>Aprobados</a></li>
                                  <li><a href="{{route('comentariosDiversion.noAprovados')}}"><i class="fa fa-list-ul"></i>No Aprobados</a></li>
+                       
+                       
+                                
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper-o"></i> Galeria Imágenes
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{route('galeriasDiversion.index')}}"><i class="fa fa-list-ul"></i>Listar</a></li>
+                                <li><a href="{{route('galeriasDiversion.create')}}"><i class="fa fa-list-ul"></i>Agregar</a></li>
                        
                        
                                 

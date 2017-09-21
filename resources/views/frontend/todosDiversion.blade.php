@@ -302,7 +302,7 @@
          <div class= "col-xs-12 col-md-12">
             <p style="font-color='black';text-align: justify; font-size: 16px" > 
 
-            Falta descripcion de diversión
+            La ciudad de Pasaje cuenta con distintos locales de diversión como bares, discotecas, centro de eventos y karaokes, las mismas que se muestran a continuación:
 
              </p>
 

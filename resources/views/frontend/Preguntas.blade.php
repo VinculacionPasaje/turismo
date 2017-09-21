@@ -133,7 +133,7 @@
 
 @section('contenido')
 
-<p> Preguntas Frecuentes </p>
+
 
 @if(count($preguntas) >0)  
 

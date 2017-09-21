@@ -140,7 +140,7 @@
 
    @yield('header')
  
-<div class="container">
+<div class="container" style="padding-bottom: 100px;">
 
  
 

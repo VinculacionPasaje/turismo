@@ -116,6 +116,13 @@
         Route::resource('administracion/videos','VideoController');
         Route::resource('administracion/footer','FooterController');
         Route::resource('administracion/noticias','NoticiaController');
+        Route::resource('administracion/galeriasActividades','GaleriaActividadesController');
+         Route::resource('administracion/galeriasTuristico','GaleriaAtractivosController');
+          Route::resource('administracion/galeriasAlimentacion','GaleriaAlimentacionController');
+          Route::resource('administracion/galeriasDiversion','GaleriaDiversionController');
+          Route::resource('administracion/galeriasEventos','GaleriaEventosController');
+          Route::resource('administracion/galeriasHospedajes','GaleriaHospedajesController');
+          Route::resource('administracion/galeriasNoticias','GaleriaNoticiasController');
         Route::resource('administracion/proyectos','ProyectosController');
         Route::resource('administracion/mapas','MapasController');
         Route::resource('administracion/llegar','LlegarController');

@@ -34,6 +34,10 @@ class Turistico extends Model
         return $this->hasMany(ComentariosAtractivosT::class);
     }
 
+    public function galeria_turistico(){
+        return $this->hasMany(GaleriaAtractivos::class);
+    }
+
 
     public function setPathAttribute($path){
 

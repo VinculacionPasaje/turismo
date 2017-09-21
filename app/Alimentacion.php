@@ -35,6 +35,10 @@ class Alimentacion extends Model
         return $this->hasMany(ComentariosAlimentacion::class);
     }
 
+       public function galeria_alimentacion(){
+        return $this->hasMany(GaleriaAlimentacion::class);
+    }
+
 
     public function setPathAttribute($path){
 

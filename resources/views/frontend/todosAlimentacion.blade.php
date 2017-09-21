@@ -307,7 +307,7 @@
          <div class= "col-xs-12 col-md-12">
             <p style="font-color='black';text-align: justify; font-size: 16px" > 
 
-            Falta descripcion de alimentacion
+            La ciudad de Pasaje cuenta con distintos locales de alimentación como restaurantes, fuentes de sodas y cafeterías, las mismas que se muestran a continuación:
 
              </p>
 

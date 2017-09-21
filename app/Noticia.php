@@ -30,6 +30,9 @@ class Noticia extends Model
         return $this->hasMany(ComentariosNoticias::class);
     }
 
+    public function galeria_noticias(){
+        return $this->hasMany(GaleriaNoticias::class);
+    }
 
     public function setPathAttribute($path){
 

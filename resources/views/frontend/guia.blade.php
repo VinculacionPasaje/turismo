@@ -13,6 +13,7 @@
          <link rel="stylesheet" href="{{url('frontend/css/default.css')}}">
          <link rel="stylesheet" href="{{url('frontend/css/bookblock.css')}}">
          <link rel="stylesheet" href="{{url('frontend/css/demo4.css')}}">
+		 
 
 
 

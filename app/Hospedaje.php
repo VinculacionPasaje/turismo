@@ -29,6 +29,10 @@ class Hospedaje extends Model
         return $this->belongsTo(CategoriaHospedaje::class,'id_categorias','id');
     }
 
+     public function galeria_hospedaje(){
+        return $this->hasMany(GaleriaHospedajes::class);
+    }
+
      public function parroquias(){
         return $this->belongsTo(Parroquias::class,'id_parroquias','id');
     }

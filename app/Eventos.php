@@ -36,6 +36,10 @@ class Eventos extends Model
     return $this->belongsTo(Parroquias::class,'parroquias_id','id');
     }
 
+    public function galeria_eventos(){
+        return $this->hasMany(GaleriaEventos::class);
+    }
+
       public function comentarios(){
         return $this->hasMany(ComentariosEventos::class);
     }

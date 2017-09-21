@@ -36,6 +36,10 @@ class Diversion extends Model
         return $this->hasMany(ComentariosDiversion::class);
     }
 
+     public function galeria_diversion(){
+        return $this->hasMany(GaleriaDiversion::class);
+    }
+
 
     public function setPathAttribute($path){
 

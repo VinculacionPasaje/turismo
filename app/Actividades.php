@@ -34,6 +34,10 @@ class Actividades extends Model
         return $this->hasMany(ComentariosActividades::class);
     }
 
+      public function galeria_actividades(){
+        return $this->hasMany(GaleriaActividades::class);
+    }
+
     
     
     

@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/lightbox.min.css')}}">
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
@@ -48,7 +49,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default menu" role="banner" style= " z-index: 1000;">
+        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner" style= " z-index: 1000;">
 
             
           
@@ -190,11 +191,11 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
-                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
+                                  <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>              
                             </ul>
                         </li>  
 
@@ -255,7 +256,71 @@
 
 
 
-                 <div class="row header">
+                 
+
+       
+                            
+        </div>
+
+        <div class="col-md-4">
+
+         <h1 class="column-title4">   Datos del Evento  </h1>
+
+         <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 7px;"> <i class="fa fa-calendar fa-1x"></i> </div> <span> Del {{$actividad->fecha_desde}} al {{$actividad->fecha_hasta}} </span></P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 10px;"> <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i>  </div> <span> {{$actividad->hora_inicio}} </span> </P>
+                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 14px; margin-left: 3px;"><i class="fa fa-map-marker fa-1x"></i> </div> <span> {{$actividad->direccion}}</span> </P>
+             {!! $actividad->script !!}
+
+
+                
+        </div>
+
+
+        <div class= "col-xs-12 col-md-12">
+
+          
+
+
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12" >
+
+                    @if(count($imagenes) >0)
+
+                                <div class="row header">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                                    <h2 class="column-title2"> Galeria de Imágenes </h2>
+
+                                                        
+
+
+                                                
+                                            </div>
+                            </div>
+
+                            @include('ajax-frontend/galeria')
+                    
+
+                                      
+
+
+
+                    @endif
+                    
+
+
+                    
+
+                    </div>  
+</div>  
+
+
+       
+
+         
+
+        <div class="row header">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
 
                                         <h2 class="column-title2"> Deja tu Comentario </h2>
@@ -310,6 +375,7 @@
 
             <div class= "col-xs-12 col-md-12">
 
+
                 <div class="row header">
                             <div class="col-lg-12 col-md-12 col-sm-12">
 
@@ -324,7 +390,6 @@
 
 
 
-
             <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
 
                     
@@ -334,8 +399,9 @@
 
 
                 @if(count($comentarios) >0)
+                
 
-                <div class="col-lg-12 col-md-12 col-sm-12" align="center">
+                                     <div class="col-lg-12 col-md-12 col-sm-12" align="center">
 
                                     <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
 
@@ -344,15 +410,7 @@
                             <div class="ajax-load text-center" style="display:none">
                                         <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
                                     </div>
-                @else
-
-                                    <div class="col-lg-12 col-md-12 col-sm-12" align="center">
-
-                                        <img src="{{url('frontend/images/sad.png')}}">
-
-                                                <p> No se encontraron resultados </p>
-
-                                        </div>
+               
 
 
 
@@ -361,145 +419,8 @@
             </div>
 
 
-       
-                            
-        </div>
 
-        <div class="col-md-4">
-
-         <h1 class="column-title4">   Datos del Evento  </h1>
-
-         <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 7px;"> <i class="fa fa-calendar fa-1x"></i> </div> <span> Del {{$actividad->fecha_desde}} al {{$actividad->fecha_hasta}} </span></P>
-                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 10px;"> <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i>  </div> <span> {{$actividad->hora_inicio}} </span> </P>
-                                                    <P class="negro2" style="text-align: justify; font-size:12px;"> <div style= "float: left; margin-right: 14px; margin-left: 3px;"><i class="fa fa-map-marker fa-1x"></i> </div> <span> {{$actividad->direccion}}</span> </P>
-             {!! $actividad->script !!}
-
-
-                
-        </div>
-
-       
-
-            <div class="row header">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-
-                   <h1 class="column-title3">   Más eventos </h1>
-
-
-                
-            </div>
-        </div>
-
-
-        <section class="team-sec">
-            <div class="container">
-                
-                <div class="row">
-                    <div id="carousel-example" class="carousel slide team team-web-view" data-ride="carousel">
-                        <div class="carousel-line">
-                            <div class="controls pull-right">
-                                <a class="left fa fa-angle-left btn" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-angle-right btn " href="#carousel-example" data-slide="next"></a>
-                            </div>
-                        </div>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                                    <div class="item active">
-                                        <div class="row">
-
-                                        <?php 
-                                        
-                                        $cont =0;
-                                        $arreglo=array();
-                                        
-                                        
-                                        ?>
-
-
-                                        @foreach($todosEventos as $evento)     
-
-
-                                            @if($cont >= 3)
-
-                                                <?php 
-
-                                                    $arreglo[] =$evento;
-
-
-                                                 ?>
-                                            
-                                            @else
-
-                                                    <div class="col-sm-4">
-                                                            <div class="col-item">
-                                                                <div class="photo-shadow"></div>
-                                                                <div class="photo">
-                                                                    <img class="img-responsive5" src="{{url('fotos/'.$evento->path)}}" alt="{{$evento->titulo}}">
-                                                                </div>
-                                                                <div class="info">
-                                                                    <div class="name">{{$evento->titulo}}</div>
-                                                                    <div class="degination">{{$evento->descripcion}}</div>
-                                                                    
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                            
-
-
-
-                                              @endif
-
-                                              <?php $cont++?>
-
-                                                
-
-
-                                        @endforeach
-
-
-                                        
-                                        
-
-                                        </div>
-                                    </div>
-
-
-                           <div class="item ">
-                                <div class="row">
-                                    
-                                    @foreach($arreglo as $evento2) 
-
-                                        <div class="col-sm-4">
-                                                            <div class="col-item">
-                                                                <div class="photo-shadow"></div>
-                                                                <div class="photo">
-                                                                    <img class="img-responsive5" src="{{url('fotos/'.$evento2->path)}}" alt="{{$evento2->titulo}}">
-                                                                </div>
-                                                                <div class="info">
-                                                                    <div class="name">{{$evento2->titulo}}</div>
-                                                                    <div class="degination">{{$evento2->descripcion}}</div>
-                                                                    
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </div>
-                                         </div>
-
-                                    @endforeach
-
-                                </div>
-                            </div>
-
-
-                     
-                        </div> <!-- Wrapper for slides -->
-
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
+      
 
 
 
@@ -610,58 +531,7 @@
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 
 
-    <script type="text/javascript">
 
-          $(document).ready(function(){
-            var altura = $('.menu').offset().top;
-            
-            $(window).on('scroll', function(){
-                if ( $(window).scrollTop() > altura ){
-                    $('.menu').addClass('menu-fixed');
-                } else {
-                    $('.menu').removeClass('menu-fixed');
-                }
-            });
-        
-        });
-
-      
-
-        
-
-
-        (function () {
-                var previousScroll = 0;
-
-                $(window).scroll(function(){
-                var currentScroll = $(this).scrollTop();
-                if (currentScroll > previousScroll){
-
-                        //$('.menu').hide('slow');
-
-                    $('.menu').addClass('desaparece');
-                    $('.menu').removeClass('aparece');
-
-                    //para abajo
-                    
-                } else {
-
-                    //$('.menu').show('slow');
-                    
-                        
-
-                    $('.menu').addClass('aparece');
-                    $('.menu').removeClass('desaparece');
-                    
-                    
-
-                    //para arriba
-                }
-                previousScroll = currentScroll;
-                });
-            }()); //run this anonymous function immediately
-
-    </script>
 
 
      <script type="text/javascript">
@@ -718,6 +588,15 @@
                 },3000);
             });
         </script>
+
+
+           <script src="{{url('frontend/js/lightbox.min.js')}}"></script>
+
+         <script type="text/javascript">
+            lightbox.option({
+                'albumLabel': "Imagen %1 de %2"
+            })
+      </script>
 
   
 

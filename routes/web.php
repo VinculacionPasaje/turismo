@@ -84,6 +84,7 @@
         Route::get('mapas', 'FrontController@mapas');
         Route::get('llegar', 'FrontController@llegar');
         Route::get('catastros', 'FrontController@catastros');
+         Route::get('luaf', 'FrontController@luaf');
         Route::get('guia', 'FrontController@guia');
         Route::get('turismoComunitario', 'FrontController@turismo_comunitario');
         

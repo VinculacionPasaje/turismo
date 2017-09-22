@@ -105,11 +105,11 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                               <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>  
-                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
+                               <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>             
                             </ul>
                           </li> 
 
@@ -151,22 +151,68 @@
 {!! $actividad->contenido !!}
 
 
- <div class="row header">
-            <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <h2 class="column-title2"> Deja tu Comentario </h2>
+@endsection
+
+@section('contenido2')
 
 
+<div class= "col-xs-12 col-md-12">
+
+           
+
+
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12" >
+
+                    @if(count($imagenes) >0)
+
+                            <div class="row header">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                                <h2 class="column-title2"> Galeria de Imágenes </h2>
+
+                                                    
+
+
+                                            
+                                        </div>
+                        </div>
+
+                            @include('ajax-frontend/galeria')
+                        
                 
-            </div>
-  </div>
+
+
+
+                    @endif
+                    
+
+
+                    
+
+                    </div>  
+</div>  
+
+
+
+                <div class="row header">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                        <h2 class="column-title2"> Deja tu Comentario </h2>
+
+
+                                    
+                                </div>
+                </div>
 
 	
 
 	<div class="row">
 		<div id="comment-form" class="col-xs-12 col-md-12" style="margin-top: 20px;">
 			{{ Form::open(['route' => ['comentariosActividades2.store', $actividad->id], 'method' => 'POST']) }}
-      <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
           
 				
 				<div class="row">
@@ -206,7 +252,7 @@
 
 <div class= "col-xs-12 col-md-12">
 
-      <div class="row header">
+        <div class="row header">
                   <div class="col-lg-12 col-md-12 col-sm-12">
 
                           <h4 class="column-title2"> Comentarios </h4>
@@ -221,40 +267,41 @@
 
 
 
-  <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
+        <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
 
-          
-      @include('ajax-frontend/comentariosActividades')
+            
+        @include('ajax-frontend/comentariosActividades')
 
-    </div>   <!-- post-comments -->
+        </div>   <!-- post-comments -->
 
 
     @if(count($comentarios) >0)
 
-     <div class="col-lg-12 col-md-12 col-sm-12" align="center">
+            <div class="col-lg-12 col-md-12 col-sm-12" align="center">
 
-                        <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
+                                <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
 
-                        </div>
+                </div>
                 
                 <div class="ajax-load text-center" style="display:none">
                             <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
                         </div>
-      @else
-
-                         <div class="col-lg-12 col-md-12 col-sm-12" align="center">
-
-                             <img src="{{url('frontend/images/sad.png')}}">
-
-                                    <p> No se encontraron resultados </p>
-
-                             </div>
+     
 
 
 
       @endif
 
 </div>
+
+
+    
+
+
+
+
+
+
 @endsection
 
 
@@ -354,6 +401,8 @@
 @endsection
 
 @section('script')
+
+
 
  
 

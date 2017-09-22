@@ -103,11 +103,11 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
-                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
+                                 <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>               
                             </ul>
                           </li> 
 
@@ -144,7 +144,54 @@
 
 {!! $actividad->contenido !!}
 
-<div class="row header">
+
+@endsection
+
+
+@section('contenido2')
+
+
+<div class= "col-xs-12 col-md-12">
+
+
+
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12" >
+
+                    @if(count($imagenes) >0)
+
+                    
+                            <div class="row header">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                                        <h2 class="column-title2"> Galeria de Imágenes </h2>
+
+                                                            
+
+
+                                                    
+                                                </div>
+                                </div>
+
+                            @include('ajax-frontend/galeria')
+                        
+                  
+
+
+
+                    @endif
+                    
+
+
+                    
+
+                    </div>  
+</div>  
+
+
+
+               <div class="row header">
             <div class="col-lg-12 col-md-12 col-sm-12">
 
                     <h2 class="column-title2"> Deja tu Comentario </h2>
@@ -233,22 +280,18 @@
                 <div class="ajax-load text-center" style="display:none">
                             <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
                         </div>
-      @else
-
-                         <div class="col-lg-12 col-md-12 col-sm-12" align="center">
-
-                             <img src="{{url('frontend/images/sad.png')}}">
-
-                                    <p> No se encontraron resultados </p>
-
-                             </div>
-
-
-
-      @endif
+    @endif
+   
 
 </div>
+
+
+
+
+
+
 @endsection
+
 
 
 

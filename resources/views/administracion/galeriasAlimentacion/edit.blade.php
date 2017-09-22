@@ -79,9 +79,9 @@
 
                             @foreach($categorias as $categoria)
                                     @if($categoria->id == $galeria->alimentacion->id)
-                                        <option value="{{$categoria->id}}" selected>  {{ $categoria->titulo }} </option>
+                                        <option value="{{$categoria->id}}" selected>  {{ $categoria->nombre_lugar }} </option>
                                     @else
-                                        <option value="{{$categoria->id}}">  {{ $categoria->titulo }} </option>
+                                        <option value="{{$categoria->id}}">  {{ $categoria->nombre_lugar }} </option>
                                     @endif
                                 @endforeach
                     </select>

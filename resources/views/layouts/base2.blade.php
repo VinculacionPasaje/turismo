@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
+     <link rel="stylesheet" href="{{url('frontend/css/lightbox.min.css')}}">
   
   
 
@@ -38,7 +39,7 @@
     
      <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default menu" role="banner" style="z-index: 100000;">
+        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner" style="z-index: 100000;">
 
             
             
@@ -173,6 +174,8 @@
         </div>
     </div>
 
+     @yield('contenido2')
+
 
 
 </div>
@@ -188,62 +191,19 @@
     
  <script src="{{url('frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{url('frontend/js/jquery.isotope.min.js')}}"></script>
+        <script src="{{url('frontend/js/lightbox.min.js')}}"></script>
+
+         <script type="text/javascript">
+            lightbox.option({
+                'albumLabel': "Imagen %1 de %2"
+            })
+      </script>
 
  
     <script src="{{url('frontend/js/main.js')}}"></script>
 
 
-      <script type="text/javascript">
-
-
-
-
-        $(document).ready(function(){
-            var altura = $('.menu').offset().top;
-            
-            $(window).on('scroll', function(){
-                if ( $(window).scrollTop() > altura ){
-                    $('.menu').addClass('menu-fixed');
-                } else {
-                    $('.menu').removeClass('menu-fixed');
-                }
-            });
-        
-        });
-
-        (function () {
-    var previousScroll = 0;
-
-    $(window).scroll(function(){
-       var currentScroll = $(this).scrollTop();
-       if (currentScroll > previousScroll){
-
-            //$('.menu').hide('slow');
-
-           $('.menu').addClass('desaparece');
-           $('.menu').removeClass('aparece');
-
-           //para abajo
-          
-       } else {
-
-           //$('.menu').show('slow');
-          
-            
-
-           $('.menu').addClass('aparece');
-           $('.menu').removeClass('desaparece');
-           
-          
-
-         //para arriba
-       }
-       previousScroll = currentScroll;
-    });
-}()); //run this anonymous function immediately
-
-
-       </script>
+      
 
        <script src="{{url('administration/dist/js/alertify.js')}}"></script>
 
@@ -254,6 +214,9 @@
               },3000);
           });
       </script>
+
+       
+   
 
 
 

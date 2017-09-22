@@ -183,11 +183,11 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
-                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
+                                 <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
-                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>                
                             </ul>
                         </li>  
 

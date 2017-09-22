@@ -41,9 +41,9 @@
                                 <option value="" disabled selected>Seleccione la categoria</option>
                                 @foreach($categorias as $categoria)
                                    @if (old('alimentacion_id') == $categoria->id)
-                                        <option value="{{$categoria->id}}" selected>{{ $categoria->titulo }}</option>
+                                        <option value="{{$categoria->id}}" selected>{{ $categoria->nombre_lugar }}</option>
                                     @else
-                                        <option value="{{$categoria->id}}">{{ $categoria->titulo }}</option>
+                                        <option value="{{$categoria->id}}">{{ $categoria->nombre_lugar }}</option>
                                     @endif             
                                 @endforeach
                                  

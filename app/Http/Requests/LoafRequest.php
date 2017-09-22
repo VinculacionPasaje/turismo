@@ -27,7 +27,6 @@ class LoafRequest extends FormRequest
             'titulo'=>'required|max:500',
             'contenido'=>'required',
             'fecha_post'=>'required',
-            'pdf'=>'required',
             
         ];
     }

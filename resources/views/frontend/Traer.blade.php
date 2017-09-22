@@ -119,11 +119,11 @@
 
                             <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
                                  
-                                 <li><a href="{{url ('guia')}}">Guía Turística</a></li>
-                                <li><a href="#">Proceso de Licencia Turística LOAF</a></li>
+                                  <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
-                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>     
                             </ul>
                           </li> 
 

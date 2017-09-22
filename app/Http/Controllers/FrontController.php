@@ -37,6 +37,17 @@ use App\ComentariosHospedaje;
 use App\ComentariosEventos;
 use App\ComentariosNoticias;
 
+use App\GaleriaActividades;
+use App\GaleriaDiversion;
+use App\GaleriaHospedajes;
+use App\GaleriaAlimentacion;
+use App\GaleriaAtractivos;
+use App\GaleriaEventos;
+use App\GaleriaNoticias;
+
+use App\Loaf;
+
+
 
 
 
@@ -400,10 +411,20 @@ class FrontController extends Controller
 
           $comentarios= ComentariosActividades::where('actividades_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
 
+          $imagenes= GaleriaActividades::where('actividades_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
+
+          
+
             if ($request->ajax()) {
                 $view = view('ajax-frontend/comentariosActividades',compact('comentarios'))->render();
                 return response()->json(['html'=>$view]);
             }
+
+
+
+           
+
+
 
 
 
@@ -414,7 +435,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/actividades',compact('categoriasHospedaje', 'comentarios','categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/actividades',compact('imagenes','categoriasHospedaje', 'comentarios','categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         
@@ -444,6 +465,7 @@ class FrontController extends Controller
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
         $comentarios= ComentariosEventos::where('eventos_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
+        $imagenes= GaleriaEventos::where('eventos_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
 
             if ($request->ajax()) {
                 $view = view('ajax-frontend/comentariosActividades',compact('comentarios'))->render();
@@ -457,7 +479,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/eventos',compact('comentarios','todosEventos','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/eventos',compact('imagenes','comentarios','todosEventos','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         
@@ -490,7 +512,7 @@ class FrontController extends Controller
 
          $noticias= Noticia::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
             $categorias= Categoria::where('estado',1)->get();
-
+        $imagenes= GaleriaNoticias::where('noticias_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
 
 
             $comentarios= ComentariosNoticias::where('noticias_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
@@ -508,7 +530,7 @@ class FrontController extends Controller
       
         
        
-        return view('frontend/noticias',compact('comentarios','categoriasActividades', 'categorias','noticias','todosNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+        return view('frontend/noticias',compact('imagenes','comentarios','categoriasActividades', 'categorias','noticias','todosNoticias','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
 
         }
         
@@ -536,6 +558,7 @@ class FrontController extends Controller
                 $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
                 $comentarios= ComentariosAtractivosT::where('turistico_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
+                $imagenes= GaleriaAtractivos::where('atractivos_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
 
                 if ($request->ajax()) {
                     $view = view('ajax-frontend/comentariosActividades',compact('comentarios'))->render();
@@ -549,7 +572,7 @@ class FrontController extends Controller
             
                 
             
-                return view('frontend/atractivosTuristicos',compact('comentarios','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
+                return view('frontend/atractivosTuristicos',compact('imagenes','comentarios','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu'))->with('variable',$variable);
         }
      
     }
@@ -573,7 +596,7 @@ class FrontController extends Controller
                 $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
 
-
+                $imagenes= GaleriaHospedajes::where('hospedajes_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
                 $comentarios= ComentariosHospedaje::where('hospedaje_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
 
                 if ($request->ajax()) {
@@ -588,7 +611,7 @@ class FrontController extends Controller
             
                 
             
-                return view('frontend/hospedaje',compact('comentarios','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
+                return view('frontend/hospedaje',compact('imagenes','comentarios','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
         }
      
     }
@@ -611,7 +634,7 @@ class FrontController extends Controller
                 $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
                 $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
-
+                $imagenes= GaleriaAlimentacion::where('alimentacion_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
                 $comentarios= ComentariosAlimentacion::where('alimentacion_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
 
                 if ($request->ajax()) {
@@ -626,7 +649,7 @@ class FrontController extends Controller
             
                 
             
-                return view('frontend/alimentacion',compact('comentarios','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
+                return view('frontend/alimentacion',compact('imagenes','comentarios','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
         }
      
     }
@@ -649,7 +672,7 @@ class FrontController extends Controller
                 $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
                 $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
-
+                $imagenes= GaleriaDiversion::where('diversion_id',$actividad->id)->where('estado', 1)->orderBy('fecha_post', 'DESC')->get();
                 $comentarios= ComentariosDiversion::where('diversion_id',$actividad->id)->where('aprovado', 1)->orderBy('fecha', 'DESC')->paginate(3);
 
                 if ($request->ajax()) {
@@ -664,7 +687,7 @@ class FrontController extends Controller
             
                 
             
-                return view('frontend/diversion',compact('comentarios','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
+                return view('frontend/diversion',compact('imagenes','comentarios','actividad', 'categoriasAct', 'actividades', 'redes', 'footer', 'categorias', 'categoriasTu', 'categoriasHospedaje', 'categoriasAlimentacion', 'categoriasDiversion'))->with('variable',$variable);
         }
      
     }
@@ -948,6 +971,35 @@ class FrontController extends Controller
        }
         
         return view('frontend/catastros', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'catastros', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
+    }
+
+
+     public function luaf(){
+       $luaf= Loaf::where('estado',1)->get();
+       $contador= Loaf::where('id',1)->get();
+
+
+        $redes= Redes::where('estado',1)->get();
+         $footer= Footer::where('estado',1)->get();
+          $categoriasAct= CategoriaActividades::where('estado',1)->get();
+          $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+          $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+         $variable=0;
+       if($contador->count())
+       {
+             foreach($contador as $item){
+
+             $item->contador_visitas++;
+             $variable= $item;
+             $item->save();
+         }
+
+       }
+        
+        return view('frontend/luaf', compact('categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'luaf', 'redes', 'footer', 'categoriasAct', 'categoriasTu'))->with('variable',$variable);
     }
 
     public function guia(){

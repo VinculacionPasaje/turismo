@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
+         <link rel="stylesheet" href="{{url('frontend/css/lightbox.min.css')}}">
     
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
@@ -44,7 +45,7 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default menu" role="banner" style="z-index: 100000;">
+        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner" style="z-index: 100000;">
 
             
           
@@ -186,11 +187,11 @@
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >GESTIÓN<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" onclick="window.open('pdf/guia_turistica.pdf')">Guía Turística</a></li>
-                                <li><a href="#">Proceso de Licencia Turistica LOAF</a></li>
+                                 <li><a href="{{url ('guia')}}">Guía Turística</a></li>
+                                <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
-                                <li><a href="#">Proyectos</a></li>  
-                                <li><a href="#">Catastros Turísticos</a></li>               
+                                <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>                
                             </ul>
                         </li>  
 
@@ -243,112 +244,7 @@
                  {!! $actividad->contenido !!}
 
 
-                 <div class="row header">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                    <h2 class="column-title2"> Deja tu Comentario </h2>
-
-
-                                
-                            </div>
-                </div>
-
-	
-
-            <div class="row">
-                <div id="comment-form" class="col-xs-12 col-md-12" style="margin-top: 20px;">
-                    {{ Form::open(['route' => ['comentariosNoticias2.store', $actividad->id], 'method' => 'POST']) }}
-            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-                
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                {{ Form::label('name', "Nombre:") }}
-                    <input id="nombre" type="text" class="form-control" name="nombre" required placeholder="Ingrese su nombre *">
-                            
-                            </div>
-
-                            <div class="col-md-6">
-                                {{ Form::label('email', 'Email:') }}
-                    
-                            <input id="email" type="email" class="form-control" name="email" required placeholder="Correo Electronico *">
-                            </div>
-
-                            <div class="col-md-12">
-                                {{ Form::label('comment', "Comentario:") }}
-
-                    <textarea name="comentario" id="comentario" required placeholder="Comentario *" class="form-control" rows="5"></textarea>
-                            
-
-                                
-                            </div>
-
-                <div align="center" class="col-lg-12 col-md-12 col-sm-12">
-
-                {{ Form::submit('Comentar', ['class' => ' slider_btn4', 'style' => 'margin-top:15px;']) }}
-
-                </div>
-                        </div>
-
-                    {{ Form::close() }}
-                </div>
-            </div>
-
-
-
-        <div class= "col-xs-12 col-md-12">
-
-            <div class="row header">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                <h4 class="column-title2"> Comentarios </h4>
-
-                                    
-
-
-                            
-                        </div>
-                </div>
-
-
-
-
-        <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
-
-                    
-                @include('ajax-frontend/comentariosActividades')
-
-                </div>   <!-- post-comments -->
-
-
-                @if(count($comentarios) >0)
-
-                <div class="col-lg-12 col-md-12 col-sm-12" align="center">
-
-                                    <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
-
-                                    </div>
-                            
-                            <div class="ajax-load text-center" style="display:none">
-                                        <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
-                                    </div>
-                @else
-
-                                    <div class="col-lg-12 col-md-12 col-sm-12" align="center">
-
-                                        <img src="{{url('frontend/images/sad.png')}}">
-
-                                                <p> No se encontraron resultados </p>
-
-                                        </div>
-
-
-
-                @endif
-
-            </div>
-
-
+                 
        
                             
         </div>
@@ -440,15 +336,144 @@
                 
         </div>
 
-            <div class="row header">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class= "col-xs-12 col-md-12">
 
-                   <h1 class="column-title3">   Más Noticias </h1>
+          
 
 
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12" >
+
+                    @if(count($imagenes) >0)
+
+                      <div class="row header">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                                <h2 class="column-title2"> Galeria de Imágenes </h2>
+
+                                                    
+
+
+                                            
+                                        </div>
+                        </div>
+
+                            @include('ajax-frontend/galeria')
+                        
+
+
+
+
+                    @endif
+                    
+
+
+                    
+
+                    </div>  
+</div>  
+
+         
+
+
+
+        <div class="row header">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                    <h2 class="column-title2"> Deja tu Comentario </h2>
+
+
+                                
+                            </div>
+                </div>
+
+	
+
+            <div class="row">
+                <div id="comment-form" class="col-xs-12 col-md-12" style="margin-top: 20px;">
+                    {{ Form::open(['route' => ['comentariosNoticias2.store', $actividad->id], 'method' => 'POST']) }}
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
                 
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ Form::label('name', "Nombre:") }}
+                    <input id="nombre" type="text" class="form-control" name="nombre" required placeholder="Ingrese su nombre *">
+                            
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ Form::label('email', 'Email:') }}
+                    
+                            <input id="email" type="email" class="form-control" name="email" required placeholder="Correo Electronico *">
+                            </div>
+
+                            <div class="col-md-12">
+                                {{ Form::label('comment', "Comentario:") }}
+
+                    <textarea name="comentario" id="comentario" required placeholder="Comentario *" class="form-control" rows="5"></textarea>
+                            
+
+                                
+                            </div>
+
+                <div align="center" class="col-lg-12 col-md-12 col-sm-12">
+
+                {{ Form::submit('Comentar', ['class' => ' slider_btn4', 'style' => 'margin-top:15px;']) }}
+
+                </div>
+                        </div>
+
+                    {{ Form::close() }}
+                </div>
             </div>
-        </div>
+
+
+
+        <div class= "col-xs-12 col-md-12">
+
+            <div class="row header">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                <h4 class="column-title2"> Comentarios </h4>
+
+                                    
+
+
+                            
+                        </div>
+                </div>
+
+
+
+
+        <div class="post-comments col-lg-12 col-md-12 col-sm-12" id="post-data" >
+
+                    
+                @include('ajax-frontend/comentariosActividades')
+
+                </div>   <!-- post-comments -->
+
+
+                @if(count($comentarios) >0)
+
+                <div class="col-lg-12 col-md-12 col-sm-12" align="center">
+
+                                    <button type= "button" class="slider_btn4 loadMore"> Ver Mas </button>
+
+                                    </div>
+                            
+                            <div class="ajax-load text-center" style="display:none">
+                                        <p><img src="{{url('frontend/images/loader.gif')}}">Cargando más post</p>
+                                    </div>
+
+
+                @endif
+
+            </div>
+
+
 
 
         
@@ -579,54 +604,7 @@
 		
         });
 
-          $(document).ready(function(){
-            var altura = $('.menu').offset().top;
-            
-            $(window).on('scroll', function(){
-                if ( $(window).scrollTop() > altura ){
-                    $('.menu').addClass('menu-fixed');
-                } else {
-                    $('.menu').removeClass('menu-fixed');
-                }
-            });
-        
-        });
-
       
-
-        
-
-
-        (function () {
-                var previousScroll = 0;
-
-                $(window).scroll(function(){
-                var currentScroll = $(this).scrollTop();
-                if (currentScroll > previousScroll){
-
-                        //$('.menu').hide('slow');
-
-                    $('.menu').addClass('desaparece');
-                    $('.menu').removeClass('aparece');
-
-                    //para abajo
-                    
-                } else {
-
-                    //$('.menu').show('slow');
-                    
-                        
-
-                    $('.menu').addClass('aparece');
-                    $('.menu').removeClass('desaparece');
-                    
-                    
-
-                    //para arriba
-                }
-                previousScroll = currentScroll;
-                });
-            }()); //run this anonymous function immediately
 
     </script>
 
@@ -685,6 +663,14 @@
                 },3000);
             });
         </script>
+
+           <script src="{{url('frontend/js/lightbox.min.js')}}"></script>
+
+         <script type="text/javascript">
+            lightbox.option({
+                'albumLabel': "Imagen %1 de %2"
+            })
+      </script>
   
 
 

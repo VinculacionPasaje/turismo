@@ -108,7 +108,9 @@
         Route::resource('administracion/usuarios','UsuarioController');
         Route::resource('administracion/traer','TraerController');
          Route::resource('administracion/loaf','LoafController');
+         Route::resource('administracion/todos','TodasActividadesController');
          Route::resource('administracion/guia','GuiaController');
+         Route::resource('administracion/guiaFotos','GuiaFotosController');
         Route::resource('administracion/turismo','TurismoController');
         Route::resource('administracion/material','MaterialController');
         Route::resource('administracion/categorias','CategoriaController');

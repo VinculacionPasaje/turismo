@@ -25,172 +25,46 @@
 			<div class="bb-custom-wrapper">
 				
 				<div id="bb-bookblock" class="bb-bookblock">
+
+				  <?php $cont = 0?>
+
+
+				 
+                    @foreach($fotos as $foto)
+							<?php $cont = $cont+1?>
+
+							@if($cont==1)
+
+							<?php $aux1 = $foto?>
+
+
+							@else
+
+								@if($cont==2)
+
+								<?php $cont = 0?>
+								<?php $aux2 = $foto?>
+
+								<div class="bb-item">
+									<div class="bb-custom-side">
+										<img src="{{url('fotos/'.$aux1->path)}}">
+									
+									</div>
+									<div class="bb-custom-side">
+										<img src="{{url('fotos/'.$aux2->path)}}">
+									</div>
+								</div>
+
+
+								@endif
+							
+							@endif
+
+					@endforeach
+
+	
 				
-					<div class="bb-item">
-						<div class="bb-custom-side">
-                            <img src="{{url('fotos/100.jpg')}}">
-						
-						</div>
-						<div class="bb-custom-side">
-							  <img src="{{url('fotos/1.jpg')}}">
-						</div>
-					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/2.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-						 <img src="{{url('fotos/3.jpg')}}">
-						</div>
-					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/4.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/5.jpg')}}">
-						</div>
-					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/6.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/7.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/8.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/9.jpg')}}">
-						</div>
-					</div>
-
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/10.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/11.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/12.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/13.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/14.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/15.jpg')}}">
-						</div>
-					</div>
-
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/16.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/17.jpg')}}">
-						</div>
-					</div>
-
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/18.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/19.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/20.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/21.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/22.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/23.jpg')}}">
-						</div>
-					</div>
-
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/24.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/25.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/26.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/27.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/28.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/29.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/30.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/31.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/32.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/33.jpg')}}">
-						</div>
-					</div>
-
-                    	<div class="bb-item">
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/99.jpg')}}">
-						</div>
-						<div class="bb-custom-side">
-							 <img src="{{url('fotos/100.jpg')}}">
-						</div>
-					</div>
-
-                    	
+					                    	
 
 
 				</div>

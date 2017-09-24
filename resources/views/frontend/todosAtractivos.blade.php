@@ -290,10 +290,10 @@
 
 
 
-       <div class="row header">
-           <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <h1 class="column-title2"> Todos los Atractivos Turísticos </h1>
+                    <h1 class="column-title2"> {{$todo->titulo_atractivos}} </h1>
 
 
                 
@@ -303,12 +303,14 @@
          <div class= "col-xs-12 col-md-12">
             <p style="font-color='black';text-align: justify; font-size: 16px" > 
 
-            Hay una ciudad por descubrir, una sociedad por investigar, una gente por amar y un tiempo por recordar. A través de éstos espacios pretendemos perpetuar la conciencia colectiva con imágenes, documentos, vídeos que sin duda tendrán un valor positivo para el conocimiento de nuestra identidad como asentamiento urbano y para el reconocimiento de nuestros espacios que son paraíso en la tierra.
+             {!! $todo->contenido_atractivos !!}
 
+                 
              </p>
 
             
         </div>
+
 
 
         

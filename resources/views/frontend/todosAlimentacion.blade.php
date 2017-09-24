@@ -294,10 +294,10 @@
 
 
 
-       <div class="row header">
-              <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <h1 class="column-title2"> Locales de Alimentación</h1>
+                    <h1 class="column-title2"> {{$todo->titulo_alimentacion}} </h1>
 
 
                 
@@ -307,12 +307,14 @@
          <div class= "col-xs-12 col-md-12">
             <p style="font-color='black';text-align: justify; font-size: 16px" > 
 
-            La ciudad de Pasaje cuenta con distintos locales de alimentación como restaurantes, fuentes de sodas y cafeterías, las mismas que se muestran a continuación:
+             {!! $todo->contenido_alimentacion !!}
 
+                 
              </p>
 
             
         </div>
+
 
 
         

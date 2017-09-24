@@ -292,7 +292,7 @@
        <div class="row header">
             <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <h1 class="column-title2"> Locales de Diversión</h1>
+                    <h1 class="column-title2"> {{$todo->titulo_diversion}} </h1>
 
 
                 
@@ -302,12 +302,14 @@
          <div class= "col-xs-12 col-md-12">
             <p style="font-color='black';text-align: justify; font-size: 16px" > 
 
-            La ciudad de Pasaje cuenta con distintos locales de diversión como bares, discotecas, centro de eventos y karaokes, las mismas que se muestran a continuación:
+             {!! $todo->contenido_diversion !!}
 
+                 
              </p>
 
             
         </div>
+
 
 
         

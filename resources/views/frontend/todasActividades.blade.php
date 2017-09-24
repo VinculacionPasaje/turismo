@@ -355,7 +355,7 @@
        <div class="row header">
             <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <h1 class="column-title2"> Todas las Actividades </h1>
+                    <h1 class="column-title2"> {{$todo->titulo_actividades}} </h1>
 
 
                 
@@ -363,19 +363,11 @@
         </div>
 
          <div class= "col-xs-12 col-md-12">
-            <p style="font-color='black';text-align: justify; font-size: 16px" > En las áreas naturales del Cantón Pasaje se encuentran zonas adecuadas para la práctica de actividades como: 
-            @foreach($actividades as $act)            
-                       
-                                        
-                    <font style="text-transform: lowercase;">{{$act->titulo}}, </font>
-                                
-                                            
-                                    
-                                    
-            @endforeach   
-            
-            
-             entre otros. El clima ideal del cantón Pasaje y sus múltiples espacios nos invitan a adentrarnos en experiencias maravillosas tanto de deportes extremos como a ser parte de las diferentes actividades que pueden realizarse en este lugar. 
+            <p style="font-color='black';text-align: justify; font-size: 16px" > 
+
+             {!! $todo->contenido_actividades !!}
+
+                 
              </p>
 
             

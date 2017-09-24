@@ -44,6 +44,7 @@
     <script src="{{url('administration/dist/js/hospedaje/java-hospedaje.js')}}"></script>
     <script src="{{url('administration/dist/js/alertify.js')}}"></script>
       <script src="{{url('administration/dist/js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+       <script src="{{url('administration/dist/js/validaNumerosLetras.js')}}"></script>
     
 
     <script type="text/javascript">

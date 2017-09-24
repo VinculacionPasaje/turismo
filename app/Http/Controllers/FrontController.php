@@ -29,6 +29,7 @@ use App\Noticia;
 use App\Eventos;
 use App\Proyectos;
 use App\Guia;
+use App\GuiaFotos;
 use App\ComentariosActividades;
 use App\ComentariosAlimentacion;
 use App\ComentariosAtractivosT;
@@ -46,6 +47,7 @@ use App\GaleriaEventos;
 use App\GaleriaNoticias;
 
 use App\Loaf;
+use App\TodasActividades;
 
 
 
@@ -161,6 +163,10 @@ class FrontController extends Controller
                 return response()->json(['html'=>$view]);
             }
 
+             $todo= TodasActividades::find('1');
+           
+            
+
 
             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
             $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
@@ -169,7 +175,7 @@ class FrontController extends Controller
             $actividades_filtradas= Actividades::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
 
         
-            return view('frontend/todasActividades', compact('actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+            return view('frontend/todasActividades', compact('todo','actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -189,7 +195,7 @@ class FrontController extends Controller
 
             $categoriasEventos= CategoriasEventos::where('estado',1)->get(); //categorias para eventos
 
-           
+          
             
             $actividades= Eventos::where('estado',1)->orderBy('id')->paginate(6);
 
@@ -295,14 +301,14 @@ class FrontController extends Controller
                 return response()->json(['html'=>$view]);
             }
 
-
+        $todo= TodasActividades::find('1');
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
         $actividades_filtradas= Turistico::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
         
-        return view('frontend/todosAtractivos', compact('actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+        return view('frontend/todosAtractivos', compact('todo','actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -315,7 +321,7 @@ class FrontController extends Controller
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
 
         
-
+        $todo= TodasActividades::find('1');
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
@@ -331,7 +337,7 @@ class FrontController extends Controller
 
          $actividades_filtradas= Hospedaje::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
         
-        return view('frontend/todosHospedajes', compact('actividades_filtradas','redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+        return view('frontend/todosHospedajes', compact('todo','actividades_filtradas','redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -348,6 +354,7 @@ class FrontController extends Controller
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
 
+        $todo= TodasActividades::find('1');
           $actividades= Alimentacion::where('estado',1)->orderBy('id')->paginate(3);
 
             if ($request->ajax()) {
@@ -357,7 +364,7 @@ class FrontController extends Controller
 
          $actividades_filtradas= Alimentacion::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
         
-        return view('frontend/todosAlimentacion', compact('actividades_filtradas','redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+        return view('frontend/todosAlimentacion', compact('todo','actividades_filtradas','redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -370,7 +377,7 @@ class FrontController extends Controller
         $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
 
         
-
+         $todo= TodasActividades::find('1');
         $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
         $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
         $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
@@ -384,7 +391,7 @@ class FrontController extends Controller
 
          $actividades_filtradas= Diversion::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
         
-        return view('frontend/todosDiversion', compact('actividades_filtradas','redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+        return view('frontend/todosDiversion', compact('todo','actividades_filtradas','redes','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
 
     }
@@ -1004,8 +1011,11 @@ class FrontController extends Controller
 
     public function guia(){
        
+         $fotos= GuiaFotos::where('estado',1)->orderBy('orden')->get();
+
         
-        return view('frontend/guia');
+
+         return view('frontend/guia', compact('fotos'));
     }
 
      

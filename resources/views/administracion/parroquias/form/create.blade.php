@@ -49,6 +49,52 @@
 
 </div>
 
+<div class="row" ><!--Inicio de row -->
+    <div class="col-md-6 col-xs-12">
+
+
+        <div class="form-group">
+            {!! Form::label('Descripción') !!}
+            {!! Form::text('descripcion',null,['placeholder'=>'Descripcion','class'=>'form-control']) !!}
+        </div>
+
+     </div>
+
+      <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Tipo de Parroquia</label>
+                            <select class="form-control select2" name="tipo_parroquia" id="tipo_parroquia" style="width: 100%;" >
+                                <option value="" disabled selected>Seleccione el tipo de parroquia</option>
+                              
+                                   @if (old('tipo_parroquia') == "Urbano")
+                                        <option value="Urbano" selected>Parroquia Urbana</option>
+                                         <option value="Rural">Parroquia Rural</option>
+                                    @else
+
+                                         @if (old('tipo_parroquia') == "Rural")
+
+                                           <option value="Rural" selected>Parroquia Rural</option>
+                                            <option value="Urbano">Parroquia Urbana</option>
+                                         @else
+                                            <option value="Urbano">Parroquia Urbana</option>
+                                            <option value="Rural">Parroquia Rural</option>
+
+                                         @endif
+                                       
+                                    @endif             
+                              
+                                 
+                            </select>
+                        </div>
+                </div>
+
+
+
+
+</div>
+
+
+
 
 <div class="form-group">
                 {!! Form::label('Contenido') !!}

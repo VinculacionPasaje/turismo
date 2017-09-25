@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="home no-js" lang="">
 
@@ -10,21 +9,28 @@
    
   <!-- /meta -->
 
-   <title>Contactos</title>
+   <title>Parroquias</title>
 
    <link rel="stylesheet" href="{{url('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/owl.transitions.css')}}">
-    <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
     <link rel="stylesheet" href="{{url('frontend/css/bootstrap-submenu.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/mensajes.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/sweetalert.css')}}">
     <link rel="stylesheet" href="{{url('administration/dist/css/alertify.css')}}">
-    
+
+
+    <link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{url('frontend/css/owl.theme.css')}}">
+
+
+
+
+
     <link rel="shortcut icon" href="{{url('frontend/images/ico/ico.ico')}}">
   
   
@@ -44,10 +50,10 @@
     
     <header id="header">
         
-        <nav id="main-menu" class="navbar navbar-default navbar-static-top" role="banner">
+        <nav id="main-menu" class="navbar navbar-default menu" style="z-index: 100000;" role="banner">
 
             
-          
+            
 
             
 
@@ -83,10 +89,9 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                             <li><a href="{{url ('parroquias')}}">Parroquias</a></li>
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
-
+                              
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
                                 <li><a href="{{url ('material')}}">Material Turístico</a></li>            
                             </ul>
@@ -111,7 +116,8 @@
                                         </ul>
                                  </li>
                                  <li class="dropdown-submenu">
-                                         <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                       <a href="{{url ('atractivosTuristicos')}}">Atractivos Turísticos</a>
+                                       
                                         <ul class="dropdown-menu">
                                                 @if($categoriasTu->count())
                                                     @foreach($categoriasTu as $cat)
@@ -124,7 +130,7 @@
                                                 @endif
                                         </ul>
                                  </li>   
-                               
+                                           
                             </ul>
                         </li>    
 
@@ -133,7 +139,7 @@
                           <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >SERVICIOS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                   <li class="dropdown-submenu">
+                                  <li class="dropdown-submenu">
                                         <a href="{{url ('hospedaje')}}">Hospedaje</a>
                                         <ul class="dropdown-menu">
                                             @if($categoriasHospedaje->count())
@@ -148,7 +154,7 @@
                                                 
                                         </ul>
                                  </li>
-                                 <li class="dropdown-submenu">
+                                  <li class="dropdown-submenu">
                                         <a href="{{url ('alimentacion')}}">Alimentacion</a>
                                         <ul class="dropdown-menu">
                                             @if($categoriasAlimentacion->count())
@@ -191,7 +197,7 @@
                                 <li><a href="{{url ('luaf')}}">Proceso de Licencia Turística LUAF</a></li>
                                 <li><a href="{{url ('eventos')}}">Agenda de Eventos</a></li>
                                 <li><a href="{{url ('proyectos')}}">Proyectos</a></li>  
-                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>                 
+                                <li><a href="{{url ('catastros')}}">Catastros Turísticos</a></li>               
                             </ul>
                         </li>  
 
@@ -200,6 +206,7 @@
                        
                         
                         <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
+                      
 
                      
                       
@@ -208,7 +215,7 @@
                        
                 </div>
 
-                
+            
 
 
 
@@ -217,226 +224,200 @@
     </header>
 
 
-<div class="container text-center" style="padding-bottom:50px">
-   @if (session('mensaje-registro'))
-        @include('mensajes.msj_correcto')
-    @endif
-    @if(!$errors->isEmpty())
-        <div class="alert alert-danger">
-            <p><strong>Error!! </strong>Corrija los siguientes errores</p>
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-        <div class="row header">
-            <div class="col-md-12">
+    <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme"> 
 
-                    <p class="contact"> Contactos </p>
+                         @foreach($actividades_filtradas as $act) 
+
+                                        <div class="item">
+                                                <img src="{{url('fotos/'.$act->path)}}" alt="">
+                                                <div class="line"> 
+                                                    <div class="text hide-s">
+                                                        <div class="line"> 
+                                                        <div class="prev-arrow">
+                                                            <i class="fa fa-chevron-left"></i>
+                                                        </div>
+                                                        <div class="next-arrow">
+                                                            <i class="fa fa-chevron-right"></i>
+                                                        </div>
+                                                        </div> 
+                                                        <h2>{{$act->parroquia}}</h2>
+                                                        <p>{{$act->descripcion}}
+
+                                                        </p>
+                                                         {!!link_to('parroquias/'.$act->id.'', $title = 'Más Información', $attributes = ['class'=>'slider_btn_banner'], $secure = null)!!}
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>   
+
+
+                             @endforeach
+
+
+            
+
+            
+
+            </div>
+    </div>
+
+
+
+
+
+<div class="container" style="padding-bottom: 70px; padding-top: 25px;">
+
+
+
+      <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <h1 class="column-title2"> Parroquias del Cantón Pasaje </h1>
+
+
                 
             </div>
         </div>
 
-        <div class=" col-md-6"   >
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h3 class="panel-title"><b>Formulario de contacto</b></h3></div>
-                        <div class="panel-body">
-                        {!! Form::open(['route' => 'send', 'method' => 'post']) !!}
+         <div class= "col-xs-12 col-md-12">
+            <p style="font-color='black';text-align: justify; font-size: 16px" > 
+
+            La ciudad y el cantón Pasaje, al igual que las demás localidades ecuatorianas, se rige por una municipalidad según lo estipulado en la Constitución Política Nacional. La Municipalidad de Pasaje es una entidad de gobierno seccional que administra el cantón de forma autónoma al gobierno central. La municipalidad está organizada por la separación de poderes de carácter ejecutivo representado por el alcalde, y otro de carácter legislativo conformado por los miembros del concejo cantonal. El Alcalde es la máxima autoridad administrativa y política del Cantón Pasaje. Es la cabeza del cabildo y representante del Municipio.
+
+         El cantón se divide en parroquias que pueden ser urbanas o rurales y son representadas por las Juntas Parroquiales ante el Municipio de Pasaje.
+
+                 
+             </p>
+
+            
+        </div>
+
+
+    <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <h1 class="column-title2"> Parroquias Rurales </h1>
+
+
+                
+            </div>
+        </div>
+        
+
+
+
+            
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                      @foreach($rurales as $act)            
+                                    
+
+                                    <div class="col-lg-4 col-md-6 col-sm-6 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               
+                                                                    <div class="cat">{{$act->tipo_parroquia}}</div>
+                                                                  
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('parroquias/'.$act->id)}}"><h1>{{$act->parroquia}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('parroquias/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                         @endforeach 
 
                         
-                            <div class="col-md-6 col-xs-12">
-                                <div class="form-group">
-                                    {!! Form::label('name', 'Nombres y Apellidos') !!}
 
-                                     <div class="input-group">
-                                        <div class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                        </div>
-                                        {!! Form::text('nombre', null, ['placeholder'=>'Nombres y Apellidos*', 'class' => 'form-control' ]) !!}
-                                    </div>
-                                    
-                                </div>
+                        
+                </div>
 
-                                <div class="text-danger" id='error_nombre'>{{$errors->first('nombre')}}</div>
-                                        
-                            </div>
+        
+        <div class="row header">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
-                            <div class="col-md-6 col-xs-12">
-
-                                <div class="form-group">
-                                    {!! Form::label('subject', 'Asunto') !!}
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                        <i class="fa fa-envelope-o"></i>
-                                        </div>
-                                       {!! Form::text('subject', null, ['placeholder'=>'Asunto*', 'class' => 'form-control' ]) !!}
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="text-danger" id='error_subject'>{{$errors->first('subject')}}</div>
-                                    
-                                    
-                            </div>
-
-                       
-                            
-                            <div class="form-group">
-                                {!! Form::label('email', 'E-Mail') !!}
-                                {!! Form::email('email', null, ['placeholder'=>'Email*', 'class' => 'form-control' ]) !!}
-                            </div>
-                             <div class="text-danger" id='error_email'>{{$errors->first('email')}}</div>
-                            
-                            
-                            <div class="form-group">
-                                {!! Form::label('body', 'Mensaje') !!}
-                                {!! Form::textarea('body', null, ['placeholder'=>'Mensaje*', 'class' => 'form-control' ]) !!}
-                            </div>
-                             <div class="text-danger" id='error_mensaje'>{{$errors->first('body')}}</div>
-
-                            <div class="form-group">
-                                {!! Form::submit('Enviar', ['class' => 'slider_btn3' ] ) !!}
-                            </div>
-                        {!! Form::close() !!}
-                        </div>
-                    </div>
-                    </div>
-
-        <div class="col-md-6">
-            <legend><b>Redes Sociales</b></legend>
-
-            <div class="social-box">
-
-            @if(count($redes) >0)  
-
-             @foreach($redes as $red)
-
-                                @if($red->id==1) 
-
-                               <div class="col-xs-3 col-md-3">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            
-                                                <a href="{{$red->url}}">
-                                                    <i class="fa fa-facebook-square icono icon-face" aria-hidden="true"></i>
-                                                </a>
-                                            
-                                        </div>
-                                        <div class="panel-footer">
-                                            <b>Facebook</b>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                @endif
-
-                                @if($red->id==2)
-
-                               
-                                    <div class="col-xs-3 col-md-3">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                
-                                                    <a href="{{$red->url}}">
-                                                        <i class='fa fa-twitter-square icono icon-twi'></i>
-                                                    </a>
-                                                
-                                            </div>
-                                            <div class="panel-footer">
-                                                <b>Twitter</b>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-
-
-                                @if($red->id==3)
-
-                                  <div class="col-xs-3 col-md-3">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                
-                                                    <a href="{{$red->url}}">
-                                                        <i class='fa fa-instagram icono icon-ins'></i>
-                                                    </a>
-                                                
-                                            </div>
-                                            <div class="panel-footer">
-                                                <b>Instagram</b>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                @endif
-
-
-
-                                 @if($red->id==5)
-
-                                  <div class="col-xs-3 col-md-3">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                
-                                                    <a href="{{$red->url}}">
-                                                        <i class='fa fa-pinterest icono icon-pinterest'></i>
-                                                    </a>
-                                                
-                                            </div>
-                                            <div class="panel-footer">
-                                                <b>Pinterest</b>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                @endif
-
-
-
-                                
-                                
-
-                    @endforeach 
-            @endif
-  
-            </div>
-
-                
-
-            <div style="margin-top: 50px;">
-                <legend><b> Más Información </b></legend>
-                <p class="text-align: left;">
-                    <address>
-                    @if(count($footer) >0)  
-                    @foreach($footer as $item)
-                    
-
-
-                     <strong>Gobierno Autónomo Descentralizado Municipal del Cantón Pasaje </strong><br>
-                       <b> Dirección: </b> {{$item->direccion}}<br>
-                        <b>Email: </b> {{$item->email}}<br>
-                        <b>Teléfono: </b> {{$item->telefono}}<br>
-                        <b>FAX: </b> {{$item->fax}}<br>
-                        <b>Web:</b>    {{$item->web}}<br>
-                @endforeach
-                @endif
-                       
-                    </address>
-                </p>
-            </div>
-            
-            <iframe width="100%" height="230" frameborder="0" style="border-radius:0px;" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0872999560816!2d-79.80886235618735!3d-3.3286075841479597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9033148ad7283497%3A0x4679366e0276b535!2sMunicipio+de+Pasaje%2C+Pasaje!5e0!3m2!1ses!2sec!4v1497075532766"  style="border-radius:20px;"></iframe>
-            
+                    <h1 class="column-title2"> Parroquias Urbanas </h1>
 
 
                 
+            </div>
         </div>
+        
+
+
+
+            
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                      @foreach($urbanas as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               
+                                                                    <div class="cat">{{$act->tipo_parroquia}}</div>
+                                                                  
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('parroquias/'.$act->id)}}"><h1>{{$act->parroquia}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('parroquias/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                         @endforeach 
+
+                        
+
+                        
+                </div>
+
+                
+
+        
+
+    
+</div> <!-- /container -->
+
+
+
+       
+
 
         
                 
- </div>
+ 
                     
        
 
@@ -532,27 +513,112 @@
     <script src="{{url('administration/dist/js/alertify.js')}}"></script>
      <script src="{{url('administration/dist/js/sweetalert.min.js')}}"></script>
 
+    
  
     <script src="{{url('frontend/js/main.js')}}"></script>
-    <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+
+     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+
+     
 
 
     <script type="text/javascript">
+         jQuery(document).ready(function($) {
+            var theme_slider = $("#owl-demo");
+            $("#owl-demo").owlCarousel({
+                navigation: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                autoPlay: 6000,
+                addClassActive: true,
+             // transitionStyle: "fade",
+                singleItem: true
+            });
+            $("#owl-demo2").owlCarousel({
+                slideSpeed: 300,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["&#xf007","&#xf006"],
+                pagination: false,
+                singleItem: true
+            });
 
-        $('#myCarousel').carousel({
-            interval:   4000
+            
+        
+            // Custom Navigation Events
+            $(".next-arrow").click(function() {
+                theme_slider.trigger('owl.next');
+            })
+            $(".prev-arrow").click(function() {
+                theme_slider.trigger('owl.prev');
+            })     
+        }); 
+
+      
+
+     
+
+
+        $(document).ready(function(){
+            var altura = $('.menu').offset().top;
+            
+            $(window).on('scroll', function(){
+                if ( $(window).scrollTop() > altura ){
+                    $('.menu').addClass('menu-fixed');
+                } else {
+                    $('.menu').removeClass('menu-fixed');
+                }
+            });
+        
         });
 
- 
+      
+
+        
+
+
+        (function () {
+                var previousScroll = 0;
+
+                $(window).scroll(function(){
+                var currentScroll = $(this).scrollTop();
+                if (currentScroll > previousScroll){
+
+                        //$('.menu').hide('slow');
+
+                    $('.menu').addClass('desaparece');
+                    $('.menu').removeClass('aparece');
+
+                    //para abajo
+                    
+                } else {
+
+                    //$('.menu').show('slow');
+                    
+                        
+
+                    $('.menu').addClass('aparece');
+                    $('.menu').removeClass('desaparece');
+                    
+                    
+
+                    //para arriba
+                }
+                previousScroll = currentScroll;
+                });
+            }()); //run this anonymous function immediately
+
+
+      
+
+       
+
       </script>
 
-       <script type="text/javascript">
-        $(document).ready(function() {
-            setTimeout(function() {
-                $(".aprobado").fadeOut(300);
-            },3000);
-        });
-    </script>
+   
+
+
+
   
 
 
@@ -563,5 +629,3 @@
 </body>
 
 </html>
-
-

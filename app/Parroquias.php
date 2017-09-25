@@ -19,6 +19,8 @@ class Parroquias extends Model
         'contador_visitas',
         'estado',
         'id_zonas',
+        'descripcion',
+        'tipo_parroquia',
     ];
 
     public function zona(){

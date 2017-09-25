@@ -23,6 +23,8 @@ class CreateTableParroquias extends Migration
             $table->integer('contador_visitas')->default(0);
             $table->char('estado',1)->default(1);
             $table->integer('id_zonas')->unsigned()->nullable();
+            $table->string('descripcion', 300);
+             $table->string('tipo_parroquia', 100);
             $table->foreign('id_zonas')
                 ->references('id')->on('zonas');
             

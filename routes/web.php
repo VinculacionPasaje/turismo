@@ -55,6 +55,11 @@
          Route::get('proyectos/{id}', 'FrontController@proyectos');
 
 
+          // para las parroquias
+         Route::get('parroquias', 'FrontController@todos_parroquias');
+         Route::get('parroquias/{id}', 'FrontController@parroquias');
+
+
          //comentarios Actividades
          Route::post('comentariosActividades/{actividades_id}', ['uses' => 'ComentariosActividadesController@store', 'as'=> 'comentariosActividades2.store']);
 

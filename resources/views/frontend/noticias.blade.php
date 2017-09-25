@@ -84,6 +84,7 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{url ('parroquias')}}">Parroquias</a></li>
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
                                
@@ -299,39 +300,7 @@
                     </div>
 
 
-                     <h3 class="column-title">Categorias Noticias</h3>
-
-                              
-                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                @if($categorias->count())
-                                @foreach($categorias as $categoria)
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading" role="tab" id="headingOne">
-                                                <h4 class="panel-title">
-                                                    <a class= "alternativo" data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
-                                                        <b>{{$categoria->nombre}}</b>
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                                <div id="{{$categoria->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                                            <div class="panel-body">
-
-                                                            @foreach($noticias as $noticia)            
-                                                                @if($categoria->id == $noticia->id_categorias )
-                                                                <b><a href="{{$noticia->id}}"> {{$noticia->titulo}} </a> </b>
-                                                                <br>
-
-                                                                @endif
-
-                                                            @endforeach
-                                                            
-                                                            
-                                                            </div>
-                                                </div>
-                                        </div>
-                                    @endforeach
-                                @endif
-						       </div>
+                     
 
                 
         </div>

@@ -16,7 +16,7 @@ class TodosTableSeeder extends Seeder
         
         TodasActividades::create([
             'id'=> 1,
-            'titulo_atractivos'=>'Todas las actividades',
+            'titulo_atractivos'=>'Todas los Atractivos Turísticos',
             'contenido_atractivos'=>'Hay una ciudad por descubrir, una sociedad por investigar, una gente por amar y un tiempo por recordar. A través de éstos espacios pretendemos perpetuar la conciencia colectiva con imágenes, documentos, vídeos que sin duda tendrán un valor positivo para el conocimiento de nuestra identidad como asentamiento urbano y para el reconocimiento de nuestros espacios que son paraíso en la tierra.',
 
              'titulo_hospedajes'=>'Todos los Hospedajes',

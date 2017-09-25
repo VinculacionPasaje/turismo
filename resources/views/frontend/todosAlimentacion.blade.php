@@ -89,6 +89,7 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
+                             <li><a href="{{url ('parroquias')}}">Parroquias</a></li>
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
                               
@@ -206,31 +207,7 @@
                        
                         
                         <li class="scroll"><a href="{{url ('contactos')}}">CONTACTOS</a></li>
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li class="negrita"><a href="{{ route('login') }}">LOGIN</a></li>
                         
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
 
                      
                       

@@ -26,6 +26,8 @@ use App\CategoriaAlimentacion;
 use App\CategoriasEventos;
 use App\TurismoComunitario;
 use App\Noticia;
+use App\Parroquias;
+use App\ParroquiasActividades;
 use App\Eventos;
 use App\Proyectos;
 use App\Guia;
@@ -269,10 +271,10 @@ class FrontController extends Controller
 
           
 
-           // $categoriasNoticias= Categoria::where('estado',1)->get(); //categorias para las noticias
+           
 
              $noticias= Proyectos::where('estado',1)->orderBy('fecha_post', 'DESC')->paginate(3); // me obtiene todas las noticias activas y ordenadas por la mas reciente
-           // $categorias= Categoria::where('estado',1)->get();
+          
 
            
             
@@ -286,6 +288,33 @@ class FrontController extends Controller
 
 
     }
+
+    public function todos_parroquias(){
+
+            $redes= Redes::where('estado',1)->get();
+            $footer= Footer::where('estado',1)->get();
+            $categoriasAct= CategoriaActividades::where('estado',1)->get(); 
+            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+            $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+            $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+          
+
+            $actividades_filtradas= Parroquias::where('estado',1)->get(); // para el carrusel
+
+             $urbanas= Parroquias::where('tipo_parroquia','Urbano')->where('estado',1)->get(); // me obtiene todas las noticias activas y ordenadas por la mas reciente
+       
+           
+            
+            $rurales= Parroquias::where('tipo_parroquia','Rural')->where('estado',1)->get();
+ 
+ 
+            return view('frontend/todasParroquias', compact('rurales','urbanas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades_filtradas', 'categoriasTu'));
+
+
+    }
+
 
     public function todos_actractivos(Request $request){
 
@@ -449,6 +478,50 @@ class FrontController extends Controller
       
      
     }
+
+     public function parroquias($id){
+        
+        $actividad = Parroquias::find($id); //aqui encuentro la actividad selecciona
+        if($actividad==null){ // si no existe el contenido entonces mostrar página no encontrada
+                
+            return view('errors/404');
+        }else{
+
+        $atractivos= Turistico::where('id_parroquias',$actividad->id)->take(3)->get();
+        $hospedajes= Hospedaje::where('id_parroquias',$actividad->id)->take(3)->get();
+        $diversion= Diversion::where('id_parroquias',$actividad->id)->take(3)->get();
+        $alimentacion= Alimentacion::where('id_parroquias',$actividad->id)->take(3)->get();
+
+        $parroquias= Parroquias::where('estado',1)->inRandomOrder()->take(5)->get(); 
+        
+        $todasActividades= Actividades::where('estado',1)->get();
+        $seleccionadas= ParroquiasActividades::where('parroquias_id',$actividad->id)->take(3)->get();
+        
+        
+
+        $redes= Redes::where('estado',1)->get(); //para las redes sociales
+        $footer= Footer::where('estado',1)->get(); //footer
+        $categoriasActividades= CategoriaActividades::where('estado',1)->get(); //este es para el menu de actividades
+        $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+        $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+        $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+        $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+         $variable=0;
+         $actividad->contador_visitas++;
+         $variable= $actividad;
+         $actividad->save();
+      
+        
+       
+        return view('frontend/parroquias',compact('seleccionadas','todasActividades','parroquias','alimentacion','diversion','hospedajes','atractivos','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'actividad', 'actividades', 'redes', 'footer', 'categoriasActividades', 'categoriasTu'))->with('variable',$variable);
+
+        }
+        
+      
+     
+    }
+
 
      public function eventos(Request $request, $id){
         

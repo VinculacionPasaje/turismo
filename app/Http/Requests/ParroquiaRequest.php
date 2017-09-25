@@ -28,8 +28,11 @@ class ParroquiaRequest extends FormRequest
             'fecha_post'=>'required',
             'id_zonas'=>'required',
             'contenido'=>'required',
+             'descripcion'=>'required|max:300',
+               'tipo_parroquia'=>'required',
             'traer'=>'required',
             'path'=>'required|file|mimes:jpeg,bmp,png|max:10240',
+
         ];
     }
 }

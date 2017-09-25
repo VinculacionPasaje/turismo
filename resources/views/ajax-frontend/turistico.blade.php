@@ -19,7 +19,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->titulo}}</h1>
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}

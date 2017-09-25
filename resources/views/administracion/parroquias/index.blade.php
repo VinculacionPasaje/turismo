@@ -39,7 +39,7 @@
                                 <tr>
                                     <th>Imagen</th>
                                     <th>Parroquia</th>
-                                    <th>Contenido</th>
+                                    <th>Descripcion</th>
                                     <th>Fecha</th>
                                     <th>Acción</th>
                                 </tr>
@@ -52,7 +52,7 @@
                                             <img src="{{url('fotos/'.$noticia->path)}}" alt="" style="width:70px;"/>
                                         </td>
                                         <td>{{$noticia->parroquia}}</td>
-                                        <td>{!! $noticia->contenido !!}</td>
+                                        <td>{{$noticia->descripcion}}</td>
                                         <td>{{$noticia->fecha_post}}</td>
                                        
                                         <td>

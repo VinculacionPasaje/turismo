@@ -288,6 +288,7 @@
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">PASAJE<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{url ('parroquias')}}">Parroquias</a></li>
                                 <li><a href="{{url ('llegar')}}">¿Cómo Llegar?</a></li>
                                 <li><a href="{{url ('mapas')}}">Mapas</a></li>  
                                 <li><a href="{{url ('preguntas')}}">Preguntas Frecuentes</a></li>   
@@ -620,7 +621,7 @@
 
                       <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <h2 class="column-title2"> Hospedajes </h2>
+                                    <h2 class="column-title2"> Locales de Hospedajes </h2>
    
                     </div>
 
@@ -670,7 +671,7 @@
 
                      <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <h2 class="column-title2"> Diversion </h2>
+                                    <h2 class="column-title2">  Locales de Diversion </h2>
    
                     </div>
 
@@ -722,7 +723,7 @@
 
 
                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <h2 class="column-title2"> Alimentación </h2>
+                                    <h2 class="column-title2">  Locales de Alimentación </h2>
    
                     </div>
 
@@ -885,39 +886,7 @@
                     
 
 
-                      <h3 class="column-title">Categorias Noticias</h3>
-
-                              
-                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                @if($categorias->count())
-                                @foreach($categorias as $categoria)
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading" role="tab" id="headingOne">
-                                                <h4 class="panel-title">
-                                                    <a class= "alternativo" data-toggle="collapse" data-parent="#accordion" href="#{{$categoria->id}}" aria-expanded="false" aria-controls="collapseOne">
-                                                        <b>{{$categoria->nombre}}</b>
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="{{$categoria->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                                <div class="panel-body">
-
-                                                @foreach($noticias as $noticia)            
-                                                    @if($categoria->id == $noticia->id_categorias )
-                                                     <b><a href="noticias/{{$noticia->id}}"> {{$noticia->titulo}} </a> </b>
-                                                     <br>
-
-                                                    @endif
-
-                                                @endforeach
-                                                   
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                @endif
-						       </div>
+                      
                 
             
 

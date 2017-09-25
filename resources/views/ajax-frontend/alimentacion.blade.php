@@ -17,7 +17,7 @@
                                                         </div>	
 
                                                         <div class="title">
-                                                            <h1>{{$act->nombre_lugar}}</h1>
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}"><h1>{{$act->nombre_lugar}}</h1></a>
                                                         </div>
                                                         <p class="description">
                                                             {{$act->descripcion}}

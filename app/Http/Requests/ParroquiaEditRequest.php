@@ -29,6 +29,8 @@ class ParroquiaEditRequest extends FormRequest
             'id_zonas'=>'required',
             'contenido'=>'required',
             'traer'=>'required',
+            'descripcion'=>'required|max:300',
+                     'tipo_parroquia'=>'required',
         ];
     }
 }

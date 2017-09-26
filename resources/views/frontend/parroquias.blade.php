@@ -243,6 +243,13 @@
                  {!! $actividad->contenido !!}
 
 
+                 <h3 class="column-title">¿Que Traer?</h3>
+
+
+                  {!! $actividad->traer !!}
+
+
+
                  
        
                             
@@ -296,6 +303,13 @@
                       
                             </div>
                     </div>
+
+
+
+
+
+
+
   
         </div>
 
@@ -307,6 +321,101 @@
                                                     <h2 class="column-title2"> Atractivos Turísticos </h2>
                 
                                     </div>
+                            
+                            @if(count($atractivos) ==1)
+
+                                @foreach($atractivos as $act)   
+
+                                 <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                 </div>         
+                                    
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasTu as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+
+
+                                      <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                 </div>   
+              
+                                      
+                                @endforeach 
+
+                            @endif
+
+                            @if(count($atractivos) ==2)
+
+                                @foreach($atractivos as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasTu as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('atractivosTuristicos/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                                @endforeach 
+                                
+                            @endif
+
+
+
+                            @if(count($atractivos) ==3)
 
                                 @foreach($atractivos as $act)            
                                     
@@ -344,11 +453,16 @@
               
                                       
                                 @endforeach 
+                                
+                            @endif
+
+                            
 
                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
                                     <a class="slider_btn4" href="{{url ('atractivosTuristicos')}}">Ver Más Atractivos Turísticos</a>
                                 
                                 </div>
+                     
                 @endif
 
 
@@ -359,12 +473,19 @@
                                                     <h2 class="column-title2">Actividades </h2>
                 
                                     </div>
+                                
+                            @if(count($seleccionadas) ==1)
 
                                 @foreach($todasActividades as $todas)            
                                     
                                     @foreach($seleccionadas as $seleccion)   
 
                                         @if($todas->id == $seleccion->actividades_id)
+
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                        </div>
 
                                                             <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
 
@@ -396,6 +517,11 @@
 
                                                             
                                                         </div>
+
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                        </div>
                                 
                                                         
                                                    
@@ -411,10 +537,142 @@
 
                             @endforeach
 
-                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
-                                                        <a class="slider_btn4" href="{{url ('actividades')}}">Ver Más Actividades</a>
+                            @endif
+
+
+                                @if(count($seleccionadas) ==2)
+
+                                @foreach($todasActividades as $todas)            
+                                    
+                                    @foreach($seleccionadas as $seleccion)   
+
+                                        @if($todas->id == $seleccion->actividades_id)
+
+
+                                       
+
+                                                            <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
+
+                                                                <div class="news">
+                                                                            <div class="img-figure">
+                                                                                @foreach($categoriasActividades as $cat)
+                                                                                        @if($cat->id == $todas->id_categorias )
+
+                                                                                        <div class="cat">{{$cat->categoria}}</div>
+                                                                                        @endif
+
+                                                                                @endforeach
+                                                                            
+                                                                                <img src="{{url('fotos/'.$todas->path)}}" class="img-responsive">
+                                                                            </div>	
+
+                                                                            <div class="title">
+                                                                                <a href="{{url ('atractivosTuristicos/'.$todas->id)}}"><h1>{{$todas->titulo}}</h1></a>
+                                                                            </div>
+                                                                            <p class="description">
+                                                                                {{$todas->descripcion}}
+                                                                            </p>
+
+                                                                            <p class="more">
+                                                                                <a href="{{url ('actividades/'.$todas->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                                            </p>
+                                                                    </div>
+
+
+                                                            
+                                                        </div>
+
+
+                                 
+                                
+                                                        
+                                                   
+
                                                     
-                                                    </div>
+
+
+                                        @endif
+
+                                    
+                                    @endforeach 
+
+
+                            @endforeach
+
+                            @endif
+
+
+
+                             @if(count($seleccionadas) ==3)
+
+                                @foreach($todasActividades as $todas)            
+                                    
+                                    @foreach($seleccionadas as $seleccion)   
+
+                                        @if($todas->id == $seleccion->actividades_id)
+
+
+                                       
+
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                                                <div class="news">
+                                                                            <div class="img-figure">
+                                                                                @foreach($categoriasActividades as $cat)
+                                                                                        @if($cat->id == $todas->id_categorias )
+
+                                                                                        <div class="cat">{{$cat->categoria}}</div>
+                                                                                        @endif
+
+                                                                                @endforeach
+                                                                            
+                                                                                <img src="{{url('fotos/'.$todas->path)}}" class="img-responsive">
+                                                                            </div>	
+
+                                                                            <div class="title">
+                                                                                <a href="{{url ('atractivosTuristicos/'.$todas->id)}}"><h1>{{$todas->titulo}}</h1></a>
+                                                                            </div>
+                                                                            <p class="description">
+                                                                                {{$todas->descripcion}}
+                                                                            </p>
+
+                                                                            <p class="more">
+                                                                                <a href="{{url ('actividades/'.$todas->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                                            </p>
+                                                                    </div>
+
+
+                                                            
+                                                        </div>
+
+
+                                 
+                                
+                                                        
+                                                   
+
+                                                    
+
+
+                                        @endif
+
+                                    
+                                    @endforeach 
+
+
+                            @endforeach
+
+                            @endif
+
+
+
+
+
+
+                                <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
+                                    <a class="slider_btn4" href="{{url ('actividades')}}">Ver Más Actividades</a>
+                                                    
+                                </div>
 
                                     
 
@@ -432,6 +690,98 @@
                                     <h2 class="column-title2"> Hospedajes </h2>
    
                     </div>
+
+                       @if(count($hospedajes) ==1)
+
+                                @foreach($hospedajes as $act)            
+                                     <div class="col-lg-4 col-md-4  col-sm-12 padding-botton25px">
+
+                                     </div>
+
+                                    <div class="col-lg-4 col-md-4  col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasHospedaje as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                             <a href="{{url ('hospedaje/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('hospedaje/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+
+
+                                       <div class="col-lg-4 col-md-4  col-sm-12 padding-botton25px">
+
+                                     </div>
+              
+                                      
+                                @endforeach 
+                        @endif
+
+
+                        @if(count($hospedajes) ==2)
+
+                                @foreach($hospedajes as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6  col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasHospedaje as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                             <a href="{{url ('hospedaje/'.$act->id)}}"><h1>{{$act->titulo}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('hospedaje/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                                @endforeach 
+                        @endif
+
+
+
+                        @if(count($hospedajes) ==3)
 
                                 @foreach($hospedajes as $act)            
                                     
@@ -469,6 +819,8 @@
               
                                       
                                 @endforeach 
+                        @endif
+
 
                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
                                     <a class="slider_btn4" href="{{url ('hospedaje')}}">Ver Más Hospedajes</a>
@@ -485,6 +837,101 @@
                                     <h2 class="column-title2"> Locales de Diversion </h2>
    
                     </div>
+
+
+                     @if(count($diversion) ==1)
+
+                                @foreach($diversion as $act)            
+                                     <div class="col-lg-4 col-md-4  col-sm-12 padding-botton25px">
+
+
+                                     </div>
+
+                                    <div class="col-lg-4 col-md-4  col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasDiversion as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                           <a href="{{url ('diversion/'.$act->id)}}"> <h1>{{$act->nombre_lugar}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('diversion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+
+
+                                      <div class="col-lg-4 col-md-4  col-sm-12 padding-botton25px">
+
+
+                                     </div>
+              
+                                      
+                                @endforeach 
+                        @endif
+
+
+                        @if(count($diversion) ==2)
+
+                                @foreach($diversion as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6  col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasDiversion as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                           <a href="{{url ('diversion/'.$act->id)}}"> <h1>{{$act->nombre_lugar}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('diversion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                                @endforeach 
+                        @endif
+
+
+
+                        @if(count($diversion) ==3)
 
                                 @foreach($diversion as $act)            
                                     
@@ -522,6 +969,9 @@
               
                                       
                                 @endforeach 
+                        @endif
+
+
 
                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
                                     <a class="slider_btn4" href="{{url ('diversion')}}">Ver Más Diversión</a>
@@ -538,6 +988,100 @@
                                     <h2 class="column-title2"> Locales de Alimentación </h2>
    
                     </div>
+
+
+                     @if(count($alimentacion) ==1)
+
+                                @foreach($alimentacion as $act)            
+                                     <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+
+                                     </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasAlimentacion as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}"><h1>{{$act->nombre_lugar}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+
+                                          <div class="col-lg-4 col-md-4 col-sm-12 padding-botton25px">
+
+
+                                     </div>
+              
+                                      
+                                @endforeach 
+                        @endif
+
+
+                         @if(count($alimentacion) ==2)
+
+                                @foreach($alimentacion as $act)            
+                                    
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 padding-botton25px">
+
+                                            <div class="news">
+                                                        <div class="img-figure">
+                                                               @foreach($categoriasAlimentacion as $cat)
+                                                                    @if($cat->id == $act->id_categorias )
+
+                                                                    <div class="cat">{{$cat->categoria}}</div>
+                                                                    @endif
+
+                                                               @endforeach
+                                                           
+                                                            <img src="{{url('fotos/'.$act->path)}}" class="img-responsive">
+                                                        </div>	
+
+                                                        <div class="title">
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}"><h1>{{$act->nombre_lugar}}</h1></a>
+                                                        </div>
+                                                        <p class="description">
+                                                            {{$act->descripcion}}
+                                                        </p>
+
+                                                        <p class="more">
+                                                            <a href="{{url ('alimentacion/'.$act->id)}}">Leer Más</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </p>
+                                                </div>
+
+
+                                        
+                                     </div>
+              
+                                      
+                                @endforeach 
+                        @endif
+
+
+
+                         @if(count($alimentacion) ==3)
 
                                 @foreach($alimentacion as $act)            
                                     
@@ -575,6 +1119,7 @@
               
                                       
                                 @endforeach 
+                        @endif
 
                                 <div align="center" class="col-lg-12 col-md-12 col-sm-12 espaciado">
                                     <a class="slider_btn4" href="{{url ('alimentacion')}}">Ver Más Alimentación</a>

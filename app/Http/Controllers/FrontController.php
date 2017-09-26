@@ -487,10 +487,10 @@ class FrontController extends Controller
             return view('errors/404');
         }else{
 
-        $atractivos= Turistico::where('id_parroquias',$actividad->id)->take(3)->get();
-        $hospedajes= Hospedaje::where('id_parroquias',$actividad->id)->take(3)->get();
-        $diversion= Diversion::where('id_parroquias',$actividad->id)->take(3)->get();
-        $alimentacion= Alimentacion::where('id_parroquias',$actividad->id)->take(3)->get();
+        $atractivos= Turistico::where('id_parroquias',$actividad->id)->where('estado',1)->take(3)->get();
+        $hospedajes= Hospedaje::where('id_parroquias',$actividad->id)->where('estado',1)->take(3)->get();
+        $diversion= Diversion::where('id_parroquias',$actividad->id)->where('estado',1)->take(3)->get();
+        $alimentacion= Alimentacion::where('id_parroquias',$actividad->id)->where('estado',1)->take(3)->get();
 
         $parroquias= Parroquias::where('estado',1)->inRandomOrder()->take(5)->get(); 
         

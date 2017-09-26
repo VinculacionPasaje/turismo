@@ -16,7 +16,7 @@ class LoafTableSeeder extends Seeder
             'id'=> 1,
             'titulo'=>'Proceso de Licencia Turística LOAF',
             'contenido'=>'Descripción de Ejemplo',
-            'fecha_post'=>'14/09/2017',
+            'fecha_post'=>'2017-05-15',
             'contador_visitas'=>0,
             'estado'=>1,
 

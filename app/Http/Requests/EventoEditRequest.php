@@ -33,6 +33,8 @@ class EventoEditRequest extends FormRequest
             'parroquias_id'=>'required',
             'categoria_id'=>'required',
             'precio'=>'required',
+            'fecha_desde'=>'required|before:fecha_hasta|date_format:Y/m/d',
+            'fecha_hasta'=>'required|after:fecha_desde|date_format:Y/m/d',
         ];
     }
 }

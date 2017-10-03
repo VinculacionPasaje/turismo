@@ -129,7 +129,7 @@
 
 @endsection
 
-@section('contenido')
+@section('contenido2')
 <div class= "col-xs-12 col-md-12" aling="center">
  <p style="font-color='black';"> <span class="fa fa-eye"></span> Visto: {{$variable->contador_visitas}} </p>
 </div>
@@ -144,6 +144,8 @@
 @endif
 
 @endsection
+
+
 
 @section('footer')
 

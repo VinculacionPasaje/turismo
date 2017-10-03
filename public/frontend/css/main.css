@@ -418,8 +418,8 @@ Author URL: http://shapebootstrap.net
   border:solid;
   font-weight: bold;
   color: #fff;
+   display: inline-block;
   font-size: 12px;
-  display: inline-block;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 10px;
   padding: 9px 15px;
@@ -435,9 +435,14 @@ Author URL: http://shapebootstrap.net
   text-decoration: none;
   outline: none;
   color:yellow;
+    
 
   
 }
+
+
+
+
 
 
 
@@ -2754,8 +2759,10 @@ Answer
 }
 
 
+
+
 .video-section .pattern-overlay {
-background-color: rgba(71, 71, 71, 0.59);
+
 
 min-height: 650px; 
 /* Incase of overlay problems just increase the min-height*/

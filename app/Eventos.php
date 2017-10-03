@@ -26,6 +26,8 @@ class Eventos extends Model
         'precio',
         'categoria_id',
         'parroquias_id',
+         'year',
+          'mes',
 
     ];
 

@@ -29,6 +29,8 @@ class CreateTableEventos extends Migration
             $table->char('estado',1)->default(1);
             $table->integer('categoria_id')->unsigned();
             $table->integer('parroquias_id')->unsigned();
+            $table->integer('mes');
+            $table->integer('year');
 
             $table->foreign('categoria_id')->references('id')->on('categorias_eventos')
                 ->onDelete('cascade');

@@ -84,7 +84,7 @@ class ComentariosEventosController extends Controller
 
         
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+                $date = $date->format('Y-m-d');
      
         $post = Eventos::find($id);
 
@@ -156,7 +156,7 @@ class ComentariosEventosController extends Controller
     {
         $comentarios = ComentariosEventos::find($id);
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+                $date = $date->format('Y-m-d');
         $hora= Carbon::now()->toTimeString();
 
          $comentarios->fill([

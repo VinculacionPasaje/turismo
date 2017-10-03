@@ -24,7 +24,7 @@ class GuiaRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo'=>'required|max:500',
+            'titulo'=>'required|max:1000',
             'descripcion'=>'required|max:500',
             'pdf'=>'required',
             

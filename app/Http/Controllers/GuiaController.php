@@ -36,6 +36,8 @@ class GuiaController extends Controller
 
     }
 
+    
+
     public function index(Request $request){
         $guia= Guia::where('id',1)->paginate(1);
          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();

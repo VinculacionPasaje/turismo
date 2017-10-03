@@ -110,7 +110,7 @@
                             <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="datepicker" name = "fecha_desde" value="{{$evento->fecha_desde}}">
+                            <input type="text" class="form-control pull-right" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask id="datepicker" name = "fecha_desde" value="{{$evento->fecha_desde}}">
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                             <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="datepicker2" name = "fecha_hasta" value="{{$evento->fecha_hasta}}">
+                            <input type="text" class="form-control pull-right" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask id="datepicker2" name = "fecha_hasta" value="{{$evento->fecha_hasta}}">
                         </div>
                     </div>
                 </div>

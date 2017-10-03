@@ -5,7 +5,7 @@
 
                                             <div class="news">
                                                         <div class="img-figure">
-                                                               @foreach($categoriasDiversion as $cat)
+                                                               @foreach($categoriasAlimentacion as $cat)
                                                                     @if($cat->id == $act->id_categorias )
 
                                                                     <div class="cat">{{$cat->categoria}}</div>

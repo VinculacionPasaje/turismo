@@ -19,6 +19,9 @@ use App\ComentariosEventos;
 use App\ComentariosNoticias;
 
 
+
+
+
 class EventosController extends Controller
 {
     /**
@@ -74,12 +77,52 @@ class EventosController extends Controller
      */
     public function store(EventoRequest $request)
     {
-          Eventos::create($request->all());
+       
+      
+
+        $fecha = explode("/", $request->fecha_desde);
+        $year= $fecha[0]; //obtengo el año
+        $mes= $fecha[1];//obtengo el mes
+
+       
+        
+
+         
+        
+        $evento = new Eventos();
+        $evento->titulo = $request->titulo;
+        $evento->script = $request->script;
+        $evento->fecha_desde = $request->fecha_desde;
+        $evento->fecha_hasta = $request->fecha_hasta;
+        $evento->precio = $request->precio;
+        $evento->path = $request->path;
+         $evento->parroquias_id = $request->parroquias_id;
+         $evento->categoria_id = $request->categoria_id;
+         $evento->hora_inicio = $request->hora_inicio;
+         $evento->direccion = $request->direccion;
+        $evento->descripcion = $request->descripcion;
+        $evento->contenido = $request->contenido;
+        $evento->year = $year;
+        $evento->mes = $mes;
+         
+        
+
+
+
+
+
+
+
+         if($evento->save()){
+            return Redirect::to('administracion/eventos/create')->with('mensaje-registro', 'Contenido Registrado Correctamente');
+
+         }
+
 
       
 
         
-        return Redirect::to('administracion/eventos/create')->with('mensaje-registro', 'Contenido Registrado Correctamente');
+
 
 
     }
@@ -122,7 +165,39 @@ class EventosController extends Controller
     public function update(EventoEditRequest $request, $id)
     {
         $evento = Eventos::find($id);
-        $evento->fill($request->all());
+      
+
+        $fecha = explode("/", $request->fecha_desde);
+        $year= $fecha[0]; //obtengo el año 
+       
+        $mes= $fecha[1];//obtengo el mes
+        
+        
+      
+       
+
+        $evento->fill([
+    
+
+                    'titulo' => $request['titulo'],
+                    'script' => $request['script'],
+                    'fecha_desde' => $request['fecha_desde'],
+                    'fecha_hasta' => $request['fecha_hasta'],
+                     'precio' => $request['precio'],
+                      'path' => $request['path'],
+                       'parroquias_id' => $request['parroquias_id'],
+                         'categoria_id' => $request['categoria_id'],
+                           'hora_inicio' => $request['hora_inicio'],
+
+                            'direccion' => $request['direccion'],
+                      'descripcion' => $request['descripcion'],
+                       'contenido' => $request['contenido'],
+                         'year' => $year,
+                           'mes' => $mes,
+                    
+                   
+                ]);
+
         
 
 

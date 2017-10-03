@@ -152,6 +152,9 @@
 
             </div>
 
+
+             @yield('contenido2')
+
 </div>
 
 

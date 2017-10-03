@@ -82,7 +82,7 @@ class ComentariosHospedajeController extends Controller
 
         
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+                $date = $date->format('Y-m-d');
      
         $post = Hospedaje::find($id);
 
@@ -154,7 +154,7 @@ class ComentariosHospedajeController extends Controller
     {
         $comentarios = ComentariosHospedaje::find($id);
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+             $date = $date->format('Y-m-d');
         $hora= Carbon::now()->toTimeString();
 
          $comentarios->fill([

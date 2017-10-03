@@ -42,6 +42,7 @@
 
           // para el menu de agenda de eventos
          Route::get('eventos', 'FrontController@todos_eventos');
+         Route::get('eventos', ['uses' => 'FrontController@todos_eventos', 'as'=> 'eventos.todos_eventos']);
          Route::get('eventos/{id}', 'FrontController@eventos');
 
 
@@ -115,6 +116,7 @@
          Route::resource('administracion/loaf','LoafController');
          Route::resource('administracion/todos','TodasActividadesController');
          Route::resource('administracion/guia','GuiaController');
+         Route::resource('administracion/guiaEventos','GuiaEventosController');
          Route::resource('administracion/guiaFotos','GuiaFotosController');
         Route::resource('administracion/turismo','TurismoController');
         Route::resource('administracion/material','MaterialController');

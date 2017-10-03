@@ -5,7 +5,7 @@ use App\Http\Requests\GaleriaRequest;
 use App\Http\Requests\GaleriaEditRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\GaleriaHospedaje;
+use App\GaleriaHospedajes;
 use App\Hospedaje;
 
 
@@ -28,7 +28,7 @@ class GaleriaHospedajesController extends Controller
      */
     public function index(Request $request)
     {
-        $galerias = GaleriaHospedaje::where('estado',1)->orderBy('id')->paginate(6);
+        $galerias = GaleriaHospedajes::where('estado',1)->orderBy('id')->paginate(6);
        
          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
         $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
@@ -76,7 +76,7 @@ class GaleriaHospedajesController extends Controller
     public function store(GaleriaRequest $request)
     {
 
-          GaleriaHospedaje::create($request->all());
+          GaleriaHospedajes::create($request->all());
 
         
         return Redirect::to('administracion/galeriasHospedajes/create')->with('mensaje-registro', 'Contenido Registrado Correctamente');
@@ -96,7 +96,7 @@ class GaleriaHospedajesController extends Controller
     {
 
        
-       $galeria = GaleriaHospedaje::find($id);
+       $galeria = GaleriaHospedajes::find($id);
         $categorias = Hospedaje::where('estado',1)->get();
          $comentariosAtractivosT = ComentariosAtractivosT::where('aprovado',0)->count();
         $comentariosHospedaje = ComentariosHospedaje::where('aprovado',0)->count();
@@ -122,7 +122,7 @@ class GaleriaHospedajesController extends Controller
      */
     public function update(GaleriaEditRequest $request, $id)
     {
-         $galeria = GaleriaHospedaje::find($id);
+         $galeria = GaleriaHospedajes::find($id);
         $galeria->fill($request->all());
         
 
@@ -143,7 +143,7 @@ class GaleriaHospedajesController extends Controller
      */
     public function destroy($id,Request $request)
     {
-        $proyecto = GaleriaHospedaje::find($id);
+        $proyecto = GaleriaHospedajes::find($id);
         $proyecto->estado = 0;
         $proyecto->save();
 

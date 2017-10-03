@@ -31,6 +31,7 @@ use App\ParroquiasActividades;
 use App\Eventos;
 use App\Proyectos;
 use App\Guia;
+use App\Guia_Eventos;
 use App\GuiaFotos;
 use App\ComentariosActividades;
 use App\ComentariosAlimentacion;
@@ -185,6 +186,11 @@ class FrontController extends Controller
 
     public function todos_eventos(Request $request){
 
+      if($request->activo==null){
+
+      
+   
+
             $redes= Redes::where('estado',1)->get();
             $footer= Footer::where('estado',1)->get();
             $categoriasAct= CategoriaActividades::where('estado',1)->get();
@@ -195,36 +201,68 @@ class FrontController extends Controller
 
            $actividades_filtradas= Eventos::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
 
-            $categoriasEventos= CategoriasEventos::where('estado',1)->get(); //categorias para eventos
+            $guia= Guia_Eventos::where('estado',1)->get();
 
-          
+           $parroquias = Parroquias::where('estado',1)->get();
             
-            $actividades= Eventos::where('estado',1)->orderBy('id')->paginate(6);
+            $actividades= Eventos::where('estado',1)->orderBy('id')->paginate(3);
 
             if ($request->ajax()) {
-                return view('ajax-frontend/eventos', compact('actividades', 'categoriasEventos'));
-            }
 
-            
-/*
-            if ($request->ajax()) {
+         
 
-                return view('ajax-frontend.eventos', compact('actividades', 'categoriasEventos'))->render();  
-              
-            }
-*/
-            
+             
+
+                
+
+                 $actividades= Eventos::where('estado',1)->orderBy('id')->paginate(3);
+
+                 return view('ajax-frontend/eventos', compact('actividades'));
+
+             }
 
 
-           
-
-           
 
         
-            return view('frontend/todosEventos', compact('categoriasEventos','actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+            return view('frontend/todosEventos', compact('guia','parroquias','actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
 
+
+
+
+      }else
+      {
+            $redes= Redes::where('estado',1)->get();
+            $footer= Footer::where('estado',1)->get();
+            $categoriasAct= CategoriaActividades::where('estado',1)->get();
+            $categoriasTu= CategoriaTuristica::where('estado',1)->get(); //categorias de atractivos turisticos
+             $categoriasHospedaje= CategoriaHospedaje::where('estado',1)->get(); //este es para el menu de hospedaje
+            $categoriasDiversion= CategoriaDiversion::where('estado',1)->get(); //para el menu de diversion
+            $categoriasAlimentacion= CategoriaAlimentacion::where('estado',1)->get(); //para el menu de Alimentacion
+
+            $actividades_filtradas= Eventos::where('estado',1)->inRandomOrder()->take(5)->get(); // para el carrusel
+
+            $guia= Guia_Eventos::where('estado',1)->get();
+
+           $parroquias = Parroquias::where('estado',1)->get();
+            
+            $actividades= Eventos::where('estado',1)->where('parroquias_id',$request->parroquias_id)->where('year',$request->year)->where('mes',$request->mes)->orderBy('fecha_desde', 'DESC')->paginate(6);;
+
+           
+
+              return view('frontend/todosEventos', compact('guia','parroquias','actividades_filtradas','categoriasHospedaje', 'categoriasDiversion', 'categoriasAlimentacion', 'redes', 'footer', 'categoriasAct', 'actividades', 'categoriasTu'));
+
+
+      }
+      
+
+
+     
+  
 
     }
+
+
+   
 
 
      public function todas_noticias(Request $request){
@@ -372,6 +410,8 @@ class FrontController extends Controller
     }
 
     public function todos_alimentacion(Request $request){
+
+     
 
         $redes= Redes::where('estado',1)->get();
         $footer= Footer::where('estado',1)->get();

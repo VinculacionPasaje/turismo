@@ -291,6 +291,135 @@
         </div>
 
 
+
+         <div class="row">
+                    <div  class="col-xs-12 col-md-12" style="margin-top: 20px;">
+                        {{ Form::open(['route' => ['eventos.todos_eventos'], 'method' => 'GET']) }}
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+
+                         <input type="hidden" name="activo" value="activo" id="activo">
+                            
+                                    
+                            <div class="row">
+                                       <div class="col-md-3 col-xs-3">
+                                            <div class="form-group">
+                                                <label>Seleccione la Parroquia</label>
+                                                <select class="form-control select2" name="parroquias_id" id="parroquias_id" style="width: 100%;" >
+
+                                                  <?php $contador=1 ?>
+                                                   
+                                                    @foreach($parroquias as $parroquia)
+
+                                                       @if (old('parroquias_id') == $parroquia->id)
+                                                            <option value="{{$parroquia->id}}" selected> {{ $parroquia->parroquia }}</option>
+                                                        @else
+                                                            @if($contador==1)
+
+                                                             <option value="{{$parroquia->id}}" selected> {{ $parroquia->parroquia }}</option>
+
+                                                             @else
+
+                                                              <option value="{{$parroquia->id}}"> {{ $parroquia->parroquia }}</option>
+
+
+                                                            @endif
+                                                           
+                                                        @endif  
+
+                                                         <?php $contador++ ?>     
+                                                        
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-xs-3">
+                                            <div class="form-group">
+
+                                                 <?php
+                                             
+                                                        // a partir de PHP 5.4
+                                                        $meses = [
+                                                            "1" => "Enero",
+                                                            "2" => "Febrero",
+                                                            "3" => "Marzo",
+                                                            "4" => "Abril",
+                                                            "5" => "Mayo",
+                                                            "6" => "Junio",
+                                                            "7" => "Julio",
+                                                            "8" => "Agosto",
+                                                            "9" => "Septiembre",
+                                                            "10" => "Octubre",
+                                                            "11" => "Noviembre",
+                                                            "12" => "Diciembre",
+                                                        ];
+                                                ?>
+                                                <label>Seleccione el mes</label>
+                                                <select class="form-control select2" name="mes" id="mes" style="width: 100%;" >
+                                                      <?php $contador=1 ?>
+
+                                                    @foreach($meses as $mes)
+
+                                                    @if (old('mes') == $mes)
+                                                            <option value="<?php echo key($meses);?>" selected> {{ $mes }}</option>
+                                                        @else
+
+                                                            @if($contador==1)
+
+
+                                                            <option value="<?php echo key($meses);?>" selected> {{ $mes }}</option>
+
+                                                            @else
+
+                                                               <option value="<?php echo key($meses);?>"> {{ $mes }}</option>
+
+
+                                                            @endif
+                                                        @endif    
+
+                                                       
+                                                         <?php next($meses); ?>
+
+
+
+                                                         <?php $contador++ ?>     
+                                                        
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-xs-3">
+                                            <div class="form-group">
+                                                <label>Seleccione el año</label>
+                                                <select class="form-control select2" name="year" id="year" style="width: 100%;" >
+                                                   
+                                                    
+                                                    <option value="2016"> 2016</option>
+                                                    <option value="2017" selected> 2017</option>
+                                                    <option value="2018"> 2018</option>
+                                                       
+                                                </select>
+                                            </div>
+                                    </div>
+
+
+                                    <div align="center" class="col-lg-3 col-md-3 col-sm-3">
+
+                                          {{ Form::submit('Buscar', ['class' => ' slider_btn4', 'style' => 'margin-top:15px;']) }}
+
+                                           <a class="slider_btn4" href="{{url ('eventos')}}">Ver Todos Eventos</a>
+
+
+                                    </div>
+                            </div>
+
+                        {{ Form::close() }}
+                    </div>
+            </div>
+
+
+           
         
 
 
@@ -298,7 +427,7 @@
      
 
               
-                        <div class="col-lg-12 col-md-12 col-sm-12" >
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 50px;">
 
                                         
 
@@ -362,6 +491,64 @@
 
     
 </div> <!-- /container -->
+
+
+<div class="container2" style="padding-bottom: 50px;">
+
+
+    @foreach($guia as $guia_turistica)            
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 " style="padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;">
+
+        @if($guia_turistica->path == "")
+
+        <img src="{{url('frontend/images/guia.jpg')}}" alt="Guia de Pasaje" style="width: 100%; height: 500px;">
+
+
+        @else
+
+        <img src="{{url('fotos/'.$guia_turistica->path)}}" alt="Guia de Pasaje" style="width: 100%; height: 500px;">
+
+
+        @endif
+
+        
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 " style=" background: #005ca3; height: 500px; ">
+
+                <div class="guiaContainer">
+
+                <h1 class="guiaH1" >{{$guia_turistica->titulo}}</h1>
+                </div>
+
+                <div style="padding-bottom: 10px;">
+                
+                    <p style="text-align: justify;color: #dadada;font-size: 15px;">
+                        {{$guia_turistica->descripcion}}
+                    
+                    </p>
+                
+                </div>
+
+                    <div align="center" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 espaciado">
+                                            <a class="slider_btn_guia" href="#" onclick="window.open('pdf/{{$guia_turistica->pdf}}')" target="_blank" >Ver Todos Eventos</a>
+                                            <a class="slider_btn_guia" href="pdf/{{$guia_turistica->pdf}}" download="eventos">Descargar Folleto Eventos</a>
+                                        
+                    </div>
+
+                
+
+        </div>
+    
+    @endforeach
+
+
+
+
+ </div>
 
 
 
@@ -474,6 +661,8 @@
     <script src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 
 
+   
+
     <script type="text/javascript">
 
     $(function(){
@@ -519,7 +708,7 @@
     {
             $(document).on('click', '.pagination a',function(event)
             {
-                location.href = "#turismo";
+                 location.href = "#turismo";
                 $('li').removeClass('active');
                 $(this).parent('li').addClass('active');
                 event.preventDefault();
@@ -528,6 +717,7 @@
                 var page=$(this).attr('href').split('page=')[1];
 
                 getData(page);
+
                 
             });
         });
@@ -543,6 +733,7 @@
                 {
                     $("#item-lists").empty().html(data);
                     location.hash = page;
+                    
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError)
                 {

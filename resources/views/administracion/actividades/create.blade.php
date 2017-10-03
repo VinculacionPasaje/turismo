@@ -72,11 +72,11 @@
                 weekStart: 0
             };
             $("#datepicker").datepicker({
-                format: 'dd/mm/yyyy',
+                format: 'yyyy/mm/dd',
                 language:'en'
             })
             $("#datepicker2").datepicker({
-                format: 'dd/mm/yyyy',
+                format: 'yyyy/mm/dd',
                 language:'en'
             })
         });

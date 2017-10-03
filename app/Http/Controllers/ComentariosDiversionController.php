@@ -88,7 +88,7 @@ class ComentariosDiversionController extends Controller
 
         
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+                $date = $date->format('Y-m-d');
      
         $post = Diversion::find($id);
 
@@ -162,7 +162,7 @@ class ComentariosDiversionController extends Controller
     {
         $comentarios = ComentariosDiversion::find($id);
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+               $date = $date->format('Y-m-d');
         $hora= Carbon::now()->toTimeString();
 
          $comentarios->fill([

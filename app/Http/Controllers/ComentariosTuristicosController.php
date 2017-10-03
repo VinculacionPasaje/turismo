@@ -84,7 +84,7 @@ class ComentariosTuristicosController extends Controller
 
         
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+        $date = $date->format('Y-m-d');
      
         $post = Turistico::find($id);
 
@@ -155,7 +155,8 @@ class ComentariosTuristicosController extends Controller
     {
         $comentarios = ComentariosAtractivosT::find($id);
         $date = Carbon::now();
-        $date = $date->format('d-m-Y');
+        
+        $date = $date->format('Y-m-d');
         $hora= Carbon::now()->toTimeString();
 
          $comentarios->fill([

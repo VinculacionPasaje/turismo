@@ -25,7 +25,7 @@ class ZonasRequest extends FormRequest
     {
         return [
             'zona'=>'required|max:255',
-            'descripcion'=>'max:255',
+            'descripcion'=>'required|max:255',
 
         ];
     }

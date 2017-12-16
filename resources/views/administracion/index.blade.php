@@ -17,8 +17,8 @@
    
 
         <div class="row">
-            <div style="background: url('../frontend/images/fondo.jpg') no-repeat;width:300px;height:300px" class="col-md-12">
-               
+            <div align="center" class="col-md-12">
+               <h2> PANEL DE ADMINISTRACION TURISMO PASAJE </h2>
 
             </div>
             <!-- /.col (RIGHT) -->

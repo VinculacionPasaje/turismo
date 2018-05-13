@@ -1,5 +1,6 @@
 <?php
 
+//Briitneeyy ponte a trabajar vagaaa
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ActividadesRequest;
